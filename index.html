@@ -746,6 +746,429 @@
   .sidebar ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); }
   .sidebar ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.30); }
 
+  /* ── ACADEMIA NAV ITEM ── */
+  .academia-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    margin: 4px 0;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: background 0.15s;
+    user-select: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+  }
+  .academia-nav-btn:hover { background: var(--sidebar-hover); }
+  .academia-nav-btn.active { background: var(--sidebar-active); }
+  .academia-nav-btn .seg-dot { background: #FFB653; }
+  .academia-nav-btn .seg-name { color: var(--sidebar-text); font-size: 13px; font-weight: 600; }
+  .academia-nav-btn .acad-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFB653;
+    background: rgba(255,182,83,0.15);
+    border: 1px solid rgba(255,182,83,0.3);
+    border-radius: 4px;
+    padding: 1px 5px;
+    flex-shrink: 0;
+  }
+
+  /* ── ACADEMIA VIEW ── */
+  .academia-view {
+    display: none;
+    padding: 40px;
+    animation: fadeIn 0.2s ease;
+  }
+  .academia-view.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .academia-hero {
+    margin-bottom: 40px;
+  }
+  .academia-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C27D0E;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .academia-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: #C27D0E;
+    border-radius: 2px;
+  }
+  .academia-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .academia-title em { color: #C27D0E; font-style: italic; }
+  .academia-desc {
+    font-size: 15px;
+    color: var(--text2);
+    max-width: 620px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+
+  /* Chapter grid */
+  .acad-chapters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .acad-chapter-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+    touch-action: manipulation;
+  }
+  .acad-chapter-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--acad-color, #C27D0E);
+  }
+  .acad-chapter-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: var(--acad-color, #C27D0E);
+  }
+  .acad-chapter-icon { font-size: 28px; margin-bottom: 10px; }
+  .acad-chapter-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 4px;
+  }
+  .acad-chapter-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .acad-chapter-topics {
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.5;
+  }
+
+  /* Content reader */
+  .acad-reader {
+    display: none;
+  }
+  .acad-reader.active { display: block; }
+
+  .acad-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 28px;
+    font-family: inherit;
+  }
+  .acad-back-btn:hover { background: var(--surface2); border-color: var(--border2); }
+
+  .acad-chapter-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+  }
+  .acad-chapter-header .acad-num-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C27D0E;
+    background: rgba(194,125,14,0.1);
+    border: 1px solid rgba(194,125,14,0.25);
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+  .acad-chapter-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .acad-chapter-header p {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.6;
+    max-width: 680px;
+  }
+
+  /* Concept cards inside chapters */
+  .acad-concept {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .acad-concept-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .acad-concept-title .acad-icon { font-size: 20px; }
+  .acad-concept-sub {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 16px;
+  }
+  .acad-concept-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text2);
+  }
+  .acad-concept-body p { margin-bottom: 12px; }
+  .acad-concept-body strong { color: var(--text); font-weight: 600; }
+  .acad-concept-body em { color: #C27D0E; }
+
+  /* Info boxes inside academia */
+  .acad-infobox {
+    display: flex;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin: 14px 0;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .acad-infobox.gold { background: rgba(194,125,14,0.07); border: 1px solid rgba(194,125,14,0.22); color: var(--gold); }
+  .acad-infobox.green { background: rgba(0,111,78,0.07); border: 1px solid rgba(0,111,78,0.2); color: var(--accent); }
+  .acad-infobox.red { background: rgba(192,57,43,0.07); border: 1px solid rgba(192,57,43,0.2); color: #c0392b; }
+  .acad-infobox.blue { background: rgba(0,119,168,0.07); border: 1px solid rgba(0,119,168,0.2); color: #0077a8; }
+  .acad-infobox-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .acad-infobox-text strong { font-weight: 700; display: block; margin-bottom: 3px; }
+
+  /* Comparison grid */
+  .acad-compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .acad-compare-card {
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 13px;
+  }
+  .acad-compare-card .acc-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 6px;
+  }
+  .acad-compare-card .acc-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .acad-compare-card .acc-body { color: var(--text2); line-height: 1.55; }
+
+  /* Tumor type cards */
+  .acad-tumor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .acad-tumor-card {
+    padding: 16px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .acad-tumor-card.maligno { border-left: 4px solid #c0392b; background: rgba(192,57,43,0.04); }
+  .acad-tumor-card.benigno { border-left: 4px solid #006F4E; background: rgba(0,111,78,0.04); }
+  .acad-tumor-card.intermedio { border-left: 4px solid #C27D0E; background: rgba(194,125,14,0.04); }
+  .acad-tumor-card .atc-name { font-weight: 700; color: var(--text); margin-bottom: 4px; font-size: 14px; }
+  .acad-tumor-card .atc-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .acad-tumor-card.maligno .atc-tag { background: rgba(192,57,43,0.15); color: #c0392b; }
+  .acad-tumor-card.benigno .atc-tag { background: rgba(0,111,78,0.12); color: #006F4E; }
+  .acad-tumor-card.intermedio .atc-tag { background: rgba(194,125,14,0.15); color: #C27D0E; }
+  .acad-tumor-card .atc-desc { color: var(--text2); line-height: 1.5; font-size: 12px; }
+
+  /* Steps numbered in academia */
+  .acad-steps { margin: 14px 0; }
+  .acad-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+  .acad-step:last-child { border-bottom: none; }
+  .acad-step-num {
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'DM Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Screw anatomy diagram (pure CSS) */
+  .acad-screw-diagram {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .acad-screw-part {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    background: var(--bg2);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .acad-screw-part .asp-name { font-weight: 700; color: var(--text); min-width: 140px; }
+  .acad-screw-part .asp-desc { color: var(--text2); }
+
+  /* Fracture types */
+  .acad-fracture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .acad-fracture-card {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-align: center;
+    font-size: 12px;
+  }
+  .acad-fracture-card .afc-icon { font-size: 24px; margin-bottom: 8px; }
+  .acad-fracture-card .afc-name { font-weight: 700; color: var(--text); margin-bottom: 4px; font-size: 13px; }
+  .acad-fracture-card .afc-desc { color: var(--text2); line-height: 1.45; }
+
+  /* Artrosis grade */
+  .acad-artrosis-bar {
+    display: flex;
+    gap: 4px;
+    margin: 14px 0;
+  }
+  .acad-grade {
+    flex: 1;
+    padding: 14px 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid var(--border);
+  }
+  .acad-grade .ag-num { font-size: 22px; font-weight: 900; font-family: 'Playfair Display', serif; line-height: 1; margin-bottom: 4px; }
+  .acad-grade .ag-label { font-weight: 700; font-size: 11px; margin-bottom: 3px; }
+  .acad-grade .ag-desc { color: var(--text2); font-size: 10px; line-height: 1.4; }
+  .acad-grade.g0 { background: rgba(0,111,78,0.06); border-color: rgba(0,111,78,0.2); }
+  .acad-grade.g0 .ag-num { color: #006F4E; }
+  .acad-grade.g1 { background: rgba(0,119,168,0.06); border-color: rgba(0,119,168,0.2); }
+  .acad-grade.g1 .ag-num { color: #0077A8; }
+  .acad-grade.g2 { background: rgba(194,125,14,0.07); border-color: rgba(194,125,14,0.25); }
+  .acad-grade.g2 .ag-num { color: #C27D0E; }
+  .acad-grade.g3 { background: rgba(192,57,43,0.06); border-color: rgba(192,57,43,0.2); }
+  .acad-grade.g3 .ag-num { color: #c0392b; }
+  .acad-grade.g4 { background: rgba(80,29,131,0.07); border-color: rgba(80,29,131,0.25); }
+  .acad-grade.g4 .ag-num { color: #501D83; }
+
+  @media (max-width: 640px) {
+    .academia-view { padding: 20px 14px 40px; }
+    .academia-title { font-size: 28px; }
+    .acad-chapters { grid-template-columns: 1fr 1fr; }
+    .acad-chapter-header h1 { font-size: 24px; }
+    .acad-concept { padding: 18px; }
+    .acad-artrosis-bar { flex-direction: column; }
+    .acad-compare-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 420px) {
+    .acad-chapters { grid-template-columns: 1fr; }
+  }
+
   .sidebar-scroll {
     flex: 1;
     overflow-y: auto;
@@ -1087,6 +1510,16 @@
           <div class="product-item" onclick="loadProduct('nail','tumor','carbofix-femur')">Clavo Largo — Fémur</div>
         </div>
       </div>
+
+      <!-- ACADEMIA -->
+      <div class="nav-section" style="padding-top:8px;">
+        <div class="nav-label">Formación</div>
+        <button class="academia-nav-btn" id="acadNavBtn" onclick="openAcademia()">
+          <div class="seg-dot" style="background:#FFB653"></div>
+          <span class="seg-name">Academia</span>
+          <span class="acad-badge">NUEVO</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1155,6 +1588,17 @@
         </div>
       </div>
     </div>
+
+    <!-- Academia banner -->
+    <div onclick="openAcademia()" style="display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#004D35 0%,#006860 100%);border-radius:var(--radius-lg);padding:28px 32px;cursor:pointer;transition:box-shadow 0.2s;box-shadow:0 2px 12px rgba(0,104,96,0.2);margin-bottom:8px;" onmouseenter="this.style.boxShadow='0 6px 24px rgba(0,104,96,0.35)'" onmouseleave="this.style.boxShadow='0 2px 12px rgba(0,104,96,0.2)'">
+      <div style="font-size:48px;flex-shrink:0;">🎓</div>
+      <div style="flex:1;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FFB653;margin-bottom:6px;">Nuevo · Mini Manual de Capacitación</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;">Academia ImplanTQ</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.5;">Anatomía · Patologías · Tumores óseos · Fracturas · Tipos de implantes · Tornillería · Cemento óseo — todo explicado desde cero para no médicos.</div>
+      </div>
+      <div style="font-size:22px;color:rgba(255,255,255,0.4);flex-shrink:0;">→</div>
+    </div>
   </div>
 
   <!-- SEGMENT BROWSE VIEW — shown when clicking a segment card -->
@@ -1162,6 +1606,27 @@
     <button class="seg-product-back" onclick="goHome()">← Inicio</button>
     <div class="seg-product-title" id="segProductTitle"></div>
     <div id="segProductContent"></div>
+  </div>
+
+  <!-- ACADEMIA VIEW -->
+  <div class="academia-view" id="academiaView">
+
+    <!-- CHAPTER LIST (default) -->
+    <div id="acadChapterList">
+      <div class="academia-hero">
+        <div class="academia-eyebrow">Mini Manual de Capacitación</div>
+        <h1 class="academia-title">Academia<br><em>ImplanTQ</em></h1>
+        <p class="academia-desc">Todo lo que necesitas saber para entender la anatomía musculoesquelética, las patologías, los tratamientos y los implantes ortopédicos — explicado desde cero, sin jerga médica innecesaria.</p>
+      </div>
+      <div class="acad-chapters" id="acadChapterGrid"></div>
+    </div>
+
+    <!-- CHAPTER READER -->
+    <div class="acad-reader" id="acadReader">
+      <button class="acad-back-btn" onclick="closeChapter()">← Volver a Academia</button>
+      <div id="acadChapterContent"></div>
+    </div>
+
   </div>
 
   <!-- CONTENT VIEW -->
@@ -6120,9 +6585,10 @@ function goHome() {
   document.getElementById('homeView').style.display = 'block';
   document.getElementById('segProductView').classList.remove('active');
   document.getElementById('contentView').classList.remove('active');
+  document.getElementById('academiaView').classList.remove('active');
   document.getElementById('breadcrumb').innerHTML =
     `<span>ImplanTQ</span><span class="sep">/</span><span>Selecciona un producto</span>`;
-  document.querySelectorAll('.product-item').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.product-item, .academia-nav-btn').forEach(el => el.classList.remove('active'));
   currentProduct = null;
 }
 
@@ -6270,7 +6736,592 @@ document.addEventListener('DOMContentLoaded', function() {
       el.style.cursor = 'pointer';
     }
   });
+
+  // Build academia chapter cards
+  buildAcademiaGrid();
 });
+
+// ========================
+// ACADEMIA
+// ========================
+
+const ACADEMIA_CHAPTERS = [
+  {
+    id: 'huesos',
+    icon: '🦴',
+    color: '#006860',
+    name: 'El Hueso: Estructura y Función',
+    topics: 'Tipos de hueso · Cortical vs esponjoso · Epífisis, diáfisis, metáfisis · ¿Por qué importan los huesos?'
+  },
+  {
+    id: 'tumores',
+    icon: '🔬',
+    color: '#c0392b',
+    name: 'Tumores Óseos',
+    topics: 'Benignos vs malignos · Osteosarcoma · Encondroma · TCG · Tratamientos · Candidato a MUTARS®'
+  },
+  {
+    id: 'anatomia',
+    icon: '🫀',
+    color: '#0077A8',
+    name: 'Anatomía Articular',
+    topics: 'Rodilla · Cadera · Hombro · Huesos, ligamentos y estructuras clave'
+  },
+  {
+    id: 'fracturas',
+    icon: '⚡',
+    color: '#C27D0E',
+    name: 'Fracturas',
+    topics: 'Tipos · Clasificaciones · Mecanismos de lesión · Relevancia clínica'
+  },
+  {
+    id: 'artrosis',
+    icon: '📊',
+    color: '#501D83',
+    name: 'Artrosis y Artritis',
+    topics: 'Qué es · Grados Kellgren-Lawrence · Síntomas · ¿Cuándo operar?'
+  },
+  {
+    id: 'implantes',
+    icon: '🔩',
+    color: '#006F4E',
+    name: 'Tipos de Implantes',
+    topics: 'Cementados vs no cementados · Papel del cemento óseo · Materiales · Indicaciones'
+  },
+  {
+    id: 'tornillos',
+    icon: '🔧',
+    color: '#888B95',
+    name: 'Tornillería Ortopédica',
+    topics: 'Partes del tornillo · Corticales vs esponjosos · Bloqueados vs no bloqueados'
+  }
+];
+
+const ACADEMIA_CONTENT = {
+
+  huesos: {
+    title: 'El Hueso: Estructura y Función',
+    subtitle: 'Capítulo 1 — Fundamentos',
+    intro: 'Los huesos son mucho más que un andamiaje. Son tejido vivo, dinámico y en constante renovación. Entender cómo están construidos es la base para comprender por qué se fracturan, por qué desarrollan tumores y cómo se fijan los implantes.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">❓</span> ¿Por qué son importantes los huesos?</div>
+  <div class="acad-concept-sub">El esqueleto como sistema</div>
+  <div class="acad-concept-body">
+    <p>El esqueleto humano tiene <strong>206 huesos</strong> y cumple funciones que van mucho más allá de sostenernos. Son la base mecánica del movimiento, el refugio de la médula ósea —donde se fabrican todas las células de la sangre— y el mayor reservorio de calcio del cuerpo.</p>
+    <div class="acad-infobox green"><div class="acad-infobox-icon">💡</div><div class="acad-infobox-text"><strong>En resumen</strong> Los huesos soportan el peso corporal, protegen órganos vitales (cráneo, costillas), permiten el movimiento (junto a músculos y tendones), producen células sanguíneas (médula roja) y regulan el calcio sérico.</div></div>
+    <p>Un hecho que sorprende a muchos: el hueso es un tejido <strong>vivo y activo</strong>. Se renueva completamente en un ciclo de aproximadamente 10 años mediante dos tipos celulares clave: los <strong>osteoblastos</strong> (construyen hueso nuevo) y los <strong>osteoclastos</strong> (resorben hueso viejo). Este equilibrio dinámico se llama <em>remodelación ósea</em>.</p>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🧱</span> Tipos de tejido óseo: cortical vs esponjoso</div>
+  <div class="acad-concept-sub">La arquitectura interna del hueso</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card">
+        <div class="acc-label">Hueso Cortical (Compacto)</div>
+        <div class="acc-title">La "cáscara" dura</div>
+        <div class="acc-body">Forma la capa externa de casi todos los huesos. Es <strong>denso, sólido y resistente</strong>. Representa el 80% de la masa ósea total. Soporta cargas axiales (peso y compresión). Cuando usamos un tornillo cortical, penetramos este tejido duro.</div>
+      </div>
+      <div class="acad-compare-card">
+        <div class="acc-label">Hueso Esponjoso (Trabecular)</div>
+        <div class="acc-title">La "esponja" interna</div>
+        <div class="acc-body">Se encuentra en el interior de los huesos, especialmente en los extremos. Tiene una <strong>estructura porosa tipo panal</strong> de trabeculado óseo. Es más liviano y flexible. Aquí vive la médula ósea. Los implantes no cementados buscan anclarse en este tejido.</div>
+      </div>
+    </div>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">⚡</div><div class="acad-infobox-text"><strong>Clave clínica:</strong> El hueso cortical ofrece mejor fijación inicial para tornillos. El esponjoso permite mejor osteointegración a largo plazo para implantes no cementados. Un buen cirujano usa ambos estratégicamente.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">📏</span> Partes de un hueso largo</div>
+  <div class="acad-concept-sub">Fémur, tibia, húmero — la anatomía que necesitas conocer</div>
+  <div class="acad-concept-body">
+    <p>Los huesos largos (fémur, tibia, húmero, radio, cúbito) comparten la misma arquitectura. Entender sus partes es fundamental para entender qué reconstituye una prótesis MUTARS® o dónde ancla un vástago.</p>
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">1</div><div><strong>Epífisis</strong> — Los extremos del hueso. Están recubiertos de cartílago articular. Aquí se forma la articulación. Es la zona que afecta principalmente la artrosis. En cirugía tumoral, suele ser el área resecada y reemplazada por la prótesis.</div></div>
+      <div class="acad-step"><div class="acad-step-num">2</div><div><strong>Metáfisis</strong> — La zona de transición entre la epífisis y la diáfisis. Tiene una estructura esponjosa abundante. Es la zona de mayor crecimiento en niños (placa de crecimiento o fisis). Muchos tumores primarios (osteosarcoma, TCG) nacen aquí. Los conos metafisiarios EPORE® se anclaron en esta zona.</div></div>
+      <div class="acad-step"><div class="acad-step-num">3</div><div><strong>Diáfisis</strong> — El cuerpo o "tubo" central del hueso. Predominantemente cortical. Es el sitio de las fracturas diafisiarias. Los vástagos medulares (como el vástago RS de implantcast) se insertan dentro del canal medular que recorre la diáfisis.</div></div>
+      <div class="acad-step"><div class="acad-step-num">4</div><div><strong>Canal medular</strong> — El espacio hueco interior de la diáfisis, donde vive la médula ósea. Es el "tubo" donde se insertan los vástagos de las prótesis. Su diámetro es fundamental para seleccionar el tamaño del vástago.</div></div>
+      <div class="acad-step"><div class="acad-step-num">5</div><div><strong>Periostio</strong> — La membrana que recubre externamente el hueso. Contiene las células responsables de la reparación ósea tras una fractura. Es muy vascularizada y su preservación durante la cirugía favorece la consolidación.</div></div>
+    </div>
+    <div class="acad-infobox blue"><div class="acad-infobox-icon">🏥</div><div class="acad-infobox-text"><strong>¿Por qué importa en implantes?</strong> El tipo de implante que se elige depende en gran parte de cuál zona del hueso está afectada. Una artrosis afecta la epífisis → se usa prótesis articular primaria. Un tumor en la metáfisis → se usa MUTARS® segmentario. Un tumor que invade toda la diáfisis → se usa prótesis diafisiaria o fémur/húmero total.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔬</span> Tipos de hueso por su forma</div>
+  <div class="acad-concept-sub">No todos los huesos son iguales</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card"><div class="acc-label">Huesos Largos</div><div class="acc-title">Fémur, Tibia, Húmero</div><div class="acc-body">Mayor longitud que anchura. Tienen epífisis, metáfisis y diáfisis. Soportan cargas axiales. Son los más frecuentemente reemplazados con endoprótesis.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Huesos Cortos</div><div class="acc-title">Carpo, Tarso</div><div class="acc-body">Similar longitud y anchura. Principalmente esponjosos con fina capa cortical. Función de amortiguación y distribución de fuerzas.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Huesos Planos</div><div class="acc-title">Pelvis, Escápula, Costillas</div><div class="acc-body">Delgados y laminares. Dos capas de hueso cortical con esponjoso intermedio (diploe). Función protectora y de anclaje muscular.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Huesos Irregulares</div><div class="acc-title">Vértebras, Mandíbula</div><div class="acc-body">Formas complejas que no encajan en otras categorías. Función mixta: soporte, protección y movilidad segmentaria.</div></div>
+    </div>
+  </div>
+</div>`
+  },
+
+  tumores: {
+    title: 'Tumores Óseos',
+    subtitle: 'Capítulo 2 — Oncología Ortopédica',
+    intro: 'El sistema musculoesquelético puede verse afectado por tumores primarios (que nacen en el hueso o tejidos blandos) o metástasis (que llegan desde otro órgano). Entender la diferencia entre benignos y malignos, y saber qué es el MUTARS®, es esencial para un asesor de implantes oncológicos.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">📊</span> Benignos vs Malignos: la diferencia fundamental</div>
+  <div class="acad-concept-sub">No todo tumor significa cáncer</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card" style="border-left:4px solid #006F4E;">
+        <div class="acc-label" style="color:#006F4E;">Tumor Benigno</div>
+        <div class="acc-title">No invade, no metastatiza</div>
+        <div class="acc-body">Crece localmente sin invadir estructuras vecinas. <strong>No produce metástasis</strong>. Generalmente de crecimiento lento. Puede causar dolor y destrucción ósea local, pero raramente es mortal. Ej: encondroma, osteocondroma, quiste óseo simple.</div>
+      </div>
+      <div class="acad-compare-card" style="border-left:4px solid #C27D0E;">
+        <div class="acc-label" style="color:#C27D0E;">Tumor de Comportamiento Intermedio</div>
+        <div class="acc-title">Localmente agresivo</div>
+        <div class="acc-body">Crece agresivamente en su área, puede recurrir tras la resección y raramente produce metástasis. Ej: tumor de células gigantes (TCG). Requiere resección amplia.</div>
+      </div>
+      <div class="acad-compare-card" style="border-left:4px solid #c0392b;">
+        <div class="acc-label" style="color:#c0392b;">Tumor Maligno</div>
+        <div class="acc-title">Invasivo, puede metastatizar</div>
+        <div class="acc-body">Invade tejidos vecinos y tiene capacidad de producir metástasis —principalmente en pulmón. Requiere tratamiento sistémico (quimioterapia) además de cirugía. Ej: osteosarcoma, condrosarcoma, sarcoma de Ewing.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔬</span> Principales Tumores Óseos</div>
+  <div class="acad-concept-sub">Los que más verás en el contexto MUTARS®</div>
+  <div class="acad-concept-body">
+    <div class="acad-tumor-grid">
+      <div class="acad-tumor-card maligno">
+        <div class="atc-name">Osteosarcoma</div>
+        <div><span class="atc-tag">Maligno</span></div>
+        <div class="atc-desc">El tumor óseo primario maligno más frecuente. Afecta principalmente a <strong>adolescentes y adultos jóvenes</strong> (10-25 años). Nace en la metáfisis de huesos largos: fémur distal, tibia proximal, húmero proximal. Produce matriz ósea tumoral directamente. Muy agresivo — requiere quimioterapia neoadyuvante, resección amplia y quimioterapia adyuvante.</div>
+      </div>
+      <div class="acad-tumor-card maligno">
+        <div class="atc-name">Sarcoma de Ewing</div>
+        <div><span class="atc-tag">Maligno</span></div>
+        <div class="atc-desc">Segundo tumor óseo maligno primario en frecuencia. Afecta a <strong>niños y adolescentes</strong> (5-20 años). Puede aparecer en cualquier hueso, incluyendo diáfisis (a diferencia del osteosarcoma). Muy quimiosensible y radiosensible. Tratamiento multimodal.</div>
+      </div>
+      <div class="acad-tumor-card maligno">
+        <div class="atc-name">Condrosarcoma</div>
+        <div><span class="atc-tag">Maligno</span></div>
+        <div class="atc-desc">Tumor maligno que produce cartílago. Afecta principalmente a <strong>adultos mayores</strong> (40-70 años). Relativamente resistente a quimio y radioterapia — el tratamiento principal es la <strong>cirugía</strong>. La resección amplia es fundamental.</div>
+      </div>
+      <div class="acad-tumor-card intermedio">
+        <div class="atc-name">Tumor de Células Gigantes (TCG)</div>
+        <div><span class="atc-tag">Localmente agresivo</span></div>
+        <div class="atc-desc">También llamado osteoclastoma. Comportamiento intermedio — <strong>localmente muy agresivo</strong>, raramente hace metástasis. Afecta adultos jóvenes (20-40 años). Ubicación característica: epífisis de huesos largos (fémur distal, tibia proximal, radio distal). Alta tasa de recurrencia local si no se reseca ampliamente.</div>
+      </div>
+      <div class="acad-tumor-card benigno">
+        <div class="atc-name">Encondroma</div>
+        <div><span class="atc-tag">Benigno</span></div>
+        <div class="atc-desc">Tumor benigno de cartílago hialino dentro del canal medular. Muy frecuente — muchos son hallazgos incidentales. Generalmente asintomático. Riesgo de transformación maligna a condrosarcoma (bajo, pero presente en síndromes como Ollier). Tratamiento: observación o curetaje.</div>
+      </div>
+      <div class="acad-tumor-card benigno">
+        <div class="atc-name">Osteocondroma</div>
+        <div><span class="atc-tag">Benigno</span></div>
+        <div class="atc-desc">Tumor óseo benigno más frecuente. Es una prominencia ósea recubierta de cartílago que crece hacia afuera del hueso. Generalmente asintomático. Raro que se transforme. Tratamiento: resección si causa síntomas.</div>
+      </div>
+      <div class="acad-tumor-card maligno">
+        <div class="atc-name">Metástasis Óseas</div>
+        <div><span class="atc-tag">Maligno secundario</span></div>
+        <div class="atc-desc">El tumor maligno más frecuente del hueso no es primario sino <strong>metastásico</strong>. Los primarios más frecuentes son mama, próstata, pulmón, riñón, tiroides. Afectan principalmente columna, pelvis, fémur proximal. El riesgo de fractura patológica determina el tratamiento — a menudo se usan clavos profilácticos (Carbofix) o prótesis.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">💊</span> Tratamientos en Oncología Ósea</div>
+  <div class="acad-concept-sub">Cirugía, quimio y radioterapia — el triángulo terapéutico</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card">
+        <div class="acc-label">Quimioterapia</div>
+        <div class="acc-title">Tratamiento sistémico</div>
+        <div class="acc-body">Fármacos que eliminan células de crecimiento rápido. En osteosarcoma se da <strong>antes de la cirugía</strong> (neoadyuvante) para reducir el tumor y tratar las micrometástasis, y <strong>después</strong> (adyuvante) para eliminar células residuales. Puede producir toxicidad significativa (náuseas, inmunosupresión, toxicidad renal, cardíaca).</div>
+      </div>
+      <div class="acad-compare-card">
+        <div class="acc-label">Radioterapia</div>
+        <div class="acc-title">Radiación ionizante</div>
+        <div class="acc-body">Radiación de alta energía que destruye el ADN celular. Especialmente útil en sarcoma de Ewing (muy radiosensible) y en metástasis óseas dolorosas. Puede usarse antes de la cirugía, después, o como paliativo. El hueso irradiado tiene <strong>mayor riesgo de fractura y peor cicatrización</strong> — dato clave para el cirujano.</div>
+      </div>
+      <div class="acad-compare-card">
+        <div class="acc-label">Cirugía Reseccional</div>
+        <div class="acc-title">Extirpación del tumor</div>
+        <div class="acc-body">El pilar del tratamiento en tumores óseos. Puede ser <strong>intralesional</strong> (curetaje, para benignos), <strong>marginal</strong> (resección al margen del tumor), <strong>amplia</strong> (con margen de hueso y tejido sano — el estándar en sarcomas) o <strong>radical</strong> (amputación, cada vez menos frecuente).</div>
+      </div>
+    </div>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">⚡</div><div class="acad-infobox-text"><strong>Cirugía de preservación de miembro vs amputación:</strong> Gracias a los avances en quimioterapia y a sistemas como MUTARS®, hoy más del 90% de los pacientes con osteosarcoma de extremidades pueden recibir cirugía conservadora con resultados oncológicos equivalentes a la amputación, con mucha mejor calidad de vida.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🏥</span> ¿Quién es candidato a una prótesis MUTARS®?</div>
+  <div class="acad-concept-sub">Criterios de indicación para endoprótesis tumoral</div>
+  <div class="acad-concept-body">
+    <p>MUTARS® (Modular Universal Tumour And Revision System) es el sistema de endoprótesis tumorales de implantcast. Está diseñado para reconstruir hueso después de una resección oncológica amplia.</p>
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">✓</div><div><strong>Tumores óseos primarios malignos de extremidades</strong> (osteosarcoma, condrosarcoma, sarcoma de Ewing) con afectación de segmentos periarticulares que requieren resección amplia. El MUTARS® reemplaza la articulación y el segmento óseo resecado.</div></div>
+      <div class="acad-step"><div class="acad-step-num">✓</div><div><strong>Tumores de comportamiento localmente agresivo</strong> (TCG grado 3) cuando la resección intralesional tiene alta tasa de recurrencia o el hueso residual es insuficiente para reconstrucción biológica.</div></div>
+      <div class="acad-step"><div class="acad-step-num">✓</div><div><strong>Metástasis óseas con destrucción segmentaria extensa</strong> en pacientes con pronóstico de supervivencia suficiente para justificar una reconstrucción protésica. Cuando el clavo intramedular no es suficiente.</div></div>
+      <div class="acad-step"><div class="acad-step-num">✓</div><div><strong>Revisiones complejas</strong> de prótesis primaria o de revisión con pérdida ósea masiva (AORI 3), cuando no hay stock óseo suficiente para otra prótesis convencional.</div></div>
+      <div class="acad-step"><div class="acad-step-num">✗</div><div><strong>Contraindicación principal:</strong> Infección activa no controlada del sitio quirúrgico. Pacientes con expectativa de vida muy limitada (semanas) que no se beneficiarán de la recuperación funcional. Enfermedad metastásica con imposibilidad de carga.</div></div>
+    </div>
+    <div class="acad-infobox green"><div class="acad-infobox-icon">💡</div><div class="acad-infobox-text"><strong>La decisión final:</strong> Siempre la toma un equipo multidisciplinario: oncólogo, cirujano ortopédico oncológico, oncólogo radioterapeuta, patólogo. El objetivo es lograr márgenes quirúrgicos libres de tumor (<em>resección R0</em>) y la mejor función posible del miembro.</div></div>
+  </div>
+</div>`
+  },
+
+  anatomia: {
+    title: 'Anatomía Articular',
+    subtitle: 'Capítulo 3 — Rodilla, Cadera y Hombro',
+    intro: 'Las tres articulaciones más reemplazadas en cirugía ortopédica. Conocer su anatomía te permitirá entender por qué falla cada una, qué estructuras preserva o reemplaza una prótesis y cómo orientarte durante una cirugía.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🦵</span> Rodilla</div>
+  <div class="acad-concept-sub">La articulación más compleja del cuerpo</div>
+  <div class="acad-concept-body">
+    <p>La rodilla no es una simple bisagra: es una articulación tricompartimental que combina movimientos de flexoextensión con rotación. Está formada por tres huesos principales que se articulan entre sí.</p>
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">🦴</div><div><strong>Huesos:</strong> <em>Fémur distal</em> (los cóndilos medial y lateral), <em>Tibia proximal</em> (las mesetas tibiales medial y lateral) y <em>Patela o rótula</em> (que articula con el surco troclear femoral). Los tres forman los compartimentos medial, lateral y patelofemoral.</div></div>
+      <div class="acad-step"><div class="acad-step-num">🔗</div><div><strong>Ligamentos cruzados:</strong> El <em>LCA (Ligamento Cruzado Anterior)</em> controla la traslación anterior de la tibia. El <em>LCP (Ligamento Cruzado Posterior)</em> controla la traslación posterior. En una prótesis CR se preserva el LCP. En la PS se sustituye por el poste intercondíleo.</div></div>
+      <div class="acad-step"><div class="acad-step-num">🔗</div><div><strong>Ligamentos colaterales:</strong> El <em>LCM (medial)</em> y el <em>LCL (lateral)</em> dan estabilidad en varo y valgo. Su integridad es fundamental para elegir el nivel de constricción del implante — si están muy dañados, se necesita una prótesis más constreñida (como el KRI MK).</div></div>
+      <div class="acad-step"><div class="acad-step-num">🟡</div><div><strong>Meniscos:</strong> Estructuras fibrocartilaginosas en forma de media luna que mejoran la congruencia articular, absorben impactos y distribuyen la carga. El menisco medial y el lateral se pierden en la prótesis total de rodilla (se reseca el cartílago y meniscos).</div></div>
+      <div class="acad-step"><div class="acad-step-num">💪</div><div><strong>Mecanismo extensor:</strong> El <em>cuádriceps femoral</em> (músculo anterior del muslo) se inserta en la patela a través del tendón cuadricipital. La patela actúa como polea mecánica que aumenta el brazo de palanca. El tendón patelar conecta la rótula con la tuberosidad tibial anterior. Es la estructura más importante para la recuperación funcional.</div></div>
+    </div>
+    <div class="acad-infobox blue"><div class="acad-infobox-icon">🏥</div><div class="acad-infobox-text"><strong>Relevancia protésica:</strong> La alineación en el plano coronal (varo/valgo), la tensión ligamentaria y la rotación del componente tibial son las tres variables más críticas en una prótesis de rodilla. Un error en cualquiera de ellas genera inestabilidad, desgaste acelerado del polietileno o dolor.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🦴</span> Cadera</div>
+  <div class="acad-concept-sub">La articulación de mayor rango de movimiento</div>
+  <div class="acad-concept-body">
+    <p>La cadera es una enartrosis —articulación esférica— que permite movimiento en los tres planos del espacio. Es inherentemente estable gracias a la profundidad del acetábulo y los poderosos músculos que la rodean.</p>
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">🦴</div><div><strong>Huesos:</strong> La <em>cabeza femoral</em> (esfera perfecta de hueso, recubierta de cartílago) articula con el <em>acetábulo</em> (cavidad del coxal o pelvis). La cabeza se une al cuello femoral, que forma un ángulo de aproximadamente 130° con la diáfisis (ángulo cérvico-diafisiario). Este ángulo es crítico en la planificación de vástagos.</div></div>
+      <div class="acad-step"><div class="acad-step-num">🔗</div><div><strong>Ligamentos capsulares:</strong> La cápsula articular es la principal estabilizadora pasiva. Los ligamentos <em>iliofemoral</em> (el más fuerte del cuerpo), <em>isquiofemoral</em> y <em>pubofemoral</em> refuerzan la cápsula. En el abordaje posterior (el más frecuente), se seccionan estructuras capsulares posteriores — de ahí las precauciones de luxación postoperatoria.</div></div>
+      <div class="acad-step"><div class="acad-step-num">💪</div><div><strong>Músculo glúteo medio:</strong> El abductor primario de la cadera. Su integridad es determinante para la marcha sin cojera (signo de Trendelenburg). En abordaje lateral se puede comprometer — el abordaje anterolateral lo preserva mejor.</div></div>
+      <div class="acad-step"><div class="acad-step-num">🔴</div><div><strong>Nervio ciático:</strong> El nervio más grande del cuerpo pasa posterior a la cadera. Riesgo de lesión en abordaje posterior, especialmente en luxaciones o en pacientes con anatomía distorsionada. Puede producir pie caído si se lesiona.</div></div>
+      <div class="acad-step"><div class="acad-step-num">📐</div><div><strong>Offset femoral:</strong> Distancia horizontal entre el eje del canal medular y el centro de la cabeza femoral. Determina la tensión de los abductores. Un offset incorrecto produce cojera (offset reducido) o impingement (offset excesivo). El vástago de revisión RS de implantcast ofrece opciones modulares de cuello para ajustar el offset.</div></div>
+    </div>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">⚡</div><div class="acad-infobox-text"><strong>Los tres parámetros críticos en la PTCadera:</strong> Anteversión del componente acetabular (15-20°), inclinación del acetábulo (40-45°) y longitud del miembro. Un error en cualquiera genera inestabilidad (luxación), impingement o disimetría de miembros.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">💪</span> Hombro</div>
+  <div class="acad-concept-sub">La articulación más móvil — y más inestable — del cuerpo</div>
+  <div class="acad-concept-body">
+    <p>El hombro sacrifica estabilidad por movilidad. La cabeza humeral es mucho más grande que la glena escapular (como una pelota de golf sobre un tee). La estabilidad depende casi completamente de los músculos del manguito rotador.</p>
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">🦴</div><div><strong>Huesos:</strong> <em>Húmero proximal</em> (con la cabeza humeral, el troquíter y troquín donde se insertan los tendones del manguito), <em>Glena escapular</em> (la cavidad que recibe la cabeza) y <em>Clavícula</em>. La articulación glenohumeral es la principal del hombro. La acromioclavicular y la esternoclavicular completan el complejo.</div></div>
+      <div class="acad-step"><div class="acad-step-num">💪</div><div><strong>Manguito rotador:</strong> Los cuatro músculos fundamentales: <em>Supraespinoso</em> (abducción inicial y depresión de la cabeza), <em>Infraespinoso</em> y <em>Redondo menor</em> (rotación externa), <em>Subescapular</em> (rotación interna). Su función coordinada mantiene la cabeza centrada en la glena. Cuando el manguito falla, la cabeza asciende y destroza la glena → indicación de prótesis reversa.</div></div>
+      <div class="acad-step"><div class="acad-step-num">🔗</div><div><strong>Ligamentos glenohumeral:</strong> Complejo ligamentario que estabiliza la glena. En la prótesis anatómica (como el Agilon) se preservan estas estructuras. En la prótesis reversa (RSA) el diseño mismo compensa la insuficiencia del manguito invirtiendo el centro de rotación.</div></div>
+      <div class="acad-step"><div class="acad-step-num">🔴</div><div><strong>Nervio axilar:</strong> Rodea el cuello quirúrgico del húmero (a unos 5-7cm distal a la cabeza humeral). Es el nervio más frecuentemente lesionado en cirugía de hombro y en luxaciones. Su lesión produce parálisis del deltoides — pérdida funcional devastadora.</div></div>
+    </div>
+    <div class="acad-infobox blue"><div class="acad-infobox-icon">🏥</div><div class="acad-infobox-text"><strong>Prótesis anatómica vs reversa:</strong> La prótesis anatómica (Agilon) está indicada cuando el manguito rotador está íntegro. La reversa está indicada cuando el manguito está irreparable, permitiendo que el deltoides compense. En cirugía tumoral de húmero proximal (MUTARS® Húmero Proximal Reverso), siempre se usa componente reverso porque el manguito es resecado con el tumor.</div></div>
+  </div>
+</div>`
+  },
+
+  fracturas: {
+    title: 'Tipos de Fracturas',
+    subtitle: 'Capítulo 4 — Traumatología Básica',
+    intro: 'Una fractura es la pérdida de continuidad de un hueso. Pero no todas son iguales. El tipo de fractura determina el tratamiento, el implante y el pronóstico. Aquí verás los conceptos que escucharás en quirófano.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔍</span> Clasificación Básica de Fracturas</div>
+  <div class="acad-concept-sub">Las categorías que necesitas conocer</div>
+  <div class="acad-concept-body">
+    <div class="acad-fracture-grid">
+      <div class="acad-fracture-card"><div class="afc-icon">📷</div><div class="afc-name">Cerrada vs Abierta</div><div class="afc-desc"><strong>Cerrada:</strong> la piel está íntegra. <strong>Abierta (expuesta):</strong> el hueso perfora o el trauma abre la piel — emergencia quirúrgica por riesgo de infección (Gustilo).</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">📐</div><div class="afc-name">Completa vs Incompleta</div><div class="afc-desc"><strong>Completa:</strong> el hueso se rompe en dos o más fragmentos. <strong>Incompleta:</strong> el hueso se dobla pero no se separa (en tallo verde, frecuente en niños).</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">📏</div><div class="afc-name">Transversa</div><div class="afc-desc">Línea de fractura perpendicular al eje del hueso. Generalmente estable tras reducción. Mecanismo de fuerza directa.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">📉</div><div class="afc-name">Oblicua</div><div class="afc-desc">Línea diagonal al eje del hueso. Tiende a la inestabilidad rotatoria. Requiere fijación que controle la rotación.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">🌀</div><div class="afc-name">Espiral</div><div class="afc-desc">La línea "envuelve" el hueso helicoidalmente. Típica de mecanismo de torsión. Puede ser señal de abuso en niños.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">💥</div><div class="afc-name">Conminuta</div><div class="afc-desc">El hueso se fragmenta en tres o más piezas. Alta energía. Difícil fijación — a menudo requiere placa puente o clavo. Peor pronóstico de consolidación.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">⬇️</div><div class="afc-name">Impactada</div><div class="afc-desc">Un fragmento se encaja dentro del otro. Frecuente en hueso esponjoso (fémur proximal). A veces relativamente estable.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">⚠️</div><div class="afc-name">Patológica</div><div class="afc-desc">Fractura sobre hueso debilitado por tumor, metástasis, osteoporosis o infección. A menudo sin trauma significativo. Requiere tratar la causa subyacente.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">🏃</div><div class="afc-name">Por Estrés (fatiga)</div><div class="afc-desc">Por cargas repetitivas acumuladas — no un trauma único. Frecuente en atletas y soldados. Tibias, metatarsianos, fémur. A menudo se ve sólo en RM.</div></div>
+      <div class="acad-fracture-card"><div class="afc-icon">🟡</div><div class="afc-name">Periprostética</div><div class="afc-desc">Fractura alrededor de un implante ortopédico existente. Vancouver (cadera) y Lewis-Rorabeck (rodilla) son las clasificaciones más usadas. Manejo complejo — puede requerir cambio del implante.</div></div>
+    </div>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">⚡</div><div class="acad-infobox-text"><strong>Criterio de Garden (cadera):</strong> Para fracturas de cuello femoral — clave para decidir entre osteosíntesis vs prótesis. Garden I-II: no desplazadas → fijación. Garden III-IV: desplazadas → artroplastia (hemiartroplastia con cabeza bipolar o PTCadera total).</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔧</span> Principios de Fijación de Fracturas</div>
+  <div class="acad-concept-sub">¿Por qué usamos placas, clavos o tornillos?</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card"><div class="acc-label">Clavo Intramedular</div><div class="acc-title">El "perno" central</div><div class="acc-body">Se inserta dentro del canal medular. Comparte la carga con el hueso (load sharing). Ideal para fracturas diafisiarias de huesos largos. El Clavo Carbofix de implantcast es un ejemplo en húmero y fémur.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Placa y Tornillos</div><div class="acc-title">La "tablilla" metálica</div><div class="acc-body">Se fija a la superficie del hueso. Con tornillos bloqueados (bloquea el tornillo a la placa = ángulo estable). Ideal para fracturas metafisiarias, periarticulares y en hueso osteoporótico.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Tornillos Aislados</div><div class="acc-title">Para fragmentos específicos</div><div class="acc-body">Usados en fracturas simples o como complemento de placas. Los de esponjoso son ideales para epífisis, los corticales para diáfisis.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Fijador Externo</div><div class="acc-title">Fuera del cuerpo</div><div class="acc-body">Pines que entran al hueso y se conectan externamente. Útil en fracturas abiertas graves, trauma múltiple, o como estabilización provisional.</div></div>
+    </div>
+  </div>
+</div>`
+  },
+
+  artrosis: {
+    title: 'Artrosis y Artritis',
+    subtitle: 'Capítulo 5 — Patología Degenerativa',
+    intro: 'La artrosis es la enfermedad articular más frecuente del mundo y la principal indicación para cirugía de reemplazo articular. Entender sus grados y diferenciarla de la artritis reumatoide es fundamental para entender cuándo un paciente llega a la prótesis.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">📊</span> ¿Qué es la Artrosis?</div>
+  <div class="acad-concept-sub">La "desgaste" de la articulación</div>
+  <div class="acad-concept-body">
+    <p>La artrosis (OA, osteoartritis) es una enfermedad degenerativa del cartílago articular. El cartílago —tejido liso y elástico que recubre los extremos óseos— se va deteriorando progresivamente. Sin cartílago, el hueso roza con hueso → dolor, inflamación, deformidad progresiva.</p>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">💡</div><div class="acad-infobox-text"><strong>Diferencia clave: Artrosis vs Artritis reumatoide</strong> La <em>artrosis</em> es un proceso mecánico-degenerativo (más frecuente con edad, sobrepeso, uso excesivo). La <em>artritis reumatoide</em> es una enfermedad autoinmune sistémica que ataca la membrana sinovial y destruye el cartílago por inflamación crónica. Ambas pueden llevar a una prótesis total, pero con diferentes características quirúrgicas.</div></div>
+    <p>Factores de riesgo: <strong>edad</strong> (principal), sobrepeso (aumenta la carga en rodilla y cadera), lesiones previas (meniscos, ligamentos), trabajo físico intenso, genética.</p>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">📏</span> Clasificación Kellgren-Lawrence (KL)</div>
+  <div class="acad-concept-sub">El estándar radiológico para graduar la artrosis</div>
+  <div class="acad-concept-body">
+    <p>Se evalúa en radiografía simple. Los hallazgos clave son: osteofitos, pinzamiento del espacio articular, esclerosis subcondral y geodas (quistes subcondrales).</p>
+    <div class="acad-artrosis-bar">
+      <div class="acad-grade g0"><div class="ag-num">0</div><div class="ag-label">Normal</div><div class="ag-desc">Sin hallazgos. Cartílago íntegro. Sin síntomas.</div></div>
+      <div class="acad-grade g1"><div class="ag-num">I</div><div class="ag-label">Dudosa</div><div class="ag-desc">Posibles osteofitos mínimos. Pinzamiento dudoso. Sin síntomas claros.</div></div>
+      <div class="acad-grade g2"><div class="ag-num">II</div><div class="ag-label">Leve</div><div class="ag-desc">Osteofitos definidos. Posible pinzamiento. Dolor con actividad intensa.</div></div>
+      <div class="acad-grade g3"><div class="ag-num">III</div><div class="ag-label">Moderada</div><div class="ag-desc">Osteofitos múltiples, pinzamiento moderado, esclerosis. Dolor frecuente, limitación funcional.</div></div>
+      <div class="acad-grade g4"><div class="ag-num">IV</div><div class="ag-label">Severa</div><div class="ag-desc">Pinzamiento severo, hueso a hueso, deformidad. Dolor constante. Indicación quirúrgica.</div></div>
+    </div>
+    <div class="acad-infobox green"><div class="acad-infobox-icon">🏥</div><div class="acad-infobox-text"><strong>¿Cuándo se opera?</strong> No existe un grado KL que "automáticamente" indique cirugía. La decisión se basa en: <em>dolor que no responde al tratamiento conservador</em> (analgésicos, fisioterapia, infiltraciones), limitación funcional significativa Y hallazgos radiológicos KL ≥ III-IV. En Colombia, muchos pacientes llegan con KL IV avanzado y deformidad severa.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">💊</span> Tratamiento Escalonado</div>
+  <div class="acad-concept-sub">Antes de llegar a la prótesis</div>
+  <div class="acad-concept-body">
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">1</div><div><strong>Medidas generales:</strong> Pérdida de peso, modificación de actividades, ejercicio de bajo impacto (natación, bicicleta), bastón o caminador.</div></div>
+      <div class="acad-step"><div class="acad-step-num">2</div><div><strong>Farmacológico:</strong> Analgésicos (acetaminofén), AINEs (ibuprofeno, diclofenac), glucosamina/condroitina (evidencia débil).</div></div>
+      <div class="acad-step"><div class="acad-step-num">3</div><div><strong>Infiltraciones:</strong> Corticosteroides intraarticulares (efecto temporal, 3-6 meses), ácido hialurónico (viscosuplementación), PRP (plasma rico en plaquetas, evidencia moderada).</div></div>
+      <div class="acad-step"><div class="acad-step-num">4</div><div><strong>Cirugía conservadora:</strong> Artroscopia (beneficio cuestionado en artrosis avanzada), osteotomías correctoras (para redistribuir la carga en pacientes jóvenes).</div></div>
+      <div class="acad-step"><div class="acad-step-num">5</div><div><strong>Artroplastia total:</strong> El gold standard cuando fallan los anteriores. La prótesis total de rodilla (PTR) o cadera (PTC) eliminan el cartílago dañado y reemplazan las superficies articulares con implantes metálicos y polietileno.</div></div>
+    </div>
+  </div>
+</div>`
+  },
+
+  implantes: {
+    title: 'Tipos de Implantes',
+    subtitle: 'Capítulo 6 — Fijación y Materiales',
+    intro: 'Una de las preguntas más frecuentes en sala: ¿cementado o no cementado? La respuesta no es simple y depende del paciente, el hueso y el cirujano. Aquí entenderás la lógica detrás de cada decisión.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔩</span> Cementado vs No Cementado</div>
+  <div class="acad-concept-sub">Los dos paradigmas de fijación</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card" style="border:2px solid rgba(0,111,78,0.3);">
+        <div class="acc-label" style="color:#006F4E;">Implante CEMENTADO</div>
+        <div class="acc-title">Fijación con PMMA</div>
+        <div class="acc-body">El cemento óseo (polimetilmetacrilato, PMMA) actúa como <strong>grout</strong> — rellena los espacios entre el implante y el hueso, fijando el componente de inmediato. Estabilidad primaria excelente desde el primer día. Ideal para hueso osteoporótico o de mala calidad. Pacientes mayores (>70 años), baja demanda funcional.</div>
+      </div>
+      <div class="acad-compare-card" style="border:2px solid rgba(0,119,168,0.3);">
+        <div class="acc-label" style="color:#0077a8;">Implante NO CEMENTADO</div>
+        <div class="acc-title">Fijación biológica (press-fit)</div>
+        <div class="acc-body">El implante se fabrica con superficie rugosa o porosa (EPORE®, recubrimiento de hidroxiapatita) para que el hueso crezca hacia adentro — <em>osteointegración</em>. Requiere press-fit inicial (interferencia de 0.2-0.3mm) y buen stock óseo. La fijación definitiva ocurre en 6-12 semanas. Ideal para pacientes jóvenes y activos con hueso de buena calidad.</div>
+      </div>
+    </div>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">⚡</div><div class="acad-infobox-text"><strong>Híbridos:</strong> Muy frecuentes en rodilla — vástago femoral no cementado + componente tibial cementado (o viceversa). En cadera — copa no cementada + vástago cementado. La combinación se individualiza según la calidad ósea de cada zona.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🧪</span> El Cemento Óseo — Todo lo que debes saber</div>
+  <div class="acad-concept-sub">PMMA: el adhesivo de la ortopedia</div>
+  <div class="acad-concept-body">
+    <p>El cemento óseo no es un pegamento ni adhiere químicamente al hueso o al implante. Es un <strong>relleno mecánico</strong> que se polimeriza in situ formando una masa sólida que "encaja" en las irregularidades del hueso esponjoso.</p>
+    <div class="acad-steps">
+      <div class="acad-step"><div class="acad-step-num">1</div><div><strong>Composición:</strong> Mezcla de polvo (PMMA prepolimerizado + iniciador) + líquido (monómero MMA + activador). Al mezclar, inicia la polimerización exotérmica.</div></div>
+      <div class="acad-step"><div class="acad-step-num">2</div><div><strong>Reacción exotérmica:</strong> El cemento alcanza 70-90°C durante el fraguado. Esta temperatura puede dañar tejidos circundantes — por eso se irrigan con suero frío. También inhibe bacterias, pero puede afectar el endostio.</div></div>
+      <div class="acad-step"><div class="acad-step-num">3</div><div><strong>Fases del cemento:</strong> Mezcla (líquido y pegajoso) → Masa (fase de trabajo, moldeable, 4-6 min) → Fraguado (endurece, 8-12 min total). La inserción del implante debe hacerse en fase de masa.</div></div>
+      <div class="acad-step"><div class="acad-step-num">4</div><div><strong>Antibiótico en cemento:</strong> Se puede añadir gentamicina o vancomicina al cemento para liberar antibiótico localmente en el sitio quirúrgico. Reduce el riesgo de infección periprotésica, especialmente en revisiones o pacientes de alto riesgo.</div></div>
+      <div class="acad-step"><div class="acad-step-num">5</div><div><strong>Modo de fallo del cemento:</strong> La interfaz cemento-hueso es el punto débil a largo plazo. Las micropartículas de cemento pueden generar osteólisis periprotésica (destrucción ósea alrededor del implante) — el principal mecanismo de aflojamiento aséptico tardío.</div></div>
+    </div>
+    <div class="acad-infobox red"><div class="acad-infobox-icon">⚠️</div><div class="acad-infobox-text"><strong>Síndrome de implantación de cemento:</strong> Poco frecuente pero grave. Durante la inserción del vástago cementado, la presión dentro del canal puede causar embolización de grasa, monómero y fragmentos óseos. Puede producir hipotensión severa, hipoxia o paro cardíaco. El anestesiólogo debe estar preparado.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔬</span> Materiales de los Implantes</div>
+  <div class="acad-concept-sub">¿De qué están hechas las prótesis?</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card"><div class="acc-label">CoCrMo (implavit®)</div><div class="acc-title">Cobalto-Cromo-Molibdeno</div><div class="acc-body">El estándar de componentes femorales de rodilla. Alta resistencia al desgaste, dureza superficial. Puede liberar iones Co y Cr — problema en pacientes con alergia a metales. El recubrimiento TiN del ACS® soluciona esto.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">TiAl6V4 (implatan®)</div><div class="acc-title">Aleación de Titanio</div><div class="acc-body">Mayor biocompatibilidad que CoCrMo. Módulo elástico más cercano al hueso (menos stress shielding). Ideal para componentes no cementados y vástagos. El EPORE® es TiAl6V4 con estructura porosa al 60%.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">Polietileno UHMWPE</div><div class="acc-title">El inserto de plástico</div><div class="acc-body">El componente que articula contra el metal. Ultra High Molecular Weight Polyethylene. Disponible en versión convencional, altamente entrecruzado (XLPE — menor desgaste) y vitamina E (antioxidante). El desgaste del PE es la principal causa de revisión a largo plazo.</div></div>
+      <div class="acad-compare-card"><div class="acc-label">TiN (Nitruro de Titanio)</div><div class="acc-title">El recubrimiento dorado ACS®</div><div class="acc-body">Capa cerámica de 5.5µm sobre CoCrMo. Aumenta la dureza 5x, reduce el desgaste del PE en 38%, bloquea la liberación de iones Co/Cr/Ni. Indicado en alergias a metales.</div></div>
+    </div>
+  </div>
+</div>`
+  },
+
+  tornillos: {
+    title: 'Tornillería Ortopédica',
+    subtitle: 'Capítulo 7 — Implantes de Fijación',
+    intro: 'Los tornillos son los componentes más básicos y más usados en cirugía ortopédica. Pero no son todos iguales. Entender las diferencias entre corticales, esponjosos, bloqueados y no bloqueados —y conocer las partes de un tornillo— te dará un lenguaje fluido en quirófano.',
+    html: `
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔩</span> Partes de un Tornillo</div>
+  <div class="acad-concept-sub">La anatomía del tornillo ortopédico</div>
+  <div class="acad-concept-body">
+    <div class="acad-screw-diagram">
+      <div class="acad-screw-part"><div class="asp-name">🔷 Cabeza</div><div class="asp-desc">La parte superior donde encaja el destornillador. Puede ser hexagonal, torx, Phillips o ranura. En tornillos bloqueados tiene rosca externa que engrana con la placa. El diseño determina el torque máximo aplicable.</div></div>
+      <div class="acad-screw-part"><div class="asp-name">🔷 Cuello</div><div class="asp-desc">La zona lisa entre la cabeza y el inicio de la rosca. En tornillos de cortical, el cuello liso en la cortical externa crea un efecto de compresión (el tornillo "jala" los fragmentos).</div></div>
+      <div class="acad-screw-part"><div class="asp-name">🔷 Cuerpo (Rosca)</div><div class="asp-desc">La parte helicoidal que se ancla en el hueso. Se caracteriza por: <strong>Diámetro mayor</strong> (punta a punta de la rosca), <strong>Diámetro menor o núcleo</strong> (el cilindro central), <strong>Paso de rosca</strong> (distancia entre filetes) y <strong>Profundidad de rosca</strong> (diferencia entre diámetros mayor y menor).</div></div>
+      <div class="acad-screw-part"><div class="asp-name">🔷 Paso de rosca</div><div class="asp-desc">La distancia entre dos filetes consecutivos. Un paso <strong>fino</strong> (menor distancia) da mejor agarre en hueso cortical denso. Un paso <strong>grueso</strong> (mayor distancia) agarra mejor en hueso esponjoso poroso.</div></div>
+      <div class="acad-screw-part"><div class="asp-name">🔷 Punta</div><div class="asp-desc">El extremo distal. Puede ser <strong>autopercutante</strong> (se abre paso sin pretaladrar) o requiere broca previa. La mayoría de tornillos ortopédicos requieren broca guía — el diámetro de la broca corresponde al diámetro del núcleo del tornillo.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">⚙️</span> Tornillos Corticales vs Esponjosos</div>
+  <div class="acad-concept-sub">Diseñados para tejidos diferentes</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card" style="border-top:3px solid #006F4E;">
+        <div class="acc-label">Tornillo CORTICAL</div>
+        <div class="acc-title">Para hueso duro</div>
+        <div class="acc-body"><strong>Paso de rosca fino</strong> — más filetes por centímetro, mayor superficie de contacto en hueso denso. Diámetro de rosca menor vs mayor — diferencia pequeña. Requiere broca de diámetro del núcleo + lavado para roscar o uso de macho. Función: compresión interfragmentaria. Ejemplos: tornillo 3.5mm, 4.5mm corticales.</div>
+      </div>
+      <div class="acad-compare-card" style="border-top:3px solid #0077A8;">
+        <div class="acc-label">Tornillo ESPONJOSO</div>
+        <div class="acc-title">Para hueso poroso</div>
+        <div class="acc-body"><strong>Paso de rosca grueso</strong> — filetes más separados que "atrapan" más trabeculado esponjoso. Mayor diferencia entre diámetro mayor y menor — la rosca "muerde" más profundo en el esponjoso. Zona lisa (cuello) que permite compresión cuando hay dos fragmentos. Ejemplos: tornillo 6.5mm esponjoso (cadera), 4.0mm esponjoso (epífisis).</div>
+      </div>
+    </div>
+    <div class="acad-infobox blue"><div class="acad-infobox-icon">💡</div><div class="acad-infobox-text"><strong>Tornillo de compresión interfragmentaria (lag screw):</strong> Cuando el cuello liso del tornillo atraviesa el primer fragmento y la rosca agarra sólo el segundo fragmento, al apretar "jalamos" los fragmentos entre sí → compresión. Este principio se puede aplicar con cualquier tornillo si se sobredimensiona la broca en el primer fragmento.</div></div>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">🔐</span> Tornillos Bloqueados vs No Bloqueados</div>
+  <div class="acad-concept-sub">La revolución de las placas de ángulo estable</div>
+  <div class="acad-concept-body">
+    <div class="acad-compare-grid">
+      <div class="acad-compare-card">
+        <div class="acc-label">NO BLOQUEADO (convencional)</div>
+        <div class="acc-title">La placa como banda de tensión</div>
+        <div class="acc-body">La cabeza del tornillo se apoya cónicamente contra la placa. La compresión del tornillo "jala" la placa contra el hueso — depende de la fricción entre placa y hueso para estabilizar. Puede perder fijación en hueso osteoporótico si el tornillo se afloja. La placa actúa como tensor o banda de tensión.</div>
+      </div>
+      <div class="acad-compare-card">
+        <div class="acc-label">BLOQUEADO (locking)</div>
+        <div class="acc-title">Ángulo fijo, fijador externo interno</div>
+        <div class="acc-body">La cabeza del tornillo tiene rosca externa que engrana con la rosca interna del orificio de la placa → el tornillo <strong>queda atornillado a la placa</strong>. Se crea un constructo de ángulo fijo entre tornillo y placa. <strong>No depende del contacto placa-hueso</strong> para estabilizar — la placa puede flotar ligeramente. Ideal para hueso osteoporótico, fracturas conminutas, zonas metafisiarias.</div>
+      </div>
+    </div>
+    <div class="acad-infobox green"><div class="acad-infobox-icon">💡</div><div class="acad-infobox-text"><strong>Principio clave:</strong> En el tornillo bloqueado, para que el sistema falle, el tornillo tiene que "arrancar" un bloque de hueso cilíndrico (fallar por corte de toda la rosca) — requiere mucho más fuerza que simplemente aflojar un tornillo convencional. Por eso son superiores en hueso osteoporótico.</div></div>
+    <p style="margin-top:14px;font-size:13.5px;color:var(--text2);">Los orificios <strong>combinados</strong> (combo holes) de muchas placas modernas permiten usar tanto tornillos bloqueados como no bloqueados en el mismo orificio, según lo que necesita cada zona de la fractura.</p>
+  </div>
+</div>
+
+<div class="acad-concept">
+  <div class="acad-concept-title"><span class="acad-icon">📐</span> El Clavo Intramedular y los Tornillos de Bloqueo</div>
+  <div class="acad-concept-sub">El sistema del Carbofix en contexto</div>
+  <div class="acad-concept-body">
+    <p>El clavo intramedular se estabiliza dentro del canal con tornillos de bloqueo proximal y distal que pasan a través del hueso y del clavo — evitando que el clavo rote o se acorte. El clavo <strong>comparte la carga</strong> con el hueso (a diferencia de la placa que soporta toda la carga).</p>
+    <div class="acad-infobox gold"><div class="acad-infobox-icon">⚡</div><div class="acad-infobox-text"><strong>Clavo Carbofix (implantcast):</strong> Clavo intramedular de fibra de carbono. La ventaja es que es <strong>radiolúcido</strong> (no genera artefacto en RX/TAC/RM), lo que facilita el seguimiento oncológico. El carbono tiene un módulo elástico más parecido al hueso que el titanio — reduce el stress shielding. Disponible para húmero y fémur. Indicado en lesiones metastásicas con riesgo de fractura patológica.</div></div>
+  </div>
+</div>`
+  }
+
+};
+
+function buildAcademiaGrid() {
+  const grid = document.getElementById('acadChapterGrid');
+  if (!grid) return;
+  grid.innerHTML = ACADEMIA_CHAPTERS.map((ch, i) => `
+    <div class="acad-chapter-card" style="--acad-color:${ch.color}" onclick="openChapter('${ch.id}')">
+      <div class="acad-chapter-icon">${ch.icon}</div>
+      <div class="acad-chapter-num">Capítulo ${i + 1}</div>
+      <div class="acad-chapter-name">${ch.name}</div>
+      <div class="acad-chapter-topics">${ch.topics}</div>
+    </div>
+  `).join('');
+}
+
+function openAcademia() {
+  closeSidebar();
+  // Hide all views
+  document.getElementById('homeView').style.display = 'none';
+  document.getElementById('segProductView').classList.remove('active');
+  document.getElementById('contentView').classList.remove('active');
+  document.getElementById('academiaView').classList.add('active');
+
+  // Show chapter list, hide reader
+  document.getElementById('acadChapterList').style.display = 'block';
+  document.getElementById('acadReader').classList.remove('active');
+
+  // Update sidebar active state
+  document.querySelectorAll('.product-item, .academia-nav-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('acadNavBtn').classList.add('active');
+
+  // Breadcrumb
+  document.getElementById('breadcrumb').innerHTML =
+    `<span onclick="goHome()" style="cursor:pointer;color:var(--text3)">ImplanTQ</span>
+     <span class="sep">/</span>
+     <span style="color:var(--text);font-weight:600">Academia</span>`;
+
+  currentProduct = null;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openChapter(id) {
+  const ch = ACADEMIA_CONTENT[id];
+  const meta = ACADEMIA_CHAPTERS.find(c => c.id === id);
+  if (!ch || !meta) return;
+
+  document.getElementById('acadChapterList').style.display = 'none';
+  const reader = document.getElementById('acadReader');
+  reader.classList.add('active');
+
+  const content = document.getElementById('acadChapterContent');
+  content.innerHTML = `
+    <div class="acad-chapter-header">
+      <div class="acad-num-badge">${meta.icon} ${ch.subtitle}</div>
+      <h1>${ch.title}</h1>
+      <p>${ch.intro}</p>
+    </div>
+    ${ch.html}
+  `;
+
+  // Breadcrumb
+  document.getElementById('breadcrumb').innerHTML =
+    `<span onclick="goHome()" style="cursor:pointer;color:var(--text3)">ImplanTQ</span>
+     <span class="sep">/</span>
+     <span onclick="openAcademia()" style="cursor:pointer;color:var(--text3)">Academia</span>
+     <span class="sep">/</span>
+     <span style="color:var(--text);font-weight:600">${ch.title}</span>`;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function closeChapter() {
+  document.getElementById('acadChapterList').style.display = 'block';
+  document.getElementById('acadReader').classList.remove('active');
+  document.getElementById('breadcrumb').innerHTML =
+    `<span onclick="goHome()" style="cursor:pointer;color:var(--text3)">ImplanTQ</span>
+     <span class="sep">/</span>
+     <span style="color:var(--text);font-weight:600">Academia</span>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
 </body>
 </html>
