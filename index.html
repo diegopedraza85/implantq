@@ -8536,6 +8536,7 @@ function openSegment(seg) {
   // Hide home, show segment browse view
   document.getElementById('homeView').style.display = 'none';
   document.getElementById('contentView').classList.remove('active');
+  document.getElementById('academiaView').classList.remove('active');
   const spv = document.getElementById('segProductView');
   spv.classList.add('active');
 
@@ -8589,6 +8590,7 @@ function loadProduct(seg, type, id) {
 
   document.getElementById('homeView').style.display = 'none';
   document.getElementById('segProductView').classList.remove('active');
+  document.getElementById('academiaView').classList.remove('active');
   document.getElementById('contentView').classList.add('active');
 
   document.getElementById('productTitle').textContent = meta.name;
