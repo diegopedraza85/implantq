@@ -2,10 +2,18 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>ImplanTQ — Técnicas Quirúrgicas | implantcast</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* iOS tap fix global */
+  * { -webkit-tap-highlight-color: transparent; }
+  [onclick], button, a, label, select {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
   :root {
     /* implantcast Corporate Light Theme */
     --bg:           #f4f6f4;
@@ -124,6 +132,8 @@
     border-radius: var(--radius);
     transition: background 0.15s;
     user-select: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .segment-header:hover { background: var(--sidebar-hover); }
   .segment-header.active { background: var(--sidebar-active); }
@@ -163,6 +173,8 @@
     font-size: 12px;
     color: var(--sidebar-text2);
     font-weight: 500;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .subseg-header:hover { background: var(--sidebar-hover); color: var(--sidebar-text); }
   .subseg-header.active { background: var(--sidebar-active); color: #7DCAAA; }
@@ -186,6 +198,8 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .product-item:hover { color: var(--sidebar-text); background: var(--sidebar-hover); }
   .product-item.active { color: #7DCAAA; background: var(--sidebar-active); }
@@ -328,6 +342,8 @@
     transition: all 0.2s;
     position: relative;
     overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .seg-card::before {
     content: '';
@@ -438,6 +454,8 @@
     font-family: inherit;
     transition: all 0.15s;
     white-space: nowrap;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .tab-btn:hover { color: var(--text2); background: var(--surface2); }
   .tab-btn.active { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(0,111,78,0.25); }
@@ -720,71 +738,6 @@
   .info-card-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
   .info-card-value { font-size: 14px; font-weight: 600; color: var(--text); }
 
-  /* QUICK ASK */
-  .quick-ask-section {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-  }
-  .quick-ask-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  .quick-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-  .quick-chip {
-    padding: 6px 12px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    font-size: 12px;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: inherit;
-  }
-  .quick-chip:hover { border-color: var(--accent); color: var(--accent2); background: var(--accent-glow); }
-
-  .ask-input-row {
-    display: flex;
-    gap: 8px;
-  }
-  .ask-input {
-    flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    color: var(--text);
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .ask-input:focus { border-color: var(--accent); }
-  .ask-input::placeholder { color: var(--text3); }
-  .ask-btn {
-    padding: 10px 18px;
-    background: var(--surface2);
-    border: 1px solid var(--border2);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .ask-btn:hover { background: var(--accent); border-color: var(--accent); }
-
   /* SCROLLBAR */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
@@ -894,6 +847,8 @@
     align-items: center;
     gap: 10px;
     width: 100%;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .seg-product-btn:hover {
     border-color: var(--accent);
@@ -977,9 +932,6 @@
     .seg-product-btn { font-size: 12px; padding: 12px; }
     .seg-product-title { font-size: 24px; }
 
-    .quick-chips { gap: 6px; }
-    .quick-chip { font-size: 11px; }
-    .ask-input-row { flex-direction: column; }
     .ask-btn { width: 100%; }
   }
 
@@ -1037,14 +989,14 @@
             <div class="product-item" onclick="loadProduct('knee','revision','conos-corticales')">Conos Corticales</div>
             <div class="product-item" onclick="loadProduct('knee','revision','vainas-genux')">Vainas Genux MK</div>
             <div class="product-item" onclick="loadProduct('knee','revision','vainas-asc')">Vainas ASC SC</div>
-            <div class="product-item" onclick="loadProduct('knee','revision','kri')">KRI</div>
+            <div class="product-item" onclick="loadProduct('knee','revision','kri-mk')">KRI MK</div>
             <div class="product-item" onclick="loadProduct('knee','revision','artrodesis-rs')">Artrodesis RS</div>
           </div>
           <div class="subseg-header" onclick="toggleSubseg(this)" data-subseg="knee-tumor">
             <span class="subseg-arrow">▶</span> Tumoral (MUTARS)
           </div>
           <div class="subseg-children">
-            <div class="product-item" onclick="loadProduct('knee','tumor','femur-distal')">Fémur Distal</div>
+            <div class="product-item" onclick="loadProduct('knee','tumor','femur-distal-mk')">Fémur Distal MK</div>
             <div class="product-item" onclick="loadProduct('knee','tumor','tibia-proximal')">Tibia Proximal</div>
             <div class="product-item" onclick="loadProduct('knee','tumor','femur-diafisiario')">Fémur Diafisiario</div>
             <div class="product-item" onclick="loadProduct('knee','tumor','artrodesis-tumoral')">Artrodesis Tumoral</div>
@@ -1232,26 +1184,10 @@
       <div class="ai-content-area">
         <div class="ai-content-header">
           <div class="ai-content-title">
-            <div class="ai-pulse"></div>
-            Técnica Quirúrgica Paso a Paso · Generada por IA
+            📄 Técnica Quirúrgica Paso a Paso
           </div>
-          <button class="generate-btn" id="btnTecnica" onclick="generateContent('tecnica')">
-            ✦ Generar Técnica
-          </button>
         </div>
         <div class="ai-content-body" id="bodyTecnica">
-          <div class="placeholder-state" id="placeholderTecnica">
-            <div class="placeholder-icon">📄</div>
-            <div class="placeholder-text">Haz clic en "Generar Técnica" para obtener el paso a paso detallado de la cirugía</div>
-          </div>
-          <div class="loading-state" id="loadingTecnica">
-            <div class="loader-dots">
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-            </div>
-            <div class="loading-text">Generando técnica quirúrgica...</div>
-          </div>
           <div class="rendered-content" id="contentTecnica"></div>
         </div>
       </div>
@@ -1262,26 +1198,10 @@
       <div class="ai-content-area">
         <div class="ai-content-header">
           <div class="ai-content-title">
-            <div class="ai-pulse"></div>
-            Componentes, Implantes, Tallas y Compatibilidad · Generado por IA
+            🔩 Componentes, Implantes, Tallas y Compatibilidad
           </div>
-          <button class="generate-btn" id="btnComponentes" onclick="generateContent('componentes')">
-            ✦ Generar Componentes
-          </button>
         </div>
         <div class="ai-content-body" id="bodyComponentes">
-          <div class="placeholder-state" id="placeholderComponentes">
-            <div class="placeholder-icon">🔩</div>
-            <div class="placeholder-text">Genera la información completa de componentes, tallas y compatibilidad con otros sistemas</div>
-          </div>
-          <div class="loading-state" id="loadingComponentes">
-            <div class="loader-dots">
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-            </div>
-            <div class="loading-text">Generando información de componentes...</div>
-          </div>
           <div class="rendered-content" id="contentComponentes"></div>
         </div>
       </div>
@@ -1292,26 +1212,10 @@
       <div class="ai-content-area">
         <div class="ai-content-header">
           <div class="ai-content-title">
-            <div class="ai-pulse"></div>
-            Cajas de Instrumental · Detalle de Contenido · Generado por IA
+            🧰 Cajas de Instrumental
           </div>
-          <button class="generate-btn" id="btnInstrumental" onclick="generateContent('instrumental')">
-            ✦ Generar Instrumental
-          </button>
         </div>
         <div class="ai-content-body" id="bodyInstrumental">
-          <div class="placeholder-state" id="placeholderInstrumental">
-            <div class="placeholder-icon">🧰</div>
-            <div class="placeholder-text">Genera el listado detallado de cajas de instrumental y su contenido para esta cirugía</div>
-          </div>
-          <div class="loading-state" id="loadingInstrumental">
-            <div class="loader-dots">
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-            </div>
-            <div class="loading-text">Generando información de instrumental...</div>
-          </div>
           <div class="rendered-content" id="contentInstrumental"></div>
         </div>
       </div>
@@ -1322,54 +1226,11 @@
       <div class="ai-content-area">
         <div class="ai-content-header">
           <div class="ai-content-title">
-            <div class="ai-pulse"></div>
-            Tips & Trucos Quirúrgicos · Pearls de Expertos · Generado por IA
+            💡 Tips & Perlas Quirúrgicas
           </div>
-          <button class="generate-btn" id="btnTips" onclick="generateContent('tips')">
-            ✦ Generar Tips
-          </button>
         </div>
         <div class="ai-content-body" id="bodyTips">
-          <div class="placeholder-state" id="placeholderTips">
-            <div class="placeholder-icon">💡</div>
-            <div class="placeholder-text">Obtén tips de expertos, pearls quirúrgicas y consejos para evitar complicaciones</div>
-          </div>
-          <div class="loading-state" id="loadingTips">
-            <div class="loader-dots">
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-              <div class="loader-dot"></div>
-            </div>
-            <div class="loading-text">Generando tips y trucos...</div>
-          </div>
           <div class="rendered-content" id="contentTips"></div>
-        </div>
-
-        <!-- Quick Ask -->
-        <div style="padding:0 28px 28px;">
-          <div class="quick-ask-section">
-            <div class="quick-ask-label">Pregunta específica</div>
-            <div class="quick-chips">
-              <button class="quick-chip" onclick="askQuestion('¿Cómo evitar lesión neurovascular?')">⚠️ Lesión neurovascular</button>
-              <button class="quick-chip" onclick="askQuestion('¿Qué hacer si hay pérdida de stock óseo?')">🦴 Pérdida ósea</button>
-              <button class="quick-chip" onclick="askQuestion('¿Cómo manejar una fractura intraoperatoria?')">🔴 Fractura intraop.</button>
-              <button class="quick-chip" onclick="askQuestion('¿Cuál es la posición quirúrgica ideal?')">🧍 Posicionamiento</button>
-              <button class="quick-chip" onclick="askQuestion('¿Cómo verificar la estabilidad del implante?')">✅ Verificación</button>
-            </div>
-            <div class="ask-input-row">
-              <input type="text" class="ask-input" id="askInput" placeholder="Escribe tu pregunta sobre este procedimiento...">
-              <button class="ask-btn" onclick="askCustomQuestion()">Preguntar →</button>
-            </div>
-            <div class="loading-state" id="loadingAsk" style="padding:20px 0 0;">
-              <div class="loader-dots">
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-              </div>
-              <div class="loading-text">Consultando...</div>
-            </div>
-            <div class="rendered-content" id="contentAsk" style="margin-top:16px; padding:16px; background:var(--surface); border-radius:10px; border:1px solid var(--border);"></div>
-          </div>
         </div>
       </div>
     </div>
@@ -1399,12 +1260,661 @@ function closeSidebar() {
 // ========================
 let currentProduct = null;
 let currentTab = 'tecnica';
-const generatedContent = {};
 
 // ========================
 // CONTENIDO OFICIAL (PDF → ES)
 // ========================
 const OFFICIAL_CONTENT = {
+
+  // ─────────────────────────────────────────────────────────────────
+  //  ACS® PRIMARY FB+ — Técnica 4in1 PS
+  // ─────────────────────────────────────────────────────────────────
+  'knee-primary-acs-ps-fb': {
+    source: 'Técnica Oficial implantcast GmbH — ACS® FB+ 4in1 PS — Traducción ImplanTQ',
+
+    tecnica: `## Sistema ACS® — Advanced Coated System
+
+El ACS® (Advanced Coated System) es el sistema de rodilla primaria de implantcast. Su característica diferenciadora es el **recubrimiento cerámico de Nitruro de Titanio (TiN)**, que otorga al fémur y tibia su característica apariencia dorada y propiedades tribológicas superiores.
+
+**Variantes disponibles:**
+- **CR (Cruciate Retaining):** Preserva el ligamento cruzado posterior — requiere LCP íntegro.
+- **PS (Posterior Stabilized):** Sacrifica el LCP; el poste intercondíleo del inserto reemplaza su función — **versión que usamos en esta técnica**.
+- **SC (Semi-Constrained):** Mayor constricción — para instabilidad colateral (revisión).
+
+> **Nota Técnica 4in1:** Con esta técnica puedes comenzar por el fémur o por la tibia. La secuencia mostrada a continuación comienza con el fémur.
+
+---
+
+## Planificación Preoperatoria
+
+1. Realizar planificación con plantillas digitales (incluidas en sistemas de planificación comunes) o radiográficas sobre Rx AP y lateral de rodilla
+2. Determinar ángulo de valgo preoperatorio del paciente
+3. Verificar disponibilidad de todos los componentes e instrumental antes de la cirugía
+4. Definir si la fijación será cementada o no cementada
+5. Tener disponible un número adecuado de tallas de cada componente
+
+---
+
+## Acceso Quirúrgico
+
+Incisión cutánea central cruzando la patella. Elegir el abordaje preferido — **medial o lateral** — para abrir la articulación de la rodilla.
+
+> En la técnica 4in1 se puede iniciar con la preparación femoral **o** tibial. Esta técnica muestra el inicio femoral.
+
+---
+
+## Paso 1 — Preparación Femoral: Apertura del Canal Intramedular
+
+1. Abrir el canal medular femoral con la **fresa iniciadora 9mm**
+2. El punto de entrada debe estar **7-10mm anterior al ligamento cruzado posterior** (LCP)
+3. Ajustar el ángulo de valgo preoperatorio en la guía de alineación femoral empujando la palanca de ajuste para liberar el mecanismo de bloqueo; fijar en la posición deseada liberando la palanca
+
+---
+
+## Paso 2 — Montaje de la Guía de Alineación Femoral
+
+1. Insertar la varilla intramedular a través de la guía de alineación femoral dentro del canal medular abierto
+2. Acoplar la guía de rotación externa para la rotación deseada:
+   - **0° neutral**
+   - **3° rotación externa — rodilla derecha**
+   - **3° rotación externa — rodilla izquierda**
+3. Conectar el bloque de corte distal con la guía de alineación del bloque distal. El acoplamiento es correcto cuando se escucha un **clic** y el logo implantcast (ic-trébol) de la guía es visible a través del orificio central en la cara anterior del bloque
+
+---
+
+## Paso 3 — Posicionamiento del Bloque de Corte Distal
+
+1. Deslizar el bloque de corte distal dentro de la guía de alineación femoral y bajarlo hasta que toque el hueso femoral anterior
+2. Antes de fijar: asegurar que la guía de rotación externa esté en contacto con los cóndilos posteriores
+3. Se recomienda usar los **dos orificios destacados** para fijar el bloque — esto permite deslizarlo en dirección proximal/distal facilitando la re-resección
+4. Para mayor estabilidad, usar un **cross-pin** (notar que el cross-pin no puede insertarse cuando hay un pin en los orificios proximales del mismo lado)
+5. Una vez fijado el bloque, retirar la varilla intramedular con el mango T-handle; luego desensamblar la guía de alineación femoral y la guía de rotación
+
+---
+
+## Paso 4 — Resección Femoral Distal
+
+1. Verificar el nivel de resección insertando la **alita de ángel** en la guía de sierra
+2. Resecar los cóndilos femorales distales a través de la guía de sierra usando la **sierra ACS®**
+3. Si se necesita mayor estabilidad del bloque, se puede añadir un pin adicional a través de un orificio oblicuo del bloque de corte distal
+
+> Se recomienda usar la **sierra ACS® de tamaño mediano**.
+
+---
+
+## Paso 5 — Determinación del Tamaño Femoral
+
+La determinación del tamaño del componente femoral se realiza por **referenciación anterior** usando la guía de talla femoral:
+
+1. Aflojar ambos tornillos de fijación de la guía y colocarla en **posición neutra (1)**; alinear las marcas como se indica y fijar con el tornillo **(2)**
+2. Colocar la guía sobre el fémur ya resecado distalmente; la guía debe tocar los cóndilos posteriores
+3. Bajar el estilete anteriormente hacia el hueso femoral y fijar el tornillo **(3)**
+4. Leer el tamaño del componente femoral necesario
+
+> Si la marcación cae entre dos tallas → **elegir el tamaño menor**. Para ajustar al tamaño menor, aflojar tornillo (2), mover la guía y fijar en la nueva posición.
+
+5. Insertar dos pines a través de los orificios de la guía de talla para marcar la posición del bloque de corte 4in1 del tamaño correspondiente. La inserción de los pines sigue la guía de rotación externa usada previamente:
+   - 3° rotación ext. rodilla izquierda: 3° L y 0° R
+   - 3° rotación ext. rodilla derecha: 0° L y 3° R
+   - Neutral: 0° L y 0° R
+
+> Para mayor rotación externa: insertar los pines por los orificios marcados con **6°**.
+
+---
+
+## Paso 6 — Resección Femoral con el Bloque de Corte 4in1
+
+1. Colocar el bloque 4in1 del tamaño determinado en los orificios previamente preparados en la superficie femoral distal resecada
+2. El bloque debe quedar **al ras** con la superficie femoral distal resecada
+3. Fijar el bloque con dos pines al hueso. Opcionalmente se pueden agregar dos mangos al bloque 4in1 para mayor estabilidad manual
+4. Realizar el **corte anterior** a través del slot anterior
+5. Realizar la resección de los **cóndilos posteriores** a través de los slots posteriores
+6. Realizar los **cortes de chanfle** anterior y posterior a través de los slots correspondientes
+
+> Se recomienda usar la **sierra ACS® de tamaño mediano**.
+
+---
+
+## Paso 7 — Preparación Tibial: Montaje del Bloque de Corte
+
+1. Ensamblar la abrazadera de tobillo y la guía de corte tibial según se indica; una vez ajustada la alineación deseada, fijar la posición cerrando las abrazaderas de conexión
+2. Realizar el ajuste:
+   - Alinear la guía de corte tibial **(1)** paralela al eje intramedular de la tibia
+   - La inclinación posterior del bloque de resección tibial debe ser paralela a la inclinación de la tibia **(2)**
+   - Fijar la abrazadera de tobillo **(3)** e insertar el segundo perno **(4)** en el hueso
+   - Finalmente fijar la varilla **(5)**
+3. Según el slope tibial deseado, acoplar el bloque de resección tibial de **5° o 7°**
+
+> El diseño del componente tibial ya incorpora un slope de 5°. Con el bloque de 5°, el perno tibial queda en línea con el eje intramedular. Con el bloque de 7°, el perno tibial se inclina 2° anteriormente.
+
+---
+
+## Paso 8 — Alineación del Bloque de Corte Tibial
+
+**Opción A — Punto de contacto más profundo como referencia:**
+- Usar el lado del estilete marcado con **2mm**
+- Bajar el bloque hasta que la punta del estilete toque el punto más profundo de la tibia más desgastada (generalmente medial)
+- La resección se realiza **2mm por debajo** del punto de referencia
+
+**Opción B — Punto de contacto más alto como referencia:**
+- Usar el lado del estilete marcado con **10mm**
+- Bajar el bloque hasta que la punta del estilete toque el punto más alto de la tibia menos desgastada (generalmente lateral)
+- La resección se realiza **10mm por debajo** del punto de referencia tibial
+
+Una vez ajustada la alineación:
+1. Fijar el bloque de resección al hueso tibial con **dos pines** — se recomienda los orificios en la línea marcada para posibilitar deslizamiento proximal/distal
+2. Opcionalmente: acoplar el host de alineación para verificar con la varilla extramedular
+3. Retirar la guía de corte tibial usando el **martillo deslizante** tras liberar las abrazaderas
+
+---
+
+## Paso 9 — Resección Tibial
+
+1. Verificar el plano de resección con el verificador de resección largo — aplicar según técnica seleccionada: a través del slot **(1)** o sobre el bloque de resección tibial **(2)**
+2. Para mayor estabilidad, fijar el bloque con un **cross-pin** adicional
+3. Realizar la resección tibial según la técnica seleccionada: guiada a través del slot o libre
+4. Retirar el bloque tras la resección
+
+---
+
+## Paso 10 — Verificación del Espacio Articular (Opcional)
+
+1. Ensamblar el adaptador con el medidor de espacio articular usando inserto PE de 10mm **(1)**
+2. Para simular mayor grosor de PE: acoplar un spacer shim del espesor deseado al medidor **(2)**
+3. Insertar el bloque espaciador en el espacio en flexión y en extensión para verificar la situación ligamentaria y realizar correcciones si es necesario
+
+---
+
+## Paso 11 — Determinación del Tamaño Tibial
+
+1. Ensamblar la platina de prueba tibial del tamaño supuesto al mango de alineación
+2. Aplicar la platina de prueba en la tibia resecada para verificar talla y alineación rotacional
+3. Para verificar la alineación, insertar la varilla de alineación a través de uno de los orificios del mango
+4. Una vez verificada la talla y posición correctas, fijar la platina de prueba con pines cortos con tope en el hueso
+
+---
+
+## Paso 12 — Reducción de Prueba (Trial Reduction) CR
+
+1. Acoplar el inserto PE de prueba del tamaño correcto (coincide con el tamaño del componente tibial) a la platina tibial de prueba — disponible en espesores de 10 y 12.5mm
+
+> Para simular insertos de mayor espesor: usar adaptadores de 15, 17.5 o 20mm ensamblados al inserto de prueba de 10mm.
+
+2. Acoplar el componente femoral de prueba del tamaño determinado al fémur usando primero el **impactor guiado (1)**; tras verificar posición, completar la impactación con el **impactor femoral corto no guiado (2)**
+3. Verificar tensión ligamentaria y estabilidad articular en flexión y extensión
+4. Si la estabilidad es insuficiente: repetir la reducción de prueba con inserto de mayor espesor
+5. Si no se logra estabilidad antero-posterior adecuada con mayor espesor: **considerar uso de componente PS** → continuar en Paso 13
+
+---
+
+## Paso 13 — Preparación Femoral PS (Solo versión PS)
+
+1. Retirar inserto PE de prueba y componente femoral de prueba
+2. Acoplar la guía del escoplo de caja PS del tamaño correcto al fémur — debe apoyar sobre las superficies resecadas distal y anterior; fijar con 2-3 pines
+3. Usar el **box reamer PS** primero anteriormente y luego posteriormente hasta el tope; empujar el reamer rotante hacia el borde anterior y posterior para completar el fresado
+4. Usar el **escoplo de caja PS** para finalizar la preparación ósea para la caja estabilizadora — insertar hasta el tope en los bordes anterior y posterior
+5. Usar el **osteótomo PS** para preparar la entalladura anterior
+
+---
+
+## Paso 14 — Reducción de Prueba PS
+
+1. Retirar la guía del escoplo PS e insertar el componente femoral de prueba PS del tamaño correcto con el impactor guiado femoral
+2. Insertar el inserto de prueba PS del tamaño y espesor tibial determinados previamente
+3. Verificar tensión ligamentaria y estabilidad articular en flexión y extensión; si es necesario, aumentar el espesor del inserto hasta lograr estabilidad adecuada
+4. Retirar el inserto de prueba y el componente femoral de prueba PS con el martillo deslizante
+5. Dejar la platina tibial de prueba fijada para la preparación tibial definitiva
+
+---
+
+## Paso 15 — Preparación Tibial Final
+
+1. Acoplar el bushing de fresado tibial a la platina tibial de prueba
+2. Fresar con la fresa tibial hasta el tope a través del bushing — usar la fresa **corta** para componente tibial cementado y la **larga** para el no cementado con vástago de extensión
+
+> Para vástagos de extensión de 35 o 50mm, la preparación debe realizarse **sin el bushing**.
+
+3. Opcionalmente: usar el punzón tibial para compactar el hueso esponjoso
+4. Retirar el bushing de fresado tibial y acoplar el punzón de aletas tibial del tamaño determinado (talla 2-4 o 5-6) al mango del punzón de aletas tibial
+5. Impactar el punzón de aletas tibial a través de la platina de prueba hasta el tope
+6. Las marcas anteriores de la platina tibial de prueba pueden usarse como referencia de alineación rotacional; marcar la alineación en el borde anterior de la tibia con **azul de metileno**
+
+---
+
+## Paso 16 — Implantación de los Componentes
+
+1. Preparar el cemento óseo si corresponde (componentes cementados)
+2. **Primero implantar el componente tibial:** Si se usa vástago de extensión con componente cementado, retirar el tapón PMMA con el extractor de taper **(1)**; atornillar el impactor-guía tibial sobre el componente del tamaño determinado e impactar con golpes suaves; desbloquear y retirar el impactor
+3. Insertar el inserto PE tibial del tamaño determinado desde anterior hacia el mecanismo de bloqueo dovetail del componente tibial; verificar asentamiento completo usando el impactor de insertos tibiales
+4. Insertar el componente femoral del tamaño determinado con el impactor femoral guiado o no guiado
+
+> Para implantación de componentes PS: el orden es **tibial → femoral → inserto PE**.
+> No mover la prótesis mientras fragua el cemento óseo.
+
+---
+
+## Paso 17 — Preparación de Patella con Inserto PE (Opcional)
+
+1. Usar la guía de resección patelar para preparar el domo patelar; ajustar la altura de resección a **9mm** (espesor de todos los componentes patelar PE)
+2. Resecar el domo patelar con la sierra ACS® a través del capturador de sierra de la guía
+3. Retirar la guía de resección patelar y determinar la talla del implante patelar aplicando la guía de perforación patelar
+4. Si es necesario, variar las tallas (todas las tallas de patella PE son compatibles con todos los tamaños femorales) y perforar con el taladro patelar hasta el tope para preparar los tres orificios de anclaje
+5. Retirar la guía de perforación patelar e insertar la patella de prueba para verificar reducción
+6. Implantar la patella PE definitiva del tamaño determinado con cemento sobre la patella preparada y fijar con el **clamp patelar ic**; dejar el clamp hasta que el cemento fragüe`,
+
+    componentes: `## TiN — Nitruro de Titanio: El Recubrimiento Dorado del ACS®
+
+El componente femoral y tibial del sistema ACS® están fabricados en **implavit® (CoCrMo, ISO 5832-4)** y recubiertos con **Nitruro de Titanio (TiN)** mediante deposición física de vapor (PVD). Este recubrimiento cerámico de color dorado es la base del nombre "Advanced Coated System".
+
+### ¿Por qué TiN?
+
+| Propiedad | TiN | CoCrMo sin recubrimiento |
+|---|---|---|
+| Dureza superficial | 23.5 GPa | ~4.5 GPa |
+| Tasa de desgaste PE (5M ciclos) | 1.3 mg/10⁶ ciclos | 2.1 mg/10⁶ ciclos |
+| Liberación de iones Co (in vitro) | <0.5 µg/l (bajo límite detectable) | 566 µg/l |
+| Liberación de iones Cr | <0.7 µg/l | 15 µg/l |
+| Ángulo de contacto (mojabilidad) | 52° | 83° |
+| Resistencia adhesiva HF | HF1 (máxima) | N/A |
+| Grosor de capa | ~5.5 µm | — |
+| Experiencia clínica | >20 años, >300.000 implantes | — |
+
+### Ventajas Clínicas Clave del TiN
+
+**1. Reducción del desgaste de PE:** Los carburos de CoCrMo que sobresalen microscópicamente de la superficie se cubren con TiN, mucho más duro. Esto reduce el desgaste del PE en un 38% respecto al CoCrMo sin recubrir (ensayo ISO 14243, simulador de rodilla).
+
+**2. Reducción de la liberación de iones:** El TiN actúa como barrera biocompatible. En pruebas in vitro, la liberación de Co, Cr y Ni cae por debajo del límite de detección. Sin reacción alérgica reportada en implantes TiN con superficie íntegra. **Especialmente indicado en pacientes con alergia conocida a Ni, Co o Cr.**
+
+**3. Mayor mojabilidad:** El ángulo de contacto del TiN (52°) es menor que el del CoCrMo (83°), lo que mejora la lubricación sinovial, reduce la fricción y el desgaste del inserto PE.
+
+**4. Mayor resistencia al cemento óseo como tercer cuerpo:** Partículas de cemento óseo son toleradas en el par tribológico — solo generan estrías superficiales sin delaminación del recubrimiento.
+
+**5. Mayor adhesión del cemento:** Pruebas in vitro muestran un aumento de un tercio en la fuerza de adhesión del cemento óseo sobre superficies TiN vs. CoCrMo sin recubrir.
+
+> Contraindicación relativa: alergia conocida a los materiales del implante. El TiN reduce (no elimina) la liberación de iones — en caso de alergia confirmada, realizar test alérgico antes de implantar.
+
+---
+
+## Componentes del Sistema ACS® FB+ (Fixed Bearing Plus)
+
+### Componente Femoral — Cementado (implavit® CoCrMo + TiN, ISO 5832-4)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 1* | 4200-3001 | 4200-3011 |
+| 2 | 4200-3002 | 4200-3012 |
+| 2.5* | 4200-3008 | 4200-3018 |
+| 3 | 4200-3003 | 4200-3013 |
+| 4 | 4200-3004 | 4200-3014 |
+| 5 | 4200-3005 | 4200-3015 |
+| 6 | 4200-3006 | 4200-3016 |
+| 7* | 4200-3007 | 4200-3017 |
+
+### Componente Femoral — No Cementado pc (CoCrMo + TiN + porous coating)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 2 | 4200-3102 | 4200-3112 |
+| 2.5* | 4200-3108 | 4200-3118 |
+| 3 | 4200-3103 | 4200-3113 |
+| 4 | 4200-3104 | 4200-3114 |
+| 5 | 4200-3105 | 4200-3115 |
+| 6 | 4200-3106 | 4200-3116 |
+
+### Componente Femoral — No Cementado cpTi/TCP (CoCrMo + TiN + cpTi + TCP)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 2 | 4200-3202 | 4200-3212 |
+| 2.5* | 4200-3208 | 4200-3218 |
+| 3 | 4200-3203 | 4200-3213 |
+| 4 | 4200-3204 | 4200-3214 |
+| 5 | 4200-3205 | 4200-3215 |
+| 6 | 4200-3206 | 4200-3216 |
+
+### Femoral PS — Cementado (CoCrMo + TiN)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 1* | 4200-6201 | 4200-6211 |
+| 2 | 4200-6202 | 4200-6212 |
+| 2.5* | 4200-6208 | 4200-6218 |
+| 3 | 4200-6203 | 4200-6213 |
+| 4 | 4200-6204 | 4200-6214 |
+| 5 | 4200-6205 | 4200-6215 |
+| 6 | 4200-6206 | 4200-6216 |
+
+### Femoral PS — No Cementado pc (CoCrMo + TiN + porous coating)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 2 | 4200-6602 | 4200-6612 |
+| 2.5* | 4200-6608 | 4200-6618 |
+| 3 | 4200-6603 | 4200-6613 |
+| 4 | 4200-6604 | 4200-6614 |
+| 5 | 4200-6605 | 4200-6615 |
+| 6 | 4200-6606 | 4200-6616 |
+
+*Disponible bajo pedido especial.
+
+---
+
+### Componente Tibial ACS® FB+ — Cementado incl. tapones PMMA (CoCrMo + TiN)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 2 | 4201-7102 | 4201-7112 |
+| 2.5* | 4201-7108 | 4201-7118 |
+| 3 | 4201-7103 | 4201-7113 |
+| 3.5* | 4201-7109 | 4201-7119 |
+| 4 | 4201-7104 | 4201-7114 |
+| 5 | 4201-7105 | 4201-7115 |
+| 6 | 4201-7106 | 4201-7116 |
+
+### Componente Tibial ACS® FB+ — No Cementado pc incl. vástago extensión (CoCrMo + TiN + pc / implatan® TiAl6V4 + TiN)
+
+| Talla | REF Izquierdo | REF Derecho |
+|---|---|---|
+| 2 | 4201-7122 | 4201-7132 |
+| 2.5* | 4201-7128 | 4201-7138 |
+| 3 | 4201-7123 | 4201-7133 |
+| 3.5* | 4201-7129 | 4201-7139 |
+| 4 | 4201-7124 | 4201-7134 |
+| 5 | 4201-7125 | 4201-7135 |
+| 6 | 4201-7126 | 4201-7136 |
+
+---
+
+### Insertos PE ACS® FB — UHMW-PE (ISO 5834-2)
+
+| Talla | 10.0mm | 12.5mm | 15.0mm | 17.5mm | 20.0mm |
+|---|---|---|---|---|---|
+| 2 | 4240-0210 | 4240-0212 | 4240-0215 | 4240-0217 | 4240-0220 |
+| 3 | 4240-0310 | 4240-0312 | 4240-0315 | 4240-0317 | 4240-0320 |
+| 4 | 4240-0410 | 4240-0412 | 4240-0415 | 4240-0417 | 4240-0420 |
+| 5 | 4240-0510 | 4240-0512 | 4240-0515 | 4240-0517 | 4240-0520 |
+| 6 | 4240-0610 | 4240-0612 | 4240-0615 | 4240-0617 | 4240-0620 |
+
+### Insertos PE ACS® FB+ PS Hyperflex — UHMW-PE (ISO 5834-2)
+
+| Talla | 10.0mm | 12.5mm | 15.0mm | 17.5mm | 20.0mm |
+|---|---|---|---|---|---|
+| 2 | 4245-4210 | 4245-4212 | 4245-4215 | 4245-4217 | 4245-4220 |
+| 3 | 4245-4310 | 4245-4312 | 4245-4315 | 4245-4317 | 4245-4320 |
+| 4 | 4245-4410 | 4245-4412 | 4245-4415 | 4245-4417 | 4245-4420 |
+| 5 | 4245-4510 | 4245-4512 | 4245-4515 | 4245-4517 | 4245-4520 |
+| 6 | 4245-4610 | 4245-4612 | 4245-4615 | 4245-4617 | 4245-4620 |
+
+Todos los insertos disponibles también como **implacross® E** (UHMW-PE con vitamina E).
+
+---
+
+### Compatibilidad Fémur–Tibia–PE
+
+| Componente femoral (talla) | Inserto PE compatible | Tibial compatible |
+|---|---|---|
+| Talla 1**/2 | PE Talla 2 | Tibial Talla 2 |
+| Talla 2.5/3/S3 | PE Talla 3 | Tibial Tallas 3/3.5 |
+| Talla 4/S4 | PE Talla 4 | Tibial Talla 4 |
+| Talla 5/S5 | PE Talla 5 | Tibial Talla 5 |
+| Talla 5.5/6/S6/7** | PE Talla 6 | Tibial Talla 6 |
+
+> El ultra-PE solo puede combinarse con el fémur de una talla menor o la misma talla.
+
+---
+
+### Patella PE Cementada — UHMWPE (ISO 5834-2)
+
+| Talla | REF |
+|---|---|
+| 26mm | 4203-0326 |
+| 29mm | 4203-0329 |
+| 32mm | 4203-0332 |
+| 35mm | 4203-0335 |
+
+Todas las tallas de patella PE son compatibles con **todos** los tamaños femorales.
+
+---
+
+### Vástagos de Extensión ACS® (male taper) — implatan® TiAl6V4 + TiN (ISO 5832-3)
+
+| Dimensión | REF |
+|---|---|
+| 14/25mm | 4201-4225 |
+| 14/35mm* | 4201-4235 |
+| 14/50mm* | 4201-4250 |
+
+*Disponible bajo pedido especial.`,
+
+    instrumental: `## Cajas de Instrumental — ACS® FB+ 4in1 (Técnica PS)
+
+| Caja | REF | Función |
+|---|---|---|
+| ACS® Basic Tibial Container (IM) | 4223-0401/-0501 / 4223-0411/-0511 | Alineación tibial básica + extramedular |
+| ACS® FB Tibial Container (incl. talla 3.5) | 4223-0412 / 4223-0512 | Instrumental tibial definitivo |
+| ACS® Basic Femoral Container | 4223-0403 | Instrumental femoral base |
+| ACS® 4in1 Femoral Container (incl. talla 2.5) | 4223-0414 / 4223-0514 | Bloque de corte 4in1 y guía de talla |
+| ACS® Femoral Trial Container (incl. talla 2.5) | 4223-0406 / 4223-0506 | Componentes femorales de prueba |
+| ACS® FB Trial PE Insert Container | 4223-0415 / 0415Hy / 0415U | Insertos PE de prueba (std, hyperflex, ultra) |
+| ACS® FB PS Container (incl. talla 2.5) | 4223-0418 / 4223-0518/-0618 | Instrumental de caja PS |
+| ACS® PS Femoral Trial Container (incl. talla 2.5) | 4223-0409 / 4223-0509 | Componentes femorales PS de prueba |
+| ACS® PE Patella Resection Container | 4223-0410 | Resección e implantación de patella PE |
+| ACS® Ligament Spreader Container | 4223-0407 | Separador de ligamentos |
+| ACS® FB Tibia sz. 2.5 Container* | 4223-0426 | Instrumental tibial para talla 2.5 |
+
+---
+
+## CAJA 4223-0401 / 4223-0411 — ACS® Basic Tibial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Abrazadera de tobillo easy-fix | 4220-0426 | Anclar la guía tibial al tobillo |
+| Guía de corte tibial | 4220-0401 | Alineación extramedular tibial |
+| Estilete tibial 2/10mm (resección ranurada) | 4220-0418 | Ajuste de altura de resección tibial |
+| Bloque de resección tibial ranurado 5° | 4220-0405 | Bloque de corte con 5° de slope (estándar) |
+| Bloque de resección tibial ranurado 7° | 4220-0407 | Bloque de corte con 7° de slope |
+| Host de alineación externa | 4223-0004 | Soporte de varilla de alineación extramedular |
+| Insertador de pines 3.2mm | 4223-0006 | Insertar pines de fijación |
+| Pin de fijación 3.2x97mm (x2) | 4223-0008 | Pines largos de fijación del bloque tibial |
+| Martillo deslizante corto | 4223-0031 | Extracción de guía y componentes de prueba |
+| Adaptador M8 para martillo | 4223-0032 | Acoplamiento del martillo |
+| Varilla de alineación extramedular 6x400mm | 4223-0035 | Verificar alineación tibial |
+| Guía de alineación intramedular tibial | 7755-0024 | Alineación intramedular tibial (versión IM) |
+| Extractor de pines | 7512-0800 | Retirar pines de fijación |
+
+---
+
+## CAJA 4223-0412 / 4223-0512 — ACS® FB Tibial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Mango para componente de prueba | 4011-0029 | Manejo de platinas de prueba tibiales |
+| Impactor de insertos tibiales FB | 4210-2213 | Asentar inserto PE definitivo en dovetail |
+| Impactor tibial FB | 4210-2214 | Impactar componente tibial definitivo |
+| Mango de alineación tibial | 4210-2215 | Inserción del impactor tibial |
+| Extractor de taper ACS® | 4212-2021 | Retirar tapones PMMA o extensiones de vástago |
+| Bushing de fresado tibial FB | 4215-0001 | Guía para fresa tibial |
+| Punzón tibial FB | 4215-0002 | Compactar hueso esponjoso (opcional) |
+| Fresadora de vástago tibial FB | 4215-0007 | Fresado del canal de extensión tibial |
+| Fresa tibial FB | 4215-0003 | Fresado canal tibial |
+| Mango para punzón de aletas tibial FB | 4215-0004 | Mango del punzón de aletas |
+| Punzón de aletas FB tallas 2-4 | 4215-0005 | Preparación de aletas tibiales tallas 2-4 |
+| Punzón de aletas FB tallas 5-6 | 4215-0006 | Preparación de aletas tibiales tallas 5-6 |
+| Pines de fijación 3.2x32mm con tope (x4) | 4223-0257 | Fijación de platina de prueba |
+| Platinas tibiales de prueba FB tallas 2-6 (L/R) | 4215-04xx | Verificar talla y posición tibial |
+| Adaptadores de prueba tibial (15/17.5/20mm) | 4215-01xx | Simular mayor altura de PE en prueba |
+
+---
+
+## CAJA 4223-0403 — ACS® Basic Femoral Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Impactor guiado femoral | 4223-0020 | Insertar componente femoral de prueba guiado |
+| Adaptador ic | 4223-0022 | Acoplamiento para guías e instrumentos |
+| Impactor femoral corto (no guiado) | 4223-0044 | Impactación final del femoral de prueba |
+| Medidor de espacio articular ACS® | 4210-4300 | Verificar espacio articular en flex./ext. |
+| Extractor femoral/tibial | 4223-0036 | Retirar componentes de prueba |
+| Varilla intramedular 9x330mm | 4220-0026 | Alineación intramedular femoral |
+| Fresa iniciadora 9mm | 4220-0014 | Apertura del canal medular femoral |
+| Pin de fijación 3.2x77mm | 4223-0029 | Pines de fijación estándar |
+| Mango T-handle Zimmer-Jakobs | 4223-0023 | Extracción de varilla intramedular |
+| Adaptador para medidor articular | 4210-4301 | Montaje del medidor articular |
+| Spacer shim (12.5/15/17.5/20mm) | 4210-43xx | Simular mayor grosor de PE |
+| Adaptador de pines ic | 4220-0421 | Adaptación de pines al sistema |
+
+---
+
+## CAJA 4223-0414 / 4223-0514 — ACS® 4in1 Femoral Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Verificador de resección largo | 4220-0318 | Verificar nivel y plano de corte femoral |
+| Bloque de corte distal | 4220-0813 | Resección distal del fémur |
+| Guía de alineación femoral 0-9° | 4220-0818 | Alineación intramedular femoral con ángulo de valgo |
+| Adaptador del bloque de corte distal | 4220-0819 | Conectar guía al bloque de corte distal |
+| Guía de rotación externa — neutral | 4220-0820 | Referencia de cóndilos posteriores sin rotación |
+| Guía de rotación externa — 3° derecha | 4220-0824 | Rotación externa 3° lado derecho |
+| Guía de rotación externa — 3° izquierda | 4220-0825 | Rotación externa 3° lado izquierdo |
+| Bloque de corte 4in1 GIS talla 2 | 4220-0832 | Resección anterior, posterior y chanfles |
+| Bloque de corte 4in1 GIS talla 2.5 | 4220-0838 | — |
+| Bloque de corte 4in1 GIS talla 3 | 4220-0833 | — |
+| Bloque de corte 4in1 GIS talla 4 | 4220-0834 | — |
+| Bloque de corte 4in1 GIS talla 5 | 4220-0835 | — |
+| Bloque de corte 4in1 GIS talla 6 | 4220-0836 | — |
+| Guía de talla femoral — referenciación anterior | 4220-0845 | Determinar talla del componente femoral |
+| Mango modular "fast fix" | 4223-0017 | Mango para bloque 4in1 |
+| Calibrador M/L ACS® | 4223-0019 | Verificar dimensión medio-lateral |
+
+---
+
+## CAJA 4223-0406 / 4223-0506 — ACS® Femoral Trial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Componente femoral de prueba talla 2 L/R | 4210-3102 / 4210-3112 | Prueba de talla y posición femoral |
+| Componente femoral de prueba talla 2.5 L/R | 4210-3108 / 4210-3118 | — |
+| Componente femoral de prueba talla 3 L/R | 4210-3103 / 4210-3113 | — |
+| Componente femoral de prueba talla 4 L/R | 4210-3104 / 4210-3114 | — |
+| Componente femoral de prueba talla 5 L/R | 4210-3105 / 4210-3115 | — |
+| Componente femoral de prueba talla 6 L/R | 4210-3106 / 4210-3116 | — |
+| Taladro femoral/patelar con tope | 4223-0024 | Perforar orificios de anclaje del femoral y patella |
+| Osteótomo tallas 2-6 | 4223-0060 | Preparación de entalladura anterior |
+
+---
+
+## CAJA 4223-0418 / 4223-0518 — ACS® FB PS Container (Instrumental PS)
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Escoplo de caja PS | 4210-2210 | Finalizar preparación ósea caja PS |
+| Escoplo de caja PS +1mm | 4210-2230 | Variante para mayor espacio |
+| Reamer de caja PS | 4210-2211 | Fresado de caja PS |
+| Reamer de caja PS +1mm | 4210-2231 | Variante para mayor espacio |
+| U-chisel PS | 4210-2212 | Preparación de entalladura de osteótomo PS |
+| Guía del escoplo de caja PS talla 2 | 4210-2202 | Guía de caja según talla femoral |
+| Guía del escoplo de caja PS talla 2.5 | 4210-2208 | — |
+| Guía del escoplo de caja PS talla 3 | 4210-2203 | — |
+| Guía del escoplo de caja PS talla 4 | 4210-2204 | — |
+| Guía del escoplo de caja PS talla 5 | 4210-2205 | — |
+| Guía del escoplo de caja PS talla 6 | 4210-2206 | — |
+| Insertos PE de prueba FB PS (tallas 2-6, 10 y 12.5mm) | 4214-1x10 / 4214-1x12 | Inserto de prueba PS |
+
+---
+
+## CAJA 4223-0409 / 4223-0509 — ACS® PS Femoral Trial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Componente femoral PS de prueba talla 2 L/R | 4210-2502 / 4210-2512 | Prueba del femoral PS |
+| Componente femoral PS de prueba talla 2.5 L/R | 4210-2508 / 4210-2518 | — |
+| Componente femoral PS de prueba talla 3 L/R | 4210-2503 / 4210-2513 | — |
+| Componente femoral PS de prueba talla 4 L/R | 4210-2504 / 4210-2514 | — |
+| Componente femoral PS de prueba talla 5 L/R | 4210-2505 / 4210-2515 | — |
+| Componente femoral PS de prueba talla 6 L/R | 4210-2506 / 4210-2516 | — |
+
+---
+
+## CAJA 4223-0410 — ACS® PE Patella Resection Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Prueba de patella PE 26mm | 4213-0326 | Verificar talla patelar |
+| Prueba de patella PE 29mm | 4213-0329 | — |
+| Prueba de patella PE 32mm | 4213-0332 | — |
+| Prueba de patella PE 35mm | 4213-0335 | — |
+| Guía de resección patelar 1.5mm | 4222-0002 | Resección del domo patelar |
+| Guía de perforación patelar 26/29mm | 4222-0004 | Preparar orificios de anclaje |
+| Guía de perforación patelar 32/35mm | 4222-0005 | Preparar orificios de anclaje |
+| Taladro femoral/patelar con tope | 4223-0024 | Perforación de anclajes |
+| Clamp patelar ic | 7352-0001 | Fijar patella PE durante fraguado del cemento |`,
+
+    tips: `## 🎯 Perlas Quirúrgicas Clave — ACS® PS FB
+
+- **El TiN es frágil frente al impacto directo con metal:** No apoyar los componentes definitivos directamente sobre superficies metálicas de la mesa. Usar paños o el blister de empaque como base — una rayadura en el recubrimiento puede comprometer su efecto barrera antiiónico.
+- **Usar el TiN como argumento para pacientes con antecedentes alérgicos:** El TiN reduce la liberación de Co, Cr y Ni por debajo del límite de detección. En pacientes con alergia conocida a metales, el ACS® es la primera línea; documentar el test alérgico preoperatorio.
+- **La referenciación anterior define la resección posterior:** La guía de talla ACS® referencia anteriormente, no posteriormente. Si el stylo cae entre dos tallas, elegir la menor — protege el chanfle anterior y evita el notching femoral anterior.
+- **Verificar siempre el logo ic en el orificio del bloque distal:** Confirma el correcto acoplamiento guía–bloque antes de fresar. Un acoplamiento incorrecto puede resultar en un corte distal mal alineado.
+- **El inserto PE debe quedar completamente asentado:** Verificar con el impactor específico de insertos FB. Si queda levantado en algún extremo, el mecanismo dovetail no estará correctamente bloqueado y puede dislocarse.
+
+---
+
+## ⚠️ Errores Más Comunes y Cómo Evitarlos
+
+- **Notching femoral anterior:** Si se elige la talla mayor cuando la referencia está entre dos tallas, la resección anterior puede impactar la cortical del fémur anterior. Siempre optar por la talla menor en caso de duda.
+- **Rotación femoral incorrecta:** Verificar que la guía de rotación externa esté en contacto con AMBOS cóndilos posteriores antes de fijar el bloque distal — la asimetría condílea es frecuente y puede causar malalineación rotatoria.
+- **Bloque tibial fijado con slope incorrecto:** El bloque de 5° deja el perno en línea con el eje intramedular. El de 7° genera 2° de ante-slope. Confirmar el slope deseado antes de fijar los pines.
+- **Componente PS vs. CR confundidos en pabellón:** Los componentes PS tienen la caja intercondílea fresada; los CR no. Verificar el tipo de componente antes de abrir cualquier envase definitivo.
+- **Inserto PE ultra con fémur de talla no compatible:** El inserto ultra solo puede combinarse con el fémur de la misma talla o una talla mayor (no al revés).
+
+---
+
+## 💡 Tips de Planificación Preoperatoria
+
+- **Decidir CR vs. PS preoperatoriamente con Rx en carga:** Si hay inestabilidad AP > 10mm o el LCP parece comprometido por la deformidad angular, planificar directamente PS — evita añadir el instrumental PS de urgencia en pabellón.
+- **Medir el ángulo de valgo femoral en Rx de cadera-rodilla completa:** El valgo anatómico varía entre 5° y 9°. Programarlo en la guía de alineación femoral antes de ingresar al pabellón.
+- **Solicitar análisis de alergia metálica antes de la cirugía en pacientes de riesgo:** Test de parche o Lymphocyte Transformation Test para Co, Cr, Ni, Mo. El TiN puede colocarse incluso con alergia relativa, pero documentarlo.
+- **Tener siempre una talla mayor y una menor de cada componente disponible:** La talla final del fémur puede diferir de la planificada por discrepancia entre Rx y anatomía intraoperatoria.
+
+---
+
+## 🔧 Trucos Intraoperatorios
+
+- **Usar azul de metileno para marcar la rotación tibial:** Antes de retirar la platina de prueba tibial, marcar la alineación rotacional en el borde anterior de la tibia. Esta marca es la referencia definitiva para el componente tibial definitivo.
+- **Para el cross-pin: recordar la regla de incompatibilidad:** El cross-pin no puede insertarse si hay un pin en el orificio proximal del mismo lado del bloque — planificar el orden de los pines antes de fijar.
+- **Verificar la articulación patelar antes de cerrar:** Patellar tracking debe evaluarse sin tensión de sutura. Si lateraliza, considerar lateralización de la tróclea o libertad patelar con relajación del retináculo lateral.
+- **El impactor guiado femoral como verificador de posición:** Antes de impactar definitivamente, el componente puede ajustarse con el impactor guiado para corregir pequeñas malposiciones en varo/valgo sin retirar el componente.
+- **No cementar si el componente de prueba no asienta perfectamente:** Si la reducción de prueba muestra flexo residual, inestabilidad o problema de tracking patelar, corregir antes de abrir el cemento.
+
+---
+
+## 🦴 Manejo de Situaciones Difíciles
+
+- **Defecto óseo tibial focal (<10mm):** En caso de defecto focal contenido, se puede cementar directamente sobre el defecto en casos de buena calidad ósea. Para defectos mayores, evaluar aumento modular.
+- **Paciente con sobrepeso mórbido (IMC>40):** Aumentar el espesor del PE inicial en 2.5mm respecto al planeado — las cargas serán mayores y el balance ligamentario intraoperatorio puede subestimarlas.
+- **Hueso tibial muy osteoporótico:** El punzón tibial de aletas (fin punch) puede no ser suficiente para crear las aletas sin fractura. En estos casos, fresar con cuidado y verificar fijación antes de liberar la guía.
+- **Canal femoral muy estrecho (mujeres pequeñas):** Los bloques de corte 4in1 de talla 2 permiten preparar fémures pequeños. Verificar que el bloque distal no interfiera con las corticales en configuraciones muy estrechas.
+- **Asimetría condílea posterior marcada:** Si hay wear condíleo asimétrico, la guía de rotación externa puede dar una rotación incorrecta. Usar la línea epicondílea como referencia secundaria y confirmar con el eje AP (método de Whiteside).
+
+---
+
+## 📐 Optimización de Resultados
+
+- **El gap tibio-femoral en extensión y flexión deben ser iguales o diferir en <3mm:** Si el espacio en flexión es mayor, revisar la resección posterior; si el espacio en extensión es mayor, revisar la resección distal.
+- **El TiN permite flexibilidad de cementado o no cementado en el mismo sistema:** Decidir según calidad ósea — en hueso denso con buena morfología, el no cementado cpTi/TCP ofrece integración biológica a largo plazo.
+- **Maximizar la cobertura del platillo tibial sin sobrepasar la cortical:** Los tibiales FB+ tienen diseño asimétrico optimizado para cobertura. Una talla adecuada minimiza el riesgo de subsidencia y fractura por stress.
+
+---
+
+## 🔴 Señales de Alerta (Red Flags)
+
+- Resistencia durante el fresado del bloque PS → verificar que la guía esté correctamente asentada sobre las superficies resecadas anterior y distal
+- Tracking patelar con tendencia a lateralizar durante la prueba → evaluar liberación del retináculo lateral antes del cierre
+- Inestabilidad en trial con inserto de máximo espesor disponible → cambiar a componente PS si aún en CR, o escalar a ACS® SC si ya está en PS
+- Componente femoral que no asienta al ras → verificar limpieza de la superficie ósea y que no queden fragmentos de cartílago o cemento previo en las ranuras
+- Cemento que alcanza las superficies articulares → remover TODOS los residuos antes del cierre — los fragmentos de cemento son la causa más frecuente de desgaste acelerado del inserto PE`
+  },
+
   'knee-revision-acs-sc-fb': {
     source: 'Técnica Oficial implantcast GmbH — Traducción ImplanTQ',
     tecnica: `## Descripción del Sistema
@@ -2108,9 +2618,7 @@ El inserto de polietileno FB+ **debe ser de la misma talla que el platillo tibia
 10. Medir talla de fémur
 11. Colocar bloque de corte 4 en 1
 12. Colocar guía de offset
-13. Usar el **ala de ángel** en la cara anterior para evitar notching
-14. Usar guía de rotación en cóndilos posteriores
-15. Fijar offset y **anotar** (posición y talla)
+13. Usar la **alita de ángel** en la cara anterior para evitar notching
 16. Colocar pines
 17. Hacer corte anterior y posterior
 18. Retirar la fresa intramedular
@@ -2972,9 +3480,7 @@ Espaciadores tibiales de prueba LL/RM y RL/LM en tallas 2-5, alturas 5/10/15/20m
 10. Medir talla de fémur
 11. Colocar bloque de corte 4 en 1
 12. Colocar guía de offset
-13. Usar el **ala de ángel** en la cara anterior para evitar notching
-14. Usar guía de rotación en cóndilos posteriores
-15. Fijar offset — **anotar el offset y la posición** (dato crítico)
+13. Usar la **alita de ángel** en la cara anterior para evitar notching
 16. Colocar pines
 17. Hacer corte anterior y posterior
 18. Retirar la fresa intramedular
@@ -3028,172 +3534,805 @@ Espaciadores tibiales de prueba LL/RM y RL/LM en tallas 2-5, alturas 5/10/15/20m
   },
 
   'knee-revision-conos-metafisiarios': {
-    source: 'Secuencia Práctica de Pabellón — ImplanTQ',
-    tecnica: `## Conos Metafisiarios — Concepto y Uso
+    source: 'Técnica Oficial implantcast GmbH — EPORE® Cones Metaphyseal — Traducción ImplanTQ',
 
-Los conos metafisiarios de metal trabecular (titanio poroso) reconstruyen defectos óseos metafisiarios severos (AORI 2B y 3) en fémur y tibia. Se implantan en **press-fit directamente sobre el hueso** sin cemento, y el componente protésico se cementa sobre el cono ya fijado.
+    tecnica: `## EPORE® Conos Metafisiarios — Estructura Oseointegrable Altamente Porosa
 
----
+El proceso de fabricación mediante **Fusión por Haz de Electrones (EBM)** implementado por implantcast GmbH permite una producción flexible y rentable directamente desde un conjunto de datos 3D electrónico. La tecnología de fabricación aditiva capa por capa ofrece nuevas dimensiones de producción, permitiendo fabricar dispositivos médicos de formas complejas con alta funcionalidad.
 
-## Secuencia Práctica — Cono Tibial
+El EPORE® es una estructura altamente porosa basada en **aleación de titanio (TiAl₆V₄)**. Esta aleación es un material excelente por ser dúctil, resistente a la corrosión y de alta resistencia a la fatiga. La alta porosidad y bajo módulo elástico favorecen el crecimiento biológico óseo. La estructura de barras presenta espesores de 360 μm y una alta similitud con el tejido óseo trabecular.
 
-1. Realizar todos los pasos de la GenuX o ACS SC hasta medir el offset tibial
-2. Preparar las fresas y quillas de la tibia
-3. Retirar los instrumentos
-4. Conectar la raspa más pequeña al adaptador de offset
-5. Conectar un vástago de prueba al offset y la raspa
-6. Atornillar la raspa al impactor
-7. Impactar la raspa verificando si la tibia necesita aumentos
-8. Verificar estabilidad — si no está estable, pasar a raspa más grande
-9. Si está estable: colocar la prueba del cono con el impactor ensamblado al mango
-10. Hacer las pruebas articulares completas
-11. Alistar componentes definitivos
-12. Armar los implantes sobre la mesa
-13. Usar pistola de lavado pulsátil
-14. Impactar los conos **directamente sobre el hueso** (sin cemento)
-15. Preparar cemento
-16. Cementar el componente sobre el cono
-17. Colocar prótesis definitiva
+| Propiedad Mecánica EPORE® | Valor |
+|---|---|
+| Porosidad | 61% |
+| Espesor de barras | 360 μm |
+| Módulo E relativo | 3,1 GPa* |
+
+*medición a tensión
 
 ---
 
-## Secuencia Práctica — Cono Femoral
+## Descripción General del Sistema
 
-1. Realizar todos los pasos de preparación del fémur hasta el cajón
-2. Retirar los instrumentos
-3. Usar la raspa de fémur más pequeña disponible
-4. Conectar la raspa a un vástago de prueba **sin offset**
-5. Atornillar la raspa al impactor
-6. Verificar que el lado medial de la raspa muestre la palabra **"MEDIAL"**
-7. Impactar la raspa hasta que quede **a ras del hueso**
-8. Verificar estabilidad — si no está estable, pasar a raspa más grande
-9. Si está estable: colocar la prueba del cono con el impactor ensamblado al mango
-10. Hacer las pruebas articulares completas
-11. Alistar componentes definitivos
-12. Armar sobre la mesa los implantes
-13. Usar pistola de lavado pulsátil
-14. Impactar los conos **directamente sobre el hueso** (sin cemento)
-15. Preparar cemento
-16. Cementar el componente sobre el cono
-17. Colocar prótesis definitiva`,
+El propósito de los implantes EPORE® cono metafisiario es **rellenar y reconstruir deficiencias óseas** y defectos cavitarios, así como proporcionar una plataforma estable de soporte para los componentes GenuX® MK o ACS® SC.
 
-    componentes: `## Conos Metafisiarios — Componentes e Indicaciones
+Los conos EPORE® metafisiarios están disponibles como implantes femorales y tibiales. Ambos componentes tienen **4 tallas diferentes**. Las dimensiones del implante crecen en A/P y en M/L, mientras que la altura del implante no cambia (femoral: 30 mm; tibial: 29 mm).
 
-Los conos metafisiarios de titanio poroso están disponibles para fémur distal y tibia proximal, y se combinan con los sistemas ACS SC o GenuX MK.
+La implantación de los conos EPORE® metafisiarios es **sin cemento, con press-fit de 0,3 mm**. Los implantes que se usan en combinación con los conos metafisiarios se implantan con cemento óseo.
+
+**Consideraciones para seleccionar los componentes EPORE® metafisiarios:**
+1. Debe ajustarse al área defectuosa sin remoción innecesaria de hueso sano
+2. Debe permitir la posición óptima de los componentes en conexión con el adaptador de offset
+3. Debe asegurar el posicionamiento proximal según el cajón del componente femoral y rellenar adecuadamente el defecto sin afectar la línea articular prevista
+
+---
+
+## Planificación Preoperatoria
+
+La planificación preoperatoria y las técnicas quirúrgicas precisas son obligatorias para resultados óptimos. Antes de la cirugía, el cirujano debe realizar una planificación quirúrgica respecto a las dimensiones del modelo protésico y el posicionamiento de los componentes en el hueso.
+
+Se dispone de plantillas de rayos X:
+- **Plantillas digitales:** Incluidas en la base de datos de los sistemas de planificación habituales. Para plantillas faltantes, contactar al proveedor del software.
+- **Plantillas radiográficas:** Disponibles en distintos factores de escala, obtenibles a través del representante local.
+
+**Antes de la cirugía debe verificarse:**
+- Que todos los componentes de implante requeridos estén disponibles durante la cirugía
+- Que todos los instrumentos requeridos estén disponibles y correspondan a los componentes correctos
+
+---
+
+## Técnica Quirúrgica Tibial
+
+> **Nota:** La técnica quirúrgica descrita se utiliza combinada con el sistema ACS® SC o MUTARS® GenuX® MK. Si se usan conos EPORE® con otros productos, verificar primero la compatibilidad.
+
+> **Nota:** El componente tibial de cono EPORE® metafisiario **solo puede combinarse con adaptadores de offset de 0 mm, 2 mm y 4 mm**.
+
+### Preparación tibial inicial
+1. Iniciar con la preparación tibial tal como se describe en las técnicas quirúrgicas ACS® SC o MUTARS® GenuX® MK y definir el tamaño y posición del offset
+2. Registrar los ajustes de offset determinados
+3. Retirar todos los instrumentos de la tibia
+
+### Ensamblaje de la raspa tibial
+1. Conectar la raspa más pequeña con el adaptador de offset de prueba ACS®; asegurarse de ensamblar el offset en la posición correcta
+2. Colocar la raspa sobre el instrumento de determinación de offset y ajustar el offset en la posición adecuada mediante las marcas del instrumento y del extremo distal de la raspa
+3. Fijar la raspa al adaptador de offset de prueba ACS® con el destornillador hexagonal corto 3,5 mm. El tornillo está dentro de la raspa
+4. Atornillar el vástago de prueba al adaptador de offset de prueba ACS®
+5. Conectar el ensamblaje (raspa + adaptador + vástago de prueba) con el mango para raspas EPORE® defect filler; insertar el mango en la ranura proximal de la raspa y apretar con el mango en T
+
+### Preparación ósea tibial metafisiaria
+1. Antes de comenzar el fresado, verificar nuevamente el posicionamiento correcto del offset
+2. Iniciar la preparación del hueso metafisiario tibial impactando la raspa — la raspa es guiada por el vástago de prueba en el canal intramedular
+3. Impactar la raspa hasta que los bordes de corte estén completamente ocultos en el hueso
+
+> **Nota:** En caso de preparar un espaciador en el lado medial o lateral, prestar atención a las marcas adicionales para espaciadores de 5 mm y 10 mm en la raspa. Asegurarse de que las marcas estén al mismo nivel que la resección ósea preparada.
+
+4. Al alcanzar la profundidad correcta, verificar la posición y estabilidad de la raspa en el hueso moviéndola en dirección M/L y A/P
+5. Si la raspa no es estable, retirarla del hueso y repetir los pasos con una raspa de talla mayor
+6. Una vez que la estabilidad es suficiente, retirar la raspa y proceder con la reducción de prueba
+
+> **Nota:** No cambiar la rotación de la raspa durante el proceso.
+
+### Reducción de prueba tibial
+1. Insertar el componente de prueba del tamaño determinado previamente; usar el impactor de cono EPORE® metafisiario tibial en combinación con el mango para raspas EPORE® defect filler
+2. Proceder con la reducción de prueba del sistema de implantes a usar; seguir las instrucciones de la técnica quirúrgica del sistema (ACS® SC o MUTARS® GenuX® MK); respetar el offset determinado previamente
+3. Después de la reducción de prueba, retirar el componente de prueba de cono metafisiario usando las pinzas ic para cabeza bipolar
+
+### Implantación tibial definitiva
+1. Insertar el cono EPORE® metafisiario tibial del tamaño determinado con el impactor de cono EPORE® metafisiario tibial y el mango para raspas
+2. Ensamblar el componente tibial con el adaptador de offset y el vástago según la técnica quirúrgica (ACS® SC o MUTARS® GenuX® MK)
+3. Rellenar el contorno interior del implante tibial y del componente cono EPORE® metafisiario con cemento óseo — se recomienda cemento óseo implabond®
+4. Impactar el implante tibial con el impactor tibial
+
+---
+
+## Técnica Quirúrgica Femoral
+
+> **Nota:** La combinación del componente cono metafisiario femoral EPORE® con el adaptador de offset **está aprobada solo con offset de 0 mm**.
+
+### Preparación femoral inicial
+1. Iniciar con la preparación ósea femoral según las técnicas quirúrgicas para ACS® SC o MUTARS® GenuX® MK; realizar todos los pasos de preparación incluyendo la preparación del cajón
+2. El offset de 0 mm es el único aprobado para los conos metafisiarios femorales EPORE®; los cortes femorales deben realizarse según esta restricción
+3. Retirar todos los instrumentos del fémur
+
+### Ensamblaje de la raspa femoral
+1. Ensamblar el vástago de prueba en la parte proximal de la raspa femoral, comenzando con la talla más pequeña; el tamaño del vástago de prueba está definido por el tamaño del componente de vástago elegido
+2. Conectar el ensamblaje de raspa y vástago de prueba con el mango para raspas EPORE® defect filler; insertar el mango en la ranura distal de la raspa y apretar con el mango en T
+
+### Preparación ósea femoral metafisiaria
+1. Preparar el hueso metafisiario femoral impactando la raspa — la raspa se inserta en el hueso guiada por el vástago de prueba femoral en el canal intramedular
+2. Fresar hasta que la parte proximal de la raspa quede al mismo nivel que la preparación del cajón
+
+> **Nota:** Asegurarse de que la parte medial de la raspa quede orientada hacia el lado medial.
+
+3. Al alcanzar la profundidad correcta, verificar la posición y estabilidad moviendo el martillo deslizante en dirección M/L y A/P
+4. Si la raspa no está suficientemente fija y estable, retirarla y repetir los pasos con una raspa de talla mayor
+5. Una vez que la estabilidad es suficiente, retirar la raspa y proceder con la reducción de prueba
+
+### Reducción de prueba femoral
+1. Insertar el componente de prueba del tamaño determinado con el impactor de cono EPORE® metafisiario femoral del tamaño adecuado y el mango para raspas
+2. Proceder con la reducción de prueba del sistema a usar; seguir las instrucciones de la técnica quirúrgica del sistema
+3. Después de la reducción de prueba, retirar el componente de prueba de cono metafisiario usando las pinzas ic para cabeza bipolar
+
+### Implantación femoral definitiva
+1. Insertar el cono EPORE® metafisiario femoral del tamaño determinado con el impactor de cono EPORE® metafisiario femoral del tamaño adecuado y el mango para raspas
+2. Ensamblar el componente femoral con el adaptador de offset de 0 mm y el vástago según la técnica quirúrgica
+3. Rellenar el contorno interior del implante femoral y del componente cono EPORE® metafisiario con cemento óseo — se recomienda cemento óseo implabond®
+4. Impactar el implante femoral con el impactor femoral`,
+
+    componentes: `## EPORE® Conos Metafisiarios — Componentes
+
+### Dimensiones — Cono Metafisiario Femoral
+
+El cono femoral EPORE® metafisiario presenta diseño simétrico. El componente puede rotarse 180° para proporcionar compatibilidad con rodilla derecha e izquierda.
+
+| Talla | M/L | A/P | Altura |
+|---|---|---|---|
+| 2 | 36 mm | 22 mm | 30 mm |
+| 3 | 40 mm | 26 mm | 30 mm |
+| 4 | 44 mm | 29 mm | 30 mm |
+| 5 | 48 mm | 32 mm | 30 mm |
+
+### Dimensiones — Cono Metafisiario Tibial
+
+Los conos metafisiarios tibiales EPORE® son simétricos, compatibles con ambas piernas. Presentan nichos mediales y laterales para las aletas, y posterior para el mecanismo de acoplamiento cuando se combinan con el implante MUTARS® GenuX® MK.
+
+| Talla | M/L | A/P | Altura |
+|---|---|---|---|
+| 2 | 36 mm | 31 mm | 30 mm |
+| 3 | 39 mm | 31 mm | 30 mm |
+| 4 | 42 mm | 32 mm | 30 mm |
+| 5 | 45 mm | 32 mm | 30 mm |
+
+---
+
+## Implantes Definitivos
+
+### EPORE® Cono Metafisiario Femoral
+Material: aleación TiAl₆V₄
+
+| REF | Talla |
+|---|---|
+| 4217-0102 | Talla 2 |
+| 4217-0103 | Talla 3 |
+| 4217-0104 | Talla 4 |
+| 4217-0105 | Talla 5 |
+
+### EPORE® Cono Metafisiario Tibial
+Material: aleación TiAl₆V₄
+
+| REF | Talla |
+|---|---|
+| 4217-1102 | Talla 2 |
+| 4217-1103 | Talla 3 |
+| 4217-1104 | Talla 4 |
+| 4217-1105 | Talla 5 |
+
+---
+
+## Principio de Funcionamiento
+
+- El cono se impacta en **press-fit de 0,3 mm sobre el hueso esponjoso** — sin cemento
+- El componente protésico se **cementa sobre el cono** ya fijado
+- La osteointegración en la superficie porosa EPORE® provee fijación biológica a largo plazo
+
+## Indicaciones y Usos de la Combinación
+
+- Compatible con sistemas GenuX® MK, ACS® SC Mobile Bearing y ACS® SC Fixed Bearing
+- Puede usarse también con productos de terceros, verificando la compatibilidad previamente
+- El cono metafisiario tibial solo puede combinarse con adaptadores de offset de **0 mm, 2 mm y 4 mm**
+- El cono metafisiario femoral solo puede combinarse con adaptador de offset de **0 mm**
+
+## Contraindicaciones
+
+| Situación | Descripción |
+|---|---|
+| Infección activa | Contraindicado |
+| Calidad ósea insuficiente (osteoporosis severa) | Contraindicado |
+| Alergia conocida a algún material del implante | Contraindicado |
+| Enfermedades metabólicas que afecten el anclaje | Contraindicado |
+| Tumores óseos en el área de fijación | Contraindicado |`,
+
+    instrumental: `## Cajas de Instrumental — EPORE® Conos Metafisiarios
+
+### Contenedor Tibial EPORE® Cone Metaph. Tibia Container 2.0
+**REF: 7295-2056**
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Mango para raspas EPORE® defect filler | 7295-1310 | Sostener y guiar la raspa durante la impactación |
+| Raspa para cono EPORE® | 7295-1029 | Preparar el lecho óseo metafisiario |
+| Mango en T ic Zimmer-Jakobs | 4223-0023 | Apretar la conexión raspa-mango |
+| Pinzas ic para cabeza bipolar | 7960-6020 | Retirar el cono de prueba tras la reducción |
+| Instrumento de determinación de offset | 7295-4003 | Ajustar el offset de la raspa tibial |
+| Raspa tibial EPORE® cono metafisiario Talla 2 | 7295-1362 | Preparar lecho tibial talla 2 |
+| Raspa tibial EPORE® cono metafisiario Talla 3 | 7295-1363 | Preparar lecho tibial talla 3 |
+| Raspa tibial EPORE® cono metafisiario Talla 4 | 7295-1364 | Preparar lecho tibial talla 4 |
+| Raspa tibial EPORE® cono metafisiario Talla 5 | 7295-1365 | Preparar lecho tibial talla 5 |
+| Trial tibial EPORE® cono metafisiario Talla 2 | 7295-1382 | Verificar tamaño y estabilidad tibial |
+| Trial tibial EPORE® cono metafisiario Talla 3 | 7295-1383 | Verificar tamaño y estabilidad tibial |
+| Trial tibial EPORE® cono metafisiario Talla 4 | 7295-1384 | Verificar tamaño y estabilidad tibial |
+| Trial tibial EPORE® cono metafisiario Talla 5 | 7295-1385 | Verificar tamaño y estabilidad tibial |
+| Adaptador de offset de prueba ACS® 0 mm | 4215-0060 | Offset tibial 0 mm |
+| Adaptador de offset de prueba ACS® 2 mm | 4215-0062 | Offset tibial 2 mm |
+| Adaptador de offset de prueba ACS® 4 mm | 4215-0064 | Offset tibial 4 mm |
+| Impactor cono EPORE® metafisiario tibial | 7295-1380 | Impactar el cono tibial definitivo |
+| Destornillador hexagonal corto 3,5 mm | 0280-1007 | Fijar la raspa al adaptador de offset |
+
+---
+
+### Contenedor Femoral EPORE® Cone Metaph. Femur Container 2.0
+**REF: 7295-2057**
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Raspa femoral EPORE® cono metafisiario Talla 2 | 7295-1372 | Preparar lecho femoral talla 2 |
+| Raspa femoral EPORE® cono metafisiario Talla 3 | 7295-1373 | Preparar lecho femoral talla 3 |
+| Raspa femoral EPORE® cono metafisiario Talla 4 | 7295-1374 | Preparar lecho femoral talla 4 |
+| Raspa femoral EPORE® cono metafisiario Talla 5 | 7295-1375 | Preparar lecho femoral talla 5 |
+| Trial femoral EPORE® cono metafisiario Talla 2 | 7295-1392 | Verificar tamaño y estabilidad femoral |
+| Trial femoral EPORE® cono metafisiario Talla 3 | 7295-1393 | Verificar tamaño y estabilidad femoral |
+| Trial femoral EPORE® cono metafisiario Talla 4 | 7295-1394 | Verificar tamaño y estabilidad femoral |
+| Trial femoral EPORE® cono metafisiario Talla 5 | 7295-1395 | Verificar tamaño y estabilidad femoral |
+| Impactor cono EPORE® metafisiario femoral Talla 2-3 | 7295-1390 | Impactar el cono femoral definitivo tallas 2-3 |
+| Impactor cono EPORE® metafisiario femoral Talla 4-5 | 7295-1391 | Impactar el cono femoral definitivo tallas 4-5 |`,
+
+    tips: `## 🧠 Concepto Clínico Esencial — ¿Cuándo usar el Cono Metafisiario?
+
+Los conos EPORE® (tanto metafisiarios como corticales) se utilizan para rellenar defectos óseos metafisiarios en revisiones de rodilla. Aunque el nombre puede generar confusión, ambos tipos actúan en la **metáfisis**, no en la diáfisis.
+
+La diferencia clave es el tipo de defecto:
+
+| Tipo de defecto | Cortical intacta | Opción recomendada |
+|---|---|---|
+| **Contenido** | Sí — el hueso cortical rodea el defecto | **Cono Metafisiario** |
+| **No contenido** | No — hay pérdida de la pared cortical | **Cono Cortical** |
+
+**El cono metafisiario se usa cuando el defecto está contenido**, es decir, cuando el hueso cortical perimetral está razonablemente preservado y puede servir de soporte. Son los casos AORI 2B con cortical intacta y algunos AORI 3 contenidos.
 
 ### Principio de funcionamiento
 
-- El cono se impacta en **press-fit sobre el hueso esponjoso** — sin cemento
-- El componente protésico se **cementa sobre el cono** ya fijado
-- La osteointegración en la superficie porosa provee fijación biológica a largo plazo
+1. El cono se impacta en **press-fit sobre el hueso esponjoso** — sin cemento entre cono y hueso
+2. La superficie porosa EPORE® se osteointegra biológicamente al hueso
+3. La cara interior del cono se **rellena con cemento**, y el componente protésico se cementa dentro del cono
 
-### Indicaciones por clasificación AORI
+> Este concepto es central: el cemento va **entre el cono y la prótesis**, nunca entre el cono y el hueso. El cono actúa como intermediario que ancla biológicamente al hueso y mecánicamente a la prótesis.
 
-| Clasificación AORI | Defecto | Manejo recomendado |
-|---|---|---|
-| Tipo 1 | Metáfisis intacta | Sin cono — espaciadores estándar |
-| Tipo 2A | Defecto unicondílar | Espaciador 5-10mm unilateral |
-| Tipo 2B | Defecto bicondílar | Espaciadores bilaterales o cono metafisiario |
-| Tipo 3 | Pérdida masiva metafisiaria | Cono metafisiario obligatorio |`,
+### ¿Con qué prótesis combinarlos?
 
-    instrumental: `## Instrumental — Conos Metafisiarios
+Los conos (metafisiarios y corticales) tienen más sentido con **prótesis cementadas**. Cuando se planifica una fijación biológica pura (sin cemento), las **vainas o componentes metafisiarios específicos** son la alternativa preferida, ya que se integran directamente al hueso sin necesitar cemento en la interfaz prótesis-implante.
 
-| Instrumento | Función |
-|---|---|
-| Raspas de prueba progresivas (fémur y tibia) | Preparar el lecho óseo metafisiario con press-fit |
-| Mango con manilla en T | Sostener la raspa durante la impactación |
-| Adaptador de offset con offset (para tibia) | Conectar la raspa tibial al vástago de prueba |
-| Vástago de prueba sin offset (para fémur) | Guiar la dirección de impactación femoral |
-| Impactor + mango | Impactar la raspa y la prueba del cono |
-| Prueba del cono | Verificar tamaño y estabilidad antes del definitivo |
-| Pistola de lavado pulsátil | Limpiar el lecho óseo antes de la cementación |`,
-
-    tips: `## 🎯 Perlas Quirúrgicas Clave — Conos Metafisiarios
-
-- **Los conos van directamente sobre el hueso, sin cemento.** El cemento solo va entre el cono y el componente protésico. Cementar el cono al hueso impide la osteointegración y complica enormemente una re-revisión futura.
-- **Siempre comenzar con la raspa más pequeña.** Ir subiendo progresivamente. Una raspa inestable indica subir de talla, no impactar más fuerte.
-- **La raspa debe quedar a ras del hueso.** Si protruye, repasar el lecho. Si queda hundida, evaluar el soporte óseo disponible.
-- **Verificar "MEDIAL" en la raspa femoral** antes de cada impactada — es el error de orientación más frecuente en el cono femoral.
-- **En tibia: el momento ideal para el cono es después de medir el offset** y antes de pasar las quillas definitivas — así el flujo quirúrgico no se interrumpe.
+Los conos EPORE® son **universales**: pueden usarse con GenuX® MK, ACS® SC y también con prótesis de otros fabricantes, siempre verificando previamente la compatibilidad de tallas con los trials estériles.
 
 ---
 
-## ⚠️ Errores Más Comunes
+## 🎯 Perlas Quirúrgicas Clave
 
-- Cementar el cono al hueso — error grave, impide osteointegración y dificulta re-revisión
-- No verificar estabilidad de la raspa antes del definitivo
-- Raspa femoral usada con offset — debe ser sin offset
-- Impactar con fuerza excesiva para compensar talla incorrecta — riesgo de fractura cortical
-- Omitir el lavado pulsátil antes de cementar
+- **Los conos van directamente sobre el hueso, sin cemento.** El press-fit de 0,3 mm garantiza la estabilidad primaria y la osteointegración posterior.
+- **Siempre comenzar con la raspa más pequeña.** Ir subiendo progresivamente — una raspa inestable indica subir de talla, nunca impactar con mayor fuerza.
+- **El cono femoral solo acepta offset de 0 mm.** Los cortes femorales deben planificarse teniendo en cuenta esta restricción desde la planificación preoperatoria.
+- **El cono tibial acepta offsets de 0, 2 y 4 mm únicamente.** No intentar combinarlo con offsets de 6 mm.
+- **No cambiar la rotación de la raspa una vez iniciada la impactación.** Esto compromete el lecho óseo y la estabilidad del press-fit.
+- **En fémur: verificar que la parte medial de la raspa esté orientada al lado medial** antes de cada golpe — es el error de orientación más frecuente.
+- **Verificar estabilidad en ambos planos (M/L y A/P)** antes de considerar que la raspa está en la talla correcta.
+
+---
+
+## ⚠️ Errores Más Comunes y Cómo Evitarlos
+
+- **Cementar el cono al hueso** — error grave: impide osteointegración y dificulta enormemente la re-revisión
+- **Usar cono metafisiario en defecto no contenido** — si la cortical está destruida, usar cono cortical
+- **No registrar los ajustes de offset** antes de retirar los instrumentos tibiales — se pierde la referencia de rotación
+- **Raspa femoral con offset distinto de 0 mm** — solo está aprobado el offset de 0 mm para el componente femoral
+- **Impactar con fuerza excesiva para compensar talla incorrecta** — riesgo de fractura cortical
+- **Omitir el lavado pulsátil** antes de cementar el componente sobre el cono
+
+---
+
+## 💡 Tips de Planificación Preoperatoria
+
+- Clasificar el defecto con AORI antes de la cirugía — si hay pérdida cortical, planificar cono cortical
+- Utilizar plantillas digitales o radiográficas para seleccionar el tamaño correcto de cono
+- Asegurarse de tener el set completo de raspas de tallas 2 a 5 para fémur y tibia
+- Confirmar que el adaptador de offset tibial planificado (0, 2 o 4 mm) esté disponible en el pabellón
+- Si se combina con prótesis de terceros, llevar trials estériles para verificar compatibilidad intraoperatoriamente
 
 ---
 
 ## 🦴 Manejo de Situaciones Difíciles
 
-- **Raspa inestable en todas las tallas:** Evaluar injerto estructural o endoprótesis tumoral segmentaria
-- **Cono que no asienta a ras:** Repasar el lecho con la raspa — no impactar sobre el borde cortical
-- **AORI 3 bilateral fémur y tibia simultáneo:** Planificar el tiempo — la preparación de 4 conos agrega tiempo significativo. Tener todo el material disponible antes de incidir`
+- **Raspa inestable en todas las tallas:** El defecto puede ser no contenido — reevaluar si corresponde usar cono cortical o vástago largo de bypass
+- **Cono que no asienta completamente:** Repasar el lecho con la raspa, verificando ausencia de restos óseos o tejido blando en el fondo del defecto
+- **AORI 3 bilateral (fémur y tibia simultáneo):** Planificar el tiempo quirúrgico — la preparación de 4 conos agrega tiempo significativo; tener todo el material disponible antes de la incisión
+- **Defecto óseo asimétrico:** El cono puede posicionarse excéntricamente para compensar el defecto sin requerir remoción ósea adicional`
   },
 
   'knee-revision-conos-corticales': {
-    source: 'Secuencia Práctica de Pabellón — ImplanTQ',
-    tecnica: `## Conos Corticales — Concepto y Uso
+    source: 'Técnica Oficial implantcast GmbH — EPORE® Cones Cortical — Traducción ImplanTQ',
 
-Los conos corticales refuerzan el anclaje diafisiario del vástago intramedular cuando la cortical está comprometida. A diferencia de los conos metafisiarios (metáfisis), los corticales trabajan a nivel de la diáfisis envolviendo el vástago.
+    tecnica: `## EPORE® Conos Corticales — Estructura Oseointegrable Altamente Porosa
 
-**Indicaciones:**
-- Fractura periprotésica con pérdida de soporte cortical
-- Perforación cortical intraoperatoria durante el fresado
-- Cortical adelgazada sin press-fit adecuado para el vástago
-- Defecto cortical segmentario en revisión compleja
+El proceso de fabricación mediante **Fusión por Haz de Electrones (EBM)** implementado por implantcast GmbH ofrece una producción flexible y rentable directamente desde un conjunto de datos 3D electrónico. La tecnología de fabricación aditiva capa por capa permite la producción de alta calidad de dispositivos médicos de formas complejas.
+
+El EPORE® es una estructura altamente porosa basada en **aleación de titanio (TiAl₆V₄)**. La alta porosidad y bajo módulo elástico favorecen el crecimiento biológico óseo. La estructura de barras presenta espesores de 330–390 μm y alta similitud con el tejido óseo trabecular.
+
+| Propiedad Mecánica EPORE® | Valor |
+|---|---|
+| Porosidad | 60% |
+| Espesor de barras | 330–390 μm |
+| Módulo E relativo | 3 GPa* |
+
+*medición a tensión
 
 ---
 
-## Secuencia Práctica de Pabellón
+## Descripción General del Sistema
 
-1. Completar toda la preparación ósea (resecciones femoral y tibial, cajón)
-2. Determinar el nivel y extensión del defecto cortical con fluoroscopía
-3. Seleccionar tamaño y longitud del cono cortical
-4. Posicionar el cono cortical alrededor del vástago antes de insertar
-5. Insertar el conjunto vástago + cono en el canal medular
-6. Verificar con fluoroscopía que el cono cubra el defecto completamente
-7. Fijar el cono con cerclajes (proximal y distal al defecto)
-8. Continuar con la implantación definitiva`,
+Los EPORE® Conos corticales están disponibles como componentes femorales y tibiales. Están diseñados como aumentos para **defectos óseos grandes**. El objetivo es reconstruir el área defectuosa para crear una base estable para implantar una prótesis de rodilla.
 
-    componentes: `## Conos Corticales — Componentes e Indicaciones
+Los EPORE® Conos corticales están diseñados para lograr una **transmisión fisiológica de fuerzas** desde el implante femoral/tibial hacia el hueso cortical. En general, los Conos corticales EPORE® tienen un **press-fit de 0,2 mm**.
 
-| Situación | Manejo |
+Para la implantación, los Conos corticales EPORE® se implantan **sin cemento en el hueso**. Posteriormente, la endoprótesis de rodilla se cementa dentro del Cono.
+
+Los EPORE® Conos corticales son compatibles con los sistemas de implantes **MUTARS® GenuX® MK, ACS® SC Mobile Bearing y ACS® SC Fixed Bearing**. Además, los componentes pueden usarse universalmente con productos de terceros, siempre que la compatibilidad sea aprobada previamente por el cirujano (ej. mediante el uso de implantes de prueba estériles).
+
+**Consideraciones para seleccionar Conos EPORE® femorales o tibiales:**
+1. Debe ajustarse al área defectuosa sin remoción innecesaria de hueso sano
+2. Debe permitir la posición óptima de los componentes en conexión con el adaptador de offset
+
+---
+
+## Planificación Preoperatoria
+
+La planificación preoperatoria y las técnicas quirúrgicas precisas son obligatorias. Antes de la cirugía, el cirujano debe realizar una planificación quirúrgica con respecto a las dimensiones del modelo protésico y el posicionamiento de los componentes en el hueso.
+
+Se dispone de plantillas de rayos X:
+- **Plantillas digitales:** Incluidas en la base de datos de los sistemas de planificación habituales
+- **Plantillas radiográficas:** Disponibles en distintos factores de escala, obtenibles a través del representante local
+
+**Antes de la cirugía debe verificarse:**
+- Que todos los componentes de implante requeridos estén disponibles
+- Que todos los instrumentos requeridos estén disponibles y correspondan a los componentes correctos
+
+---
+
+## Técnica Quirúrgica Femoral
+
+> **Atención:** La técnica quirúrgica descrita está diseñada para su uso con el sistema MUTARS® GenuX® MK. También puede usarse con el sistema ACS® SC respectivamente. En caso de usar los Conos EPORE® con productos de terceros, debe asegurarse previamente la compatibilidad de los implantes usando implantes de prueba estériles.
+
+### Preparación femoral inicial
+1. Realizar la preparación femoral tal como se describe en la técnica quirúrgica del GenuX® MK **hasta que se complete el corte distal**
+
+### Ensamblaje del impactor de cono (femoral)
+1. Ensamblar el impactor de cono como se indica, para usarlo con las raspas femorales; se recomienda comenzar con la raspa más pequeña (talla 2)
+2. Insertar la palanca de bloqueo grabada con "**close 1.**" en el orificio marcado con "**F**" (femoral); dejar ambas palancas de bloqueo abiertas
+3. Colocar la placa adaptadora femoral sobre el impactor de cono; la placa adaptadora está marcada con "F" en la parte inferior
+4. Verificar la alineación correcta de la placa adaptadora: para rodilla izquierda, los grabados "L" deben quedar en el mismo lado; para rodilla derecha, los dos grabados "R" deben quedar alineados. La placa adaptadora femoral no es específica por talla
+5. Montar la raspa femoral sobre la placa adaptadora femoral
+6. Cerrar primero la palanca de bloqueo grabada "**close 1.**"
+7. Después, cerrar la segunda palanca de bloqueo grabada "**close 2.**"
+
+### Preparación ósea femoral
+8. Fresar la cavidad intramedular del fémur con el ensamblaje preparado; continuar fresando hasta alcanzar la profundidad de implante correcta
+
+> **Nota:** La profundidad de implante correcta se alcanza cuando los bordes distales de la raspa quedan ligeramente fuera del hueso. La línea articular se desplaza distalmente.
+
+9. Al alcanzar la profundidad final, verificar la estabilidad de la raspa en el hueso moviéndola cuidadosamente en dirección A/P y M/L
+10. Si la estabilidad no es suficiente, retirar la raspa y repetir la preparación con una raspa una talla mayor que la anterior
+11. Una vez asegurado el buen ajuste de la raspa, retirar el impactor de la raspa abriendo ambas palancas de bloqueo
+
+> **Nota:** Para facilitar la extracción del insertor de la raspa, comprimir ligeramente los brazos sostenedores con los dedos para reducir la tensión del brazo de sujeción.
+
+12. La raspa permanece en el hueso para los siguientes pasos de preparación ósea y la reducción de prueba
+
+### Continuación de la preparación femoral
+13. Insertar el último freno rígido utilizado (junto con la vaina de freno correspondiente) en el hueso
+
+> **Nota:** Tener en cuenta la profundidad de fresado correcta (ver técnica quirúrgica del GenuX® MK). Después de cada resección, la marcación relevante del fresador debe estar alineada con el corte distal. Para vástagos de 150 mm o más, el uso de vainas de freno es obligatorio.
+
+14. Colocar el bloque de corte 4in1 del tamaño apropiado sobre el freno rígido
+15. Colocar la vaina del vástago largo sobre el bloque de corte 4in1; insertar el comprobador de offset femoral (0, 2, 4 o 6 mm) en la vaina del vástago largo
+
+> **Nota:** El comprobador de offset femoral no encajará completamente en la vaina del vástago largo al preparar para los Conos corticales femorales EPORE® de 30 mm y 40 mm — esto no es un error operativo. En este caso, el offset puede estimarse usando la verificación de resección.
+
+16. Rotar el comprobador de offset femoral para posicionar el bloque de corte 4in1 sobre el hueso; usar la verificación de resección para revisar los planos de resección anterior y posterior
+17. Opcionalmente: alinear la rotación del bloque de corte 4in1 según la resección tibial usando el posicionador femoral
+18. Una vez establecida la posición óptima del bloque de corte 4in1, apretar el tornillo en la vaina del vástago largo; fijar el bloque de corte 4in1 con dos pines
+19. Registrar los ajustes de offset del comprobador de offset (ej.: rodilla izquierda, 2 mm, 12 en punto); tener presentes estos ajustes para el ensamblaje de los componentes de prueba y definitivos
+
+> **Nota:** Si los pines son bloqueados por la raspa femoral y el bloque de corte 4in1 no puede fijarse correctamente al hueso, la raspa debe retirarse para los siguientes pasos de preparación.
+
+20. Continuar con los pasos finales del GenuX® MK según la técnica quirúrgica
+21. La preparación femoral ha concluido; la raspa femoral permanece en el hueso para la reducción de prueba
+
+---
+
+## Técnica Quirúrgica Tibial
+
+> **Atención:** La técnica quirúrgica descrita está diseñada para su uso con el sistema MUTARS® GenuX® MK. También puede usarse con el sistema ACS® SC. En caso de usar los Conos EPORE® con productos de terceros, debe verificarse la compatibilidad previamente.
+
+### Preparación tibial inicial
+1. Si es necesario, refrescar el corte tibial tal como se describe en la técnica quirúrgica del MUTARS® GenuX® MK
+
+### Ensamblaje del impactor de cono (tibial)
+1. Ensamblar el impactor de cono para usarlo con las raspas tibiales; se recomienda comenzar con la raspa más pequeña (talla 2)
+2. Insertar la palanca de bloqueo grabada con "**close 1.**" en el orificio marcado con "**T**" (tibial); dejar ambas palancas de bloqueo abiertas
+3. Colocar la placa adaptadora tibial sobre el impactor de Cono; las placas adaptadoras tibiales son específicas por talla y están coloreadas de la siguiente manera:
+
+| Talla | Color |
 |---|---|
-| Perforación cortical puntual | Cono cortical corto + cerclaje |
-| Defecto segmentario < 5cm | Cono cortical estándar |
-| Defecto segmentario > 5cm | Cono cortical largo + múltiples cerclajes |
-| Fractura periprotésica Vancouver B2/B3 | Cono cortical + vástago largo de bypass |
+| Talla 2 | Amarillo |
+| Talla 3 | Rojo |
+| Talla 4 | Verde |
+| Talla 5 | Azul |
 
-> El vástago debe superar el defecto cortical por **al menos 2 diámetros del hueso** para proveer estabilidad distal al defecto.`,
+4. Asegurarse de colocar la placa adaptadora tibial en la rotación correcta; los grabados "L" y "R" en la placa adaptadora y el impactor de cono deben superponerse
+5. Montar la raspa tibial sobre la placa adaptadora tibial
+6. Cerrar primero la palanca de bloqueo grabada "**close 1.**"
+7. Después, cerrar la segunda palanca de bloqueo grabada "**close 2.**"
 
-    instrumental: `## Instrumental — Conos Corticales
+### Preparación ósea tibial
+8. Fresar la cavidad intramedular de la tibia con el ensamblaje preparado; verificar el posicionamiento correcto de la raspa y que el tamaño de la raspa sea visible anteriormente
+9. Continuar fresando hasta alcanzar la profundidad de implante correcta
+
+> **Nota:** La profundidad de implante correcta se alcanza cuando la raspa queda ligeramente fuera del hueso. La línea articular se desplaza proximalmente.
+
+10. Al alcanzar la profundidad final, verificar la estabilidad de la raspa moviéndola en dirección A/P y M/L
+11. Si la estabilidad no es suficiente, retirar la raspa y repetir la preparación con una raspa una talla mayor
+12. Una vez asegurado el buen ajuste, retirar el impactor y la placa adaptadora tibial de la raspa abriendo ambas palancas de bloqueo
+
+> **Nota:** Para facilitar la extracción, comprimir ligeramente los brazos sostenedores con los dedos.
+
+13. La raspa permanece en el hueso para los siguientes pasos de preparación y la reducción de prueba tibial
+
+### Continuación de la preparación tibial
+14. Insertar el último freno rígido en el canal intramedular y colocar la guía de fresado tibial del tamaño apropiado sobre el corte tibial; usar el mango de alineación tibial para mejor guía
+15. Colocar el comprobador de offset tibial sobre el freno rígido en la guía de fresado tibial
+16. Rotar el comprobador de offset tibial para lograr la mejor posición de la guía de fresado (igual que el componente tibial) sobre el hueso tibial; verificar cobertura óptima y alineación rotacional con la varilla de alineación externa
+17. Cuando se establece la posición óptima de la guía de fresado, registrar los ajustes de offset (anteriormente); mantener presentes estos ajustes para el ensamblaje de los componentes de prueba y definitivos; la alineación rotacional puede marcarse en el borde anterior de la tibia con azul de metileno o diatermia
+18. La preparación del cono tibial ha concluido; dejar el cono en el hueso para la reposición de prueba
+
+---
+
+## Reposición de Prueba
+
+1. Ensamblar los componentes de prueba (femoral y tibial) según la técnica quirúrgica del GenuX® MK; prestar atención a los ajustes correctos de offset determinados previamente
+2. Insertar los componentes de prueba a través de las raspas hacia el hueso
+3. Seleccionar el inserto PE de prueba del tipo deseado (Mobile-Bearing o Fixed-Bearing) y colocarlo sobre el componente tibial de prueba
+4. Acoplar el componente femoral de prueba con el componente tibial de prueba usando el acoplamiento de prueba del GenuX® MK
+5. Verificar la colocación correcta de los componentes
+
+---
+
+## Extracción de Componentes de Prueba
+
+Después de la reducción de prueba, retirar todos los componentes de prueba del hueso.
+
+**Femoral:**
+1. Separar el componente femoral de prueba del componente tibial de prueba y retirar el acoplamiento de prueba
+2. Usar el martillo deslizante combinado con el extractor para el componente femoral
+3. Las raspas de los conos corticales EPORE® se retiran usando el impactor de cono; ensamblar el impactor de cono como se describe (páginas 10/11); insertar el impactor de cono (ambas palancas de bloqueo abiertas) en la raspa que permanece en el hueso; cerrar las palancas de bloqueo en el orden indicado; retirar la raspa del hueso
+
+**Tibial:**
+1. Usar el extractor tibial con el martillo deslizante
+2. Las raspas tibiales de los conos corticales EPORE® se retiran usando el impactor de cono; ensamblar el impactor de cono como se describe (páginas 15/16); insertar el impactor de cono en la raspa que permanece en el hueso; cerrar las palancas de bloqueo en el orden indicado; retirar la raspa del hueso
+
+---
+
+## Implantación Femoral Definitiva
+
+1. Implantar primero el Cono EPORE® femoral sin cemento en el hueso femoral; usar el impactor de Cono EPORE® femoral; los Conos EPORE® tienen un press-fit de 0,2 mm
+2. Ensamblar el adaptador de offset (del tamaño y alineación rotacional correctos) y el vástago sobre el implante femoral
+3. Cubrir la superficie interior del implante femoral y el contorno interior del Cono cortical EPORE® femoral con cemento óseo; insertar cuidadosamente el ensamblaje del implante femoral en el hueso; usar el impactor femoral
+
+---
+
+## Implantación Tibial Definitiva
+
+1. Antes de la implantación tibial, determinar si las placas de presión mediolaterales del cono EPORE® deben retirarse para lograr compatibilidad con el implante tibial; consultar las tablas de compatibilidad para los sistemas ACS® SC MB, ACS® SC FB y GenuX® MK (ver sección de Compatibilidad)
+2. Si las placas de presión mediolaterales deben retirarse: colocar el Cono cortical tibial EPORE® bajo el soporte de las placas de presión en el contenedor; usar el instrumento de placa de presión para retirar los tapones
+
+> **Nota:** En caso de usar el Cono tibial EPORE® cortical con implantes de terceros, la compatibilidad puede verificarse con los componentes de prueba estériles. Los trials se empacan por separado. Los tapones mediolaterales pueden retirarse respectivamente a los implantes del Cono cortical tibial EPORE®.
+
+3. Implantar primero el Cono EPORE® cortical tibial sin cemento en el hueso tibial; usar el impactor de Cono EPORE® tibial; los Conos EPORE® tienen un press-fit de 0,2 mm
+4. Ensamblar el adaptador de offset (del tamaño y alineación rotacional correctos) y el vástago sobre el implante tibial
+5. Cubrir el implante tibial distalmente y el contorno interior del Cono cortical EPORE® tibial con cemento óseo; insertar cuidadosamente el ensamblaje del implante tibial en el hueso; usar el impactor tibial
+6. Colocar el inserto PE del tipo deseado (Mobile-Bearing o Fixed-Bearing) sobre el componente tibial de prueba; acoplar el componente femoral con el componente tibial usando el acoplamiento del GenuX® MK; la implantación ha concluido`,
+
+    componentes: `## EPORE® Conos Corticales — Componentes e Indicaciones
+
+### Descripción General
+
+Los Conos corticales EPORE® se implantan **sin cemento** (press-fit de 0,2 mm). Posteriormente, el componente protésico se cementa dentro del Cono. Están diseñados para lograr una transmisión fisiológica de fuerzas desde el implante femoral/tibial hacia el hueso cortical.
+
+### Compatibilidad — Femoral
+
+| Sistema | Talla del sistema | Cono sz. 2 | Cono sz. 3 | Cono sz. 4 | Cono sz. 5 |
+|---|---|---|---|---|---|
+| ACS® SC | Sz. 2 | ✓ | ✓ | (✓) | ✗ |
+| ACS® SC | Sz. 2.5 | ✓ | ✓ | (✓) | ✗ |
+| ACS® SC | Sz. 3 | ✓ | ✓ | ✓ | (✓) |
+| ACS® SC | Sz. 4 | ✓ | ✓ | ✓ | ✓ |
+| ACS® SC | Sz. 5-6 | ✓ | ✓ | ✓ | ✓ |
+| GenuX® MK | Sz. 2 | ✓ | ✓ | (✓) | ✗ |
+| GenuX® MK | Sz. 3 | ✓ | ✓ | ✓ | (✓) |
+| GenuX® MK | Sz. 4-5 | ✓ | ✓ | ✓ | ✓ |
+
+*(✓) = Compatibilidad limitada — se logra desplazando el Cono en M/L. ✗ = No compatible.*
+*Diámetro máximo de vástago: 18 mm para todas las tallas.*
+
+### Compatibilidad — Tibial
+
+| Sistema | Talla del sistema | Cono sz. 2 | Cono sz. 3 | Cono sz. 4 | Cono sz. 5 |
+|---|---|---|---|---|---|
+| ACS® SC MB | Sz. 2 | ✓ | ✓ | ✓ | ✗ |
+| ACS® SC MB | Sz. 3-4 | ✓ | ✓ | ✓ | ✓ |
+| ACS® SC MB | Sz. 5-6 | ✗ | ✓ | ✓ | ✓ |
+| ACS® SC FB | Sz. 2-3 | ✓ | ✓ | ✓ | ✗ |
+| ACS® SC FB | Sz. 3.5-6 | ✓ | ✓ | ✓ | ✓ |
+| GenuX® MK | Sz. 2 | ✓ | ✓ | ✓ | ✗ |
+| GenuX® MK | Sz. 3-4 | ✓ | ✓ | ✓ | ✓ |
+| GenuX® MK | Sz. 5 | ✗ | ✓ | ✓ | ✓ |
+
+*En algunas combinaciones la compatibilidad puede lograrse retirando únicamente las placas de presión mediolaterales del Cono EPORE®.*
+
+---
+
+## EPORE® Cono Cortical Femoral — Dimensiones y Referencias
+
+Diseño anatómico simétrico. Disponible en versiones para rodilla derecha e izquierda, en alturas de 30 mm, 40 mm y 50 mm. Para cada altura del implante, hay 4 tallas diferentes.
+
+| Talla | M/L | A/P | Altura disponible |
+|---|---|---|---|
+| 2 | 53 mm | 27 mm | 30 / 40 / 50 mm |
+| 3 | 55 mm | 28 mm | 30 / 40 / 50 mm |
+| 4 | 58 mm | 33 mm | 30 / 40 / 50 mm |
+| 5 | 63 mm | 37 mm | 30 / 40 / 50 mm |
+
+### REF — Cono Cortical Femoral 30 mm (mat.: EPORE®; TiAl₆V₄)
+
+| REF | Talla |
+|---|---|
+| 4217-3020 | 2 D (Derecho) |
+| 4217-3030 | 3 D |
+| 4217-3040 | 4 D |
+| 4217-3050 | 5 D |
+| 4217-3025 | 2 I (Izquierdo) |
+| 4217-3035 | 3 I |
+| 4217-3045 | 4 I |
+| 4217-3055 | 5 I |
+
+### REF — Cono Cortical Femoral 40 mm (mat.: EPORE®; TiAl₆V₄)
+
+| REF | Talla |
+|---|---|
+| 4217-4020 | 2 D |
+| 4217-4030 | 3 D |
+| 4217-4040 | 4 D |
+| 4217-4050 | 5 D |
+| 4217-4025 | 2 I |
+| 4217-4035 | 3 I |
+| 4217-4045 | 4 I |
+| 4217-4055 | 5 I |
+
+### REF — Cono Cortical Femoral 50 mm (mat.: EPORE®; TiAl₆V₄)
+
+| REF | Talla |
+|---|---|
+| 4217-5020 | 2 D |
+| 4217-5030 | 3 D |
+| 4217-5040 | 4 D |
+| 4217-5050 | 5 D |
+| 4217-5025 | 2 I |
+| 4217-5035 | 3 I |
+| 4217-5045 | 4 I |
+| 4217-5055 | 5 I |
+
+---
+
+## EPORE® Cono Cortical Tibial — Dimensiones y Referencias
+
+Diseño simétrico. Disponible en alturas de 20 mm y 30 mm, y en versión escalonada (stepped) para configuración derecha e izquierda. El escalón tiene una altura de 10 mm.
+
+| Talla | M/L | A/P | Altura disponible |
+|---|---|---|---|
+| 2 | 51 mm | 34 mm | 20 / 30 mm |
+| 3 | 55 mm | 36 mm | 20 / 30 mm |
+| 4 | 60 mm | 36 mm | 20 / 30 mm |
+| 5 | 67 mm | 38 mm | 20 / 30 mm |
+
+### REF — Cono Cortical Tibial 20 mm (mat.: EPORE®; TiAl₆V₄)
+
+| REF | Talla |
+|---|---|
+| 4217-0022 | 2 |
+| 4217-0023 | 3 |
+| 4217-0024 | 4 |
+| 4217-0025 | 5 |
+
+### REF — Cono Cortical Tibial 30 mm
+
+| REF | Talla |
+|---|---|
+| 4217-0002 | 2 |
+| 4217-0003 | 3 |
+| 4217-0004 | 4 |
+| 4217-0005 | 5 |
+
+### REF — Cono Cortical Tibial Escalonado 30 mm
+
+| REF | Talla |
+|---|---|
+| 4217-0012 | 2 D |
+| 4217-0013 | 3 D |
+| 4217-0014 | 4 D |
+| 4217-0015 | 5 D |
+| 4217-0032 | 2 I |
+| 4217-0033 | 3 I |
+| 4217-0034 | 4 I |
+| 4217-0035 | 5 I |`,
+
+    instrumental: `## Cajas de Instrumental — EPORE® Conos Corticales
+
+### Contenedor Básico EPORE® Cone Cortical Basic Container
+**REF: 7295-2040**
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Impactor para Conos corticales EPORE® | 7295-3000 | Instrumento central: guía las raspas femorales y tibiales |
+| Placa adaptadora femoral para Conos corticales EPORE® | 7295-3001 | Adaptar el impactor a las raspas femorales (no específica por talla) |
+| Placa adaptadora tibial Talla 2 | 7295-3002 | Adaptar el impactor a la raspa tibial talla 2 (amarilla) |
+| Placa adaptadora tibial Talla 3 | 7295-3003 | Adaptar el impactor a la raspa tibial talla 3 (roja) |
+| Placa adaptadora tibial Talla 4 | 7295-3004 | Adaptar el impactor a la raspa tibial talla 4 (verde) |
+| Placa adaptadora tibial Talla 5 | 7295-3005 | Adaptar el impactor a la raspa tibial talla 5 (azul) |
+| Impactor de cono EPORE® femoral | 7295-1020 | Impactar el cono cortical femoral definitivo |
+| Impactor de cono EPORE® tibial | 7295-1010 | Impactar el cono cortical tibial definitivo |
+| Instrumento de placa de presión (crunch plate) EPORE® | 7295-1030 | Retirar los tapones mediolaterales del cono tibial |
+| Soporte de placa de presión 20 mm | 7295-1307 | Sostener el cono tibial durante la remoción de tapones |
+| Soporte de placa de presión 30 mm | 7295-1306 | Sostener el cono tibial durante la remoción de tapones |
+| Pinzas ic para cabeza bipolar | 7960-6020 | Manejo de componentes de prueba |
+| Raspa universal 5mm recta | 8005-1600 | Instrumento estándar de preparación ósea |
+
+---
+
+### Contenedor Tibial EPORE® Cone Cortical Tibial Container
+**REF: 7295-2041**
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Raspa tibial Cono cortical 20 mm Talla 2 | 7295-3102 | Preparar lecho tibial 20 mm talla 2 |
+| Raspa tibial Cono cortical 20 mm Talla 3 | 7295-3103 | Preparar lecho tibial 20 mm talla 3 |
+| Raspa tibial Cono cortical 20 mm Talla 4 | 7295-3104 | Preparar lecho tibial 20 mm talla 4 |
+| Raspa tibial Cono cortical 20 mm Talla 5 | 7295-3105 | Preparar lecho tibial 20 mm talla 5 |
+| Raspa tibial Cono cortical 30 mm Talla 2 | 7295-3072 | Preparar lecho tibial 30 mm talla 2 |
+| Raspa tibial Cono cortical 30 mm Talla 3 | 7295-3073 | Preparar lecho tibial 30 mm talla 3 |
+| Raspa tibial Cono cortical 30 mm Talla 4 | 7295-3074 | Preparar lecho tibial 30 mm talla 4 |
+| Raspa tibial Cono cortical 30 mm Talla 5 | 7295-3075 | Preparar lecho tibial 30 mm talla 5 |
+| Raspa tibial Cono cortical 30 mm Escalonado D Talla 2 | 7295-3092 | Preparar lecho tibial escalonado D talla 2 |
+| Raspa tibial Cono cortical 30 mm Escalonado D Talla 3 | 7295-3093 | Preparar lecho tibial escalonado D talla 3 |
+| Raspa tibial Cono cortical 30 mm Escalonado D Talla 4 | 7295-3094 | Preparar lecho tibial escalonado D talla 4 |
+| Raspa tibial Cono cortical 30 mm Escalonado D Talla 5 | 7295-3095 | Preparar lecho tibial escalonado D talla 5 |
+| Raspa tibial Cono cortical 30 mm Escalonado I Talla 2 | 7295-3082 | Preparar lecho tibial escalonado I talla 2 |
+| Raspa tibial Cono cortical 30 mm Escalonado I Talla 3 | 7295-3083 | Preparar lecho tibial escalonado I talla 3 |
+| Raspa tibial Cono cortical 30 mm Escalonado I Talla 4 | 7295-3084 | Preparar lecho tibial escalonado I talla 4 |
+| Raspa tibial Cono cortical 30 mm Escalonado I Talla 5 | 7295-3085 | Preparar lecho tibial escalonado I talla 5 |
+
+---
+
+### Contenedor Femoral Izquierdo / Derecho
+
+**REF: 7295-2042 (Izquierdo) / 7295-2043 (Derecho)**
 
 | Instrumento | Función |
 |---|---|
-| Fluoroscopio intraoperatorio | Verificar posición del cono sobre el defecto |
-| Cerclajes de cable o alambre | Fijación adicional del cono cortical |
-| Reductor de cerclajes | Tensar el cerclaje de forma controlada |
-| Vástago largo de bypass | Superar el defecto en ≥ 2 diámetros del hueso |`,
-
-    tips: `## 🎯 Perlas Quirúrgicas Clave — Conos Corticales
-
-- **El vástago debe superar el defecto por al menos 2 diámetros del hueso.** Un vástago que termina en el nivel del defecto no provee estabilidad mecánica suficiente.
-- **El cerclaje debe quedar proximal y distal al cono** para evitar migración axial.
-- **Verificar con fluoroscopía antes de cementar** que el cono esté correctamente posicionado y no haya ventanas corticales descubiertas.
-- **Usar fluoroscopía sistemáticamente durante el fresado** en revisiones complejas — detectar una perforación temprano permite planificar el cono antes de que sea una emergencia.
+| Raspas femorales 30 mm (small) Tallas 2-5 Izq / Der | Preparar lecho femoral 30 mm (tallas 2L-5L / 2R-5R) |
+| Raspas femorales 40 mm Tallas 2-5 Izq / Der | Preparar lecho femoral 40 mm |
+| Raspas femorales 50 mm Tallas 2-5 Izq / Der | Preparar lecho femoral 50 mm |
 
 ---
 
-## ⚠️ Errores Más Comunes
+### Contenedores de Comprobadores de Offset
 
-- Vástago que no supera el defecto — compromete la estabilidad del constructo
-- Cerclaje solo en el centro del cono — sin fijación proximal ni distal
-- Perforación cortical no detectada — consecuencia de omitir fluoroscopía durante el fresado`
+| Contenedor | REF | Instrumento | REF | Talla |
+|---|---|---|---|---|
+| Femoral Offset Tester Container | 7295-2005 | Comprobador offset femoral 0 mm | 7295-1200 | 0 mm |
+| Femoral Offset Tester Container | 7295-2005 | Comprobador offset femoral 2 mm | 7295-1202 | 2 mm |
+| Femoral Offset Tester Container | 7295-2005 | Comprobador offset femoral 4 mm | 7295-1204 | 4 mm |
+| Femoral Offset Tester Container | 7295-2005 | Comprobador offset femoral 6 mm | 7295-1206 | 6 mm |
+| Tibial Offset Tester Container | 7295-2007 | Comprobador offset tibial 0 mm | 7295-2200 | 0 mm |
+| Tibial Offset Tester Container | 7295-2007 | Comprobador offset tibial 2 mm | 7295-2202 | 2 mm |
+| Tibial Offset Tester Container | 7295-2007 | Comprobador offset tibial 4 mm | 7295-2204 | 4 mm |
+| Tibial Offset Tester Container | 7295-2007 | Comprobador offset tibial 6 mm | 7295-2206 | 6 mm |
+
+> **Nota:** Los instrumentos se entregan no estériles.`,
+
+    tips: `## 🧠 Concepto Clínico Esencial — ¿Cuándo usar el Cono Cortical?
+
+Los conos EPORE® (tanto corticales como metafisiarios) se utilizan para rellenar defectos óseos metafisiarios en revisiones de rodilla. Aunque el nombre puede inducir a pensar que actúan en la diáfisis, **ambos tipos actúan en la metáfisis**. Lo que los diferencia es el tipo de defecto que tratan:
+
+| Tipo de defecto | Cortical | Opción recomendada |
+|---|---|---|
+| **Contenido** | Intacta — el hueso cortical rodea el defecto | **Cono Metafisiario** |
+| **No contenido** | Destruida — hay pérdida de la pared cortical | **Cono Cortical** |
+
+**El cono cortical se usa cuando el defecto es no contenido**, es decir, cuando el hueso cortical ha sido destruido y ya no puede servir de pared de contención. Esto ocurre típicamente en defectos AORI 2B con cortical comprometida y AORI 3 severos. El cono cortical está diseñado para anclarse en el reborde cortical remanente.
+
+### Principio de funcionamiento
+
+1. El cono cortical se impacta en **press-fit de 0,2 mm** en el hueso — sin cemento entre cono y hueso
+2. La superficie porosa EPORE® se osteointegra biológicamente al reborde cortical remanente
+3. La cara interior del cono se **rellena con cemento**, y el componente protésico se cementa dentro del cono
+4. El componente protésico se inserta cementado a través del cono ya fijado
+
+> El cemento va **entre el cono y la prótesis**, nunca entre el cono y el hueso. El cono actúa como intermediario: ancla biológicamente al hueso y mecánicamente a la prótesis cementada.
+
+### ¿Con qué prótesis combinarlos?
+
+Los conos (corticales y metafisiarios) tienen más sentido con **prótesis cementadas**. La lógica es que la prótesis se cementa dentro del cono ya osteointegrado, de modo que el cemento sirve de unión prótesis-cono sin comprometer la interfaz biológica cono-hueso.
+
+Los conos EPORE® son **universales**: se pueden usar con GenuX® MK, ACS® SC y también con prótesis de otros fabricantes. Antes de combinarlos con implantes de terceros, verificar la compatibilidad de tallas con los **trials estériles** disponibles.
+
+### Zonas de fijación y clasificación AORI
+
+| AORI | Tipo | Opción recomendada |
+|---|---|---|
+| AORI I | Cualquiera | Solo cemento o injerto óseo — sin cono |
+| AORI IIa | Estable | Vainas o aumentos modulares |
+| AORI IIb | Contenido | Cono Metafisiario + vástagos |
+| AORI IIb | No contenido | **Cono Cortical** + vástagos |
+| AORI III | No contenido | **Cono Cortical** + vástagos — o KRI MK + conos RS |
+
+---
+
+## 🎯 Perlas Quirúrgicas Clave
+
+- **Los conos corticales van directamente sobre el hueso, sin cemento (press-fit de 0,2 mm).** Nunca cementar el cono al hueso — impediría la osteointegración y complicaría la re-revisión.
+- **La placa adaptadora tibial es específica por talla y coloreada** (amarilla Talla 2, roja Talla 3, verde Talla 4, azul Talla 5) — verificar siempre que se usa la placa correcta antes de ensamblar.
+- **La placa adaptadora femoral NO es específica por talla** — la misma placa sirve para todas las tallas femorales.
+- **Verificar la alineación de los grabados L/R en la placa adaptadora:** Para rodilla izquierda, los "L" deben quedar en el mismo lado; para rodilla derecha, los "R" deben quedar alineados.
+- **Cerrar siempre primero "close 1." y luego "close 2."** — el orden inverso dificulta el cierre correcto del impactor.
+- **Iniciar siempre con la raspa más pequeña (Talla 2)** y subir progresivamente.
+- **Profundidad correcta femoral:** Los bordes distales de la raspa deben quedar ligeramente fuera del hueso.
+- **Profundidad correcta tibial:** La raspa debe quedar ligeramente fuera del hueso.
+
+---
+
+## ⚠️ Errores Más Comunes y Cómo Evitarlos
+
+- **Usar cono cortical en defecto contenido** — si la cortical está intacta, el cono metafisiario es más adecuado
+- **Cementar el cono al hueso** — error crítico: impide osteointegración y dificulta la re-revisión
+- **Confundir la placa adaptadora tibial por talla** — revisar el color antes de ensamblar
+- **Placa adaptadora en orientación errónea** — verificar siempre los grabados L/R antes de montar la raspa
+- **Cerrar las palancas de bloqueo en orden incorrecto** — siempre "close 1." primero
+- **No registrar el ajuste de offset antes de retirar los instrumentos** — anotar la configuración de offset (talla, posición en reloj) inmediatamente al determinarla
+- **No verificar compatibilidad con el componente protésico** — revisar tablas de compatibilidad M/L y A/P antes de la cirugía
+
+---
+
+## 💡 Tips de Planificación Preoperatoria
+
+- Clasificar el defecto óseo con AORI preoperatoriamente — el cono cortical corresponde a los defectos **no contenidos** (pérdida de cortical)
+- Planificar el tamaño del cono con plantillas digitales o radiográficas para fémur y tibia
+- Verificar la compatibilidad del cono con el tamaño del componente protésico en las tablas de compatibilidad M/L y A/P
+- Para vástagos de diámetro mayor a 18 mm, el orden de implantación debe ajustarse
+- Llevar trials estériles si se combina con prótesis de terceros
+
+---
+
+## 🔧 Trucos Intraoperatorios
+
+- **Para retirar el insertor de la raspa más fácilmente:** Comprimir ligeramente los brazos sostenedores con los dedos para reducir la tensión del brazo de sujeción
+- **Si los pines son bloqueados por la raspa femoral** y el bloque de corte 4in1 no puede fijarse correctamente, retirar la raspa antes de continuar con los pasos de preparación
+- **El comprobador de offset femoral no encajará completamente** en la vaina del vástago largo para los Conos corticales 30 mm y 40 mm — esto es normal; estimar el offset con la verificación de resección
+- **Marcar la alineación rotacional tibial** con azul de metileno o diatermia en el borde anterior de la tibia antes de retirar el comprobador de offset
+- **Retirar las placas de presión mediolaterales sobre la mesa** con el soporte y el instrumento correspondiente — hacerlo antes de llevar el cono al campo quirúrgico cuando sea necesario
+
+---
+
+## 🦴 Manejo de Situaciones Difíciles
+
+- **Raspa inestable en todas las tallas:** Reevaluar la calidad del hueso cortical remanente — si es insuficiente, considerar endoprótesis tumoral segmentaria (KRI MK o Rodilla Total MK)
+- **Compatibilidad limitada (✓):** Desplazar el Cono en dirección M/L para lograr compatibilidad — los trials estériles permiten verificar esto intraoperatoriamente
+- **Pérdida cortical circunferencial muy extensa:** Si no hay cortical residual para anclar el cono, considerar KRI MK + conos RS o artrodesis como alternativa`
   },
 
     'hip-primary-cabeza-bipolar': {
@@ -3495,6 +4634,1238 @@ REFs: 7960-0044 a 7960-0062
 - Anillo que no se engancha completamente → no reducir, revisar mecanismo
 - Inestabilidad persistente en reducción de prueba → reevaluar offset y talla de cuello
 - Dolor inguinal persistente postoperatorio → sospechar protrusión o necesidad de conversión a artroplastia total`
+  },
+
+  'knee-tumor-femur-distal-mk': {
+    source: 'MUTARS® Distal Femur MK — Técnica Quirúrgica Oficial implantcast GmbH',
+
+    tecnica: `## MUTARS® Fémur Distal MK — Técnica Quirúrgica
+
+El MUTARS® Fémur Distal MK es un sistema tumoral completamente constreñido y modular para reconstrucción del fémur distal tras resección oncológica. En uso clínico exitoso desde 1992.
+
+---
+
+## Planificación Preoperatoria
+
+La planificación quirúrgica es obligatoria. El cirujano debe determinar las dimensiones del implante y la posición de los componentes mediante plantillas radiológicas:
+
+- **Plantillas digitales:** Incluidas en los sistemas de planificación habituales. Si faltan, contactar al proveedor del software.
+- **Plantillas radiográficas:** Disponibles en distintos factores de escala a través del representante local.
+
+La resección ósea mínima es de 120 mm si se usa el fémur distal MK de 110 mm, o de 100 mm si se usa el de 90 mm.
+
+---
+
+## 1. Resección Tumoral y Preparación Tibial
+
+1. Resecar el tumor y medir la longitud del explante.
+2. Remover los meniscos.
+3. Flexionar la rodilla a 90°.
+4. Si es necesario, abrir el canal intramedular tibial con la fresa iniciadora de 9 mm. El punto de entrada debe situarse 1/3 ventral y 2/3 dorsal respecto a la eminencia intercondílea para centrar el canal.
+5. Fresar con fresas rígidas hasta alcanzar el diámetro y longitud de vástago determinados preoperatoriamente.
+6. Para longitudes de vástago mayores a 125 mm, colocar el sleeve de fresa del diámetro correspondiente sobre la fresa rígida. Usar el sleeve de 150 mm para todas las longitudes > 125 mm.
+7. Aumentar el diámetro en pasos hasta alcanzar el tamaño preoperatorio planeado.
+8. Fresar hasta obtener contacto cortical en la punta de la fresa.
+
+> **Nota:** Respetar la "Tabla de profundidad de fresado tibial". El marcador de longitud del vástago en la fresa debe coincidir con el plano de resección tibial.
+
+---
+
+## 2. Selección del Vástago Tibial
+
+Dejar la última fresa rígida usada (mayor diámetro) en el canal medular. Esta indica el diámetro del implante a seleccionar:
+
+| Diámetro de fresa | Vástago sin cemento (GenuX® MK) | Vástago cementado (GenuX® MK) |
+|---|---|---|
+| 11 mm | 12 mm | — |
+| 13 mm | 14 mm | 11 mm |
+| 15 mm | 16 mm | 13 mm |
+| 17 mm | 18 mm | 15 mm |
+| 19 mm | 20 mm | 17 mm |
+| 21 mm | 22 mm | 19 mm |
+
+> El diámetro final de fresa debe ser de número impar para lograr press-fit en sin cemento o dejar 1 mm para manto de cemento.
+
+**Tabla de profundidad de fresado tibial (primaria):**
+
+| Longitud del vástago | Sin cemento* | Cementado* |
+|---|---|---|
+| 125 mm | 125 mm | 150 mm |
+| 150 mm | 150 mm | 175 mm |
+| 200 mm | 200 mm | 225 mm |
+| 250 mm | 250 mm | 275 mm |
+
+**Tabla de profundidad de fresado tibial (revisión):**
+
+| Longitud del vástago | Sin cemento* | Cementado* |
+|---|---|---|
+| 125 mm | 115 mm | 140 mm |
+| 150 mm | 140 mm | 165 mm |
+| 200 mm | 190 mm | 215 mm |
+| 250 mm | 240 mm | 265 mm |
+
+*Longitudes para altura de inserto PE 12.5 mm.
+
+> Tras cada resección, insertar la fresa más profundo. Siempre fresar hasta la profundidad de revisión, independientemente de si es cirugía primaria o revisión.
+
+---
+
+## 3. Alineación Tibial
+
+La alineación tibial es intramedular. Fijar el bloque de corte tibial revisión 0° a la guía de alineación I/M tibial. Deslizar la guía sobre la fresa en el canal e impactar los pines proximales para fijarla al hueso.
+
+**Ajuste de la altura de resección:**
+- Usar el estilete tibial con marcado 12.5 mm (marcador **2**) para referenciar sobre el punto tibial más alto del lado menos afectado en implantación primaria.
+- Usar el marcado 2 mm (marcador **1**) para resecar 2 mm bajo la superficie tibial pre-operada en revisión.
+
+Fijar el bloque de corte con dos pines. Verificar el nivel de resección con el verificador de resección largo. Retirar la guía de alineación.
+
+---
+
+## 4. Resección Tibial
+
+1. Insertar opcionalmente un tercer pin oblicuo para asegurar el bloque de corte.
+2. Resecar la tibia a través del slot proximal del bloque de corte.
+3. Retirar el bloque de corte por los pines. Dejar los pines en el hueso para la preparación del espaciador en pasos posteriores.
+
+---
+
+## 5. Preparación Femoral
+
+**Fijación sin cemento:** Fresar el canal medular femoral hasta 130 mm de profundidad con una fresa flexible 1.5 mm menor que el vástago femoral planeado.
+
+**Fijación cementada:** Fresar el canal medular femoral hasta 130 mm con una fresa flexible 2 mm mayor que el vástago femoral planeado.
+
+**Chanflado del canal medular:** Preparar el canal femoral con el fresador de cavidad medular con orificio cruzado para chanflar el interior del canal.
+
+---
+
+## 6. Raspado del Canal Femoral (Sin Cemento)
+
+1. Ensamblar la raspa femoral del tamaño adecuado, el sleeve y el martillo deslizante.
+2. Marcar la cara anterior del fémur para mantener la antecurvatura correcta.
+3. Usar la raspa del mismo tamaño que el vástago sin cemento planificado.
+4. Para vástagos cementados, usar la raspa 2 mm mayor que el vástago cementado (provee 1 mm de manto de cemento).
+5. Limpiar la raspa de fragmentos óseos durante el raspado.
+6. Dejar la raspa femoral en el hueso para la prueba articular.
+
+---
+
+## 7. Preparación Tibial Final
+
+1. Reinsertar la última fresa rígida usada en el canal tibial.
+2. Determinar la talla del componente tibial con la guía de fresado tibial (su contorno exterior corresponde al del componente).
+3. Fijar la guía de fresado tibial al hueso via la fresa rígida.
+4. Usar el alineador de offset tibial (0, 2, 4 o 6 mm) para evaluar el offset óptimo. Registrar la posición del offset.
+5. Marcar el centro de la guía de fresado en el borde anterior de la tibia.
+6. Verificar la alineación rotacional con el mango de alineación tibial combinado con la varilla de alineación externa.
+7. Fresar con la fresa tibial GenuX® MK hasta el tope a través de la guía de fresado.
+8. Insertar la guía de fresa de acoplamiento tibial GenuX® del tamaño correcto. Las tres barras deben alinearse con las tres muescas de la guía de fresado, con el grabado "ANT" dirigido hacia la tibia anterior. Fresar hasta el tope.
+9. Para la preparación de aletas, conectar el mango al punzón de aletas del tamaño tibial determinado (tallas 2-4 y 5-6). Punzonar hasta el tope.
+10. Desconectar el punzón de aletas y conectar el mango a las aletas de fijación tibial MK. Punzonar hasta el tope.
+11. Retirar el punzón de aletas, la guía de fresado y los pines.
+
+---
+
+## 8. Preparación de Vástagos Pequeños (11, 12 y 14 mm)
+
+Los siguientes vástagos tienen una porción cónica: Ø11 mm cementado (todas las longitudes), Ø12 mm sin cemento (todas las longitudes), Ø14 mm sin cemento (todas las longitudes).
+
+Conectar la fresa cónica GenuX® MK al mango ic-T:
+- **Ø12 mm sin cemento:** Fresa cónica diámetro 11 mm
+- **Ø11 mm cementado y Ø14 mm sin cemento:** Fresa cónica diámetro 13 mm
+
+Colocar el tope en el marcador del fresador correspondiente al uso de espaciadores tibiales (T0 = sin espaciador; Tx = con espaciador de x mm). Introducir el fresador cuidadosamente hasta que el tope toque la tibia proximal.
+
+---
+
+## 9. Reducción de Prueba (Trial)
+
+1. Conectar el componente tibial de prueba GenuX® MK al adaptador de offset de prueba del offset determinado usando el destornillador hexagonal 3.5 mm.
+2. Usar el alineador de offset tibial para verificar la posición correcta del adaptador.
+3. Atornillar el vástago de prueba del diámetro y longitud determinados al adaptador de offset.
+4. Insertar el componente tibial de prueba con el impactor tibial GenuX® MK.
+5. Seleccionar el inserto de prueba del tipo deseado (MB o FB) y colocarlo en el componente tibial.
+6. Montar el MUTARS® fémur distal y las piezas de extensión necesarias sobre la raspa.
+7. Usar el instrumento para el mecanismo de bloqueo para insertar el acoplamiento de prueba MUTARS® 12.5 mm en el componente femoral de prueba. Girar el acoplamiento 90° en sentido horario para fijarlo.
+8. Colocar el perno del acoplamiento en la abertura del componente tibial de prueba con el orificio dirigido hacia anterior.
+9. Insertar el posicionador desde ventral en el orificio del componente tibial de prueba.
+10. Bloquear el acoplamiento desde ventral con el tornillo de prueba y el destornillador 3.5 mm.
+11. Verificar la estabilidad articular en flexión y extensión.
+12. Retirar todos los componentes de prueba.
+
+---
+
+## 10. Implantación de Componentes Definitivos
+
+**Vástago femoral:**
+- Sin cemento: usar el vástago del mismo tamaño que la raspa. Proteger el fémur con una pinza ósea durante la impactación.
+- Cementado: insertar cemento y usar el vástago 2 mm menor que la raspa/fresadora usada. Retirar todos los instrumentos durante el fraguado.
+
+**Montaje del fémur distal:**
+1. Combinar el fémur distal con las piezas de extensión necesarias y el vástago femoral. Verificar la rotación correcta.
+2. Insertar el tornillo de barra del largo correcto (ver tabla de opciones de montaje).
+3. Bloquear con la llave de balancín MUTARS® y asegurar con la llave de ingeniería.
+4. Bloquear el tornillo de seguridad de la misma manera.
+
+**Componente tibial:**
+1. Acoplar el adaptador de offset determinado al cono del componente tibial.
+2. Acoplar el vástago del tamaño y longitud determinados al adaptador de offset.
+3. Fijar la conexión cónica con el impactor tibial en el bloque de montaje de vástagos.
+
+**Acoplamiento definitivo:**
+1. Usar el instrumento para el mecanismo de bloqueo para insertar el acoplamiento MUTARS® 12.5 mm en el componente femoral.
+2. Con la rodilla en flexión, insertar el acoplamiento en la caja femoral y girarlo 180° en sentido horario usando el posicionador como palanca.
+3. Colocar el perno del acoplamiento en la abertura del componente tibial con el orificio hacia anterior.
+4. Insertar el posicionador desde ventral para asegurar el posicionamiento correcto.
+5. Bloquear con el tornillo para acoplamiento y el destornillador hexagonal 3.5 mm.
+6. Colocar el inserto PE definitivo (MB o FB) del tipo deseado. El tamaño corresponde al talla del componente tibial.
+7. Insertar el tornillo de seguridad y bloquearlo.
+8. Realizar pruebas finales de estabilidad articular en flexión y extensión antes de cerrar la articulación.
+
+---
+
+## 11. Explantación
+
+En caso de explantación:
+1. Desbloquear el tornillo de seguridad tibial y el tornillo de bloqueo desde ventral con el destornillador 3.5 mm.
+2. Usar el instrumento para el mecanismo de bloqueo para retirar el acoplamiento del componente fémur distal MOM.
+3. Retirar el tornillo de seguridad y el tornillo de barra M10.
+4. El fémur distal M-O-M puede retirarse fácilmente del vástago.
+5. Para los componentes tibiales: acoplar el extractor tibial al martillo deslizante e insertarlo desde arriba en el orificio de bloqueo del componente tibial. Bloquear con la pestaña. Retirar con el martillo deslizante.
+
+---
+
+## Opciones de Montaje (Longitud en mm)
+
+| Reconstrucción | Fémur distal | Pieza conectora 100mm | Pieza de extensión | Tornillo |
+|---|---|---|---|---|
+| 100 mm | 90 | — | — | 25 |
+| 120 mm | 110 | — | — | 45 |
+| 140 mm | 90 | — | 40 | 65 |
+| 160 mm | 110 | — | 40 | 85 |
+| 180 mm | 110 | — | 60 | 105 |
+| 200 mm | 110 | — | 80 | 125 |
+| 220 mm | 110 | 100 | — | 45+25 |
+| 240 mm | 110 | — | 80+40 | 165 |
+| 260 mm | 110 | 100 | 40 | 65+45 |
+| 280 mm | 110 | 100 | 60 | 85+45 |
+| 300 mm | 110 | 100 | 80 | 105+45 |
+| 320 mm | 110 | 100 | 60+40 | 125+45 |`,
+
+    componentes: `## MUTARS® Fémur Distal MK — Componentes del Sistema
+
+### Propiedades del Sistema
+
+- Sistema tumoral completamente constreñido
+- Insertos de PE de plataforma móvil (MB) y fija (FB)
+- Hasta 20° de rotación (plataforma móvil)
+- Cementado y sin cemento
+- Offset 360° libre
+- Offsets tibiales: 0, 2, 4 y 6 mm
+- Fijación de espaciadores tibiales
+- 5 tallas tibiales (2-6)
+- 2 longitudes de implante femoral (90 y 110 mm)
+
+---
+
+## Implantes Principales
+
+### MUTARS® Fémur Distal M-O-M (incl. tornillo de seguridad) *S *N *SN
+Material: implavit®, CoCrMo según ISO 5832-4; tornillo contra: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Longitud | Lateralidad |
+|---|---|---|
+| 5720-0045 | 110 mm | Izquierdo |
+| 5720-0040 | 110 mm | Derecho |
+| 5720-0047 | 90 mm | Izquierdo |
+| 5720-0042 | 90 mm | Derecho |
+
+### MUTARS® Acoplamiento 12.5 mm *N
+Material: implavit®, CoCrMo según ISO 5832-12; perno PE: UHMWPE según ISO 5834-2
+- REF: 5720-1210
+
+### MUTARS® Pieza de extensión *S
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Longitud |
+|---|---|
+| 5772-2504 | 40 mm |
+| 5772-2506 | 60 mm |
+| 5772-2508 | 80 mm |
+| 5772-2510 | 100 mm |
+
+### MUTARS® Pieza conectora *S
+Material: implatan®, TiAl6V4 según ISO 5832-3
+- REF 5730-0100: 100 mm
+
+### MUTARS® Tornillo
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Medida |
+|---|---|
+| 5792-1002 | M10 x 25 mm |
+| 5792-1004 | M10 x 45 mm |
+| 5792-1006 | M10 x 65 mm |
+| 5792-1008 | M10 x 85 mm |
+| 5792-1010 | M10 x 105 mm |
+| 5792-1012 | M10 x 125 mm |
+| 5792-1014 | M10 x 145 mm |
+| 5792-1016 | M10 x 165 mm |
+
+---
+
+## Componentes Tibiales
+
+### MUTARS® GenuX® MK Tibia cementada (incl. tornillo contra + tornillo acoplamiento) *N
+Material: implavit®, CoCrMo según ISO 5832-4
+
+| Talla | REF |
+|---|---|
+| 2 | 5751-0602 |
+| 3 | 5751-0603 |
+| 4 | 5751-0604 |
+| 5 | 5751-0605 |
+| 6* | 5751-0606 |
+
+### MUTARS® GenuX® MK Tibia sin cemento (incl. tornillo contra + tornillo acoplamiento) *N
+
+| Talla | REF |
+|---|---|
+| 2 | 5751-0702 |
+| 3 | 5751-0703 |
+| 4 | 5751-0704 |
+| 5 | 5751-0705 |
+| 6* | 5751-0706 |
+
+*Talla 6 no incluida en el set de préstamo, debe pedirse por separado.
+
+---
+
+## Insertos de PE
+
+### MUTARS® GenuX® MK Inserto PE MB (plataforma móvil)
+Material: UHMW-PE según ISO 5834-2
+
+| Talla | REF |
+|---|---|
+| 2/12.5 mm | 5721-0102 |
+| 3/12.5 mm | 5721-0103 |
+| 4/12.5 mm | 5721-0104 |
+| 5/12.5 mm | 5721-0105 |
+| 6/12.5 mm* | 5721-0106 |
+
+### MUTARS® GenuX® MK Inserto PE FB (plataforma fija)
+
+| Talla | REF |
+|---|---|
+| 2/12.5 mm | 5721-0202 |
+| 3/12.5 mm | 5721-0203 |
+| 4/12.5 mm | 5721-0204 |
+| 5/12.5 mm | 5721-0205 |
+| 6/12.5 mm* | 5721-0206 |
+
+---
+
+## Vástagos
+
+### MUTARS® Vástago Femoral Cementado *N
+Material: implavit®, CoCrMo según ISO 5832-4
+
+| REF | Dimensiones |
+|---|---|
+| 5760-0011 | 11 x 120 mm (máx. 75 kg) |
+| 5760-0013 | 13 x 120 mm |
+| 5760-0015 | 15 x 120 mm |
+| 5760-0017 | 17 x 120 mm |
+
+### MUTARS® Vástago Femoral sin Cemento HA
+Material: implatan®, TiAl6V4 según ISO 5832-3 con recubrimiento HA según ISO 13779-2
+
+| REF | Dimensiones |
+|---|---|
+| 5760-0012 | 12 x 120 mm |
+| 5760-0014 | 14 x 120 mm |
+| 5760-0016 | 16 x 120 mm |
+| 5760-0018 | 18 x 120 mm |
+| 5760-0020 | 20 x 120 mm |
+
+### MUTARS® GenuX® MK Vástago Tibial sin Cemento HA
+Material: implatan®, TiAl6V4 según ISO 5832-3 con recubrimiento HA según ISO 13779-2
+
+| Diámetro | L: 125mm | L: 150mm | L: 200mm* | L: 250mm* |
+|---|---|---|---|---|
+| 12 mm | 5767-1212 | 5767-1215 | 5767-1220 | 5767-1225 |
+| 14 mm | 5767-1412 | 5767-1415 | 5767-1420 | 5767-1425 |
+| 16 mm | 5767-1612 | 5767-1615 | 5767-1620 | 5767-1625 |
+| 18 mm | 5767-1812 | 5767-1815 | 5767-1820 | 5767-1825 |
+| 20 mm | 5767-2012 | 5767-2015 | 5767-2020 | 5767-2025 |
+
+### MUTARS® GenuX® MK Vástago Tibial Cementado *N
+
+| Diámetro | L: 125mm | L: 150mm | L: 200mm* | L: 250mm* |
+|---|---|---|---|---|
+| 11 mm | 5766-1112 | 5766-1115 | 5766-1120 | 5766-1125 |
+| 13 mm | 5766-1312 | 5766-1315 | 5766-1320 | 5766-1325 |
+| 15 mm | 5766-1512 | 5766-1515 | 5766-1520 | 5766-1525 |
+| 17 mm | 5766-1712 | 5766-1715 | 5766-1720 | 5766-1725 |
+| 19 mm | 5766-1912 | 5766-1915 | 5766-1920 | 5766-1925 |
+
+*Con orificios distales para fijación con tornillos Ø5 mm.
+
+---
+
+## MUTARS® GenuX® MK Adaptador de Offset
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Offset |
+|---|---|
+| 5751-0000 | 0 mm |
+| 5751-0002 | +2 mm |
+| 5751-0004 | +4 mm |
+| 5751-0006 | +6 mm |
+
+---
+
+## Espaciadores Tibiales MK *S (incl. tornillo)
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+Disponibles en espesores: 5, 10, 15 y 20 mm (unicondílares LL/RM y RL/LM) y 25, 35 y 45 mm (bicondílares).
+
+---
+
+## Recubrimientos Disponibles
+
+- ***S**: Implantes disponibles con recubrimiento de plata (antinfeccioso)
+- ***N**: Implantes disponibles con recubrimiento TiN (antialérgico)
+- ***SN**: Implantes disponibles con recubrimiento de plata y TiN`,
+
+    instrumental: `## MUTARS® Fémur Distal MK — Cajas de Instrumental
+
+### CAJA 7999-5712 — MUTARS® Basic Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Impactor universal MUTARS® | 7210-0000 | Impactar componentes |
+| Sleeve de impacto y extracción MUTARS® | 7230-0000 | Adaptar impactor |
+| Llave de vaso MUTARS® | 7420-0000 | Apretar tornillos modulares |
+| Llave de balancín MUTARS® | 7411-0000 | Apretar tornillo de barra |
+| Llave de ingeniería SW 24 | 7490-0000 | Asegurar y contrastar |
+| Martillo deslizante MUTARS® | 7220-0001 | Retirar guías y componentes |
+| Raspa para vástago femoral (Ø12-20mm) | 7760-0112 a 7760-0120 | Preparación canal femoral |
+| Mango para tapón intramedular | 7512-4001 | — |
+| Fresador de cavidad medular con orificio cruzado | 4220-0000 | Chanflar canal medular |
+
+---
+
+### CAJA 7999-5821 — MUTARS® Distal Femur MK Basic Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Verificador de resección largo | 4220-0318 | Verificar nivel de resección tibial |
+| Host de alineación externo | 4223-0004 | — |
+| Insertador de pines 3.2 mm | 4223-0006 | Insertar pines de fijación |
+| Mango ic-T Zimmer-Jakobs | 4223-0023 | Mango para fresas cónicas |
+| Martillo deslizante corto | 4223-0031 | Retirar guías |
+| Adaptador M8 para martillo | 4223-0032 | Conexión a martillo deslizante |
+| Varilla de alineación externa 6x400mm | 4223-0035 | Verificar alineación rotacional |
+| Extractor de pines | 7512-0800 | Retirar pines |
+| Trial fémur distal MK (90/110mm, D/I) | 7720-0140/0142/0145/0147 | Prueba articular femoral |
+| Posicionador para mecanismo de bloqueo | 7610-0003 | Palanca para acoplamiento |
+| Instrumento para mecanismo de bloqueo | 7720-1201 | Insertar acoplamiento |
+| Instrumento de asentamiento angular acoplamiento | 7751-1201 | Posicionar acoplamiento |
+| Acoplamiento de prueba MUTARS® 12.5 mm | 7720-1210 | Prueba del acoplamiento |
+| Tornillo de prueba para acoplamiento GenuX® MK | 7720-1213 | Bloquear acoplamiento en trial |
+| Instrumento de asentamiento para mecanismo de bloqueo | 7751-1200 | — |
+| Adaptador ic para pines | 4220-0421 | — |
+| Adaptador ic | 4223-0022 | — |
+
+---
+
+### CAJA 7999-5802 — MK Tibial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Bloque de corte tibial revisión 0° | 7755-0054 | Resección tibial |
+| Guía de alineación I/M tibial | 7755-0024 | Alineación intramedular |
+| Guía de fresa de acoplamiento tibial GenuX® MK | 4214-0125 | Guiar fresa de acoplamiento |
+| Fresa de acoplamiento tibial GenuX® MK | 4214-0124 | Preparar cavidad de acoplamiento |
+| Fresa tibial GenuX® MK | 4214-0120 | Preparación final lecho tibial |
+| Guía de fresado tibial MK (tallas 2-5) | 4220-4202 a 4220-4205 | Definir talla y guiar fresado |
+| Punzón de aletas MK (tallas 2-4 y 5-6) | 4214-0142 / 4214-0145 | Preparar aletas de fijación |
+| Estilete tibial 2/12.5mm para resección con slot | 4220-0428 | Referencia de altura de resección |
+| Aletas de fijación tibial MK | 4214-0146 | Aletas de fijación |
+| Mango de alineación tibial | 4210-2215 | Verificar rotación tibial |
+| Mango para punzón de aletas tibial | 4215-0447 | — |
+| Sleeve de offset tibial MK (0, 2, 4, 6mm) | 4210-4270/4261/4263/4267 | Evaluar offset tibial |
+| Pines de fijación 3.2mm x 77mm (x4) | 4223-0029 | Fijar guía al hueso |
+| Brocas 126 x 3.2mm (x2) | 4221-0019 | — |
+| Verificador de resección largo | 4220-0318 | Verificar nivel de resección |
+| Pines de taladrado 3.2mm x 77/97mm | 4224-0132 / 4224-0133 | Pines de perforación |
+
+---
+
+### CAJA 7999-5804 — MK Tibial Trial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Impactor tibial GenuX® MK | 4214-0130 | Insertar componente tibial de prueba |
+| Destornillador hexagonal corto 3.5mm | 0280-1007 | Fijar adaptadores de offset en trial |
+| Componentes tibiales de prueba GenuX® MK (tallas 2-5) | 7751-0602 a 7751-0605 | Ensayo tibial |
+| Instrumento de alineación de offset tibial MK | 4220-4210 | Verificar y ajustar offset |
+| Adaptadores de offset de prueba (0, 2, 4, 6mm) | 7751-0000/02/04/06 | Simular offset tibial |
+| Insertos de prueba MB GenuX® MK (tallas 2-5/12.5mm) | 7721-0102 a 7721-0105 | Prueba inserto MB |
+| Insertos de prueba FB GenuX® MK (tallas 2-5/12.5mm) | 7721-0202 a 7721-0205 | Prueba inserto FB |
+| Extractor tibial | 7755-0020 | Retirar componente tibial de prueba |
+| Adaptador para martillo deslizante M5 | 7801-0025 | Retirar adaptadores sueltos |
+
+---
+
+### CAJA 7999-7701 — MUTARS® Trial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Trial fémur proximal MUTARS® (50/70mm) | 7710-0205/0207 | — |
+| Trial reductor MUTARS® (20/30mm) | 7730-0220/0230 | — |
+| Trial pieza conectora 100mm | 7730-0100 | — |
+| Trial piezas de extensión (40/60/80/100mm) | 7772-2504/06/08/10 | Simular longitud de reconstrucción |
+| Trial vástago femoral MUTARS® (11/13/15/17mm) | 7760-0011/0013/0015/0017 | Simular vástago femoral |
+| Trial tornillos de barra M10 (25-205mm) | 7792-1002 a 7792-1020 | — |
+
+---
+
+### CAJAS DE FRESAS RÍGIDAS
+
+**CAJA 7999-5774 — Rigid Drill Container 1 (Ø10-18mm)**
+
+| Instrumento | REF |
+|---|---|
+| Fresas rígidas Ø10-18/330mm | 4220-3110 a 4220-3118 |
+| Sleeves de fresa 12-18/150mm | 4211-1512 a 4211-1518 |
+| Sleeves de fresa 12-18/200mm | 4211-2012 a 4211-2018 |
+| Fresa iniciadora 9mm | 4220-0014 |
+| Fresa para base de vástago | 7330-1010 |
+
+**CAJA 7999-5775 — Rigid Drill Container 2 (Ø19-27mm)**
+
+| Instrumento | REF |
+|---|---|
+| Fresas rígidas Ø19-27/330mm | 4220-3119 a 4220-3127 |
+| Sleeves de fresa 19-23/150mm | 4211-1519 a 4211-1523 |
+| Sleeves de fresa 19-23/200mm | 4211-2019 a 4211-2023 |
+
+---
+
+### CAJA 7999-5805 — MK Trial Stem Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Fresa cónica GenuX® MK Ø11mm | 4214-0127 | Preparar porción cónica vástagos pequeños |
+| Fresa cónica GenuX® MK Ø13mm | 4214-0128 | — |
+| Tope para fresas cónicas GenuX® MK | 4220-4211 | Controlar profundidad de fresado |
+| Adaptador para martillo deslizante | 4223-0033 | — |
+| Vástagos de prueba GenuX® MK (Ø11-27mm, 125-250mm) | 7766-xxxx | Simular vástago definitivo |
+
+---
+
+### CAJA 7999-5770 — Stem Assembly Container
+- Bloque de montaje de vástagos MK (REF 4223-4003): Fijar la conexión cónica tibial al ensamblar vástago y adaptador de offset.
+
+---
+
+### CAJAS COMPLEMENTARIAS
+
+- **7999-5808 — MK Tibia Trial Spacer Container:** Espaciadores tibiales de prueba unicondílares 5/10/15/20mm (LL/RM y RL/LM), tallas 2-5.
+- **7999-5819 — MK Tibia Trial Container Size 6:** Guía de fresa acoplamiento talla 6, guía de fresado talla 6, insertos MB/FB de prueba talla 6, espaciadores de prueba talla 6.
+- **7999-7000 — Flexible Reamer Nitinol Container:** Eje de fresador flexible nitinol + cabezas de fresa nitinol Ø8.5-19.0mm.
+- **7999-5745 — MUTARS® Patella Container:** Guía de broca para patela, grapa para patela, broca para patela.`,
+
+    tips: `## 🎯 Perlas Quirúrgicas Clave — MUTARS® Fémur Distal MK
+
+- **Siempre fresar hasta la profundidad de revisión en la tibia**, incluso en cirugía primaria. Si se necesita una revisión futura, el canal ya estará preparado.
+- **El diámetro final de fresa debe ser número impar.** Para sin cemento, el vástago queda 1 mm mayor (press-fit). Para cementado, el vástago queda 2 mm menor (manto de 1 mm).
+- **Dejar la raspa femoral en el hueso durante toda la prueba articular.** Retirarla antes de la prueba impide evaluar correctamente el espacio articular.
+- **Verificar la tabla de opciones de montaje antes de la cirugía.** La combinación de piezas (fémur distal + extensión + pieza conectora + tornillo) es específica para cada longitud de reconstrucción.
+- **El grabado "ANT" en la guía de fresa de acoplamiento debe quedar hacia la tibia anterior.** Las tres barras deben alinearse con las tres muescas. Un error de orientación aquí compromete el mecanismo de bloqueo del acoplamiento.
+
+---
+
+## ⚠️ Errores Más Comunes y Cómo Evitarlos
+
+- **Fresa tibial de diámetro par:** Usar siempre número impar como última fresa. Verificar antes de elegir el vástago.
+- **Confundir acoplamiento de prueba con definitivo:** El de prueba lleva tornillo de prueba distinto. Revisar REF antes de cerrar el campo.
+- **No verificar la tabla de montaje:** La longitud del tornillo de barra es crítica y varía para cada reconstrucción. Un tornillo corto no da rigidez suficiente; uno largo protruye.
+- **Girar el acoplamiento solo 90° en la prueba y 180° en definitivo:** En prueba se giran 90° en sentido horario; en definitivo, 180°. Confundirlos deja el acoplamiento sin fijación.
+- **Omitir el sleeve de fresa tibial en vástagos > 125mm:** Sin sleeve, la fresa no queda centrada en el canal, lo que produce un fresado excéntrico y vástago mal alineado.
+
+---
+
+## 💡 Tips de Planificación Preoperatoria
+
+- Usar plantillas digitales o radiográficas de implantcast para determinar la longitud de resección, el tamaño del fémur distal (90 o 110 mm) y la longitud de reconstrucción total.
+- La resección mínima es 120 mm para el MOM de 110 mm y 100 mm para el de 90 mm.
+- Verificar disponibilidad de TODOS los componentes antes de la cirugía: vástago tibial, adaptador de offset, fémur distal, piezas de extensión y tornillo de longitud correcta.
+- Planificar la opción de espaciadores tibiales si hay defectos óseos unicondílares.
+- Para pacientes con alergia a metales: solicitar versión *N (TiN) para componentes CoCrMo. Para alto riesgo infeccioso: solicitar versión *S (plata) para superficies no articulares.
+
+---
+
+## 🔧 Trucos Intraoperatorios
+
+- **Marcar la cara anterior del fémur** antes de retirar la raspa femoral para no perder la referencia de antecurvatura al insertar el vástago definitivo.
+- **Usar pinza ósea alrededor del fémur durante la impactación** del vástago sin cemento. En hueso osteoporótico o irradiado, la fractura cortical es real y evitable.
+- **El posicionador sirve como palanca** para girar el acoplamiento definitivo 180°. No intentarlo con los dedos — existe riesgo de contaminación y el torque es insuficiente.
+- **En implantación cementada, retirar TODOS los instrumentos del campo durante el fraguado.** Cualquier instrumento que transmita estrés al cemento durante su polimerización compromete la interfaz.
+- **Verificar la posición del offset con el marcador** en el adaptador antes de impactar el componente tibial definitivo. La flechita apunta en la dirección del componente.
+
+---
+
+## 🦴 Manejo de Situaciones Difíciles
+
+- **Pérdida ósea femoral extensa:** Si la longitud de reconstrucción supera 200 mm, planificar el uso de pieza conectora 100 mm además de las piezas de extensión (ver tabla de montaje).
+- **Canal medular femoral muy curvo:** La raspa flexible para fémur (nitinol) permite acceder a canales con curvaturas que la raspa rígida no puede seguir. No forzar con raspa rígida en fémur muy curvado.
+- **Tejidos blandos comprometidos por radioterapia o quimioterapia:** Considerar implante con recubrimiento de plata (*S) para reducir el riesgo de infección. Evitar antisépticos con H₂O₂, yodo o metales pesados (Betaisodona®) — inactivan el recubrimiento de plata.
+- **Defecto tibial unicondílar:** Preparar el lecho para espaciador con el bloque de corte tibial, usando el slot más distal del lado afectado para resecar el escalón adicional de 5 mm.
+
+---
+
+## 📐 Optimización de Resultados
+
+- **La plataforma móvil (MB) permite hasta 20° de rotación:** Ofrece mayor tolerancia a errores rotacionales, pero requiere un buen balanceo ligamentario (o su ausencia, en tumor).
+- **El offset tibial (0, 2, 4, 6mm) debe determinarse con la guía de fresado en el campo.** Leer el offset en el borde anterior de la guía antes de retirarla. Este valor debe replicarse exactamente en el trial y en el definitivo.
+- **Realizar las pruebas de estabilidad en TODOS los arcos de movimiento** antes de liberar el acoplamiento definitivo. La constricción del sistema no compensa una mala orientación del componente.
+
+---
+
+## 🔴 Señales de Alerta (Red Flags)
+
+- Resistencia al avanzar el tornillo de barra → verificar longitud correcta en tabla de montaje
+- Acoplamiento que no gira 180° → revisar que la caja femoral esté limpia y el perno libre
+- Inserto PE que no asenta completamente → verificar que el acoplamiento esté bien posicionado antes de insertar el PE
+- Vástago tibial que no avanza a la profundidad planeada → revisar tabla de profundidad de fresado y confirmar que el canal esté correctamente preparado`
+  },
+
+  'knee-revision-kri-mk': {
+    source: 'MUTARS® KRI MK — Técnica Quirúrgica Oficial implantcast GmbH',
+
+    tecnica: `## MUTARS® KRI MK — Técnica Quirúrgica
+
+El MUTARS® KRI MK es el sistema modular de revisión de rodilla completamente constreñido de implantcast, diseñado para casos de revisión complejos y cirugía oncológica con preservación del stock óseo femoral distal.
+
+---
+
+## Características del Sistema
+
+- Sistema de rodilla completamente constreñido
+- Insertos de PE de plataforma móvil (MB) y fija (FB)
+- Tres alturas de PE: 12.5, 15.0 y 17.5 mm
+- Hasta 20° de rotación (plataforma móvil)
+- Cementado y sin cemento
+- Offset tibial 360° libremente ajustable
+- Offsets tibiales: 0, 2, 4 y 6 mm
+- Fijación de espaciadores tibiales
+- 5 tallas tibiales (2-6)
+- 1 talla femoral
+
+---
+
+## Planificación Preoperatoria
+
+La planificación quirúrgica preoperatoria es obligatoria. El cirujano debe determinar las dimensiones del implante y la posición de los componentes en el hueso. Están disponibles plantillas radiológicas de implantcast GmbH.
+
+---
+
+## 1. Abordaje Quirúrgico
+
+- Resecar 75 mm de los cóndilos femorales distales (opción a).
+- Si la parte superior del KRI se insertará en el canal medular, la resección puede minimizarse a 50 mm (opción b).
+- Remover los meniscos.
+
+---
+
+## 2. Preparación Tibial — Fresado
+
+1. Flexionar la rodilla a 90°.
+2. Si es necesario, abrir el canal tibial con la fresa iniciadora de 9 mm. El punto de entrada: 1/3 ventral y 2/3 dorsal respecto a la eminencia intercondílea.
+3. Fresar con fresas rígidas hasta el diámetro y longitud de vástago determinados preoperatoriamente. Para longitudes > 125 mm, usar el sleeve de fresa correspondiente (recomendado sleeve de 150 mm para todas las longitudes > 125 mm).
+4. Aumentar el diámetro en pasos hasta el tamaño planeado. Fresar hasta contacto cortical.
+
+> Respetar la "Tabla de profundidad de fresado tibial". El marcador en la fresa debe coincidir con el plano de resección tibial.
+
+**Tabla de selección de vástago tibial:**
+
+| Diámetro de fresa | Vástago sin cemento (GenuX® MK) | Vástago cementado (GenuX® MK) |
+|---|---|---|
+| 11 mm | 12 mm | — |
+| 13 mm | 14 mm | 11 mm |
+| 15 mm | 16 mm | 13 mm |
+| 17 mm | 18 mm | 15 mm |
+| 19 mm | 20 mm | 17 mm |
+| 21 mm | 22 mm | 19 mm |
+
+**Tabla de profundidad de fresado tibial (primaria):**
+
+| Longitud vástago | Sin cemento* | Cementado* |
+|---|---|---|
+| 125 mm | 125 mm | 150 mm |
+| 150 mm | 150 mm | 175 mm |
+| 200 mm | 200 mm | 225 mm |
+| 250 mm | 250 mm | 275 mm |
+
+**Tabla de profundidad de fresado tibial (revisión):**
+
+| Longitud vástago | Sin cemento* | Cementado* |
+|---|---|---|
+| 125 mm | 115 mm | 140 mm |
+| 150 mm | 140 mm | 165 mm |
+| 200 mm | 190 mm | 215 mm |
+| 250 mm | 240 mm | 265 mm |
+
+*Longitudes para altura de inserto PE 12.5 mm.
+
+> Siempre fresar hasta la profundidad de revisión, independientemente del tipo de cirugía.
+
+> Para vástagos de 150 mm, el sleeve de fresa debe retirarse para la preparación posterior.
+
+---
+
+## 3. Alineación Tibial
+
+La alineación tibial es intramedular. Fijar el bloque de corte tibial revisión 0° a la guía de alineación I/M tibial. Deslizar la guía sobre la fresa en el canal e impactar los pines proximales.
+
+**Ajuste de la altura de resección:**
+- Marcado 2 mm (marcador **1**): Resecar 2 mm bajo la superficie tibial pre-operada (revisión).
+- Marcado 12.5 mm (marcador **2**): Referenciar sobre el punto tibial más alto del lado menos afectado (primaria).
+
+Fijar el bloque de corte con dos pines. Verificar el nivel de resección con el verificador de resección largo. Retirar la guía de alineación y la fresa rígida.
+
+---
+
+## 4. Resección Tibial
+
+1. Verificar el nivel de resección con el verificador largo.
+2. Resecar la tibia. Si es necesario, insertar un tercer pin oblicuo para asegurar el bloque de corte.
+3. El bloque de corte permite preparación para espaciadores (compensar defectos óseos tibiales).
+4. Retirar los pines y el bloque de corte tras la resección.
+
+**Preparación para espaciadores tibiales:**
+- Para espaciador de 5 mm: resecar 5 mm adicionales usando el slot más distal del lado afectado.
+- Para espaciador de 10 mm: usar los orificios de la fila inferior para fijar el bloque; usar el slot distal tras bajar el bloque.
+- Para espesores mayores: medir el defecto con una regla.
+
+---
+
+## 5. Preparación Femoral
+
+**Implantación sin cemento:**
+Fresar el canal medular femoral con fresadora flexible 3 mm menor que el vástago RS sin cemento. Fresar hasta la profundidad del vástago RS. Conectar el martillo deslizante a la raspa del mismo tamaño que el vástago.
+
+**Implantación cementada:**
+Preparar el canal con fresa 1 mm menor que el vástago cementado. Conectar el martillo deslizante a la raspa 2 mm mayor que el vástago elegido.
+
+**Uso de la raspa:**
+Preparar el canal medular femoral con la raspa RS. El marcado "KRI joint line" muestra la línea articular de la prótesis. Si se usa la pieza de extensión de 25 mm, usar el marcado "KRI +25mm joint line".
+
+> Si se usa el vástago RS de 250 mm: fresar con fresa flexible hasta 250 mm de profundidad, luego usar la raspa de 200 mm.
+
+> El nivel de resección NO debe ser distal a la marca "KRI bone" o "KRI +25 mm bone".
+
+---
+
+## 6. Preparación Tibial Final
+
+1. Reinsertar la última fresa rígida usada en el canal tibial.
+2. Determinar la talla del componente tibial con la guía de fresado (su contorno exterior = contorno del componente tibial).
+3. Fijar la guía de fresado al hueso via la fresa rígida.
+4. Usar el alineador de offset tibial (0, 2, 4, 6 mm) para determinar el offset óptimo. Registrar la posición del offset.
+5. Marcar el centro de la guía de fresado en el borde anterior de la tibia.
+6. Verificar la alineación rotacional con el mango de alineación tibial.
+7. Retirar el alineador de offset y la fresa rígida.
+8. Fresar con la fresa tibial GenuX® MK hasta el tope.
+9. Para la preparación del acoplamiento: insertar la guía de fresa de acoplamiento GenuX® MK del tamaño correcto. Las tres barras deben alinearse con las tres muescas; el grabado "ANT" hacia la tibia anterior. Fresar hasta el tope.
+10. Preparación de aletas: conectar el mango al punzón de aletas del tamaño tibial determinado. Punzonar hasta el tope.
+11. Desconectar el punzón de aletas, conectar el mango a las aletas de fijación tibial MK. Punzonar hasta el tope.
+12. Retirar el punzón, la guía de fresado y los pines.
+
+---
+
+## 7. Preparación de Vástagos Pequeños (11, 12 y 14 mm)
+
+Vástagos con porción cónica: Ø11 mm cementado (todas las longitudes), Ø12 mm sin cemento, Ø14 mm sin cemento.
+
+- **Ø12 mm sin cemento:** Fresa cónica GenuX® MK diámetro 11 mm
+- **Ø11 mm cementado y Ø14 mm sin cemento:** Fresa cónica GenuX® MK diámetro 13 mm
+
+Conectar la fresa cónica al mango ic-T. Colocar el tope en el marcador del fresador correspondiente (T0 sin espaciador; Tx con espaciador de x mm). Introducir el fresador hasta que el tope toque la tibia proximal.
+
+---
+
+## 8. Reducción de Prueba (Trial)
+
+1. Conectar el componente tibial de prueba GenuX® MK al adaptador de offset de prueba del offset determinado con el destornillador hexagonal 3.5 mm.
+2. Verificar la posición correcta del adaptador con el alineador de offset tibial.
+3. Atornillar el vástago de prueba al adaptador de offset.
+4. Insertar el componente tibial de prueba con el impactor tibial GenuX® MK.
+5. Adjuntar los espaciadores tibiales de prueba del tamaño determinado al componente tibial de prueba.
+6. Conectar el vástago RS con el KRI a través de la conexión de cono. Considerar la marca de curvatura del vástago y el KRI para la correcta alineación femoral.
+7. Si se usa la pieza de extensión de 25 mm, añadirla entre el vástago y el KRI.
+8. No insertar el tornillo para la prueba — esto permite reajuste de la rotación femoral.
+9. Impactar los componentes en el hueso femoral con el impactor.
+10. Seleccionar el inserto tibial de prueba del tipo deseado (MB o FB) del tamaño correspondiente. La altura es libremente seleccionable.
+11. Usar el instrumento para el mecanismo de bloqueo para insertar el acoplamiento de prueba MUTARS® en el componente femoral. La altura del acoplamiento debe ser igual a la altura del inserto PE. Ensamblar como se muestra y girar el acoplamiento 90° en sentido horario.
+12. Colocar el perno del acoplamiento en la abertura del componente tibial de prueba con el orificio hacia anterior.
+13. Insertar el posicionador desde ventral en el orificio del componente tibial de prueba.
+14. Bloquear el acoplamiento desde ventral con el tornillo de prueba y el destornillador 3.5 mm.
+15. Verificar la estabilidad articular en flexión y extensión.
+16. Retirar todos los componentes de prueba con el martillo deslizante combinado con el extractor.
+
+---
+
+## 9. Implantación de Componentes Definitivos
+
+**Componente tibial:**
+1. Acoplar el adaptador de offset determinado al cono del componente tibial.
+2. Acoplar el vástago del tamaño y longitud determinados al adaptador de offset.
+3. Fijar la conexión cónica con el impactor tibial y el bloque de montaje de vástagos.
+
+**Montaje femoral:**
+1. Combinar el KRI y la pieza de extensión opcional con el vástago femoral. Verificar la rotación correcta.
+2. Insertar el tornillo para KRI de la longitud correcta.
+3. Bloquear con la llave de balancín MUTARS® y asegurar con el instrumento contra.
+4. Bloquear el tornillo de seguridad de la misma manera.
+
+> Si se usan espaciadores de 25 o 35 mm: fijar el espaciador al componente tibial ANTES de acoplar el adaptador de offset.
+> Si se usan espaciadores de 45 mm: solo el adaptador de offset 0 mm puede combinarse con el componente tibial.
+
+**Acoplamiento definitivo:**
+1. Usar el instrumento para el mecanismo de bloqueo para insertar el acoplamiento MUTARS® en el componente femoral. La altura del acoplamiento debe ser la misma que la altura del inserto PE seleccionado.
+2. Con la rodilla en flexión, insertar el acoplamiento en la caja femoral y girarlo 180° en sentido horario. Si es necesario, usar el posicionador como palanca.
+3. Retirar el instrumento para el mecanismo de bloqueo.
+4. Colocar el perno del acoplamiento en la abertura del componente tibial con el orificio hacia anterior.
+5. Insertar el posicionador desde ventral.
+6. Seleccionar el inserto PE definitivo (MB o FB) del tipo deseado y colocarlo en el componente tibial.
+7. Bloquear el acoplamiento desde ventral con el tornillo para acoplamiento y el destornillador hexagonal 3.5 mm.
+8. Insertar el tornillo de seguridad y bloquearlo.
+9. Realizar pruebas finales de estabilidad articular antes de cerrar la articulación.
+
+---
+
+## 10. Explantación
+
+1. Desbloquear el tornillo de seguridad tibial y el tornillo de bloqueo desde ventral con el destornillador 3.5 mm.
+2. Usar el instrumento para el mecanismo de bloqueo para retirar el acoplamiento del componente KRI.
+3. Retirar el tornillo de seguridad y el tornillo para KRI.
+4. Usar el extractor para KRI y el instrumento contra para retirar el KRI.
+
+> El KRI debe retirarse del vástago inmediatamente tras aflojar la conexión. Un mayor roscado del extractor puede provocar atasco y ruptura de instrumentos.
+> El extractor para KRI solo puede usarse en explantación. Los componentes (vástago RS + KRI) no pueden reensamblarse tras desconectarse.
+
+5. Para los componentes tibiales: atornillar el extractor tibial al martillo deslizante, insertar desde arriba en el orificio de bloqueo del componente tibial, bloquear con la pestaña y retirar con el martillo deslizante.`,
+
+    componentes: `## MUTARS® KRI MK — Componentes del Sistema
+
+### Tornillo para KRI
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Medida |
+|---|---|
+| 5720-2508 | M8 x 25 mm |
+| 5720-5008 | M8 x 50 mm |
+
+---
+
+### MUTARS® KRI M-O-M (incl. tornillo de seguridad) *N *SN
+Material: implavit®, CoCrMo según ISO 5832-4; tornillo contra: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Lateralidad |
+|---|---|
+| 5720-0048 | Derecho |
+| 5720-0043 | Izquierdo |
+
+---
+
+### MUTARS® Acoplamiento *N
+Material: implavit®, CoCrMo según ISO 5832-12; perno PE: UHMW-PE según ISO 5834-2
+
+| REF | Altura |
+|---|---|
+| 5720-1210 | 12.5 mm |
+| 5720-1212 | 15.0 mm* |
+| 5720-1217 | 17.5 mm* |
+
+---
+
+### MUTARS® Tornillo para acoplamiento (incl. tornillo contra)
+Material: implatan®, TiAl6V4 según ISO 5832-3 con recubrimiento TiN
+- REF: 5720-1201
+
+---
+
+### Vástagos Femorales RS
+
+**MUTARS® Vástago RS Cementado *N**
+Material: implavit®, CoCrMo según ISO 5832-4
+
+| Talla | L: 120 mm* | L: 150 mm | L: 200 mm |
+|---|---|---|---|
+| Ø12 mm | 6760-1212 | 6760-1215 | 6761-1220 |
+| Ø14 mm | 6760-1412 | 6760-1415 | 6761-1420 |
+| Ø16 mm | 6760-1612 | 6760-1615 | 6761-1620 |
+| Ø18 mm | 6760-1812 | 6760-1815 | 6761-1820 |
+
+*L=120mm no incluida en set de préstamo, pedir por separado.
+
+**MUTARS® Vástago RS sin Cemento HA**
+Material: implatan®, TiAl6V4 según ISO 5832-3 con recubrimiento HA según ISO 13779-2
+
+| Talla | L: 150 mm | L: 200 mm | L: 250 mm |
+|---|---|---|---|
+| Ø12 mm | 6762-1512 | 6762-2012 | — |
+| Ø14 mm | 6762-1514 | 6762-2014 | 6762-2514 |
+| Ø16 mm | 6762-1516 | 6762-2016** | 6762-2516 |
+| Ø18 mm | 6762-1518 | 6762-2018** | 6762-2518** |
+| Ø20 mm | 6762-1520 | 6762-2020** | 6762-2520** |
+| Ø22 mm* | 6762-1522 | 6762-2022** | 6762-2522** |
+
+*No incluidos en set de préstamo. **Con orificios para tornillos de bloqueo Ø4.5 mm.
+
+---
+
+### MUTARS® RS Pieza de Extensión
+Material: implatan®, TiAl6V4 según ISO 5832-3
+- REF 6730-0025: 25 mm
+
+---
+
+### Insertos PE
+
+**MUTARS® GenuX® MK Inserto PE MB (plataforma móvil)**
+Material: UHMW-PE según ISO 5834-2
+
+| Talla | 12.5 mm | 15.0 mm* | 17.5 mm* |
+|---|---|---|---|
+| 2 | 5721-0102 | 5721-0132 | 5721-0152 |
+| 3 | 5721-0103 | 5721-0133 | 5721-0153 |
+| 4 | 5721-0104 | 5721-0134 | 5721-0154 |
+| 5 | 5721-0105 | 5721-0135 | 5721-0155 |
+| 6* | 5721-0106 | 5721-0136 | 5721-0156 |
+
+**MUTARS® GenuX® MK Inserto PE FB (plataforma fija)**
+
+| Talla | 12.5 mm | 15.0 mm* | 17.5 mm* |
+|---|---|---|---|
+| 2 | 5721-0202 | 5721-0232 | 5721-0252 |
+| 3 | 5721-0203 | 5721-0233 | 5721-0253 |
+| 4 | 5721-0204 | 5721-0234 | 5721-0254 |
+| 5 | 5721-0205 | 5721-0235 | 5721-0255 |
+| 6* | 5721-0206 | 5721-0236 | 5721-0256 |
+
+**Insertos implacross® E (PE reticulado con Vitamina E)**
+
+| Talla | 12.5 mm MB | 12.5 mm FB |
+|---|---|---|
+| 2-6* | 5721-0112 a 5721-0116 | 5721-0212 a 5721-0216 |
+
+*Talla 6, alturas 15.0 y 17.5 mm y material implacross® E no incluidos en el set de préstamo.
+
+---
+
+### Componentes Tibiales
+
+**MUTARS® GenuX® MK Tibia cementada (incl. tornillo contra + tornillo acoplamiento) *N**
+
+| Talla | REF |
+|---|---|
+| 2 | 5751-0602 |
+| 3 | 5751-0603 |
+| 4 | 5751-0604 |
+| 5 | 5751-0605 |
+| 6* | 5751-0606 |
+
+**MUTARS® GenuX® MK Tibia sin cemento (incl. tornillo contra + tornillo acoplamiento) *N**
+
+| Talla | REF |
+|---|---|
+| 2 | 5751-0702 |
+| 3 | 5751-0703 |
+| 4 | 5751-0704 |
+| 5 | 5751-0705 |
+| 6* | 5751-0706 |
+
+---
+
+### Vástagos Tibiales GenuX® MK
+
+**Sin Cemento HA**
+
+| Diámetro | L: 125mm | L: 150mm | L: 200mm* | L: 250mm* |
+|---|---|---|---|---|
+| 12 mm | 5767-1212 | 5767-1215 | 5767-1220 | 5767-1225 |
+| 14 mm | 5767-1412 | 5767-1415 | 5767-1420 | 5767-1425 |
+| 16 mm | 5767-1612 | 5767-1615 | 5767-1620 | 5767-1625 |
+| 18 mm | 5767-1812 | 5767-1815 | 5767-1820 | 5767-1825 |
+| 20 mm | 5767-2012 | 5767-2015 | 5767-2020 | 5767-2025 |
+| 22 mm | 5767-2212 | 5767-2215 | 5767-2220 | 5767-2225 |
+
+**Cementado *N**
+
+| Diámetro | L: 125mm | L: 150mm | L: 200mm* | L: 250mm* |
+|---|---|---|---|---|
+| 11 mm | 5766-1112 | 5766-1115 | 5766-1120 | 5766-1125 |
+| 13 mm | 5766-1312 | 5766-1315 | 5766-1320 | 5766-1325 |
+| 15 mm | 5766-1512 | 5766-1515 | 5766-1520 | 5766-1525 |
+| 17 mm | 5766-1712 | 5766-1715 | 5766-1720 | 5766-1725 |
+| 19 mm | 5766-1912 | 5766-1915 | 5766-1920 | 5766-1925 |
+
+---
+
+### Adaptador de Offset GenuX® MK
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+| REF | Offset |
+|---|---|
+| 5751-0000 | 0 mm |
+| 5751-0002 | +2 mm |
+| 5751-0004 | +4 mm |
+| 5751-0006 | +6 mm |
+
+---
+
+### Espaciadores Tibiales MK *S (incl. tornillo)
+Material: implatan®, TiAl6V4 según ISO 5832-3
+
+Unicondílares: 5, 10, 15 y 20 mm (LL/RM y RL/LM), tallas 2-6.
+Bicondílares: 25, 35 y 45 mm, tallas 2-6.
+
+> **Nota:** Para espaciadores de 45 mm, solo puede usarse el adaptador de offset 0 mm.`,
+
+    instrumental: `## MUTARS® KRI MK — Cajas de Instrumental
+
+### CAJA 7999-5829 — MUTARS® KRI MK Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Extractor RS para KRI M-O-M | 6500-0017 | Retirar el KRI durante explantación |
+| Extractor de componente femoral GenuX® MK | 4214-0129 | Retirar el componente femoral de prueba |
+| Impactor para componente femoral MUTARS® | 7610-0000 | Impactar componente femoral |
+| Instrumento contra KRI/Distal Femur M-O-M | 7230-1004 | Asegurar y aflojar tornillo KRI |
+| Extractor para KRI | 7230-1003 | Extracción del KRI definitivo |
+| Broca tibial ACS® | 4221-0008 | Broca tibial complementaria |
+| Trial KRI MK (izquierdo/derecho) | 7720-0143/0148 | Prueba articular del componente KRI |
+| Tornillo de prueba para KRI | 7720-2508/5008 | M8 x 25/50 mm para trial |
+| Pieza de extensión RS de prueba 25 mm | 6500-0025 | Simular pieza de extensión |
+| Mango ic-T Zimmer-Jakobs | 4223-0023 | Mango para fresas cónicas |
+| Instrumento de asentamiento angular acoplamiento | 7751-1201 | Posicionar acoplamiento |
+| Acoplamiento de prueba GenuX® 12.5 mm | 7720-1210 | Prueba del acoplamiento |
+| Tornillo de prueba para acoplamiento MK | 7720-1213 | Bloquear acoplamiento en trial |
+| Instrumento de asentamiento para mecanismo de bloqueo | 7751-1200 | — |
+| Posicionador para mecanismo de bloqueo | 7610-0003 | Palanca para acoplamiento |
+| Instrumento para mecanismo de bloqueo MUTARS® | 7720-1201 | Insertar acoplamiento |
+| Adaptador de extracción M8x1 a M8 | 6500-0060 | — |
+| Sleeve para raspa KRI (12-14 mm) | 7770-0114 | Guiar raspa en canal femoral |
+| Sleeve para raspa KRI (16-20 mm) | 7770-0116 | — |
+
+---
+
+### CAJA 7999-6715 — MUTARS® RS ES Container 2
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Martillo deslizante con mecanismo snap | 6500-0012 | Impactar vástago RS |
+| Impactor de vástago RS ES | 6500-3000 | Impactar vástago RS en canal femoral |
+| Varilla guía RS ES | 6500-3003 | Guiar el sistema RS en el canal |
+| Llave de vaso RS SW 6 mm | 6500-0013 | Apretar tornillo del vástago RS |
+| Llave de vaso 300 mm | 7420-0300 | Apretar tornillos modulares |
+| Llave de balancín larga | 7411-0001 | Apretar tornillo para KRI |
+| Fresador metafisiario RS 21 mm ES | 6500-3021 | Preparar porción metafisiaria del canal femoral |
+
+---
+
+### CAJA 7999-5802 — MK Tibial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Mango de alineación tibial | 4210-2215 | Verificar rotación tibial |
+| Sleeve de offset tibial MK (0, 2, 4, 6mm) | 4210-4261/4263/4267/4270 | Evaluar offset tibial |
+| Fresa tibial GenuX® MK | 4214-0120 | Preparación final lecho tibial |
+| Fresa de acoplamiento tibial GenuX® MK | 4214-0124 | Preparar cavidad de acoplamiento |
+| Guía de fresa de acoplamiento tibial GenuX® MK | 4214-0125 | Guiar la fresa de acoplamiento |
+| Punzón de aletas MK (tallas 2-4 y 5-6) | 4214-0142/0145 | Preparar aletas de fijación |
+| Mango para punzón de aletas tibial | 4215-0447 | — |
+| Verificador de resección largo | 4220-0318 | Verificar nivel de resección |
+| Guía de fresado tibial MK (tallas 2-5) | 4220-4202 a 4220-4205 | Definir talla y guiar fresado |
+| Brocas 126 x 3.2mm (x2) | 4221-0019 | — |
+| Estilete tibial 2/12.5mm para resección con slot | 4220-0428 | Referencia de altura de resección |
+| Guía de alineación I/M tibial | 7755-0024 | Alineación intramedular |
+| Bloque de corte tibial revisión 0° | 7755-0054 | Resección tibial |
+| Pines de fijación 3.2mm x 77mm (x4) | 4223-0029 | Fijar guía al hueso |
+| Aletas de fijación tibial MK | 4214-0146 | — |
+| Pines de taladrado 3.2mm x 77/97mm | 4224-0132/0133 | — |
+
+---
+
+### CAJA 7999-5804 — GenuX® MK Tibial Trial Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Impactor tibial GenuX® MK | 4214-0130 | Insertar componente tibial de prueba |
+| Destornillador hexagonal corto 3.5mm | 0280-1007 | Fijar adaptadores de offset |
+| Componentes tibiales de prueba GenuX® MK (tallas 2-5) | 7751-0602 a 7751-0605 | Ensayo tibial |
+| Instrumento de alineación de offset tibial MK | 4220-4210 | Verificar y ajustar offset |
+| Adaptadores de offset de prueba (0, 2, 4, 6mm) | 7751-0000/02/04/06 | Simular offset tibial |
+| Insertos de prueba MB GenuX® MK (tallas 2-5/12.5mm) | 7721-0102 a 7721-0105 | Prueba inserto MB |
+| Insertos de prueba FB GenuX® MK (tallas 2-5/12.5mm) | 7721-0202 a 7721-0205 | Prueba inserto FB |
+| Extractor tibial | 7755-0020 | Retirar componente tibial de prueba |
+| Adaptador para martillo deslizante M5 | 7801-0025 | Retirar adaptadores sueltos |
+
+---
+
+### CAJA 7999-5800 — GenuX® MK Basic Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Verificador de resección largo | 4220-0318 | — |
+| Guía de alineación femoral 6° | 4220-0880 | — |
+| Adaptador de bloque de corte distal | 4220-0819 | — |
+| Guía de rotación externa (neutral/3°D/3°I) | 4220-0820/0824/0825 | Controlar rotación femoral |
+| Host de alineación externo | 4223-0004 | — |
+| Insertador de pines 3.2mm | 4223-0006 | — |
+| Mango ic-T Zimmer-Jakobs | 4223-0023 | — |
+| Martillo deslizante corto | 4223-0031 | Retirar guías |
+| Adaptador M8 para martillo | 4223-0032 | — |
+| Varilla de alineación externa 6x400mm | 4223-0035 | Verificar alineación |
+| Extractor femoral/tibial | 4223-0036 | Extraer componentes de prueba |
+| Osteótomo tallas 2-6 | 4223-0060 | Preparar entalladura anterior |
+| Extractor de pines | 7512-0800 | — |
+| Adaptador ic | 4223-0022 | — |
+| Adaptador de pines ic | 4220-0421 | — |
+
+---
+
+### CAJAS DE FRESAS RÍGIDAS
+
+**CAJA 7999-5774 — Rigid Drill Container 1 (Ø10-18mm)**
+
+| Instrumento | REF |
+|---|---|
+| Fresas rígidas Ø10-18/330mm | 4220-3110 a 4220-3118 |
+| Sleeves de fresa 12-18/150mm | 4211-1512 a 4211-1518 |
+| Sleeves de fresa 12-18/200mm | 4211-2012 a 4211-2018 |
+| Fresa iniciadora 9mm | 4220-0014 |
+| Fresa para base de vástago | 7330-1010 |
+
+**CAJA 7999-5775 — Rigid Drill Container 2 (Ø19-27mm)**
+
+| Instrumento | REF |
+|---|---|
+| Fresas rígidas Ø19-27/330mm | 4220-3119 a 4220-3127 |
+| Sleeves de fresa 19-23/150mm | 4211-1519 a 4211-1523 |
+| Sleeves de fresa 19-23/200mm | 4211-2019 a 4211-2023 |
+
+---
+
+### CAJA 7999-6724 — MUTARS® RS Trial Stem Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Vástagos de prueba RS (Ø12-20mm, 150-250mm) | 6511-xxxx | Simular vástago RS definitivo |
+
+---
+
+### CAJA 7999-6721 — MUTARS® RS Broach Container (2 bandejas)
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Raspas RS (Ø12-20mm, 150-200mm) | 6500-xxxx / 6501-xxxx | Preparación canal medular femoral |
+| Adaptador extractor de vástago RS ES | 6500-3007 | Extracción de vástago RS |
+| Impactor de raspa RS | 6500-0008 | Impactar raspa RS |
+
+---
+
+### CAJA 7999-5805 — MK Trial Stem Container
+
+| Instrumento | REF | Función |
+|---|---|---|
+| Fresa cónica GenuX® MK Ø11mm | 4214-0127 | Preparar porción cónica vástagos pequeños |
+| Fresa cónica GenuX® MK Ø13mm | 4214-0128 | — |
+| Tope para fresas cónicas GenuX® MK | 4220-4211 | Controlar profundidad |
+| Adaptador para martillo deslizante | 4223-0033 | — |
+| Vástagos de prueba GenuX® MK (Ø11-27mm, 125-250mm) | 7766-xxxx | Simular vástago tibial definitivo |
+
+---
+
+### CAJAS COMPLEMENTARIAS
+
+- **7999-5770 — Stem Assembly Container:** Bloque de montaje de vástagos MK (4223-4003).
+- **7999-5808 — MK Tibia Trial Spacer Container:** Espaciadores tibiales de prueba unicondílares 5/10/15/20mm (LL/RM y RL/LM), tallas 2-5.
+- **7999-5819 — MK Tibia Trial Container Size 6:** Guía fresa acoplamiento talla 6, guía fresado talla 6, insertos MB/FB talla 6, espaciadores talla 6.
+- **7999-5848 — MK Trial PE-insert Container 15.0mm y 17.5mm:** Insertos de prueba MB y FB en alturas 15.0 y 17.5mm, tallas 2-6.
+- **7999-7000 — Flexible Reamer Nitinol Container:** Eje de fresador flexible nitinol + cabezas de fresa nitinol Ø8.5-19.0mm.`,
+
+    tips: `## 🎯 Perlas Quirúrgicas Clave — MUTARS® KRI MK
+
+- **La línea articular está marcada en la raspa RS.** Usar "KRI joint line" para la resección estándar de 75 mm y "KRI +25mm joint line" si se añade la pieza de extensión. No resecar distal a "KRI bone" o "KRI +25mm bone".
+- **La resección femoral puede ser de solo 50 mm** si la parte proximal del KRI se insertará en el canal medular distal. Esto preserva stock óseo y puede ser relevante en pacientes jóvenes o en revisiones donde se prevé una futura re-revisión.
+- **No insertar el tornillo para KRI durante la prueba articular.** Esto permite reajustar la rotación femoral sin tener que retirar el componente. Solo fijar en definitivo tras verificar la rotación óptima.
+- **La altura del acoplamiento DEBE coincidir con la altura del inserto PE.** KRI MK ofrece tres alturas (12.5, 15.0 y 17.5 mm). Un acoplamiento de 12.5 mm con inserto de 15.0 mm genera inestabilidad del mecanismo de bloqueo.
+- **Girar el acoplamiento de prueba 90° y el definitivo 180°.** En la prueba articular se giran 90° en sentido horario; en el definitivo, 180°. Confundirlos deja el acoplamiento sin fijación adecuada.
+
+---
+
+## ⚠️ Errores Más Comunes y Cómo Evitarlos
+
+- **Resecar distal a la marca "KRI bone":** El componente KRI no tendría soporte óseo proximal. Verificar la marca en la raspa ANTES de la resección.
+- **Diámetro par de fresa tibial:** Siempre terminar con diámetro impar para asegurar press-fit o espacio de cemento adecuado.
+- **Espaciador de 45mm combinado con offset > 0mm:** Solo el adaptador de 0mm es compatible con espaciadores de 45mm. Revisar esta restricción en la planificación.
+- **Intentar rensamblar vástago RS y KRI tras explantación:** La conexión entre vástago RS y KRI, y entre KRI y pieza de extensión RS, NO pueden reensamblarse tras desconectarse. El extractor para KRI solo es para explantación.
+- **Omitir el sleeve de fresa tibial en vástagos > 125mm:** Sin sleeve, el canal tibial queda fresado excéntricamente.
+
+---
+
+## 💡 Tips de Planificación Preoperatoria
+
+- Determinar preoperatoriamente si se necesita la pieza de extensión RS de 25mm. Esto cambia la marca de referencia de la raspa y la longitud del tornillo para KRI.
+- Verificar la altura del acoplamiento según el espacio articular planificado (12.5, 15.0 o 17.5 mm). Los acoplamientos y los insertos PE deben tener la misma altura.
+- Para pacientes con alergia a metales (Ni, Co, Cr): solicitar componentes con recubrimiento *N (TiN). Para alto riesgo infeccioso: solicitar *S (plata).
+- La altura de PE libremente seleccionable (12.5/15.0/17.5 mm) permite ajustar el espacio articular sin cambiar los componentes óseos — útil para calibrar la tensión ligamentaria o, en tumoral, la longitud del miembro.
+- Disponer de TODAS las longitudes de vástago RS necesarias antes de la cirugía. Los vástagos de Ø13, 15, 17, 19, 21 y 22mm sin cemento y el de L=120mm cementado no están en el set de préstamo.
+
+---
+
+## 🔧 Trucos Intraoperatorios
+
+- **Usar el posicionador como palanca** para girar el acoplamiento definitivo 180°. No intentarlo con los dedos — el torque es insuficiente y hay riesgo de contaminación.
+- **En implantación cementada del vástago RS, retirar todos los instrumentos durante el fraguado.** Cualquier instrumento que transmita estrés al cemento compromete la interfaz.
+- **Limpiar la raspa RS de fragmentos óseos durante el raspado** del canal femoral. Una raspa cargada de fragmentos no permite evaluar correctamente la resistencia del tejido óseo.
+- **Verificar la curvatura del vástago RS antes de insertar.** El marcado de curvatura en el vástago debe coincidir con el del KRI para asegurar la alineación femoral correcta.
+- **El extractor para KRI solo puede usarse una vez.** Evitar roscarlo más allá del primer afloje — el sobreroscado puede producir atasco y ruptura del instrumento.
+
+---
+
+## 🦴 Manejo de Situaciones Difíciles
+
+- **Canal femoral muy estrecho:** El KRI MK usa vástagos RS que parten desde Ø12 mm, compatibles con canales más estrechos que otros sistemas de revisión.
+- **Defecto tibial unilateral significativo:** El sistema permite espaciadores unicondílares de 5-20mm. Para defectos de 25-45mm, usar espaciadores bicondílares. Recuerda la restricción con offset al usar 45mm.
+- **Pérdida ósea femoral distal extensa:** Si no se puede anclar el KRI en el hueso distal, evaluar si el implante oncológico MUTARS® Distal Femur MK es más adecuado. El KRI está diseñado para revisión con preservación del stock óseo distal femoral.
+- **Tejidos blandos comprometidos (RT/QT):** Considerar recubrimiento de plata (*S) para componentes no articulares. Evitar Betaisodona® y antisépticos oxidantes durante el lavado de la herida.
+
+---
+
+## 📐 Optimización de Resultados
+
+- **Tres alturas de PE (12.5/15.0/17.5mm)** dan mayor flexibilidad para ajustar el espacio articular sin modificar los componentes óseos.
+- **La plataforma móvil (MB) permite hasta 20° de rotación** — más tolerante a errores rotacionales que el sistema FB.
+- **El offset tibial de 0-6mm** ayuda a optimizar la cobertura de la plataforma tibial y alinear el brazo de palanca del mecanismo extensor.
+- **Verificar la estabilidad en todos los arcos** antes de liberar el acoplamiento definitivo.
+
+---
+
+## 🔴 Señales de Alerta (Red Flags)
+
+- Raspa RS que no avanza con torque normal → verificar si el canal tiene curvatura marcada; considerar fresa flexible más pequeña
+- Acoplamiento que no gira 180° → revisar que la caja del KRI esté limpia y el perno libre de tejido blando
+- Inestabilidad persistente en trial → verificar que la altura del acoplamiento sea igual a la del inserto PE; revisar rotación femoral
+- KRI que no asienta completamente → verificar que el nivel de resección femoral sea correcto y que no haya fragmentos óseos en el canal`
   }
 };
 
@@ -3505,13 +5876,15 @@ const PRODUCT_META = {
   'knee-primary-acs-ps-fb': { name: 'ACS PS FB', seg: 'Rodilla', type: 'Primaria', color: 'var(--knee)', desc: 'Sistema de rodilla primaria con sacrificio de ligamento cruzado posterior (PS) y base fija (FB)' },
   'knee-revision-acs-sc-fb': { name: 'ACS SC FB', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Sistema de revisión de rodilla con vástago centromedular y base fija' },
   'knee-revision-genux-mk': { name: 'Genux MK', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Sistema de revisión modular de rodilla con constricción variable (Mega Knee)' },
-  'knee-revision-conos-metafisiarios': { name: 'Conos Metafisiarios', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Conos porosos para reconstrucción metafisiaria en revisiones de rodilla' },
-  'knee-revision-conos-corticales': { name: 'Conos Corticales', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Conos corticales para reconstrucción en defectos óseos severos de rodilla' },
+  'knee-revision-conos-metafisiarios': { name: 'EPORE® Conos Metafisiarios', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Conos metafisiarios de titanio poroso EPORE® (EBM). Press-fit 0,3 mm sin cemento. Para GenuX® MK y ACS® SC. 4 tallas femoral y tibial. Cementación del componente protésico sobre el cono.' },
+  'knee-revision-conos-corticales': { name: 'EPORE® Conos Corticales', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Conos corticales de titanio poroso EPORE® (EBM). Press-fit 0,2 mm sin cemento. Para GenuX® MK y ACS® SC MB/FB. Femoral en 30/40/50 mm, tibial en 20/30 mm y escalonados. 4 tallas cada uno.' },
   'knee-revision-vainas-genux': { name: 'Vainas Genux MK', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Vainas de extensión para el sistema Genux MK en revisiones complejas' },
   'knee-revision-vainas-asc': { name: 'Vainas ASC SC', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Vainas de extensión para el sistema ACS SC en revisiones' },
-  'knee-revision-kri': { name: 'KRI', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Sistema de rodilla de revisión con alta constricción y soporte intramedular' },
+
   'knee-revision-artrodesis-rs': { name: 'Artrodesis RS', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Clavo de artrodesis de rodilla para casos de infección o fracaso de revisión' },
-  'knee-tumor-femur-distal': { name: 'MUTARS — Fémur Distal', seg: 'Rodilla', type: 'Tumoral', color: 'var(--tumor)', desc: 'Endoprótesis tumoral MUTARS para reconstrucción de fémur distal tras resección oncológica' },
+
+  'knee-tumor-femur-distal-mk': { name: 'MUTARS — Fémur Distal MK', seg: 'Rodilla', type: 'Tumoral', color: 'var(--tumor)', desc: 'Sistema tumoral completamente constreñido MUTARS® Distal Femur MK con inserto MB/FB para reconstrucción oncológica del fémur distal' },
+  'knee-revision-kri-mk': { name: 'KRI MK', seg: 'Rodilla', type: 'Revisión', color: 'var(--knee)', desc: 'Sistema modular de revisión de rodilla KRI MK completamente constreñido con vástago RS, tres alturas de PE y offset tibial 360° ajustable' },
   'knee-tumor-tibia-proximal': { name: 'MUTARS — Tibia Proximal', seg: 'Rodilla', type: 'Tumoral', color: 'var(--tumor)', desc: 'Endoprótesis tumoral MUTARS para reconstrucción de tibia proximal' },
   'knee-tumor-femur-diafisiario': { name: 'MUTARS — Fémur Diafisiario', seg: 'Rodilla', type: 'Tumoral', color: 'var(--tumor)', desc: 'Endoprótesis segmentaria para defectos diafisiarios del fémur' },
   'knee-tumor-artrodesis-tumoral': { name: 'MUTARS — Artrodesis Tumoral', seg: 'Rodilla', type: 'Tumoral', color: 'var(--tumor)', desc: 'Sistema de artrodesis para rodilla tumoral con soporte intramedular' },
@@ -3566,11 +5939,11 @@ const SEGMENTS = {
         { id: 'conos-corticales',    type: 'revision', name: 'Conos Corticales' },
         { id: 'vainas-genux',        type: 'revision', name: 'Vainas Genux MK' },
         { id: 'vainas-asc',          type: 'revision', name: 'Vainas ASC SC' },
-        { id: 'kri',                 type: 'revision', name: 'KRI' },
+        { id: 'kri-mk',              type: 'revision', name: 'KRI MK' },
         { id: 'artrodesis-rs',       type: 'revision', name: 'Artrodesis RS' },
       ]},
       { label: 'Tumoral (MUTARS)', products: [
-        { id: 'femur-distal',       type: 'tumor', name: 'Fémur Distal' },
+        { id: 'femur-distal-mk',    type: 'tumor', name: 'Fémur Distal MK' },
         { id: 'tibia-proximal',     type: 'tumor', name: 'Tibia Proximal' },
         { id: 'femur-diafisiario',  type: 'tumor', name: 'Fémur Diafisiario' },
         { id: 'artrodesis-tumoral', type: 'tumor', name: 'Artrodesis Tumoral' },
@@ -3707,7 +6080,6 @@ function loadProduct(seg, type, id) {
   closeSidebar();
   const key = `${seg}-${type}-${id}`;
   currentProduct = key;
-  Object.keys(generatedContent).forEach(k => { if(k.startsWith(key+'-')) delete generatedContent[k]; });
 
   const meta = PRODUCT_META[key];
   if (!meta) return;
@@ -3734,9 +6106,8 @@ function loadProduct(seg, type, id) {
   resetTabContent();
   switchTab('tecnica');
 
-  if (OFFICIAL_CONTENT[key]) {
-    setTimeout(() => generateContent('tecnica'), 100);
-  }
+  // Cargar todas las tabs de inmediato
+  ['tecnica', 'componentes', 'instrumental', 'tips'].forEach(tab => loadTabContent(tab));
 
   document.querySelectorAll('.product-item').forEach(el => el.classList.remove('active'));
   const activeItem = document.querySelector(`.product-item[onclick*="'${id}'"]`);
@@ -3757,14 +6128,10 @@ function goHome() {
 
 function resetTabContent() {
   ['tecnica','componentes','instrumental','tips'].forEach(tab => {
-    document.getElementById(`placeholder${cap(tab)}`).style.display = 'flex';
-    document.getElementById(`loading${cap(tab)}`).classList.remove('show');
     const c = document.getElementById(`content${cap(tab)}`);
     c.classList.remove('show');
     c.innerHTML = '';
   });
-  document.getElementById('contentAsk').classList.remove('show');
-  document.getElementById('contentAsk').innerHTML = '';
 }
 
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
@@ -3782,183 +6149,33 @@ function switchTab(tab) {
 }
 
 // ========================
-// AI CONTENT GENERATION
+// MOSTRAR CONTENIDO
 // ========================
-const PROMPTS = {
-  tecnica: (meta) => `Eres un experto en cirugía ortopédica y técnicas quirúrgicas de implantes.
-Genera una técnica quirúrgica COMPLETA y DETALLADA para el implante: **${meta.name}** (${meta.seg} - ${meta.type}).
-Descripción del implante: ${meta.desc}
-
-Incluye:
-## Indicaciones y Contraindicaciones
-## Planificación Preoperatoria
-## Posición del Paciente y Acceso Quirúrgico
-## Técnica Quirúrgica Paso a Paso
-(Numera cada paso detalladamente desde la incisión hasta el cierre)
-## Verificación Intraoperatoria
-## Cierre y Cuidados Postoperatorios
-
-Usa formato markdown con headers, sublistas y tablas cuando sea útil. Sé preciso y clínico.`,
-
-  componentes: (meta) => `Eres un experto en implantes ortopédicos y sistemas de prótesis.
-Genera información COMPLETA de componentes para el implante: **${meta.name}** (${meta.seg} - ${meta.type}).
-Descripción: ${meta.desc}
-
-Incluye:
-## Componentes del Sistema
-(Lista todos los componentes con función de cada uno)
-## Tallas y Dimensiones Disponibles
-(Tabla con tallas, diámetros, longitudes para cada componente)
-## Materiales y Superficies
-## Compatibilidad con Otros Sistemas
-(Compatibilidades e incompatibilidades conocidas)
-## Opciones de Cabeza/Inserto/Liner
-## Codificación y Referencias de Catálogo
-
-Usa tablas markdown para tallas y referencias. Sé técnico y preciso.`,
-
-  instrumental: (meta) => `Eres un experto en instrumental quirúrgico ortopédico y gestión de cajas.
-Genera el detalle COMPLETO de cajas de instrumental para: **${meta.name}** (${meta.seg} - ${meta.type}).
-Descripción: ${meta.desc}
-
-Incluye:
-## Cajas de Instrumental Requeridas
-(Lista cada caja con su nombre oficial)
-
-### Para cada caja:
-- Nombre oficial de la caja
-- Función de la caja en el procedimiento
-- Contenido detallado (cada instrumento con cantidad y función)
-
-## Equipamiento Adicional Requerido
-## Orden de Uso de las Cajas Durante la Cirugía
-## Consideraciones de Esterilización
-
-Usa formato de lista estructurado y tablas donde sea aplicable.`,
-
-  tips: (meta) => `Eres un cirujano ortopédico experto con amplia experiencia en ${meta.seg.toLowerCase()} y especialmente en el sistema ${meta.name}.
-Genera tips, trucos y pearls quirúrgicas AVANZADAS y PRÁCTICAS para: **${meta.name}** (${meta.seg} - ${meta.type}).
-
-Incluye:
-## 🎯 Perlas Quirúrgicas Clave
-## ⚠️ Errores Más Comunes y Cómo Evitarlos
-## 💡 Tips de Planificación Preoperatoria
-## 🔧 Trucos Intraoperatorios
-## 🦴 Manejo de Situaciones Difíciles
-(Pérdida ósea, fractura intraoperatoria, mala alineación, etc.)
-## 📐 Optimización de Resultados
-## 🔴 Señales de Alerta (Red Flags)
-
-Sé específico, práctico y comparte el conocimiento que solo un experto con muchos casos tendría.`,
-};
-
-async function generateContent(tab) {
-  if (!currentProduct) return;
-  const meta = PRODUCT_META[currentProduct];
-  if (!meta) return;
-
-  const cacheKey = `${currentProduct}-${tab}`;
-  if (generatedContent[cacheKey]) {
-    showContent(tab, generatedContent[cacheKey], true);
-    return;
-  }
-
-  // Check for official PDF content first
-  if (OFFICIAL_CONTENT[currentProduct] && OFFICIAL_CONTENT[currentProduct][tab]) {
-    const officialText = OFFICIAL_CONTENT[currentProduct][tab];
-    generatedContent[cacheKey] = officialText;
-    showContent(tab, officialText, false);
-    const btn = document.getElementById(`btn${cap(tab)}`);
-    btn.textContent = '↺ Regenerar con IA';
-    document.getElementById(`placeholder${cap(tab)}`).style.display = 'none';
-    return;
-  }
-
-  const btn = document.getElementById(`btn${cap(tab)}`);
-  btn.disabled = true;
-  btn.textContent = '⏳ Generando...';
-
-  document.getElementById(`placeholder${cap(tab)}`).style.display = 'none';
-  document.getElementById(`loading${cap(tab)}`).classList.add('show');
-  document.getElementById(`content${cap(tab)}`).classList.remove('show');
-
-  try {
-    const prompt = PROMPTS[tab](meta);
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        messages: [{ role: "user", content: prompt }]
-      })
-    });
-
-    const data = await response.json();
-    const text = data.content.map(i => i.text || '').join('\n');
-    generatedContent[cacheKey] = text;
-    showContent(tab, text, true);
-  } catch (err) {
-    showContent(tab, `## Error\n\nNo se pudo generar el contenido. Por favor intenta nuevamente.\n\n**Error:** ${err.message}`, true);
-  }
-
-  btn.disabled = false;
-  btn.textContent = '↺ Regenerar';
-}
-
-function showContent(tab, markdown, isAI=false) {
-  document.getElementById(`loading${cap(tab)}`).classList.remove('show');
+function showContent(tab, markdown) {
   const el = document.getElementById(`content${cap(tab)}`);
   const isOfficial = OFFICIAL_CONTENT[currentProduct] && OFFICIAL_CONTENT[currentProduct][tab];
-  const badge = isOfficial && !isAI
+  const badge = isOfficial
     ? `<div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.3);border-radius:20px;font-size:11px;font-weight:700;color:var(--gold2);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">📄 Contenido Oficial — ${OFFICIAL_CONTENT[currentProduct].source}</div>`
-    : `<div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--accent-glow);border:1px solid rgba(61,139,255,0.2);border-radius:20px;font-size:11px;font-weight:700;color:var(--accent2);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">✦ Generado por IA</div>`;
+    : '';
   el.innerHTML = badge + renderMarkdown(markdown);
   el.classList.add('show');
 }
 
-async function askQuestion(q) {
-  document.getElementById('askInput').value = q;
-  await askCustomQuestion();
-}
-
-async function askCustomQuestion() {
+function loadTabContent(tab) {
   if (!currentProduct) return;
-  const q = document.getElementById('askInput').value.trim();
-  if (!q) return;
-
-  const meta = PRODUCT_META[currentProduct];
-  const loadEl = document.getElementById('loadingAsk');
-  const contentEl = document.getElementById('contentAsk');
-
-  loadEl.classList.add('show');
-  contentEl.classList.remove('show');
-
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        messages: [{
-          role: "user",
-          content: `Eres un experto cirujano ortopédico. El procedimiento en cuestión es: ${meta.name} (${meta.seg} - ${meta.type}). Descripción: ${meta.desc}.\n\nPregunta específica: ${q}\n\nResponde de forma concisa, práctica y clínica.`
-        }]
-      })
-    });
-    const data = await response.json();
-    const text = data.content.map(i => i.text || '').join('\n');
-    loadEl.classList.remove('show');
-    contentEl.innerHTML = renderMarkdown(text);
-    contentEl.classList.add('show');
-  } catch(err) {
-    loadEl.classList.remove('show');
-    contentEl.innerHTML = `<p style="color:var(--tumor)">Error: ${err.message}</p>`;
-    contentEl.classList.add('show');
+  const official = OFFICIAL_CONTENT[currentProduct];
+  if (official && official[tab]) {
+    showContent(tab, official[tab]);
+  } else {
+    const el = document.getElementById(`content${cap(tab)}`);
+    el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center;color:var(--text3);">
+      <div style="font-size:36px;margin-bottom:16px;opacity:0.4;">🚧</div>
+      <div style="font-size:16px;font-weight:600;color:var(--text2);margin-bottom:8px;">Próximamente</div>
+      <div style="font-size:13px;max-width:300px;line-height:1.6;">El contenido de esta sección está en preparación y estará disponible en una próxima actualización.</div>
+    </div>`;
+    el.classList.add('show');
   }
 }
-
 
 // ========================
 // SIMPLE MARKDOWN RENDERER
@@ -4038,6 +6255,22 @@ function filterProducts(query) {
     document.querySelectorAll('.segment-header, .subseg-header').forEach(h => h.classList.add('open'));
   }
 }
+
+// ========================
+// iOS TOUCH FIX
+// ========================
+// En iOS Safari, los div con onclick no siempre responden al tap.
+// Este listener delega el evento touch a los elementos con onclick.
+document.addEventListener('touchstart', function(){}, {passive: true});
+
+// Asegurar que todos los elementos con onclick sean accesibles al tap en iOS
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[onclick]').forEach(function(el) {
+    if (el.tagName !== 'BUTTON' && el.tagName !== 'A') {
+      el.style.cursor = 'pointer';
+    }
+  });
+});
 </script>
 </body>
 </html>
