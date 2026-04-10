@@ -1444,7 +1444,6 @@
             <div class="product-item" onclick="loadProduct('hip','primary','cabeza-bipolar')">Cabeza Bipolar</div>
             <div class="product-item" onclick="loadProduct('hip','primary','vastago-ecofit-nc')">Vástago EcoFit®</div>
             <div class="product-item" onclick="loadProduct('hip','primary','vastago-bicana-c')">Vástago Bicana Cementado</div>
-            <div class="product-item" onclick="loadProduct('hip','primary','copa-ecofit-2m')">Copa Ecofit 2M No Cementada</div>
           </div>
           <div class="subseg-header" onclick="toggleSubseg(this)">
             <span class="subseg-arrow">▶</span> Revisión
@@ -1453,7 +1452,7 @@
             <div class="product-item" onclick="loadProduct('hip','revision','vastago-rs')">Vástago RS</div>
             <div class="product-item" onclick="loadProduct('hip','revision','vastago-bicana-rev')">Vástago Bicana Revisión</div>
             <div class="product-item" onclick="loadProduct('hip','revision','copa-rs')">Copa RS</div>
-            <div class="product-item" onclick="loadProduct('hip','revision','copa-ecofit-2m-c')">Copa Ecofit 2M Cementada</div>
+            <div class="product-item" onclick="loadProduct('hip','revision','copa-ecofit-2m-c')">Copa EcoFit® 2M (No Cementada y Cementada)</div>
             <div class="product-item" onclick="loadProduct('hip','revision','prs-canastillo')">PRS con Canastillo</div>
             <div class="product-item" onclick="loadProduct('hip','revision','aumentos-acetabulares')">Aumentos Acetabulares</div>
           </div>
@@ -1465,6 +1464,7 @@
             <div class="product-item" onclick="loadProduct('hip','tumor','femur-prox-rs')">Fémur Proximal RS</div>
             <div class="product-item" onclick="loadProduct('hip','tumor','femur-total')">Fémur Total</div>
             <div class="product-item" onclick="loadProduct('hip','tumor','lumic')">Lumic</div>
+            <div class="product-item" onclick="loadProduct('nail','tumor','carbofix-femur')">Clavo Carbofix — Fémur</div>
           </div>
         </div>
       </div>
@@ -1493,20 +1493,8 @@
             <div class="product-item" onclick="loadProduct('shoulder','tumor','humero-diaf')">Húmero Diafisiario</div>
             <div class="product-item" onclick="loadProduct('shoulder','tumor','ulna-proximal')">Ulna Proximal</div>
             <div class="product-item" onclick="loadProduct('shoulder','tumor','codo-total')">Codo Total</div>
+            <div class="product-item" onclick="loadProduct('nail','tumor','carbofix-humero')">Clavo Carbofix — Húmero</div>
           </div>
-        </div>
-      </div>
-
-      <!-- CARBOFIX -->
-      <div class="nav-segment">
-        <div class="segment-header" onclick="toggleSeg(this)" data-seg="nail">
-          <div class="seg-dot" style="background:var(--tumor)"></div>
-          <span class="seg-name">Clavo Carbofix</span>
-          <span class="seg-arrow">▶</span>
-        </div>
-        <div class="segment-children">
-          <div class="product-item" onclick="loadProduct('nail','tumor','carbofix-humero')">Clavo Largo — Húmero</div>
-          <div class="product-item" onclick="loadProduct('nail','tumor','carbofix-femur')">Clavo Largo — Fémur</div>
         </div>
       </div>
 
@@ -1569,7 +1557,7 @@
       <div class="seg-card hip" onclick="openSegment('hip')">
         <div class="seg-card-icon">🦴</div>
         <div class="seg-card-name">Cadera</div>
-        <div class="seg-card-count">7 primaria · 6 revisión · 4 tumorales</div>
+        <div class="seg-card-count">5 primaria · 6 revisión · 5 tumorales</div>
         <div class="seg-card-types">
           <span class="type-chip" style="color:var(--hip)">Primaria</span>
           <span class="type-chip" style="color:var(--hip)">Revisión</span>
@@ -1579,7 +1567,7 @@
       <div class="seg-card shoulder" onclick="openSegment('shoulder')">
         <div class="seg-card-icon">💪</div>
         <div class="seg-card-name">Hombro</div>
-        <div class="seg-card-count">1 primaria/revisión · 6 tumorales</div>
+        <div class="seg-card-count">1 primaria/revisión · 7 tumorales</div>
         <div class="seg-card-types">
           <span class="type-chip" style="color:var(--shoulder)">Agilon</span>
           <span class="type-chip" style="color:var(--tumor)">Tumoral</span>
@@ -13735,6 +13723,2938 @@ Ejemplo: Copa NC 46/50 → Capuchón 28/46 → Cabeza 28 mm ✓
 - **El capuchón articula libremente — no se cementa ni fija a la copa:** Es un sistema de doble articulación libre. No aplicar ningún adhesivo.
 - **Herramienta de ensamblaje 2900-2000 obligatoria:** Unir el capuchón a la cabeza femoral siempre con la herramienta — nunca a mano.
 - **Copas de prueba azules y naranjas:** Funcionalmente idénticas. El color es solo estético — no indica diferencia de talla ni de material.`
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  //  EcoFit® 2M — Copa Cementada (Revisión)
+  // ─────────────────────────────────────────────────────────────────
+  'hip-revision-copa-ecofit-2m-c': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH / MBA — EcoFit® 2M Cotilo Doble Movilidad — Traducción ic-Academy',
+
+    tecnica: `## EcoFit® 2M — Copa Doble Movilidad Cementada
+
+La copa EcoFit® 2M es un cotilo de **doble movilidad (tripolar)** disponible en versión **no cementada** (press-fit + recubrimiento HA) y **cementada** (CoCrMo con estrías circunferenciales). Ambas versiones comparten el mismo instrumental y los mismos capuchones ImplaCross. Esta técnica cubre la versión **cementada**, indicada en cirugías de revisión con stock óseo comprometido o calidad ósea insuficiente para press-fit.
+
+> La versión no cementada ya está documentada en la ficha **Copa EcoFit® 2M No Cementada**. Esta técnica se centra en las diferencias de la versión cementada y en el flujo quirúrgico completo unificado.
+
+---
+
+### Los tres componentes del sistema
+
+1. **Copa EcoFit® 2M cementada** — CoCrMo con estrías circunferenciales (integración en el manto de cemento) y acanaladuras longitudinales (evacuación del cemento sobrante)
+2. **Capuchón ImplaCross Vitamina E** — polietileno crosslinked con Vitamina E añadida; articula externamente con la copa y retiene internamente la cabeza femoral
+3. **Cabeza femoral** — disponible en CoCrMo (28 mm / 32 mm) o cerámica BIOLOX® delta
+
+> **Dos articulaciones simultáneas:** La cabeza gira dentro del capuchón (par interno, M1 — la mayor parte del movimiento). El capuchón gira dentro de la copa pulida (par externo, M2 — sólo en movimientos extremos). La distancia anti-luxación es el radio del capuchón, no el de la cabeza → máxima estabilidad.
+
+---
+
+## Planificación Preoperatoria (Paso 1)
+
+La planificación preoperatoria permite al cirujano determinar el tamaño aproximado del componente definitivo y su orientación anatómica. Están disponibles plantillas radiográficas EcoFit® 2M (REF X.262) especialmente diseñadas para este propósito.
+
+> **Criterio de talla para copa cementada:** El implante cementado debe ser **2 mm menor** que la última fresa utilizada (el espacio de 1 mm a cada lado queda relleno por el manto de cemento).
+
+---
+
+## Paso 2 — Fresado Acetabular
+
+El fresado acetabular se inicia progresivamente comenzando por la fresa de menor tamaño (REF 29X03046), acoplada al mango portafresas (REF 29502010).
+
+1. Fresar progresivamente en incrementos de 2 mm hasta hueso subcondral sangrante
+2. Mantener una inclinación de ~45° de abducción y 10–20° de anteversión
+3. Para la versión cementada: fresar **2 mm más grande** que el diámetro del implante elegido
+
+---
+
+## Paso 3 — Verificación con Copa de Prueba (Trial)
+
+Una vez alcanzado el diámetro de fresa deseado, verificar el asentamiento con una copa de prueba (REF 295023XX) acoplada al impactor de cotilo (REF 0282003X).
+
+> Los cotilos de prueba tienen diseño perfectamente hemisférico — no incorporan la sobredimensión ecuatorial del implante definitivo (1,5–2 mm).
+
+---
+
+## Paso 4 — Preparación del Impactor
+
+Acoplar el **Mango en T Zimmer-Jacobs** (REF 42230023) al impactor EcoFit® 2M (REF 02201800). Conectar el **adaptador para impactor recto** (REF 022018XX) del tamaño correspondiente junto con la copa definitiva.
+
+Girar el Mango en T en el sentido de las agujas del reloj → el adaptador se ensancha y fija la copa en posición. Desacoplar el Mango en T del impactor, dejando el sistema listo para la implantación.
+
+---
+
+## Paso 5 — Preparación del Cemento e Implantación
+
+**Diferencia clave respecto a la versión no cementada:**
+
+1. Preparar el lecho acetabular con lavado pulsátil y secado
+2. Introducir el cemento óseo en el acetábulo (técnica de cementación estándar)
+3. La copa cementada debe ser **2 mm menor** que la última fresa utilizada
+4. Implantar la copa con una inclinación de **45° de abducción y 10–20° de anteversión**
+5. La **marca láser** de la copa debe orientarse hacia la zona **postero-superior** del acetábulo
+6. Mantener la copa en posición durante el fraguado del cemento con el inserto de prueba 2M (REF 295022XX) acoplado al impactor de cotilo
+7. Una vez fraguado, retirar el inserto de prueba junto con el impactor
+
+---
+
+## Paso 6 — Desacoplamiento del Impactor
+
+Desacoplar la copa del impactor utilizando el Mango en T y girando en sentido contrario a las agujas del reloj.
+
+> Para copas cementadas: durante el fraguado se puede asegurar la posición del implante con el inserto de prueba 2M (REF 295022XX) acoplado al impactor de cotilo.
+
+---
+
+## Paso 7 — Reducción de Prueba
+
+Una vez la copa está firmemente fijada:
+
+1. Retirar el inserto de prueba 2M junto con el impactor
+2. Combinar el inserto de prueba 2M con la cabeza de prueba del diámetro correspondiente (REF 7962XXXX)
+3. Realizar la reducción de prueba: valorar estabilidad articular, rango de movimiento y elegir la longitud definitiva de la cabeza femoral
+
+---
+
+## Paso 8 — Ensamblaje de Componentes Definitivos
+
+1. Tras la reducción de prueba, seleccionar los componentes definitivos
+2. Ensamblar el **inserto ImplaCross 2M** a la cabeza femoral definitiva usando la **pieza de ensamblaje** (REF 29002000): girar la manivela en sentido horario hasta ejercer la presión necesaria entre los componentes
+3. Impactar ambos componentes en el vástago femoral definitivo con el **impactor de cabeza femoral** (REF 29500039)
+4. Realizar la **reducción definitiva**`,
+
+    componentes: `## Componentes — EcoFit® 2M Copa Cementada
+
+### Copa EcoFit® 2M — Cementada
+*CoCrMo con estrías circunferenciales y acanaladuras longitudinales para evacuación del cemento*
+
+| Dimensiones (Ø int/ext) | Referencia |
+|---|---|
+| 38/44 mm | 02201144 |
+| 40/46 mm | 02201146 |
+| 42/48 mm | 02201148 |
+| 44/50 mm | 02201150 |
+| 46/52 mm | 02201152 |
+| 48/54 mm | 02201154 |
+| 50/56 mm | 02201156 |
+| 52/58 mm | 02201158 |
+| 54/60 mm | 02201160 |
+| 56/62 mm | 02201162 |
+
+> La copa cementada se fresea 2 mm más grande que el implante para conseguir el manto de cemento de 1 mm a cada lado.
+
+---
+
+### Inserto ImplaCross Vitamina E (capuchón 2M)
+*Polietileno crosslinked con Vitamina E añadida — compartido con versión no cementada*
+
+| Dimensiones (Ø cabeza / Ø capuchón) | Referencia |
+|---|---|
+| 22/38 mm | 29052238 |
+| 22/40 mm | 29052240 |
+| 28/42 mm | 29052842 |
+| 28/44 mm | 29052844 |
+| 28/46 mm | 29052846 |
+| 32/48 mm | 29053248 |
+| 32/50 mm | 29053250 |
+| 32/52 mm | 29053252 |
+| 32/54 mm | 29053254 |
+| 32/56 mm | 29053256 |
+| 32/58 mm | 29053258 |
+
+---
+
+### Cuadro de Combinaciones — Copa Cementada
+
+| Cabeza femoral | Capuchón ImplaCross | Copa cementada (implante) | Fresa acetabular |
+|---|---|---|---|
+| 22 mm | 38 mm | 44 mm | 46 mm |
+| 22 mm | 40 mm | 46 mm | 48 mm |
+| 28 mm | 42 mm | 48 mm | 50 mm |
+| 28 mm | 44 mm | 50 mm | 52 mm |
+| 28 mm | 46 mm | 52 mm | 54 mm |
+| 32 mm | 48 mm | 54 mm | 56 mm |
+| 32 mm | 50 mm | 56 mm | 58 mm |
+| 32 mm | 52 mm | 58 mm | 60 mm |
+| 32 mm | 54 mm | 60 mm | 62 mm |
+| 32 mm | 56 mm | 62 mm | 64 mm |
+
+---
+
+### Cabeza EcoFit® 2M
+*Disponible en CoCrMo (Cromo Cobalto) y cerámica BIOLOX® delta; tallas 28 mm y 32 mm*`,
+
+    instrumental: `## Instrumental — EcoFit® 2M (Compartido para versión cementada y no cementada)
+
+El sistema EcoFit® 2M usa el mismo instrumental para ambas versiones (cementada y no cementada). Se organiza en dos contenedores:
+
+---
+
+### CONTENEDOR I / REF. 02201081 — Bandeja de Cabezas de Prueba (naranja)
+
+| Nº | Referencia | Descripción | Talla |
+|---|---|---|---|
+| 1 | 02201081F | Contenedor EcoFit® 2M I vacío | — |
+| 2 | 29500039 | Impactor de cabeza femoral | — |
+| 3 | 29002000 | Pieza de ensamblaje cabezas ic head | — |
+| 4 | 29502238 | Inserto de prueba 2M | 22/38 mm |
+| 4 | 29502240 | Inserto de prueba 2M | 22/40 mm |
+| 4 | 29502842 | Inserto de prueba 2M | 28/42 mm |
+| 4 | 29502844 | Inserto de prueba 2M | 28/44 mm |
+| 4 | 29502846 | Inserto de prueba 2M | 28/46 mm |
+| 4 | 29503248 | Inserto de prueba 2M | 32/48 mm |
+| 4 | 29503250 | Inserto de prueba 2M | 32/50 mm |
+| 4 | 29503252 | Inserto de prueba 2M | 32/52 mm |
+| 4 | 29503254 | Inserto de prueba 2M | 32/54 mm |
+| 4 | 29503256 | Inserto de prueba 2M | 32/56 mm |
+| 5 | 79622205 | Cabeza de prueba cono 12/14 | 22 mm M |
+| 5 | 79622210 | Cabeza de prueba cono 12/14 | 22 mm L |
+| 6 | 79622800–2815 | Cabeza de prueba cono 12/14 | 28 mm S/M/L/XL |
+| 7 | 79623200–3215 | Cabeza de prueba cono 12/14 | 32 mm S/M/L/XL |
+
+---
+
+### CONTENEDOR I / REF. 02201081 — Bandeja de Instrumental
+
+| Nº | Referencia | Descripción | Talla |
+|---|---|---|---|
+| 1 | 02201081F | Contenedor EcoFit® 2M I vacío | — |
+| 2 | 02820030 | Impactor de cotilo | — |
+| 3 | 29502010 | Mango para fresa de acetábulo | — |
+| 4 | 29502342–2362 | Cotilo de prueba | 42–62 mm |
+| 5 | 29603042–3062 | Fresa de acetábulo bajo perfil | 42–62 mm |
+
+---
+
+### CONTENEDOR II / REF. 02201082 — Impactor Recto y Adaptadores
+
+| Nº | Referencia | Descripción | Talla |
+|---|---|---|---|
+| 1 | 02201082F | Contenedor EcoFit® 2M II vacío | — |
+| 2 | 02201800 | Impactor recto EcoFit® 2M | — |
+| 3 | 02201838–1858 | Adaptador para impactor recto EcoFit® 2M | 38–58 mm |
+| 4 | 42230023 | Mango en T Zimmer-Jacobs | — |`,
+
+    tips: `## 💡 Tips Clínicos — EcoFit® 2M Copa Cementada
+
+### ¿Cuándo elegir la versión cementada sobre la no cementada?
+
+La copa cementada está especialmente indicada en **cirugías de revisión** donde el stock óseo o la calidad del hueso no permiten un press-fit adecuado:
+- Defectos acetabulares Paprosky I–II con hueso friable
+- Pacientes con osteoporosis severa
+- Revisiones donde el lecho es irregular y no garantiza press-fit circunferencial
+- Cuando el acetábulo está sobredimensionado por cirugías previas
+
+---
+
+### 📐 Regla de tallas para la versión cementada
+
+> **Copa cementada = 2 mm menos que la fresa.** El espacio de 1 mm a cada lado forma el manto de cemento.
+
+Ejemplo: Fresa 50 mm → Copa cementada 48 mm → Inserto 32/48 → Cabeza 32 mm ✓
+
+La versión **no cementada** usa la copa del mismo tamaño que la fresa (el PressFit viene del recubrimiento HA).
+
+---
+
+### 🔑 Diferencias prácticas entre versión cementada y no cementada
+
+| | Copa No Cementada | Copa Cementada |
+|---|---|---|
+| Material superficie exterior | CoCrMo + HA (PressFit) | CoCrMo con estrías (cemento) |
+| Talla del implante vs fresa | Igual que la fresa | 2 mm menor que la fresa |
+| Fijación definitiva | Press-fit + HA | Cemento óseo |
+| Indicación principal | Primaria / revisión leve | Revisión con defecto óseo |
+| Posición durante fraguado | N/A | Mantener con inserto de prueba |
+
+---
+
+### ⚠️ Puntos Críticos — Copa Cementada
+
+- **Lavado pulsátil previo al cemento:** El lecho óseo debe estar limpio y seco para una buena penetración del cemento.
+- **Mantener posición durante el fraguado:** Usar el inserto de prueba 2M acoplado al impactor para evitar que la copa rote durante la polimerización.
+- **La marca láser es la referencia de orientación:** Debe quedar en la zona postero-superior del acetábulo — verificar antes de que fragüe el cemento.
+- **El capuchón ImplaCross NO se fija a la copa:** Es un sistema de doble articulación libre — nunca aplicar adhesivo. El capuchón queda retenido mecánicamente.
+- **Pieza de ensamblaje 29002000 obligatoria:** Unir el capuchón a la cabeza siempre con la herramienta — nunca a mano libre para evitar daños en el PE.
+- **Desgaste distribuido:** El PE crosslinked + Vitamina E minimiza la degradación. La doble articulación reparte el desgaste entre los dos pares de fricción (0,048 mm³/año exterior + 0,08 mm³/año interior).`
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  //  MUTARS® — HÚMERO DISTAL (Hombro/Codo Tumoral)
+  // ─────────────────────────────────────────────────────────────────
+  'shoulder-tumor-humero-distal': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® Distal Humerus Surgical Technique — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® Húmero Distal — Técnica Quirúrgica
+
+El MUTARS® Húmero Distal es un sistema modular de endoprótesis oncológica para reconstrucción del húmero distal y la articulación del codo tras resección tumoral. En uso clínico exitoso desde 1992.
+
+---
+
+## Planificación Preoperatoria
+
+La planificación quirúrgica es obligatoria. El cirujano determina las dimensiones del implante y la posición de los componentes mediante plantillas digitales (incluidas en los sistemas de planificación habituales) o plantillas radiográficas disponibles a través del representante local.
+
+---
+
+## Opciones de Ensamblaje
+
+| Reconstrucción (mm) | Húmero Distal (mm) | Extensión (mm) | Conexión (mm) | Extensión (mm) | Tornillo |
+|---|---|---|---|---|---|
+| 60 | 50 | — | — | — | 15 |
+| 80 | 50 | 20 | — | — | 35 |
+| 100 | 50 | 40 | — | — | 55 |
+| 120 | 50 | 60 | — | — | 75 |
+| 140 | 50 | — | 80 | — | 15+15 |
+| 160 | 50 | 20 | 80 | — | 35+15 |
+| 180 | 50 | 40 | 80 | — | 55+15 |
+| 200 | 50 | 60 | 80 | — | 75+15 |
+| 220 | 50 | 60 | 80 | 20 | 75+35 |
+| 240 | 50 | 60 | 80 | 40 | 75+55 |
+| 260 | 50 | 60 | 80 | 20+40 | 75+75 |
+
+---
+
+## Paso 1 — Resección Tumoral
+
+Medir el tamaño del hueso resecado y compararlo con la planificación preoperatoria.
+
+> Si la cabeza del radio está libre de tumor, no es necesario resecarla.
+
+---
+
+## Paso 2 — Preparación de la Ulna Proximal
+
+1. Observar la geometría ósea y el ajuste del anclaje ulnar.
+2. Retirar cartílago y hueso obsoleto del olécranon.
+3. Abrir el canal medular en la posición adecuada con la broca de 6 mm con tope.
+
+> El orificio del peg central es ligeramente menor que el peg del implante — se bloqueará por PressFit.
+
+---
+
+## Paso 3 — Implantación del Anclaje Ulnar
+
+1. Insertar la guía en el canal medular. Usar la fresa flexible de 5 mm guiada por la varilla hasta alcanzar la profundidad deseada.
+   - Sin cemento: 70 mm | Con cemento: 70 mm y 100 mm
+2. El marcador del fresador debe alinearse con la punta del olécranon.
+3. Ampliar la entrada ventral (Proc. Coronoideus) y dorsal. Preservar el olécranon si es posible.
+4. Raspar la ulna con la raspa MUTARS® para anclaje ulnar.
+5. Control radiológico final en dos planos.
+
+> **Atención:** Riesgo de vía falsa con perforación cortical. Control en dos planos obligatorio.
+> Al elegir la raspa, verificar el lado (I / D).
+
+---
+
+## Paso 4 — Fijación del Anclaje Ulnar con Tornillo
+
+Se recomienda reforzar siempre la fijación con tornillo óseo (cementado y sin cemento).
+
+1. Si cementado: limpiar cavidad e insertar cemento antes de impactar el anclaje.
+2. Impactar con instrumento de colocación recto o angulado.
+3. Perforar con broca 2 mm, medir longitud del tornillo de 4 mm e insertar.
+
+> Los anclajes sin tornillo esponjoso muestran tasas elevadas de aflojamiento. Evitar tornillos corticales transcorticales por riesgo de perforación cutánea.
+
+---
+
+## Paso 5 — Preparación Ósea Humeral
+
+**Sin cemento:** Broca humeral 1 mm menor que el vástago elegido.
+**Con cemento:** Broca humeral 2 mm mayor que el vástago elegido.
+
+Preparar la cavidad con el fresador de cavidad medular MUTARS®.
+
+> Obtener contacto cortical uniforme para evitar enclavamiento.
+
+---
+
+## Paso 6 — Raspado del Canal Humeral
+
+Ensamblar raspa del tamaño adecuado, extractor, impactador humeral y sleeve. Bloquear con llave de contrasoporte.
+
+**Sin cemento — Tabla 1 (misma talla):**
+
+| Vástago | Raspa |
+|---|---|
+| 9 mm | 9 mm |
+| 10 mm | 10 mm |
+| 11 mm | 11 mm |
+| 12 mm | 12 mm |
+| 13 mm | 13 mm |
+
+**Con cemento — Tabla 2 (raspa 2 mm mayor = manto 1 mm):**
+
+| Vástago | Raspa |
+|---|---|
+| 8 mm | 10 mm |
+| 9 mm | 11 mm |
+| 10 mm | 12 mm |
+| 11 mm | 13 mm |
+| 12 mm | 14 mm |
+
+Raspar con el mazo. Dejar la raspa en el hueso para la prueba. Limpiar la raspa durante el raspado y fijar pinza ósea alrededor del húmero para prevenir fracturas corticales.
+
+---
+
+## Paso 7 — Reducción de Prueba (Trial)
+
+Montar el húmero distal y las piezas de extensión necesarias (20–200 mm) sobre la raspa. Ensamblar el mecanismo articular insertando el eje de prueba.
+
+> No existen vástagos de prueba — si se usó vástago cementado sin pasar por raspa, la prueba se realiza con el vástago cementado sin cemento.
+
+---
+
+## Paso 8 — Implantación del Vástago Humeral
+
+1. Montar vástago del tamaño correcto y sleeve de impacto sobre el impactador.
+2. Apretar la conexión con el instrumento de contrasoporte. Impactar el vástago.
+3. Sin cemento: mismo tamaño que la raspa.
+4. Opcional: tornillo cortical de 3,5 mm para proteger contra rotación.
+5. Con cemento: insertar cemento y usar vástago 2 mm menor que broca o raspa.
+6. Retirar todos los instrumentos durante el fraguado.
+
+---
+
+## Paso 9 — Implantación de los Componentes Distales
+
+1. Combinar el húmero distal sobre el vástago. Extender si es necesario con piezas de extensión. Ajustar rotación.
+2. Bloquear con tornillo humeral de longitud correcta (ver tabla).
+3. Asegurar con llave de vaso pequeña MUTARS® y contrasoporte.
+4. Bloquear tornillo de seguridad de la misma forma.
+
+---
+
+## Paso 10 — Tope Ulnar y Reducción Final
+
+1. Insertar tope ulnar con instrumento de colocación — debe cerrar completamente el orificio del húmero distal.
+2. Conectar húmero distal al anclaje ulnar insertando el eje articular.
+
+---
+
+## Paso 11 — Bloqueo del Eje Articular
+
+Insertar los tornillos de bloqueo en ambos lados con la llave de vaso pequeña MUTARS®.`,
+
+    componentes: `## Implantes — MUTARS® Húmero Distal
+
+> *S: Recubrimiento de plata antiinfeccioso. *N: Recubrimiento TiN antialérgico.
+
+### MUTARS® Húmero Distal 50 mm (incl. eje, tornillo de seguridad, 2 tornillos de bloqueo, tapa) *S
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832-3 | eje y buje CoCrMo ISO 5832-12*
+**REF 5250-0000**
+
+---
+
+### MUTARS® Anclaje Ulnar sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 con implaFix® Duo; cpTi y HA según ISO 13779-2 | buje CoCrMo ISO 5832-12*
+
+| REF | Lado | Longitud |
+|---|---|---|
+| 5250-1015 | Izquierdo | 70 mm |
+| 5250-1020 | Derecho | 70 mm |
+
+---
+
+### MUTARS® Anclaje Ulnar cementado *N
+*Mat.: implavit® CoCrMo ISO 5832-4 | buje CoCrMo ISO 5832-12*
+
+| REF | Lado | Longitud |
+|---|---|---|
+| 5250-5070 | Izquierdo | 70 mm |
+| 5250-0070 | Derecho | 70 mm |
+| 5250-5100 | Izquierdo | 100 mm |
+| 5250-0100 | Derecho | 100 mm |
+
+---
+
+### MUTARS® Tope Ulnar
+*Mat.: UHMWPE ISO 5834-2*
+**REF 5250-1100**
+
+---
+
+### Tornillo esponjoso 4 mm
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+
+| REF | Longitud |
+|---|---|
+| 5793-4026 | 26 mm |
+| 5793-4028 | 28 mm |
+| 5793-4030 | 30 mm |
+| 5793-4032 | 32 mm |
+| 5793-4034 | 34 mm |
+
+---
+
+### MUTARS® Tornillo humeral
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+
+| REF | Medida |
+|---|---|
+| 5230-0015 | M8×15 mm |
+| 5230-0035 | M8×35 mm |
+| 5230-0055 | M8×55 mm |
+| 5230-0075 | M8×75 mm |
+
+---
+
+### MUTARS® Vástago humeral HA sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 con implaFix® HA ISO 13779-2*
+
+| REF | Diámetro |
+|---|---|
+| 5240-0808 | 8 mm |
+| 5240-0809 | 9 mm |
+| 5240-0810 | 10 mm |
+| 5240-0811 | 11 mm |
+| 5240-0812 | 12 mm |
+| 5240-0813 | 13 mm |
+| 5240-0814 | 14 mm* |
+| 5240-0815 | 15 mm* |
+| 5240-0816 | 16 mm* |
+
+*Disponibles bajo pedido.
+
+---
+
+### MUTARS® Vástago humeral cementado *N
+*Mat.: implavit® CoCrMo ISO 5832-4*
+
+| REF | Diámetro |
+|---|---|
+| 5240-0408 | 8 mm |
+| 5240-0409 | 9 mm |
+| 5240-0410 | 10 mm |
+| 5240-0411 | 11 mm |
+| 5240-0412 | 12 mm |
+
+Tallas especiales bajo pedido.
+
+---
+
+### MUTARS® Pieza de extensión humeral *S
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+
+| REF | Longitud |
+|---|---|
+| 5220-0020 | 20 mm |
+| 5220-0040 | 40 mm |
+| 5220-0060 | 60 mm |
+
+---
+
+### MUTARS® Pieza de conexión humeral *S
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+**REF 5221-0080** — 80 mm
+
+---
+
+### MUTARS® Tubo de fijación (attachment tube)
+*Mat.: Polietileno tereftalato (PET)*
+
+| REF | Longitud |
+|---|---|
+| 5900-0300 | 35 mm |
+| 5900-0310 | 55 mm |`,
+
+    instrumental: `## Instrumental — MUTARS® Húmero Distal
+
+### Contenedor Humeral MUTARS® (7999-5200)
+
+| Instrumento | REF |
+|---|---|
+| Dispositivo extractor MUTARS® | 7220-0000 |
+| Llave de vaso pequeña MUTARS® | 7608-1010 |
+| Broca humeral ic-connection 7–14 mm | 7630-0207 a 7630-0214 |
+| Fresador de cavidad medular MUTARS® | 4220-0000 |
+| Raspa humeral 9–13 mm | 7770-0809 a 7770-0813 |
+| Impactador humeral MUTARS® | 7710-0000 |
+| Sleeve de impacto + extracción humeral | 7721-0000 |
+| Llave para tapa / contrasoporte MUTARS® | 7710-0001 |
+| Instrumento de contrasoporte Ø 6 mm | 7420-0001 |
+| Tapa de prueba — pequeña / mediana / grande | 7710-1000 / 7710-1005 / 7710-1010 |
+| ic T-handle Zimmer-Jakobs | 4223-0023 |
+| ic-adapter | 4223-0022 |
+
+---
+
+### Contenedor Húmero Distal MUTARS® (7999-5150)
+
+| Instrumento | REF |
+|---|---|
+| Raspa para componente ulnar — izquierda | 7420-0009 |
+| Raspa para componente ulnar — derecha | 7420-0010 |
+| Instrumento de colocación ulnar recto | 7420-0013 |
+| Instrumento de colocación ulnar angulado | 7420-0014 |
+| Eje de prueba para húmero distal | 7420-0015 |
+| Calibrador de profundidad pequeño | 0270-1015 |
+| Broca para mandril 3 garras 2 mm | 7520-0000 |
+| Destornillador hexagonal 2,5 mm | 7608-1001 |
+| Fresa flexible | 7701-2005 |
+| Broca de rótula MUTARS® | 7351-0000 |
+| Guía para fresa flexible | 7512-0039 |
+| Rimador ulnar | 7420-0016 |
+| Anclaje ulnar de prueba — izquierdo | 7710-1281 |
+| Anclaje ulnar de prueba — derecho | 7710-1282 |
+
+---
+
+### Contenedor de Trials Humeral MUTARS® (7999-5202)
+
+| Instrumento | REF |
+|---|---|
+| Tapa de prueba con rosca — pequeña / mediana / grande | 7710-1200 / 1205 / 1210 |
+| Cabeza de prueba humeral MUTARS® | 7710-1252 |
+| Pieza de extensión de prueba 20 / 40 / 60 mm | 7710-0020 / 0040 / 0060 |
+| Reductor de prueba 10 / 100 mm | 7710-2100 / 7710-2101 |
+| Pieza de conexión de prueba 80 mm | 7710-2180 |
+| Tornillo de prueba M8×15 mm (×2) | 7710-2315 |
+| Tornillo de prueba M8×35 / 55 / 75 mm | 7710-2335 / 2355 / 2375 |
+| Trial húmero distal 50 mm MUTARS® | 7710-1275 |`,
+
+    tips: `## 💡 Tips de Planificación Preoperatoria
+
+- La **resección mínima** recomendada es 60 mm. Verificar con plantillas la longitud de reconstrucción necesaria.
+- El sistema es **modular**: el húmero distal de 50 mm se combina con piezas de extensión (20, 40, 60 mm) y la pieza de conexión de 80 mm para alcanzar la longitud necesaria.
+- Verificar disponibilidad de todos los implantes e instrumentos antes de la cirugía.
+- Si la cabeza del radio está libre de tumor, no resecarla.
+
+---
+
+## 🔧 Tips Intraoperatorios
+
+- **Anclaje ulnar:** Reforzar siempre con tornillo esponjoso de 4 mm — los anclajes sin tornillo muestran tasas elevadas de aflojamiento. Preferir esponjoso sobre cortical para evitar perforación cutánea.
+- **Control radiológico en dos planos** obligatorio tras preparar el canal ulnar — riesgo real de vía falsa.
+- **Fresado humeral:** Sin cemento → 1 mm menor. Con cemento → 2 mm mayor. Asegurar contacto cortical uniforme.
+- **Dejar la raspa en el hueso** para el ensamblaje de prueba — permite evaluar posición antes de implantar el vástago definitivo.
+- Retirar todos los instrumentos durante el fraguado del cemento.
+
+---
+
+## ⚠️ Puntos Críticos
+
+- **Tope ulnar:** Debe cerrar completamente el orificio del húmero distal para garantizar el rango de movimiento libre.
+- **Tornillo de seguridad humeral:** Bloquear siempre con el contrasoporte.
+- **Recubrimiento de plata (*S):** No usar Betaisodona®, H₂O₂ ni ácido acético. Usar NaCl, Lavasept® o Prontosan®.
+- **Alergia a metales (*N):** Anclaje ulnar cementado y vástago humeral cementado disponibles con TiN.`
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  //  MUTARS® — HÚMERO INVERSO (Hombro Tumoral Proximal)
+  // ─────────────────────────────────────────────────────────────────
+  'shoulder-tumor-humero-prox-rev': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® Humerus Inverse Surgical Technique — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® Húmero Inverso — Técnica Quirúrgica
+
+El MUTARS® Húmero Inverso es una endoprótesis oncológica modular para reconstrucción del húmero proximal tras resección tumoral, articulando con un sistema de hombro inverso/reverso (glenosfera en escápula, copa en húmero). Indicado cuando el manguito rotador es resecado con el tumor.
+
+---
+
+## Planificación Preoperatoria
+
+La planificación preoperatoria es obligatoria. Determinar las dimensiones del modelo protésico mediante plantillas digitales o radiográficas (disponibles a través del representante local).
+
+---
+
+## Opciones de Ensamblaje (con tapa humeral inversa, longitudes en mm)
+
+| Reconstrucción | Cabeza | Extensión / Conexión 80 mm | Tornillo |
+|---|---|---|---|
+| 60 mm | 50 | — | 15 |
+| 80 mm | 50 | 20 | 35 |
+| 100 mm | 50 | 40 | 55 |
+| 120 mm | 50 | 60 | 75 |
+| 140 mm | 50 | 80 | 15+15 |
+| 160 mm | 50 | 20+80 | 35+15 |
+| 180 mm | 50 | 40+80 | 55+15 |
+| 200 mm | 50 | 60+80 | 75+15 |
+| 220 mm | 50 | 60+80+20 | 75+35 |
+| 240 mm | 50 | 60+80+40 | 75+55 |
+| 260 mm | 50 | 60+80+40+20 | 75+75 |
+
+---
+
+## Paso 1 — Resección Tumoral
+
+Resecar el tumor y medir la longitud del explante. Resección mínima: 60 mm.
+
+---
+
+## Paso 2 — Preparación de la Glenoide
+
+1. Colocar la guía de perforación glenoidea y elegir la posición correcta para el implante.
+2. Perforar el orificio central con el pin de 3,2 mm y dejarlo en posición (~2,5 cm). No perforar demasiado — la broca no tiene tope.
+3. Refresar la glenoide con el fresador glenoidea guiado por el pin central para exponer el hueso subcondral sangrante.
+4. La mejor fijación se logra al alcanzar hueso subcondral sangrante.
+
+> El orificio del peg central es ligeramente menor que el peg del implante — se bloqueará por PressFit.
+
+---
+
+## Paso 3 — Implantación de la Glenoide e Impactación de la Glenosfera
+
+1. Atornillar el impactador al implante glenoideo. Verificar orientación craneal correcta.
+2. Impactar con golpes suaves hasta que quede al ras de la superficie ósea. Retirar el impactador.
+3. El ángulo de perforación puede elegirse entre 0° y 15°.
+
+**Técnica opcional — tornillos adicionales:**
+- Usar guía de broca glenoidea especial para preperforar con broca 2,0 mm.
+- Medir longitud con calibrador de profundidad.
+- Insertar tornillos angulados estables 4,2 mm con destornillador hexagonal 2,5 mm hasta que queden al ras.
+
+4. Asentar la glenosfera en el implante glenoideo — el labio se encaja en el borde de bloqueo exterior. Reforzar el bloqueo con el impactador de cabeza.
+
+---
+
+## Paso 4 — Preparación Ósea Humeral
+
+Refresar el canal medular con el fresador de cavidad medular.
+
+**Sin cemento:** Broca humeral 1 mm menor que el vástago elegido. Asegurar al menos 4 cm de contacto cortical.
+
+**Con cemento:** Broca humeral 2 mm mayor que el vástago elegido.
+
+---
+
+## Paso 5 — Raspado del Canal Humeral
+
+Ensamblar raspa del tamaño adecuado, extractor, impactador y sleeve. Bloquear con llave de contrasoporte.
+
+- **Sin cemento:** Raspa del mismo tamaño que el vástago planificado.
+- **Con cemento (opcional):** Raspa 2 mm mayor → manto de 1 mm.
+
+Raspar con el mazo. Dejar la raspa en el hueso para la prueba.
+
+---
+
+## Paso 6 — Reducción de Prueba
+
+1. Montar la cabeza humeral de prueba y piezas de extensión (20–200 mm) sobre la raspa.
+2. Insertar tornillo de prueba de la longitud correcta y apretar con llave de vaso.
+3. Colocar la tapa humeral inversa de prueba (neutral, +5 mm, +10 mm).
+4. Realizar prueba de reducción. Evaluar tensión muscular y rango de movimiento. En caso de inestabilidad, cambiar la tapa.
+5. Si se logra función suficiente, retirar todos los componentes de prueba.
+
+---
+
+## Paso 7 — Implantación del Vástago Humeral
+
+1. Montar vástago del tamaño correcto y sleeve de impacto sobre el impactador.
+2. Apretar con el instrumento de contrasoporte. Impactar el vástago.
+3. Sin cemento: mismo tamaño que la raspa.
+4. Opcional: tornillo cortical de 3,5 mm para proteger contra rotación.
+5. Con cemento: insertar cemento y usar vástago 2 mm menor que broca o raspa.
+6. Retirar todos los instrumentos durante el fraguado.
+
+---
+
+## Paso 8 — Ensamblaje Final
+
+1. Combinar los componentes proximales sobre el vástago. Bloquear en la alineación rotacional correcta.
+2. Apretar el tornillo de barra de la longitud correcta con la llave de vaso pequeña. Asegurar con el contrasoporte.
+3. Bloquear el tornillo de seguridad de la misma forma.
+4. Atornillar la tapa humeral inversa del tamaño correcto. Apretar con la llave para tapa/contrasoporte. Reducir la articulación y verificar estabilidad y rango de movimiento.
+
+---
+
+## Paso 9 — Uso del Tubo de Fijación
+
+1. Fijar el tubo con 4 suturas Ethibond (talla 2) o similar no reabsorbible a la cápsula / manguito restante.
+2. Fijar primero proximal, luego distal.
+3. Pasar el tubo sobre la cápsula articular y fijarlo a la pared capsular.
+4. Tensar el tubo y fijarlo sobre y bajo los pads de los componentes MUTARS®.
+5. Fijar músculos y tendones con suturas a la malla del tubo.`,
+
+    componentes: `## Implantes — MUTARS® Húmero Inverso
+
+> *S: Recubrimiento de plata. *N: Recubrimiento TiN. *SN: Plata y TiN.
+
+### MUTARS® Tapa humeral inversa — con recubrimiento TiN
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| 5210-1000 | 0 mm |
+| 5210-1005 | +5 mm |
+| 5210-1010 | +10 mm |
+
+---
+
+### MUTARS® Cabeza humeral *S
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+**REF 5200-0000**
+
+---
+
+### MUTARS® Tornillo humeral
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+
+| REF | Medida |
+|---|---|
+| 5230-0015 | M8×15 mm |
+| 5230-0035 | M8×35 mm |
+| 5230-0055 | M8×55 mm |
+| 5230-0075 | M8×75 mm |
+
+---
+
+### MUTARS® Vástago humeral HA sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 con implaFix® HA ISO 13779-2*
+
+| REF | Diámetro |
+|---|---|
+| 5240-0808 | 8 mm |
+| 5240-0809 | 9 mm |
+| 5240-0810 | 10 mm |
+| 5240-0811 | 11 mm |
+| 5240-0812 | 12 mm |
+| 5240-0813 | 13 mm |
+| 5240-0814 | 14 mm* |
+| 5240-0815 | 15 mm* |
+| 5240-0816 | 16 mm* |
+
+*Disponibles bajo pedido.
+
+---
+
+### MUTARS® Vástago humeral cementado *N
+*Mat.: implavit® CoCrMo ISO 5832-4*
+
+| REF | Diámetro |
+|---|---|
+| 5240-0408 | 8 mm |
+| 5240-0409 | 9 mm |
+| 5240-0410 | 10 mm |
+| 5240-0411 | 11 mm |
+| 5240-0412 | 12 mm |
+
+Tallas especiales bajo pedido.
+
+---
+
+### Glenoide sin cemento talla 3 redonda
+*Mat.: titanio puro cpTi ISO 5832-2 con implaFix® HA ISO 13779-2*
+**REF 3800-4001**
+
+---
+
+### MUTARS® Glenosfera
+*Mat.: UHMW-PE ISO 5834-2* — 40 mm
+**REF 5210-1002**
+
+---
+
+### Tornillo esponjoso Ø 4,0 mm
+
+| REF | Longitud |
+|---|---|
+| 5793-4026 | 26 mm |
+| 5793-4028 | 28 mm |
+| 5793-4030 | 30 mm |
+| 5793-4032 | 32 mm |
+| 5793-4034 | 34 mm |
+
+---
+
+### MUTARS® Pieza de extensión humeral *S
+
+| REF | Longitud |
+|---|---|
+| 5220-0020 | 20 mm |
+| 5220-0040 | 40 mm |
+| 5220-0060 | 60 mm |
+
+---
+
+### MUTARS® Pieza de conexión humeral *S
+**REF 5221-0080** — 80 mm
+
+---
+
+### MUTARS® Tubo de fijación (attachment tube)
+*Mat.: PET*
+
+| REF | Longitud |
+|---|---|
+| 5900-0300 | 35 mm |
+| 5900-0310 | 55 mm |
+
+---
+
+### Tornillo esponjoso angulado estable 4,2 mm
+
+| REF | Longitud |
+|---|---|
+| 5794-4220 | 20 mm |
+| 5794-4222 | 22 mm |
+| 5794-4224 | 24 mm |
+| 5794-4226 | 26 mm |
+| 5794-4228 | 28 mm |
+| 5794-4230 | 30 mm |
+| 5794-4232 | 32 mm |
+| 5794-4234 | 34 mm |
+| 5794-4236 | 36 mm |
+| 5794-4238 | 38 mm |
+| 5794-4240 | 40 mm |`,
+
+    instrumental: `## Instrumental — MUTARS® Húmero Inverso
+
+### Contenedor Humeral MUTARS® (7999-5200)
+
+| Instrumento | REF |
+|---|---|
+| Dispositivo extractor MUTARS® | 7220-0000 |
+| Llave de vaso pequeña MUTARS® | 7608-1010 |
+| Brocas humerales ic-connection 7–12 mm | 7630-0207 a 7630-0212 |
+| Fresador de cavidad medular MUTARS® | 4220-0000 |
+| Raspas humerales 9–13 mm | 7770-0809 a 7770-0813 |
+| Impactador humeral MUTARS® | 7710-0000 |
+| Sleeve de impacto + extracción humeral | 7721-0000 |
+| Llave para tapa / contrasoporte MUTARS® | 7710-0001 |
+| Instrumento de contrasoporte Ø 6 mm | 7420-0001 |
+| Tapas de prueba humeral — pequeña / mediana / grande | 7710-1000 / 1005 / 1010 |
+| ic T-handle Zimmer-Jakobs | 4223-0023 |
+| ic-adapter | 4223-0022 |
+
+---
+
+### Contenedor Húmero Inverso MUTARS® (7999-5201)
+
+| Instrumento | REF |
+|---|---|
+| Tapas de prueba inversa con rosca 0 / +5 / +10 mm | 7710-1201 / 1105 / 1110 |
+| Fresador de glenoide 30 mm | 7800-4030 |
+| Impactador de glenoide | 7800-4001 |
+| Guía de broca glenoidea MUTARS® | 7710-1101 |
+| Destornillador hexagonal 2,5 mm | 7608-1001 |
+| Calibrador de profundidad pequeño | 0270-1015 |
+| Guía de broca glenoidea | 7800-4016 |
+| Impactador de glenosfera | 7801-0001 |
+| Broca para mandril A/O 2,0 mm | 7700-0020 |
+| Pin de fijación 3,2 mm × 97 mm (2 unid.) | 4223-0008 |
+| Extractor de pin | 4223-0007 |
+| ic-pin extractor (alternativa) | 7512-0800 |
+| Impactador de pin 3,2 mm | 4223-0006 |
+| Guía de broca para glenoide sin cemento 12 mm | 7710-1104 |
+
+---
+
+### Contenedor de Trials Humeral MUTARS® (7999-5202)
+
+| Instrumento | REF |
+|---|---|
+| Tapas de prueba con rosca — pequeña / mediana / grande | 7710-1200 / 1205 / 1210 |
+| Cabeza de prueba humeral MUTARS® | 7710-1252 |
+| Piezas de extensión de prueba 20 / 40 / 60 mm | 7710-0020 / 0040 / 0060 |
+| Reductor de prueba 10 / 100 mm | 7710-2100 / 7710-2101 |
+| Pieza de conexión de prueba 80 mm | 7710-2180 |
+| Tornillos de prueba M8×15 / 35 / 55 / 75 mm | 7710-2315 / 2335 / 2355 / 2375 |
+| Trial húmero distal 50 mm MUTARS® | 7710-1275 |`,
+
+    tips: `## 💡 Tips de Planificación Preoperatoria
+
+- La indicación es **siempre con geometría reversa** en tumores de húmero proximal: el manguito rotador se reseca con el tumor. El deltoides compensa a través del diseño reverso.
+- Resección mínima: 60 mm. El sistema permite reconstrucciones desde 60 hasta 260+ mm.
+- Elegir la **talla de tapa humeral inversa** (neutral, +5, +10 mm) según la prueba — una tapa más larga tensiona más el deltoides y mejora la estabilidad.
+
+---
+
+## 🔧 Tips Intraoperatorios
+
+- **Orientación glenoide:** El marcado "craneal" debe estar correctamente orientado al impactar. Error de orientación compromete la biomecánica.
+- **PressFit glenoideo:** El peg del implante es ligeramente mayor que el orificio — impactar con golpes suaves y controlados.
+- **Glenosfera:** Verificar que el borde de bloqueo esté completamente encajado antes de progresar.
+- **Fresado humeral:** Sin cemento → broca 1 mm menor, ≥ 4 cm de contacto cortical. Con cemento → broca 2 mm mayor.
+- **Tubo de fijación:** Clave para la función del hombro — la reinserción muscular al tubo es el único anclaje de tejidos blandos disponible.
+
+---
+
+## ⚠️ Puntos Críticos
+
+- **Recubrimiento de plata (*S):** No usar Betaisodona®, H₂O₂ ni ácido acético. Usar NaCl, Lavasept® o Prontosan®.
+- **Tornillos glenoideos opcionales:** Pueden añadir estabilidad. Solo los orificios craneal y caudal permiten ángulo de 15° con la guía especial.
+- **Tornillo de seguridad humeral:** Bloquear siempre antes de finalizar el ensamblaje.`
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  //  MUTARS® — HÚMERO TOTAL (Hombro Tumoral)
+  // ─────────────────────────────────────────────────────────────────
+  'shoulder-tumor-humero-total': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® Total Humerus Surgical Technique — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® Húmero Total — Técnica Quirúrgica
+
+El MUTARS® Húmero Total reemplaza el húmero completo, articulando proximalmente con el hombro (tapa humeral + cabeza) y distalmente con la ulna proximal (bisagra del húmero distal). Indicado en tumores que comprometen el húmero en toda su extensión.
+
+---
+
+## Planificación Preoperatoria
+
+La planificación preoperatoria es obligatoria. Determinar las dimensiones del modelo protésico mediante plantillas digitales o radiográficas.
+
+---
+
+## Opciones de Ensamblaje
+
+| Reconstrucción | Cabeza | Reductor | Extensión | Conexión 80 mm | Húmero Distal | Tornillo |
+|---|---|---|---|---|---|---|
+| 190 mm | 50 | 10 | — | 80 | 50 | 15+15+15 |
+| 210 mm | 50 | 10 | 20 | 80 | 50 | 15+35+15 |
+| 230 mm | 50 | 10 | 40 | 80 | 50 | 15+55+15 |
+| 250 mm | 50 | 10 | 60 | 80 | 50 | 15+75+15 |
+| 270 mm | 50 | 10 | 20+60 | 80 | 50 | 35+75+15 |
+| 290 mm | 50 | 10 | 40+60 | 80 | 50 | 55+75+15 |
+| 300 mm | 50 | 100 | 20 | 80 | 50 | 15+35+15 |
+| 310 mm | 50 | 10 | 20+40+60 | 80 | 50 | 75+75+15 |
+| 320 mm | 50 | 100 | 40 | 80 | 50 | 15+55+15 |
+
+> Se recomienda el reductor de 100 mm para reconstrucciones superiores a 300 mm.
+
+---
+
+## Paso 1 — Resección Tumoral
+
+Medir el hueso resecado. Comparar con la planificación preoperatoria. Resección mínima: 60 mm.
+
+> Si la cabeza del radio está libre de tumor, no resecarla.
+
+---
+
+## Paso 2 — Preparación de la Ulna Proximal
+
+1. Observar geometría ósea y ajuste del anclaje ulnar.
+2. Retirar cartílago y hueso obsoleto del olécranon.
+3. Abrir el canal medular con la broca de 6 mm con tope.
+
+---
+
+## Paso 3 — Implantación del Anclaje Ulnar
+
+1. Insertar guía en canal medular. Usar fresa flexible de 5 mm hasta la profundidad deseada.
+   - Sin cemento: 70 mm | Con cemento: 70 y 100 mm
+2. Ampliar la entrada ventral y dorsal. Preservar olécranon si es posible.
+3. Raspar el canal con la raspa MUTARS® para anclaje ulnar.
+
+> Riesgo de vía falsa. Control radiológico en dos planos recomendado.
+
+---
+
+## Paso 4 — Fijación del Anclaje Ulnar con Tornillo
+
+1. Impactar el anclaje (recto o angulado). Si cementado: insertar cemento primero.
+2. Perforar con broca 2 mm, medir y colocar tornillo de 4 mm.
+3. Preferir tornillo esponjoso sobre cortical.
+4. Control radiológico final en dos planos.
+
+---
+
+## Paso 5 — Ensamblaje de Componentes Humerales
+
+La modularidad permite reajustar rotación y longitud en varios puntos del acoplamiento.
+
+**Dos estrategias:**
+- **Reductor largo (100 mm):** Para reconstrucciones > 300 mm.
+- **Reductor corto (10 mm) + pieza de conexión:** Preferido — facilita revisión sin abrir articulaciones.
+
+---
+
+## Paso 6 — Prueba Articular con Componentes Humerales
+
+1. Ensamblar primero húmero distal + reductor + pieza de conexión distalmente.
+2. Combinar húmero distal y reductor con tornillo de 15 mm. Ajustar rotación.
+3. Bloquear con llave de vaso pequeña MUTARS®. Asegurar con contrasoporte.
+4. Bloquear tornillo de seguridad de la misma forma.
+
+---
+
+## Paso 7 — Tope Ulnar y Conexión de la Articulación del Codo
+
+1. Insertar tope ulnar con impactador o punzón. Debe quedar completamente asentado.
+2. Combinar anclaje ulnar con componentes del húmero distal e insertar el eje articular.
+
+> La articulación del codo puede conectarse aquí. Ajustes de rotación posteriores se realizan cambiando componentes proximales.
+
+---
+
+## Paso 8 — Bloqueo del Mecanismo de la Articulación del Codo
+
+Tras insertar el eje, cerrar el húmero distal con el tornillo de bloqueo. Usar la llave de vaso para apretar.
+
+---
+
+## Paso 9 — Prueba con Componentes Proximales
+
+1. Montar cabeza humeral de prueba y piezas de extensión (20–200 mm) sobre la pieza de conexión.
+2. Insertar tornillo de barra de la longitud correcta y bloquear con llave de vaso.
+3. Colocar tapa de prueba humeral del tamaño planificado (pequeña, mediana, grande).
+4. Realizar prueba de reducción. Controlar tensión muscular.
+5. Retirar la tapa y la cabeza cuando se logre estabilidad suficiente.
+
+> Si se usa reducción de prueba con componentes reales, NO insertar el tornillo de seguridad en esta etapa.
+
+---
+
+## Paso 10 — Ensamblaje Final
+
+1. Combinar los componentes implantares proximales con la pieza de conexión. Insertar tornillo de barra de la longitud correcta sin apretarlo del todo.
+2. Colocar la tapa humeral elegida sobre la cabeza. Realizar pruebas de estabilidad y reajustar rotación si es necesario.
+3. Con estabilidad y rotación correctas: apretar tornillo con llave de vaso pequeña. Asegurar con contrasoporte.
+4. Bloquear tornillo de seguridad de la misma forma.
+5. Atornillar la tapa humeral con la llave para tapa/contrasoporte. Asegurar con la llave para húmero.
+
+---
+
+## Paso 11 — Uso del Tubo de Fijación
+
+1. Fijar el tubo (primero proximal, luego distal).
+2. Pasar sobre la cápsula articular y fijar a la pared capsular.
+3. Tensar y fijar sobre y bajo los pads de los componentes MUTARS®.
+4. Fijar músculos y tendones con suturas a la malla del tubo.`,
+
+    componentes: `## Implantes — MUTARS® Húmero Total
+
+> *S: Recubrimiento de plata. *N: Recubrimiento TiN. *SN: Plata y TiN.
+
+### MUTARS® Tapa humeral — con recubrimiento TiN
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3*
+
+| REF | Talla |
+|---|---|
+| 5210-0000 | Pequeña |
+| 5210-0005 | Mediana |
+| 5210-0010 | Grande |
+
+---
+
+### MUTARS® Cabeza humeral 50 mm *S
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3*
+**REF 5200-0000**
+
+---
+
+### MUTARS® Tornillo humeral
+*(Para húmero total se necesitan tres tornillos — ver tabla de ensamblaje)*
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3*
+
+| REF | Medida |
+|---|---|
+| 5230-0015 | M8×15 mm |
+| 5230-0035 | M8×35 mm |
+| 5230-0055 | M8×55 mm |
+| 5230-0075 | M8×75 mm |
+
+---
+
+### MUTARS® Pieza de extensión humeral *S
+
+| REF | Longitud |
+|---|---|
+| 5220-0020 | 20 mm |
+| 5220-0040 | 40 mm |
+| 5220-0060 | 60 mm |
+
+---
+
+### MUTARS® Pieza de conexión humeral *S
+**REF 5221-0080** — 80 mm
+
+---
+
+### MUTARS® Reductor humeral *S
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3*
+
+| REF | Longitud |
+|---|---|
+| 5221-0000 | 10 mm |
+| 5221-0100 | 100 mm |
+
+---
+
+### MUTARS® Húmero Distal 50 mm (incl. eje, tornillo de seguridad, 2 tornillos de bloqueo)
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3*
+**REF 5250-0000**
+
+---
+
+### MUTARS® Tope Ulnar
+*Mat.: UHMWPE DIN ISO 5834/2*
+**REF 5250-1100**
+
+---
+
+### MUTARS® Anclaje Ulnar sin cemento
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3 con cpTi y recubrimiento HA*
+
+| REF | Lado |
+|---|---|
+| 5250-1015 | Izquierdo |
+| 5250-1020 | Derecho |
+
+---
+
+### MUTARS® Anclaje Ulnar cementado *N
+*Mat.: implavit® CoCrMo DIN ISO 5832/4*
+
+| REF | Lado | Longitud |
+|---|---|---|
+| 5250-0570 | Izquierdo | 70 mm |
+| 5250-0070 | Derecho | 70 mm |
+| 5250-5100 | Izquierdo | 100 mm |
+| 5250-0100 | Derecho | 100 mm |
+
+---
+
+### Tornillo esponjoso Ø 4 mm
+*Mat.: implatan® TiAl₆V₄ DIN ISO 5832/3*
+
+| REF | Longitud |
+|---|---|
+| 5793-4026 | 26 mm |
+| 5793-4028 | 28 mm |
+| 5793-4030 | 30 mm |
+| 5793-4032 | 32 mm |
+| 5793-4034 | 34 mm |`,
+
+    instrumental: `## Instrumental — MUTARS® Húmero Total
+
+### Contenedor Humeral MUTARS® (7999-5200)
+
+| Instrumento | REF |
+|---|---|
+| Llave para húmero MUTARS® | 7420-0001 |
+| Impactador humeral MUTARS® | 7710-0000 |
+| Llave para tapa / contrasoporte MUTARS® | 7710-0001 |
+| Fresador de cavidad medular MUTARS® | 7760-0501 |
+| Llave de vaso pequeña MUTARS® | 7608-1010 |
+| Sleeve de impacto + extracción humeral | 7721-0000 |
+| Dispositivo extractor MUTARS® | 7220-0000 |
+| Tapas de prueba — pequeña / mediana / grande | 7710-1000 / 1005 / 1010 |
+| Raspas humerales 9–13 mm | 7770-0809 a 7770-0813 |
+| Brocas humerales 7–12 mm | 7630-0007 a 7630-0012 |
+
+---
+
+### Contenedor Húmero Distal MUTARS® (7999-5150)
+
+| Instrumento | REF |
+|---|---|
+| Raspa para anclaje ulnar — izquierda | 7420-0009 |
+| Raspa para anclaje ulnar — derecha | 7420-0010 |
+| Instrumento de colocación ulnar recto | 7420-0013 |
+| Instrumento de colocación ulnar angulado | 7420-0014 |
+| Eje de prueba para húmero distal | 7420-0015 |
+| Guía para fresa flexible | 7512-0039 |
+| Fresa flexible | 7701-2005 |
+| Calibrador de profundidad pequeño | 0270-1015 |
+| Broca para mandril 2 mm | 7520-0000 |
+| Destornillador hexagonal 2,5 mm | 7608-1001 |
+| Broca de rótula MUTARS® | 7351-0000 |
+
+---
+
+### Contenedor de Trials Humeral MUTARS® (7999-5202)
+
+| Instrumento | REF |
+|---|---|
+| Tapas de prueba con rosca — pequeña / mediana / grande | 7710-1200 / 1205 / 1210 |
+| Cabeza de prueba humeral MUTARS® | 7710-1252 |
+| Piezas de extensión de prueba 20 / 40 / 60 mm | 7710-0020 / 0040 / 0060 |
+| Reductores de prueba 10 / 100 mm | 7710-2100 / 7710-2101 |
+| Pieza de conexión de prueba 80 mm | 7710-2180 |
+| Tornillos de prueba M8×15 / 35 / 55 / 75 mm | 7710-2315 / 2335 / 2355 / 2375 |
+| Trial húmero distal 50 mm MUTARS® | 7710-1275 |`,
+
+    tips: `## 💡 Tips de Planificación Preoperatoria
+
+- El Húmero Total reemplaza el húmero completo. Longitud de reconstrucción mínima: 190 mm. Para > 300 mm usar el reductor de 100 mm.
+- Se necesitan **tres tornillos humerales** por sistema — verificar tallas en la tabla de ensamblaje.
+- Preferir la configuración **reductor corto (10 mm) + pieza de conexión** sobre el reductor largo — facilita la revisión sin desensamblar las articulaciones.
+
+---
+
+## 🔧 Tips Intraoperatorios
+
+- **Ensamblar los componentes humerales ex-vivo** antes de introducirlos al campo — más fácil controlar rotación y longitud en la mesa.
+- **Conectar la articulación del codo primero**, antes de ensamblar los componentes proximales — permite reajustar rotación cambiando componentes proximales.
+- **Tope ulnar:** Impactar completamente antes de conectar la bisagra — no podrá insertarse después.
+- **Tubo de fijación:** Crítico para la función del hombro — la reinserción de músculos y tendones al tubo es el único anclaje de tejidos blandos disponible.
+
+---
+
+## ⚠️ Puntos Críticos
+
+- **No insertar el tornillo de seguridad** durante la prueba con componentes reales — solo al ensamblaje definitivo.
+- **Usar el contrasoporte** al apretar el tornillo definitivo — sin él, el torque rotará el componente.
+- **Recubrimiento de plata (*S):** No usar Betaisodona®, H₂O₂ ni ácido acético. Usar NaCl, Lavasept® o Prontosan®.
+- **Ajuste rotacional:** Posible en varios puntos del acoplamiento — no bloquear definitivamente hasta estar seguro de la rotación correcta.`
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  //  MUTARS® — ULNA PROXIMAL (Codo Tumoral)
+  // ─────────────────────────────────────────────────────────────────
+  'shoulder-tumor-ulna-proximal': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® Proximal Ulna Surgical Technique — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® Ulna Proximal — Técnica Quirúrgica
+
+El MUTARS® Ulna Proximal es una endoprótesis oncológica modular para reconstrucción de la ulna proximal y el olécranon tras resección tumoral, articulando con el húmero distal mediante bisagra. Es un sistema bicompartimental que reconstruye simultáneamente el lado ulnar y el lado humeral del codo.
+
+---
+
+## Planificación Preoperatoria
+
+Obligatoria. Determinar dimensiones y posición de los componentes mediante plantillas digitales o radiográficas.
+
+---
+
+## Opciones de Ensamblaje — Componentes Ulnares
+
+| Reconstrucción | Ulna Proximal | Extensión | Conexión | Extensión | Tornillo |
+|---|---|---|---|---|---|
+| 60 mm | 50 | — | — | — | 15 |
+| 80 mm | 50 | 20 | — | — | 35 |
+| 100 mm | 50 | 40 | — | — | 55 |
+| 120 mm | 50 | 60 | — | — | 75 |
+| 140 mm | 50 | — | 80 | — | 15+15 |
+| 160 mm | 50 | 20 | 80 | — | 35+15 |
+| 180 mm | 50 | 40 | 80 | — | 55+15 |
+| 200 mm | 50 | 60 | 80 | — | 75+15 |
+| 220 mm | 50 | 60 | 80 | 20 | 75+35 |
+| 240 mm | 50 | 60 | 80 | 40 | 75+55 |
+| 260 mm | 50 | 60 | 80 | 20+40 | 75+75 |
+
+## Opciones de Ensamblaje — Componentes Humerales (Húmero Distal 30 mm)
+
+| Reconstrucción | Húmero Distal 30 mm | Sleeve 1 (mm) | Sleeve 2 (mm) | Tornillo M6 |
+|---|---|---|---|---|
+| 30 mm | 30 | — | — | 15 |
+| 35 mm | 30 | 5 | — | 15 |
+| 37,5 mm | 30 | 7,5 | — | 20 |
+| 40 mm | 30 | 10 | — | 20 |
+| 42,5 mm | 30 | 5 | 7,5 | 25 |
+| 45 mm | 30 | 10 | 5 | 25 |
+| 47,5 mm | 30 | 10 | 7,5 | 30 |
+| 50 mm | 30 | 10 | 10 | 30 |
+
+---
+
+## Paso 1 — Resección Tumoral
+
+Resecar el tumor y determinar la longitud del hueso resecado. Resección mínima: 30 mm en húmero y 60 mm en ulna.
+
+> Si la cabeza del radio está libre de tumor, no resecarla.
+
+---
+
+## Paso 2 — Preparación de la Ulna Proximal
+
+**Sin cemento:** Broca 1 mm menor. Mínimo 4 cm de contacto cortical.
+**Con cemento:** Broca 2 mm mayor. Mínimo 4 cm de contacto cortical.
+
+Preparar la cavidad con el fresador de cavidad medular.
+
+> Riesgo de vía falsa. Control radiológico en dos planos recomendado.
+> Contacto cortical uniforme para evitar enclavamiento.
+
+---
+
+## Paso 3 — Raspado del Canal Ulnar
+
+**Tabla 1 — Sin cemento:**
+
+| Vástago | Raspa |
+|---|---|
+| 7 mm | 7 mm |
+| 8 mm | 8 mm |
+| 9 mm | 9 mm |
+| 10 mm | 10 mm |
+| 11 mm | 11 mm |
+| 12 mm | 12 mm |
+| 13 mm | 13 mm |
+
+**Tabla 2 — Con cemento (raspa 2 mm mayor):**
+
+| Vástago | Raspa |
+|---|---|
+| 8 mm | 10 mm |
+| 9 mm | 11 mm |
+| 10 mm | 12 mm |
+| 11 mm | 13 mm |
+| 12 mm | 14 mm |
+
+Raspar con mazo. Dejar raspa en el hueso para la prueba. Fijar pinza ósea alrededor del hueso ulnar para prevenir fracturas.
+
+---
+
+## Paso 4 — Preparación Ósea Humeral
+
+**Con cemento (AGILON®):** Fresar con broca trauma (Ø 7–13 mm, pasos de 1 mm) hasta 1 mm mayor que el vástago elegido y la longitud correcta (90 o 120 mm). Usar broca cónica adicional para vástagos menores de 12 mm.
+
+**Sin cemento (AGILON®):** Fresar hasta el diámetro planificado e implantar el mismo diámetro.
+
+**Húmero Distal 30 mm:** Cementado → canal 1 mm mayor. Sin cemento → canal al mismo diámetro.
+
+---
+
+## Paso 5 — Implantación del Vástago AGILON®
+
+**Cementado:** Montar sleeve e impactador sobre el vástago. Insertar cemento. Insertar vástago hasta profundidad correcta. Retirar cemento sobrante — el mecanismo dentado de componentes debe estar libre de cemento. Retirar impactador y sleeve durante el fraguado.
+
+**Sin cemento:** Montar sleeve e impactador. Insertar vástago hasta profundidad correcta. Retirar impactador y sleeve.
+
+---
+
+## Paso 6 — Ensamblaje del Trial del Húmero Distal 30 mm
+
+1. Combinar el trial del Húmero Distal 30 mm y los sleeves distanciadores con el vástago.
+2. Insertar tornillo de la longitud correcta y bloquear al vástago (ver Tabla 4 del PDF original).
+3. Montar el trial de Ulna Proximal sobre la raspa alojada en la cavidad ulnar.
+
+---
+
+## Paso 7 — Reducción de Prueba
+
+Ensamblar el mecanismo articular insertando el eje de prueba. Controlar la tensión muscular y la alineación rotacional. Retirar todos los componentes de prueba tras la prueba exitosa.
+
+---
+
+## Paso 8 — Implantación del Vástago Humeral en la Ulna
+
+1. Retirar la raspa con el impactador humeral y el dispositivo extractor.
+2. Montar vástago del tamaño correcto y sleeve de impacto sobre el impactador.
+3. Apretar con el contrasoporte. Impactar el vástago en la ulna.
+4. Sin cemento: mismo tamaño que la raspa. Con cemento: cemento + vástago 2 mm menor.
+5. Opcional: tornillo cortical 3,5 mm para protección rotacional.
+6. Retirar todos los instrumentos durante el fraguado.
+
+---
+
+## Paso 9 — Ensamblaje del Húmero Distal 30 mm
+
+1. Combinar el Húmero Distal 30 mm y el sleeve distanciador con el vástago.
+2. Insertar tornillo de la longitud correcta y bloquear los componentes.
+3. Usar la llave de torsión de 5 mm (15 Nm) para apretar el tornillo.
+
+---
+
+## Paso 10 — Ensamblaje de la Ulna Proximal
+
+1. Agregar contratornillo y apretar con la llave de vaso pequeña.
+2. Impactar el tope ulnar con el instrumento de impactación o punzón. Debe quedar completamente asentado.
+3. Conectar la Ulna Proximal al vástago. Usar piezas de extensión si es necesario. Ajustar rotación.
+4. Bloquear insertando el tornillo de barra de la longitud correcta (ver tabla de opciones ulnares).
+5. Apretar con llave de vaso pequeña MUTARS®. Asegurar con contrasoporte.
+6. Insertar tornillo de seguridad y bloquearlo de la misma forma.
+
+---
+
+## Paso 11 — Reducción Final y Bloqueo de la Bisagra
+
+1. Conectar el húmero distal 30 mm a la Ulna Proximal insertando el eje articular.
+2. Insertar tornillos de bloqueo en ambos lados con la llave de vaso pequeña.`,
+
+    componentes: `## Implantes — MUTARS® Ulna Proximal
+
+> *S: Recubrimiento de plata. *N: Recubrimiento TiN. *SN: Plata y TiN.
+
+### AGILON® Vástago trauma humeral cementado *N *E
+*Mat.: implavit® CoCrMo ISO 5832-4*
+
+| REF | Longitud | Diámetro |
+|---|---|---|
+| 3820-9006 | 90 mm | Ø 6 mm |
+| 3820-9008 | 90 mm | Ø 8 mm |
+| 3820-9010 | 90 mm | Ø 10 mm |
+| 3820-9012 | 90 mm | Ø 12 mm |
+| 3821-2006 | 120 mm | Ø 6 mm |
+| 3821-2008 | 120 mm | Ø 8 mm |
+| 3821-2010 | 120 mm | Ø 10 mm |
+| 3821-2012 | 120 mm | Ø 12 mm |
+
+---
+
+### AGILON® Vástago trauma humeral sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3*
+
+| REF | Longitud | Diámetro |
+|---|---|---|
+| 3830-6010 | 60 mm | Ø 10 mm |
+| 3830-6011 | 60 mm | Ø 11 mm |
+| 3830-6012 | 60 mm | Ø 12 mm |
+| 3830-6013 | 60 mm | Ø 13 mm |
+| 3830-6014 | 60 mm | Ø 14 mm |
+| 3830-6015 | 60 mm | Ø 15 mm |
+| 3830-6016 | 60 mm | Ø 16 mm |
+| 3831-2010 | 120 mm | Ø 10 mm |
+| 3831-2011 | 120 mm | Ø 11 mm |
+| 3831-2012 | 120 mm | Ø 12 mm |
+| 3831-2013 | 120 mm | Ø 13 mm |
+| 3831-2014 | 120 mm | Ø 14 mm |
+| 3831-2015 | 120 mm | Ø 15 mm |
+| 3831-2016 | 120 mm | Ø 16 mm |
+
+---
+
+### AGILON® Pieza de extensión
+
+| REF | Longitud |
+|---|---|
+| 3820-0050 | 5 mm |
+| 3820-0075 | 7,5 mm |
+| 3820-0100 | 10 mm |
+
+---
+
+### MUTARS® Húmero Distal 30 mm (incl. eje, tapas y tornillo de seguridad)
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 | eje y buje CoCrMo según 5832-12*
+**REF 5250-1300**
+
+---
+
+### Tornillo para Húmero Distal 30 mm M6
+
+| REF | Longitud |
+|---|---|
+| 5230-1815 | 15 mm |
+| 5230-1820 | 20 mm |
+| 5230-1825 | 25 mm |
+| 5230-1830 | 30 mm |
+
+---
+
+### MUTARS® Ulna Proximal (incl. tornillo de seguridad) *S
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 | buje CoCrMo ISO 5832-12*
+**REF 5250-0030**
+
+---
+
+### MUTARS® Tope Ulnar
+*Mat.: UHMWPE ISO 5834-2*
+**REF 5250-1100**
+
+---
+
+### MUTARS® Tornillo humeral
+
+| REF | Medida |
+|---|---|
+| 5230-0015 | M8×15 mm |
+| 5230-0035 | M8×35 mm |
+| 5230-0055 | M8×55 mm |
+| 5230-0075 | M8×75 mm |
+
+---
+
+### MUTARS® Vástago humeral HA sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 con implaFix® HA ISO 13779-2*
+
+| REF | Diámetro |
+|---|---|
+| 5240-0807 | 7 mm |
+| 5240-0808 | 8 mm |
+| 5240-0809 | 9 mm |
+| 5240-0810 | 10 mm |
+| 5240-0811 | 11 mm |
+| 5240-0812 | 12 mm |
+| 5240-0813 | 13 mm |
+
+---
+
+### MUTARS® Vástago humeral cementado *N
+
+| REF | Diámetro |
+|---|---|
+| 5240-0408 | 8 mm |
+| 5240-0409 | 9 mm |
+| 5240-0410 | 10 mm |
+| 5240-0411 | 11 mm |
+| 5240-0412 | 12 mm |
+
+---
+
+### MUTARS® Pieza de extensión humeral *S
+
+| REF | Longitud |
+|---|---|
+| 5220-0020 | 20 mm |
+| 5220-0040 | 40 mm |
+| 5220-0060 | 60 mm |
+
+---
+
+### MUTARS® Pieza de conexión humeral *S
+**REF 5221-0080** — 80 mm`,
+
+    instrumental: `## Instrumental — MUTARS® Ulna Proximal
+
+### Contenedor Humeral MUTARS® (7999-5200)
+
+| Instrumento | REF |
+|---|---|
+| Dispositivo extractor MUTARS® | 7220-0000 |
+| Llave de vaso pequeña MUTARS® | 7608-1010 |
+| Brocas humerales ic-connection 7–14 mm | 7630-0207 a 7630-0214 |
+| Fresador de cavidad medular MUTARS® | 4220-0000 |
+| Raspas humerales 9–13 mm | 7770-0809 a 7770-0813 |
+| Impactador humeral MUTARS® | 7710-0000 |
+| Sleeve de impacto + extracción humeral | 7721-0000 |
+| Llave para tapa / contrasoporte MUTARS® | 7710-0001 |
+| Instrumento de contrasoporte Ø 6 mm | 7420-0001 |
+| ic T-handle Zimmer-Jakobs | 4223-0023 |
+| ic-adapter | 4223-0022 |
+
+---
+
+### Contenedor Ulna Proximal MUTARS® (7999-5205)
+
+| Instrumento | REF |
+|---|---|
+| Eje de prueba para húmero distal MUTARS® | 7420-0015 |
+| Destornillador hexagonal 2,5 mm | 7608-1001 |
+| Broca humeral ic-connection 6 mm | 7630-0206 |
+| Piezas de extensión de prueba 20 / 40 / 60 mm | 7710-0020 / 0040 / 0060 |
+| Trial de Ulna Proximal MUTARS® | 7710-1280 |
+| Tornillos de prueba M8×15 (×2) / 35 / 55 / 75 (×2) mm | 7710-2315 / 2335 / 2355 / 2375 |
+| Raspa humeral MUTARS® 7 mm | 7770-0807 |
+| Raspa humeral MUTARS® 8 mm | 7770-0808 |
+
+---
+
+### Contenedor Húmero Distal 30 mm M6 (7999-5208)
+
+| Instrumento | REF |
+|---|---|
+| Impactador de vástago AGILON® | 7801-0012 |
+| Varilla guía AGILON® | 7801-0015 |
+| Llave de torsión 15 Nm 5 mm | 7512-0025 |
+| Fresador cónico AGILON® | 7801-0019 |
+| Llave hexagonal 3,5 mm con T-handle MUTARS® | 7608-1035 |
+| Llave de vaso pequeña MUTARS® | 7608-1010 |
+| ic t-handle A/O | 7512-0100 |
+| Brocas trauma shoulder AGILON® 7–13 mm | 7820-0007 a 7820-0013 |
+| Sleeve de impactación AGILON® | 7801-0017 |
+| Trial húmero distal 30 mm MUTARS® | 7710-1273 |
+
+---
+
+### Contenedor de Trials Humeral MUTARS® (7999-5202)
+
+| Instrumento | REF |
+|---|---|
+| Tapas de prueba con rosca — pequeña / mediana / grande | 7710-1200 / 1205 / 1210 |
+| Cabeza de prueba humeral MUTARS® | 7710-1252 |
+| Piezas de extensión de prueba 20 / 40 / 60 mm | 7710-0020 / 0040 / 0060 |
+| Reductores de prueba 10 / 100 mm | 7710-2100 / 7710-2101 |
+| Pieza de conexión de prueba 80 mm | 7710-2180 |
+| Tornillos de prueba M8×15 / 35 / 55 / 75 mm | 7710-2315 / 2335 / 2355 / 2375 |
+| Trial húmero distal 50 mm MUTARS® | 7710-1275 |`,
+
+    tips: `## 💡 Tips de Planificación Preoperatoria
+
+- La **Ulna Proximal MUTARS®** es un sistema bicompartimental: reconstruye el lado ulnar (vástago humeral MUTARS® en ulna + ulna proximal) y el lado humeral (vástago AGILON® + húmero distal 30 mm).
+- Resección mínima: **30 mm en húmero** y **60 mm en ulna**.
+- El **vástago humeral AGILON®** (90 o 120 mm) se usa para el anclaje humeral — diferente al vástago MUTARS® estándar. Verificar el tipo correcto antes de la cirugía.
+- Los **sleeves distanciadores AGILON®** (5, 7,5, 10 mm) permiten ajustar finamente la longitud del lado humeral.
+
+---
+
+## 🔧 Tips Intraoperatorios
+
+- **Control radiológico obligatorio** tras preparar los canales — riesgo de vía falsa en ambos lados.
+- **Preparación ulnar:** Sin cemento → 1 mm menor. Con cemento → 2 mm mayor. Mínimo 4 cm de contacto cortical.
+- **Preparación humeral AGILON®:** Pasos de 1 mm hasta 1 mm mayor que el vástago (cementado) o al mismo diámetro (sin cemento). Broca cónica adicional para vástagos < 12 mm.
+- **Llave de torsión 5 mm (15 Nm)** obligatoria para el tornillo del Húmero Distal 30 mm — no apretar a mano libre.
+- **Tope ulnar:** Completamente asentado antes de conectar la bisagra — sin correcto asiento el rango de movimiento quedará limitado.
+- Retirar todos los instrumentos durante el fraguado del cemento.
+
+---
+
+## ⚠️ Puntos Críticos
+
+- **Dos sistemas de vástago diferentes** en una misma cirugía: AGILON® para el húmero y MUTARS® para la ulna — no intercambiarlos.
+- **Tornillo de barra correcto** según la tabla de Opciones de Ensamblaje Ulnares.
+- **El contratornillo** sobre la Ulna Proximal debe apretarse con la llave de vaso pequeña antes de conectar la bisagra.
+- **Recubrimiento de plata (*S):** No usar Betaisodona®, H₂O₂ ni ácido acético. Usar NaCl, Lavasept® o Prontosan®.`
+  },
+
+  'shoulder-tumor-humero-diaf': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® Humerus Diaphyseal Implant Surgical Technique — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® Húmero Diafisiario — Técnica Quirúrgica
+
+El implante diafisiario humeral MUTARS® actúa como un bypass para defectos de la diáfisis del húmero tras resección tumoral segmentaria. El lado proximal (cercano a la articulación del hombro) se ancla con el vástago humeral modular estándar (incluyendo versión sin cemento); el lado distal se ancla con tallos no modulares de 8 mm o 9 mm cementados. La resección mínima es de **80 mm**. En uso clínico desde 1992.
+
+---
+
+## Planificación Preoperatoria
+
+La planificación quirúrgica preoperatoria es obligatoria. El cirujano debe determinar las dimensiones del implante y la posición de cada componente usando plantillas digitales (incluidas en los sistemas de planificación habituales) o plantillas radiográficas disponibles a través del representante local.
+
+---
+
+## Opciones de Ensamblaje
+
+> El implante diafisiario humeral actúa como bypass de la diáfisis del húmero. El acoplamiento entre ambos extremos se realiza con la pieza de conexión que viene incluida junto al implante diafisiario.
+
+| Longitud de Reconstrucción (mm) | Implante Diafisiario (mm) | Pieza de Conexión | Pieza de Extensión (mm) | Tornillo (mm) |
+|---|---|---|---|---|
+| 80 | 70 | — | — | 15 |
+| 100 | 70 | — | 20 | 35 |
+| 120 | 70 | — | 40 | 55 |
+| 140 | 70 | — | 60 | 75 |
+
+---
+
+## Paso 1 — Resección Tumoral
+
+Realizar la resección del tumor. Medir la longitud del hueso resecado. La resección mínima es de **80 mm**.
+
+---
+
+## Paso 2 — Preparación de la Cavidad Medular
+
+Preparar la cavidad medular proximal y distal del húmero con el fresador de cavidad medular MUTARS®.
+
+---
+
+## Paso 3 — Preparación del Lado Proximal (Cercano a la Articulación)
+
+**Sin cemento:**
+Ampliar la cavidad medular con una broca humeral **1 mm menor** que el diámetro del vástago elegido en la planificación. Garantizar al menos 4 cm de contacto cortical.
+
+**Con cemento:**
+Ampliar la cavidad medular con una broca humeral **2 mm mayor** que el diámetro del vástago elegido en la planificación.
+
+> Obtener contacto cortical uniforme para evitar enclavamiento.
+
+---
+
+## Paso 4 — Raspado del Canal Proximal
+
+Ensamblar la raspa humeral del tamaño adecuado con el extractor, el impactador humeral y el sleeve. Bloquear la raspa sobre el impactador con la llave de contrasoporte.
+
+> El uso de raspa humeral para vástago cementado es opcional. En general puede procederse directamente con la prueba.
+
+**Sin cemento — Tabla 1 (misma talla):**
+
+| Vástago | Raspa |
+|---|---|
+| 9 mm | 9 mm |
+| 10 mm | 10 mm |
+| 11 mm | 11 mm |
+| 12 mm | 12 mm |
+| 13 mm | 13 mm |
+
+**Con cemento — Tabla 2 (raspa 2 mm mayor = manto de cemento de 1 mm):**
+
+| Vástago | Raspa |
+|---|---|
+| 8 mm | 10 mm |
+| 9 mm | 11 mm |
+| 10 mm | 12 mm |
+| 11 mm | 13 mm |
+| 12 mm | 14 mm |
+
+Raspar con el mazo con precaución. Dejar la raspa en el hueso para la prueba. Limpiar la raspa de virutas durante el raspado. Fijar una pinza ósea alrededor del húmero para prevenir fracturas corticales.
+
+---
+
+## Paso 5 — Preparación del Lado Distal (Lejano a la Articulación)
+
+El implante diafisiario humeral solo está disponible en versión **cementada**, por lo que la cavidad medular distal debe ampliarse con una broca **2 mm mayor** que el diámetro del implante planificado. Esto genera un manto de cemento de 1 mm.
+
+| Talla del Implante | Talla de la Broca |
+|---|---|
+| 8 mm | 10 mm |
+| 9 mm | 11 mm |
+
+---
+
+## Paso 6 — Implantación del Implante Diafisiario
+
+1. Antes de introducir el cemento óseo, colocar un tapón intramedular.
+2. Seleccionar el implante diafisiario humeral con diámetro de tallo **2 mm menor** que la broca y/o raspa utilizada.
+3. Colocar la pieza de conexión sobre la raspa humeral dejada en la cavidad medular.
+4. Combinar el implante diafisiario con la pieza de conexión y realizar el posicionamiento de prueba.
+5. Desacoplar los componentes y retirar la pieza de conexión y la raspa humeral.
+
+---
+
+## Paso 7 — Implantación del Vástago Humeral (Lado Proximal)
+
+1. Montar el vástago humeral del tamaño correcto y el sleeve de impacto sobre el impactador.
+2. Apretar la conexión con el instrumento de contrasoporte. Impactar el vástago.
+3. **Sin cemento:** mismo tamaño que la raspa utilizada previamente.
+4. Opcional: tornillo cortical de 3,5 mm para proteger contra rotación.
+5. **Con cemento:** insertar cemento y usar vástago 2 mm menor que la broca o raspa.
+6. Retirar todos los instrumentos, especialmente durante el fraguado del cemento para evitar momentos de flexión.
+
+> Fijar una pinza ósea alrededor del húmero durante la impactación para prevenir fracturas corticales.
+
+---
+
+## Paso 8 — Ensamblaje de los Componentes
+
+1. Añadir la pieza de conexión y, si es necesario según la planificación, la pieza de extensión al vástago humeral.
+2. Insertar el tornillo de la longitud correcta (ver tabla de opciones de ensamblaje) y apretarlo con la llave de vaso.
+3. Realizar el posicionamiento de prueba. Si es necesario, ajustar la rotación aflojando el tornillo y modificando en pasos de 10° sobre la dentadura.
+4. Una vez verificada la posición correcta, apretar el perno de conexión con la llave articulada mientras se contrarreaciona con el contrasoporte.
+
+---
+
+## Paso 9 — Acoplamiento de los Componentes
+
+1. Conectar el implante diafisiario humeral y la pieza de conexión mediante los dos tornillos de bloqueo.
+2. Usar la llave articulada para apretar los tornillos.`,
+
+    componentes: `## Implantes — MUTARS® Húmero Diafisiario
+
+> *S: Recubrimiento de plata antiinfeccioso disponible. *N: Recubrimiento TiN antialérgico disponible. *SN: Ambos recubrimientos disponibles.
+
+---
+
+### MUTARS® Implante Diafisiario Humeral cementado *S
+*(incluye 2 tornillos de bloqueo y pieza de conexión)*
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| REF 5731-1008 | 8 mm |
+| REF 5731-1009 | 9 mm |
+
+---
+
+### MUTARS® Pieza de Extensión Humeral *S
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| REF 5220-0020 | 20 mm |
+| REF 5220-0040 | 40 mm |
+| REF 5220-0060 | 60 mm |
+
+---
+
+### MUTARS® Tornillo Humeral
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| REF 5230-0015 | M8×15 mm |
+| REF 5230-0035 | M8×35 mm |
+| REF 5230-0055 | M8×55 mm |
+| REF 5230-0075 | M8×75 mm |
+
+---
+
+### MUTARS® Vástago Humeral HA sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 con implaFix® HA; recubrimiento HA conforme a ISO 13779-2*
+
+| REF | Talla |
+|---|---|
+| REF 5240-0807 | 7 mm* |
+| REF 5240-0808 | 8 mm* |
+| REF 5240-0809 | 9 mm |
+| REF 5240-0810 | 10 mm |
+| REF 5240-0811 | 11 mm |
+| REF 5240-0812 | 12 mm |
+| REF 5240-0813 | 13 mm |
+| REF 5240-0814 | 14 mm* |
+| REF 5240-0815 | 15 mm* |
+| REF 5240-0816 | 16 mm* |
+*disponible bajo pedido*
+
+---
+
+### MUTARS® Vástago Humeral cementado *N
+*Mat.: implavit® CoCrMo conforme a ISO 5832-4*
+
+| REF | Talla |
+|---|---|
+| REF 5240-0408 | 8 mm |
+| REF 5240-0409 | 9 mm |
+| REF 5240-0410 | 10 mm |
+| REF 5240-0411 | 11 mm |
+| REF 5240-0412 | 12 mm |
+*Tallas especiales disponibles bajo pedido*`,
+
+    instrumental: `## Instrumental — MUTARS® Húmero Diafisiario
+
+### Contenedor Húmero MUTARS® (7999-5200)
+Bandeja principal con todo el instrumental para la preparación diafisiaria humeral.
+
+### Contenedor de Prueba Húmero MUTARS® (7999-5202)
+Bandeja con componentes de prueba (trial) para el ensamblaje preimplantación.
+
+---
+
+### Instrumental Principal
+
+| Instrumento | REF |
+|---|---|
+| Dispositivo extractor MUTARS® | REF 7220-0000 |
+| Llave de vaso pequeña MUTARS® | REF 7608-1010 |
+| Fresador de cavidad medular MUTARS® | REF 4220-0000 |
+| Impactador humeral MUTARS® | REF 7710-0000 |
+| Sleeve de impacto + extracción humeral MUTARS® | REF 7721-0000 |
+| Llave para tapa / instrumento de contrasoporte MUTARS® | REF 7710-0001 |
+| Instrumento de contrasoporte Ø6 mm MUTARS® | REF 7420-0001 |
+| Mango en T ic — Zimmer-Jakobs | REF 4223-0023 |
+| Adaptador ic | REF 4223-0022 |
+
+---
+
+### Brocas Humerales ic-connection MUTARS®
+
+| REF | Talla |
+|---|---|
+| REF 7630-0207 | 7 mm |
+| REF 7630-0208 | 8 mm |
+| REF 7630-0209 | 9 mm |
+| REF 7630-0210 | 10 mm |
+| REF 7630-0211 | 11 mm |
+| REF 7630-0212 | 12 mm |
+| REF 7630-0213 | 13 mm |
+| REF 7630-0214 | 14 mm |
+
+---
+
+### Raspas para Vástago Humeral MUTARS®
+
+| REF | Talla |
+|---|---|
+| REF 7770-0809 | 9 mm |
+| REF 7770-0810 | 10 mm |
+| REF 7770-0811 | 11 mm |
+| REF 7770-0812 | 12 mm |
+| REF 7770-0813 | 13 mm |
+
+---
+
+### Tapas de Prueba Humerales MUTARS®
+
+| REF | Talla |
+|---|---|
+| REF 7710-1000 | pequeña |
+| REF 7710-1005 | mediana |
+| REF 7710-1010 | grande |`,
+
+    tips: `## 💡 Tips Intraoperatorios — MUTARS® Húmero Diafisiario
+
+- **Resección mínima de 80 mm.** Siempre medir el hueso resecado antes de seleccionar el implante.
+- **El implante diafisiario solo es cementado** en su extremo distal. Planificarlo con anticipación — la broca distal debe ser 2 mm mayor que el implante.
+- **Lado proximal:** usar vástago modular estándar (con o sin cemento). El acoplamiento entre ambos lados se realiza con la pieza de conexión incluida en el embalaje del implante diafisiario.
+- **Selección del implante:** el diámetro del tallo del implante diafisiario debe ser **2 mm menor** que la broca y/o raspa utilizadas.
+- **Prueba antes del cemento:** realizar siempre el posicionamiento de prueba (trial) antes de mezclar el cemento. Verificar rotación, longitud y estabilidad.
+- **Ajuste de rotación:** se puede modificar en pasos de **10°** aflojando el tornillo de ensamblaje y reposicionando sobre la dentadura.
+- **Limpiar la raspa** de virutas óseas durante el raspado para facilitar su extracción.
+- **Pinza ósea:** fijar siempre alrededor del húmero durante el raspado e impactación para prevenir fracturas corticales.
+- **Recubrimiento de plata (*S):** No irrigar con Betaisodona®, H₂O₂ ni ácido acético. Usar NaCl, Lavasept® o Prontosan®.
+- Retirar todos los instrumentos antes de que fragüe el cemento para evitar momentos de flexión sobre el implante.
+
+---
+
+## ⚠️ Puntos Críticos
+
+- Verificar que la cantidad de implantes e instrumentos en el pedido coincide con la planificación preoperatoria.
+- El vástago cementado para el lado distal es **no modular** (8 mm o 9 mm); no confundir con el vástago proximal modular.
+- El tornillo de bloqueo del acoplamiento debe apretarse con la **llave articulada** mientras se contrarreacciona con el contrasoporte — no apretar a mano libre.`
+  },
+
+  'shoulder-tumor-codo-total': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® Total Elbow Surgical Technique — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® Codo Total — Técnica Quirúrgica
+
+El MUTARS® Codo Total es un sistema modular de endoprótesis oncológica que reemplaza la articulación del codo completa tras resección tumoral del húmero distal y/o la ulna proximal. Incluye un mecanismo de bisagra articulada con eje de articulación. La resección mínima es de **60 mm** tanto en el lado humeral como en el cubital. En uso clínico desde 1992.
+
+---
+
+## Planificación Preoperatoria
+
+La planificación quirúrgica preoperatoria es obligatoria. El cirujano determina las dimensiones del implante y la posición de los componentes usando plantillas digitales (incluidas en los sistemas de planificación habituales) o plantillas radiográficas disponibles a través del representante local.
+
+---
+
+## Opciones de Ensamblaje
+
+### Componentes Humerales
+
+| Reconstrucción (mm) | Húmero Distal (mm) | Extensión (mm) | Conexión (mm) | Extensión (mm) | Tornillo Humeral |
+|---|---|---|---|---|---|
+| 60 | 50 | — | — | — | 15 |
+| 80 | 50 | 20 | — | — | 35 |
+| 100 | 50 | 40 | — | — | 55 |
+| 120 | 50 | 60 | — | — | 75 |
+| 140 | 50 | — | 80 | — | 15+15 |
+| 160 | 50 | 20 | 80 | — | 35+15 |
+| 180 | 50 | 40 | 80 | — | 55+15 |
+| 200 | 50 | 60 | 80 | — | 75+15 |
+| 220 | 50 | 60 | 80 | 20 | 75+35 |
+| 240 | 50 | 60 | 80 | 40 | 75+55 |
+| 260 | 50 | 60 | 80 | 20+40 | 75+75 |
+
+### Componentes Ulnares
+
+| Reconstrucción (mm) | Húmero Distal (mm) | Extensión (mm) | Conexión (mm) | Extensión (mm) | Tornillo Humeral |
+|---|---|---|---|---|---|
+| 60 | 50 | — | — | — | 15 |
+| 80 | 50 | 20 | — | — | 35 |
+| 100 | 50 | 40 | — | — | 55 |
+| 120 | 50 | 60 | — | — | 75 |
+| 140 | 50 | — | 80 | — | 15+15 |
+| 160 | 50 | 20 | 80 | — | 35+15 |
+| 180 | 50 | 40 | 80 | — | 55+15 |
+| 200 | 50 | 60 | 80 | — | 75+15 |
+| 220 | 50 | 60 | 80 | 20 | 75+35 |
+| 240 | 50 | 60 | 80 | 40 | 75+55 |
+| 260 | 50 | 60 | 80 | 20+40 | 75+75 |
+
+---
+
+## Paso 1 — Resección Tumoral
+
+Resecar el tumor y determinar la longitud del hueso resecado. La resección mínima en el lado humeral es **60 mm** y en el lado ulnar **60 mm**.
+
+> Si la cabeza del radio está libre de tumor, no es necesario resecarla.
+
+---
+
+## Paso 2 — Preparación de la Ulna Proximal
+
+**Sin cemento:** Fresar el canal medular con broca humeral **1 mm menor** que el vástago elegido. Garantizar mínimo 4 cm de contacto cortical.
+
+**Con cemento:** Fresar el canal medular con broca humeral **2 mm mayor** que el vástago elegido. Garantizar mínimo 4 cm de contacto cortical.
+
+> Obtener contacto cortical uniforme para evitar enclavamiento.
+
+Preparar la cavidad con el fresador de cavidad medular MUTARS®.
+
+> Riesgo de vía falsa con perforación cortical. Se recomienda control radiológico en dos planos.
+
+---
+
+## Paso 3 — Raspado del Canal Ulnar
+
+Ensamblar la raspa humeral del tamaño adecuado con el extractor, el impactador humeral y el sleeve. Bloquear con la llave de contrasoporte.
+
+> El uso de raspa para vástago cementado es opcional. Puede procederse directamente con la prueba.
+
+**Sin cemento — Tabla 1 (misma talla):**
+
+| Vástago | Raspa |
+|---|---|
+| 7 mm | 7 mm |
+| 8 mm | 8 mm |
+| 9 mm | 9 mm |
+| 10 mm | 10 mm |
+| 11 mm | 11 mm |
+| 12 mm | 12 mm |
+| 13 mm | 13 mm |
+
+**Con cemento — Tabla 2 (raspa 2 mm mayor = manto de cemento de 1 mm):**
+
+| Vástago | Raspa |
+|---|---|
+| 8 mm | 10 mm |
+| 9 mm | 11 mm |
+| 10 mm | 12 mm |
+| 11 mm | 13 mm |
+| 12 mm | 14 mm |
+
+Raspar con el mazo. Dejar la raspa en el hueso para la prueba. Limpiar la raspa de virutas y fijar pinza ósea para prevenir fracturas corticales.
+
+---
+
+## Paso 4 — Preparación Ósea Humeral
+
+**Sin cemento:** Fresar el canal medular con broca humeral **1 mm menor** que el vástago elegido.
+
+**Con cemento:** Fresar el canal medular con broca humeral **2 mm mayor** que el vástago elegido.
+
+Preparar la cavidad con el fresador de cavidad medular MUTARS®.
+
+> Obtener contacto cortical uniforme para evitar enclavamiento.
+
+---
+
+## Paso 5 — Raspado del Canal Humeral
+
+Misma técnica que para el canal ulnar. Ver tablas de correspondencia vástago-raspa (Tabla 3 sin cemento / Tabla 4 con cemento, idénticas a las anteriores). Dejar la raspa en el hueso para la prueba.
+
+---
+
+## Paso 6 — Reducción de Prueba (Trial)
+
+1. Montar el húmero distal y las piezas de extensión necesarias (posible ampliación de 20 a 200 mm; ver tabla) sobre la raspa humeral.
+2. Ensamblar el mecanismo articular insertando el eje de prueba.
+3. Montar también la Ulna Proximal sobre la raspa dejada en la cavidad cubital.
+4. Ensamblar el mecanismo articular insertando el eje de prueba en el lado ulnar.
+5. Realizar la reducción de prueba. Verificar tensión muscular y alineación rotacional de los componentes.
+
+> En esta fase no es obligatorio el tornillo de barra — el mecanismo de dentadura estabiliza el conjunto. Si se desea mayor estabilidad, insertar el tornillo de barra de la longitud correcta en la Ulna Proximal y bloquearlo.
+
+---
+
+## Paso 7 — Implantación del Vástago Humeral
+
+1. Montar el vástago del tamaño correcto y el sleeve de impacto sobre el impactador.
+2. Apretar la conexión con el instrumento de contrasoporte. Impactar el vástago humeral.
+3. **Sin cemento:** mismo tamaño que la raspa.
+4. Opcional: tornillo cortical de 3,5 mm para proteger contra rotación.
+5. **Con cemento:** insertar cemento y usar vástago 2 mm menor que broca o raspa.
+6. Retirar todos los instrumentos durante el fraguado para evitar momentos de flexión.
+
+> Fijar pinza ósea alrededor del húmero durante la impactación para prevenir fracturas corticales.
+
+---
+
+## Paso 8 — Implantación del Vástago Ulnar
+
+Repetir el procedimiento de impactación del vástago para el lado ulnar exactamente igual que el descrito para el vástago humeral.
+
+---
+
+## Paso 9 — Implantación de los Componentes Distales (Húmero)
+
+1. Combinar el húmero distal sobre el vástago humeral. Extender si es necesario con piezas de extensión. Ajustar posición rotacional.
+2. Bloquear con el tornillo humeral de longitud correcta (ver tabla).
+3. Asegurar con la llave de vaso pequeña MUTARS® y el instrumento de contrasoporte.
+4. Bloquear el tornillo de seguridad de la misma forma.
+
+---
+
+## Paso 10 — Tope Ulnar y Ensamblaje de la Ulna Proximal
+
+1. Insertar el tope ulnar con el instrumento de colocación para el anclaje ulnar. El tope debe cerrar completamente el orificio del húmero distal para garantizar el movimiento libre de la articulación.
+2. Conectar la Ulna Proximal al vástago ulnar. Si es necesario, usar piezas de extensión para reconstruir la cantidad de hueso resecada. Ajustar la alineación rotacional correcta.
+3. Bloquear el conjunto insertando el tornillo de barra de la longitud correcta (ver tabla).
+4. Usar la llave de vaso pequeña MUTARS® para apretar el tornillo. Asegurar con la llave de contrasoporte.
+5. Insertar el tornillo de seguridad y bloquearlo de la misma forma.
+
+---
+
+## Paso 11 — Reducción Final
+
+Conectar el húmero distal a la Ulna Proximal insertando el eje articular.
+
+---
+
+## Paso 12 — Bloqueo del Mecanismo de Bisagra
+
+Tras el acoplamiento de los componentes articulares, insertar los tornillos de bloqueo en ambos lados para cubrir el mecanismo articular y proteger el eje. Usar la llave de vaso pequeña para apretar los tornillos.`,
+
+    componentes: `## Implantes — MUTARS® Codo Total
+
+> *S: Recubrimiento de plata antiinfeccioso disponible. *N: Recubrimiento TiN antialérgico disponible.
+
+---
+
+### MUTARS® Húmero Distal 50 mm *S
+*(incluye eje, tornillo de seguridad, 2 tornillos de bloqueo y tapa humeral)*
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3 | eje CoCrMo ISO 5832-12 | buje CoCrMo ISO 5832-12*
+**REF 5250-0000**
+
+---
+
+### MUTARS® Ulna Proximal *S
+*(incluye tornillo de seguridad)*
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3 | buje CoCrMo ISO 5832-12*
+**REF 5250-0030**
+
+---
+
+### MUTARS® Tope Ulnar
+*Mat.: UHMWPE conforme a ISO 5834-2*
+**REF 5250-1100**
+
+---
+
+### Tornillo esponjoso 4 mm
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| REF 5793-4026 | 26 mm |
+| REF 5793-4028 | 28 mm |
+| REF 5793-4030 | 30 mm |
+| REF 5793-4032 | 32 mm |
+| REF 5793-4034 | 34 mm |
+
+---
+
+### MUTARS® Tubo de Fijación (attachment tube)
+*Mat.: polietileno tereftalato (PET)*
+
+| REF | Talla |
+|---|---|
+| REF 5900-0300 | 35 mm |
+| REF 5900-0310 | 55 mm |
+
+---
+
+### MUTARS® Tornillo Humeral
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| REF 5230-0015 | M8×15 mm |
+| REF 5230-0035 | M8×35 mm |
+| REF 5230-0055 | M8×55 mm |
+| REF 5230-0075 | M8×75 mm |
+
+---
+
+### MUTARS® Vástago Humeral HA sin cemento
+*Mat.: implatan® TiAl₆V₄ ISO 5832-3 con implaFix® HA; recubrimiento HA conforme a ISO 13779-2*
+
+| REF | Talla |
+|---|---|
+| REF 5240-0807 | 7 mm |
+| REF 5240-0808 | 8 mm |
+| REF 5240-0809 | 9 mm |
+| REF 5240-0810 | 10 mm |
+| REF 5240-0811 | 11 mm |
+| REF 5240-0812 | 12 mm |
+| REF 5240-0813 | 13 mm |
+| REF 5240-0814 | 14 mm* |
+| REF 5240-0815 | 15 mm* |
+| REF 5240-0816 | 16 mm* |
+*disponible bajo pedido*
+
+---
+
+### MUTARS® Vástago Humeral cementado *N
+*Mat.: implavit® CoCrMo conforme a ISO 5832-4*
+
+| REF | Talla |
+|---|---|
+| REF 5240-0408 | 8 mm |
+| REF 5240-0409 | 9 mm |
+| REF 5240-0410 | 10 mm |
+| REF 5240-0411 | 11 mm |
+| REF 5240-0412 | 12 mm |
+*Tallas especiales disponibles bajo pedido*
+
+---
+
+### MUTARS® Pieza de Extensión Humeral *S
+*Mat.: implatan® TiAl₆V₄ conforme a ISO 5832-3*
+
+| REF | Talla |
+|---|---|
+| REF 5220-0020 | 20 mm |
+| REF 5220-0040 | 40 mm |
+| REF 5220-0060 | 60 mm |
+
+---
+
+### MUTARS® Pieza de Conexión Humeral *S
+*Mat.: implatan® TiAl₆V₄ conforme a DIN ISO 5832-3*
+**REF 5221-0080 — 80 mm**`,
+
+    instrumental: `## Instrumental — MUTARS® Codo Total
+
+### Contenedor Húmero MUTARS® (7999-5200)
+Bandeja principal con instrumental para preparación humeral.
+
+### Contenedor de Prueba Húmero MUTARS® (7999-5202)
+Bandeja con componentes de prueba (trial) humerales.
+
+### Contenedor Ulna Proximal MUTARS® (7999-5205)
+Bandeja con instrumental específico para la ulna proximal.
+
+---
+
+### Instrumental Principal
+
+| Instrumento | REF |
+|---|---|
+| Dispositivo extractor MUTARS® | REF 7220-0000 |
+| Llave de vaso pequeña MUTARS® | REF 7608-1010 |
+| Fresador de cavidad medular MUTARS® | REF 4220-0000 |
+| Impactador humeral MUTARS® | REF 7710-0000 |
+| Sleeve de impacto + extracción humeral MUTARS® | REF 7721-0000 |
+| Llave para tapa / instrumento de contrasoporte MUTARS® | REF 7710-0001 |
+| Instrumento de contrasoporte Ø6 mm MUTARS® | REF 7420-0001 |
+| Mango en T ic — Zimmer-Jakobs | REF 4223-0023 |
+| Adaptador ic | REF 4223-0022 |
+| Destornillador hexagonal 2,5 mm | REF 7608-1001 |
+| Broca humeral ic-connection 6 mm MUTARS® | REF 7630-0206 |
+| Eje de prueba para húmero distal MUTARS® | REF 7420-0015 |
+
+---
+
+### Brocas Humerales ic-connection MUTARS®
+
+| REF | Talla |
+|---|---|
+| REF 7630-0207 | 7 mm |
+| REF 7630-0208 | 8 mm |
+| REF 7630-0209 | 9 mm |
+| REF 7630-0210 | 10 mm |
+| REF 7630-0211 | 11 mm |
+| REF 7630-0212 | 12 mm |
+| REF 7630-0213 | 13 mm |
+| REF 7630-0214 | 14 mm |
+
+---
+
+### Raspas para Vástago Humeral MUTARS®
+
+| REF | Talla |
+|---|---|
+| REF 7770-0807 | 7 mm |
+| REF 7770-0808 | 8 mm |
+| REF 7770-0809 | 9 mm |
+| REF 7770-0810 | 10 mm |
+| REF 7770-0811 | 11 mm |
+| REF 7770-0812 | 12 mm |
+| REF 7770-0813 | 13 mm |
+
+---
+
+### Componentes de Prueba (Trial)
+
+| Instrumento | REF |
+|---|---|
+| Tapa de prueba humeral pequeña | REF 7710-1000 |
+| Tapa de prueba humeral mediana | REF 7710-1005 |
+| Tapa de prueba humeral grande | REF 7710-1010 |
+| Tapa de prueba humeral con rosca pequeña | REF 7710-1200 |
+| Tapa de prueba humeral con rosca mediana | REF 7710-1205 |
+| Tapa de prueba humeral con rosca grande | REF 7710-1210 |
+| Cabeza de prueba humeral MUTARS® | REF 7710-1252 |
+| Pieza de extensión de prueba 20 mm | REF 7710-0020 |
+| Pieza de extensión de prueba 40 mm | REF 7710-0040 |
+| Pieza de extensión de prueba 60 mm | REF 7710-0060 |
+| Reductor de prueba 10 mm | REF 7710-2100 |
+| Reductor de prueba 100 mm | REF 7710-2101 |
+| Pieza de conexión de prueba 80 mm | REF 7710-2180 |
+| Tornillo de prueba M8×15 mm (×2) | REF 7710-2315 |
+| Tornillo de prueba M8×35 mm | REF 7710-2335 |
+| Tornillo de prueba M8×55 mm | REF 7710-2355 |
+| Tornillo de prueba M8×75 mm (×2) | REF 7710-2375 |
+| Trial húmero distal 50 mm MUTARS® | REF 7710-1275 |
+| Ulna proximal de prueba MUTARS® | REF 7710-1280 |`,
+
+    tips: `## 💡 Tips Intraoperatorios — MUTARS® Codo Total
+
+- **Resección mínima de 60 mm** en cada lado (humeral y ulnar). Verificar siempre la longitud del hueso resecado antes de seleccionar los componentes.
+- **Si la cabeza del radio está libre de tumor, no es obligatorio resecarla** — preservarla mejora la estabilidad rotacional residual.
+- **Control radiológico en dos planos** obligatorio tras preparar los canales medulares — riesgo real de vía falsa, especialmente en el canal ulnar.
+- **Preparación ulnar:** Sin cemento → broca 1 mm menor. Con cemento → broca 2 mm mayor. Mínimo 4 cm de contacto cortical en ambos canales.
+- **Tope ulnar:** Debe cerrar completamente el orificio del húmero distal antes de conectar la bisagra. Sin el tope correctamente asentado, el movimiento articular quedará limitado.
+- **Reducción de prueba obligatoria** antes del cemento — verificar tensión muscular, longitud de reconstrucción y alineación rotacional de ambos componentes.
+- **El eje articular** se inserta en último lugar, una vez que ambos vástagos están definitivamente fijados y los componentes articulares correctamente alineados.
+- **Pinza ósea:** fijar alrededor del hueso durante el raspado e impactación en ambos lados para prevenir fracturas corticales.
+- **Limpiar la raspa** de virutas óseas durante el raspado para facilitar su extracción posterior.
+- **Recubrimiento de plata (*S):** No irrigar con Betaisodona®, H₂O₂ ni ácido acético. Usar exclusivamente NaCl, Lavasept® o Prontosan®.
+- Retirar todos los instrumentos antes de que fragüe el cemento para evitar momentos de flexión sobre los componentes.
+
+---
+
+## ⚠️ Puntos Críticos
+
+- **Dos vástagos independientes** (humeral y ulnar) con la misma familia de instrumental — verificar que cada vástago se impacta en el canal correcto.
+- **El tornillo de barra (ulnar)** debe tener la longitud exacta según la tabla de opciones de ensamblaje ulnares — un tornillo demasiado corto no asegurará el conjunto.
+- **Secuencia de apriete correcta:** primero el tornillo humeral principal → tornillo de seguridad humeral → tornillo de barra ulnar → tornillo de seguridad ulnar → tornillos de bloqueo del eje articular.
+- **Tornillos de bloqueo del eje:** ambos lados deben apretarse correctamente con la llave de vaso pequeña para proteger el mecanismo de la bisagra.
+- Verificar antes de la cirugía que todos los implantes e instrumentos del pedido están disponibles — la cantidad puede diferir del catálogo.`
+  },
+
+  // ─── CADERA REVISIÓN NUEVAS TÉCNICAS ───────────────────────────────────────
+
+  'hip-revision-prs-canastillo': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — MUTARS® PRS + MUTARS® PRS Reinforcement Cage — Traducción ic-Academy',
+
+    tecnica: `## MUTARS® PRS — Copa Acetabular de Revisión con Tornillo de Anclaje Supraacetabular
+
+El **MUTARS® PRS** (Pelvi-Revision-System) es una copa hemiesférica de revisión con superficie EPORE® (porosidad TiAl₆V₄ por EBM), indicada para defectos acetabulares hasta **Paprosky tipo 3a**. Su característica diferencial es el tornillo de anclaje supraacetabular de Ø8 mm que permite ajustar la anteroversión de la copa antes de la impactación definitiva.
+
+> **Concepto clave:** La copa se fresna con técnica línea a línea (sin press-fit adicional). El tornillo Ø8 mm actúa como pivote de corrección de orientación: la copa se inserta sobre la aguja-guía, se orienta y finalmente se impacta. La estabilidad rotacional definitiva se asegura con tornillos adicionales Ø6,5 mm.
+
+---
+
+### Planificación Preoperatoria
+
+Antes de la cirugía, el cirujano debe realizar planificación radiológica con plantillas digitales o radiográficas disponibles en el sistema de planificación habitual. Se debe confirmar disponibilidad de todos los componentes e instrumental. Determinar si la fijación final será cementada o sin cemento para los componentes acetabulares internos.
+
+**Tallas disponibles:** MUTARS® PRS en Ø 52 / 56 / 60 / 64 / 68 / 72 mm (diámetro externo). Las tallas se escalan en pasos de 4 mm.
+
+**Tabla de PressFit por talla:**
+
+| Talla copa | PressFit |
+|---|---|
+| 52 mm | 1,6 mm |
+| 56 mm | 1,7 mm |
+| 60 mm | 1,8 mm |
+| 64 mm | 1,9 mm |
+| 68 mm | 2,0 mm |
+| 72 mm | 2,0 mm |
+
+> **Nota:** El fresado es línea a línea. Por ejemplo: fresa 52 mm → implante 52 mm.
+
+---
+
+### Paso 1 — Exposición y Fresado Acetabular
+
+Exponer completamente la articulación de la cadera y retirar los componentes a revisar. Resecar la cápsula articular y el labrum acetabular. Disecar el borde óseo del acetábulo lo más completamente posible. Retirar osteofitos y tejido conectivo de la fosa acetabular. Para reconstruir proporciones anatómicas normales, medializar el acetábulo en la medida necesaria para reconstruir el centro de rotación planificado preoperatoriamente.
+
+Fresar el acetábulo con fresas de perfil bajo (Ø 48–72 mm, en incrementos de 1 ó 2 mm según disponibilidad). El fresado debe corregir el defecto existente hacia un defecto esférico, considerando la anteroversión e inclinación adecuadas para la posición correcta de la copa.
+
+---
+
+### Paso 2 — Prueba con Copa Trial y Determinación de la Posición del Tornillo Ø8 mm
+
+Usar la **copa trial MUTARS® PRS** (con orificios ovales longitudinales de exploración) para evaluar el tamaño preparado y verificar los 3 orificios de anclaje disponibles para el tornillo Ø8 mm.
+
+La copa trial debe corresponder al diámetro externo de la última fresa. Definir la posición óptima de la copa y seleccionar el orificio más adecuado para el tornillo Ø8 mm. Revisar simultáneamente la presencia de osteólisis y rellenarlas con una fresa pequeña y un injerto óseo alogénico o sustituto óseo cerámico (ej. Cerasorb®).
+
+---
+
+### Paso 3 — Posicionamiento de la Aguja-Guía de 3,2 mm
+
+El punto de entrada para la aguja-guía K de 3,2 mm (para la posición óptima del tornillo Ø8 mm) se determina **a mano libre** o con el **instrumento de puntería pélvico** (Pelvis Targeting Device — solo en posición lateral, con la punta de la guía aplicada percutáneamente en la espina ilíaca posterosuperior).
+
+Colocar la aguja-guía con la copa trial como referencia o a mano libre, apuntando en dirección hacia la espina ilíaca posterosuperior. Verificar la posición de la aguja-guía con radioscopia en varios planos para confirmar la posición correcta del tornillo. Reintroducir la copa trial y determinar el orificio más adecuado para el tornillo. Los **3 surcos longitudinales** de la copa trial permiten mover libremente la aguja sin retirar la copa, eligiendo la altura óptima del tornillo Ø8 mm.
+
+---
+
+### Paso 4 — Fresado del Canal para el Tornillo Ø8 mm
+
+Retirar la copa trial. Con la aguja-guía correctamente posicionada, fresar el canal con una fresa canulada Ø6 mm. Si es necesario, comenzar con una fresa de Ø4 mm. Verificar la posición intraósea del canal con un instrumento táctil y radioscopia en dos planos. Retirar los tapones (*crunch plugs*) de los orificios donde se colocarán los tornillos antes de impactar la copa.
+
+> **Advertencia:** La retirada de los tapones puede generar bordes cortantes en los extremos de rotura.
+
+> **Nota técnica:** La fresa Ø6 mm debe alcanzar la longitud total del tornillo planificado (o al menos 1 cm menos). Debe quedar hueso suficiente en el eje planificado en la radioscopia.
+
+---
+
+### Paso 5 — Impactación de la Copa y Colocación del Tornillo Ø8 mm
+
+Introducir una aguja K de 2 mm (no incluida en el set) o el pin en el orificio preparado para el tornillo Ø8 mm. Colocar la copa sobre la aguja-guía y llevarla a la posición correcta considerando la orientación pélvica. La aguja debe quedar holgada y moverse libremente dentro del orificio oval. Impactar la copa hasta posición casi definitiva (no fijar completamente). Retirar el impactor.
+
+Antes de colocar el tornillo, palpar el canal con el calibrador curvo Ø2,0 mm (estéril, uso único). Medir la longitud necesaria con el medidor de profundidad. Insertar el tornillo Ø8 mm con el destornillador hexagonal de 5 mm. Continuar apretando bajo control radioscópico sin bloquear la copa. Corregir la anteroversión de la copa alrededor del tornillo (si es necesario con un punzón) e impactar firmemente con el impactor de copa. Retirar el impactor y verificar el contacto con el fondo acetabular a través del orificio apical.
+
+> **Nota:** No apretar el tornillo Ø8 mm hasta aprox. 4–5 mm antes del asiento final para evitar basculamiento de la copa y poder ocupar más orificios.
+
+Colocar tornillos adicionales Ø6,5 mm (cabeza plana) bajo control radioscópico. Apretar finalmente el tornillo Ø8 mm. Si es necesario, introducir aloinjerto o sustituto óseo cerámico a través del orificio apical y cerrarlo con el tapón central M10x1.
+
+El tornillo cancelloso Ø8 mm permite un ángulo de pivote de ±10°. Se recomienda usar 1 ó 2 tornillos adicionales Ø6,5 mm.
+
+---
+
+### Paso 6 — Copa Interna Cementada
+
+Verificar la posición y profundidad finales de la copa a través del orificio apical o con radioscopia. Insertar el tapón central M10x1 antes de cementar la copa interna. Al cementar la copa EcoFit® 2M o la copa PE Müller II, los tornillos quedan también angularmente estables.
+
+Referirse a la técnica quirúrgica específica de la copa EcoFit® 2M o PE-cup Müller II para el procedimiento de cementación de la copa interna.
+
+---
+
+### Técnica con Canastillo (MUTARS® PRS Reinforcement Cage)
+
+El **canastillo de refuerzo MUTARS® PRS** se utiliza cuando se requiere estabilización inicial adicional del MUTARS® PRS hasta completar la oseointegración. Está indicado en defectos acetabulares pronunciados o discontinuidades pélvicas.
+
+**Pasos adicionales con canastillo:**
+
+1. Seguir todos los pasos del MUTARS® PRS hasta tener el implante posicionado.
+2. Verificar la posición del canastillo de prueba (trial) incluyendo el flap. Marcar la posición del flap caudal y prepararlo con el cincel pequeño. La inclinación del MUTARS® PRS debe elegirse de modo que el borde inferior no obstruya la entrada al Os ischii.
+3. Preparar el Os ischii con el cincel largo para poder insertar el flap caudal del implante.
+4. Los canastillos de prueba (estériles de un solo uso) pueden moldearse con los instrumentos de curvado y posicionamiento para adaptarlos a la anatomía. El flap superior se adapta en dirección al ilion.
+5. Usar los trials para determinar las posiciones de los tornillos respecto al MUTARS® PRS ya implantado.
+6. Moldear los flaps del implante definitivo de forma análoga al canastillo de prueba e insertarlo en el MUTARS® PRS.
+7. Pre-perforar para los tornillos de cabeza plana Ø6,5 mm antes de la colocación final del canastillo.
+8. Fijar el flap proximal con tornillos Ø6,5 mm (destornillador 3,5 mm) para estabilidad adicional.
+9. Aplicar cemento óseo viscoso estándar en la cúpula del canastillo y empujarlo a través de los orificios abiertos para rellenar el espacio entre el canastillo y el MUTARS® PRS. Retirar el exceso con una cureta.
+10. Cementar la copa interna EcoFit® 2M o PE Müller II en el conjunto.
+
+> **Advertencia:** Evitar el contacto metálico directo entre el MUTARS® PRS y el canastillo de refuerzo. Una congruencia exacta de los orificios de ambos componentes es prácticamente imposible.
+
+> **Advertencia:** No doblar el canastillo de forma repetida o inversa — puede debilitar el material o producir fractura. Verificar que el implante no quede dañado durante el moldeado.
+
+> **Advertencia postoperatoria:** Tras la implantación del canastillo, la articulación operada no debe cargarse completamente hasta que se complete la oseointegración del MUTARS® PRS.`,
+
+    componentes: `## Componentes del Sistema MUTARS® PRS + Canastillo de Refuerzo
+
+### Copa MUTARS® PRS (con tapón central)
+Material: TiAl₆V₄ con estructura EPORE®
+
+| REF | Talla (Ø externo) |
+|---|---|
+| 0296-0052 | 52 mm |
+| 0296-0056 | 56 mm |
+| 0296-0060 | 60 mm |
+| 0296-0064 | 64 mm |
+| 0296-0068 | 68 mm |
+| 0296-0072 | 72 mm |
+
+---
+
+### Tornillo Cancelloso Ø8 mm (anclaje supraacetabular)
+Material: implatan®, TiAl₆V₄ según ISO 5832-3
+
+| REF | Longitud |
+|---|---|
+| 0287-0070 | 8×70 mm |
+| 0287-0080 | 8×80 mm |
+| 0287-0090 | 8×90 mm |
+| 0287-0100 | 8×100 mm |
+
+---
+
+### Tornillo Esponjoso Cabeza Plana Ø6,5 mm
+Material: implatan®, TiAl₆V₄ según ISO 5832-3
+
+| REF | Longitud |
+|---|---|
+| 0280-1015 | 15 mm |
+| 0280-1020 | 20 mm |
+| 0280-1025 | 25 mm |
+| 0280-1030 | 30 mm |
+| 0280-1035 | 35 mm |
+| 0280-1040 | 40 mm |
+| 0280-1045 | 45 mm |
+| 0280-1050 | 50 mm |
+| 0280-1055 | 55 mm |
+| 0280-1060 | 60 mm |
+| 0280-1065 | 65 mm |
+| 0280-1070 | 70 mm |
+| 0280-1075 | 75 mm |
+| 0280-1080 | 80 mm |
+
+---
+
+### Shim para tornillo esponjoso cabeza plana Ø6,5 mm
+(Para usar tornillos Ø6,5 mm en los orificios del tornillo Ø8 mm)
+Material: implatan®, TiAl₆V₄ según ISO 5832-3
+
+| REF | Descripción |
+|---|---|
+| 0296-0000 | Shim universal |
+
+---
+
+### Copa interna cementada compatible (se selecciona separadamente)
+
+**EcoFit® 2M cementada** (implavit®, CoCrMo según ISO 5832-4):
+
+| Talla copa externa MUTARS® PRS | Copa EcoFit® 2M compatible (Ø interno/externo) |
+|---|---|
+| 52 mm | 38/44 mm |
+| 56 mm | 40/46 – 42/48 mm |
+| 60 mm | 42/48 – 44/50 mm |
+| 64 mm | 46/52 – 48/54 mm |
+| 68 mm | 50/56 – 52/58 mm |
+| 72 mm | 54/60 – 56/62 mm |
+
+> Manto de cemento recomendado: 2 mm. La capa de cemento no debe superar 4 mm (propiedades biomecánicas del PMMA se ven comprometidas por encima de este valor).
+
+---
+
+### Canastillo de Refuerzo MUTARS® PRS — Corto
+
+| REF | Talla |
+|---|---|
+| 0296-2050 | Corto derecho 56/60 mm |
+| 0296-2056 | Corto derecho 64 mm |
+| 0296-2060 | Corto derecho 68 mm |
+| 0296-2064 | Corto derecho 72 mm |
+| 0296-2150 | Corto izquierdo 56/60 mm |
+| 0296-2156 | Corto izquierdo 64 mm |
+| 0296-2160 | Corto izquierdo 68 mm |
+| 0296-2164 | Corto izquierdo 72 mm |
+
+**Flap corto: 5 orificios | Esfera: 7 orificios**
+
+---
+
+### Canastillo de Refuerzo MUTARS® PRS — Largo
+
+| REF | Talla |
+|---|---|
+| 0296-2250 | Largo derecho 56/60 mm |
+| 0296-2256 | Largo derecho 64 mm |
+| 0296-2260 | Largo derecho 68 mm |
+| 0296-2264 | Largo derecho 72 mm |
+| 0296-2350 | Largo izquierdo 56/60 mm |
+| 0296-2356 | Largo izquierdo 64 mm |
+| 0296-2360 | Largo izquierdo 68 mm |
+| 0296-2364 | Largo izquierdo 72 mm |
+
+**Flap largo: 10 orificios | Esfera: 7 orificios**
+
+> **Nota:** La combinación con la talla mínima MUTARS® PRS 52 mm y el canastillo de refuerzo **no es posible**.
+
+---
+
+### Canastillos Trial (estériles de un solo uso)
+
+| REF | Talla |
+|---|---|
+| 0296-2450 | Trial corto derecho 56/60 mm |
+| 0296-2456 | Trial corto derecho 64 mm |
+| 0296-2460 | Trial corto derecho 68 mm |
+| 0296-2464 | Trial corto derecho 72 mm |
+| 0296-2550 | Trial corto izquierdo 56/60 mm |
+| 0296-2556 | Trial corto izquierdo 64 mm |
+| 0296-2560 | Trial corto izquierdo 68 mm |
+| 0296-2564 | Trial corto izquierdo 72 mm |
+| 0296-2650 | Trial largo derecho 56/60 mm |
+| 0296-2656 | Trial largo derecho 64 mm |
+| 0296-2660 | Trial largo derecho 68 mm |
+| 0296-2664 | Trial largo derecho 72 mm |
+| 0296-2750 | Trial largo izquierdo 56/60 mm |
+| 0296-2756 | Trial largo izquierdo 64 mm |
+| 0296-2760 | Trial largo izquierdo 68 mm |
+| 0296-2764 | Trial largo izquierdo 72 mm |`,
+
+    instrumental: `## Cajas de Instrumental — MUTARS® PRS + Canastillo de Refuerzo
+
+### Contenedor 0296-0001 — MUTARS® PRS (capa superior e inferior)
+
+Incluye instrumentos principales de implantación de copa:
+
+| Instrumento | REF |
+|---|---|
+| Impactor de copa | 0282-0030 |
+| Destornillador flexible 3,5 mm | 0270-1002 |
+| Destornillador largo 3,5 mm | 0280-1006 |
+| Guía de broca angulada 3,2 mm | 0282-1001 |
+| Destornillador hexagonal con mango en T 5 mm | 0287-1003 |
+| Pin guía | 0296-5002 |
+| Broca canulada Ø6 mm | 0296-5001 |
+| Tornillo central para instrumento de retención curvo | 0296-5004 |
+| Pin de fijación 3,2 mm × 350 mm con rosca 15 mm (2×) | 4224-0035 |
+| Instrumento de retención curvo | 0296-5003 |
+| Copa trial MUTARS® PRS (tallas 52–72 mm) | 0296-0152 a 0296-0172 |
+
+---
+
+### Contenedor 0296-0002 — Fresas Acetabulares (capa superior e inferior)
+
+| Instrumento | REF / Tallas disponibles |
+|---|---|
+| Fresas acetabulares de perfil bajo | 2950-3048 / 2960-3048 → Ø48 a Ø72 mm |
+| Mango para fresadora acetabular A/O largo | 2950-2010 |
+
+---
+
+### Contenedor 0296-0003 — Instrumental de Tornillos Modular MUTARS® PRS
+
+| Instrumento | REF |
+|---|---|
+| Brocas con marcación de profundidad Ø3,2 mm | 0232-0015 (15 mm) / 0232-0020 (20 mm) / 0232-0025 (25 mm) / 0232-0040 (40 mm) / 0232-0060 (60 mm) / 0232-0115 (115 mm) |
+| Destornillador cardán modular | 0270-1009 (3,5 mm) / 0270-1030 (5 mm) |
+| Medidor de profundidad 0–100 mm | 0270-1070 |
+| Guía de broca angulada 3,2 mm | 0282-1001 |
+| Abrazadera retenedora de tornillos 180 mm | 0282-1002 |
+| Eje de broca flexible ic | 0282-2120 |
+| Broca canulada Ø6 mm | 0296-5001 |
+| Mango de carraca | RIV-10-11-02DB |
+| Destornillador largo modular 3,5 mm | 0280-1009 |
+| Destornillador recto modular 5 mm | 0270-1050 |
+
+---
+
+### Instrumentos sueltos (no incluidos en contenedores)
+
+| Instrumento | REF | Nota |
+|---|---|---|
+| Calibrador curvo Ø2,0 mm | 0292-0001 | Estéril, uso único |
+| Destornillador hexagonal MUTARS® 5 mm | 7608-1050 | — |
+| Extractor de tapones | 0220-2012 | — |
+| Sonda en bola 240 mm | 7512-0008 | — |
+| Broca Ø6/300 mm canulada con marcación | 0260-0300 | — |
+
+---
+
+### Contenedor 0296-0005 — Canastillo de Refuerzo MUTARS® PRS
+
+| Instrumento | REF |
+|---|---|
+| Posicionador | 7512-1021 |
+| Posicionador para placa | 7512-1025 |
+| Instrumento de curvado | 7512-1022 |
+| Espina de curvado (bending thorn) | 7512-1023 |
+| Cincel pequeño | 7512-1024 |
+| Cincel grande | 7512-1026 |
+| Impactor de copa | 0282-0030 |`,
+
+    tips: `## 🎯 Perlas Quirúrgicas Clave — MUTARS® PRS con Canastillo
+
+---
+
+### Indicaciones y Clasificación de Defectos
+
+- **El MUTARS® PRS está indicado hasta Paprosky tipo 3a.** Para defectos 3b o discontinuidad pélvica, evaluar el uso del canastillo de refuerzo o considerar el sistema LUMIC.
+- El canastillo de refuerzo agrega estabilidad inicial durante la oseointegración — no es un implante independiente, **siempre va en combinación con el MUTARS® PRS**.
+- **La talla mínima para usar canastillo es 56 mm** — la copa de 52 mm no es compatible con el canastillo.
+
+---
+
+### Técnica de Fresado y PressFit
+
+- El fresado es **línea a línea**, no se añade press-fit adicional. Una fresa de 60 mm = implante de 60 mm.
+- Las tallas del MUTARS® PRS van en pasos de **4 mm** (52, 56, 60, 64, 68, 72 mm) — recordar esto para la selección y pedido del implante.
+- Verificar presencia de osteólisis tras fresar: corregirlas con una fresa pequeña y relleno con aloinjerto o Cerasorb® antes de colocar la copa.
+
+---
+
+### Aguja-Guía y Tornillo Ø8 mm
+
+- El tornillo Ø8 mm es el elemento central de la técnica: **si el canal no está bien preparado, toda la técnica fracasa**. Verificar la posición intraósea del canal con sonda táctil y radioscopia en 2 planos antes de insertar el implante.
+- Debido a la rosca en la base de la aguja-guía K de 3,2 mm, retirarla con el motor en **sentido inverso** — no forzarla hacia adelante.
+- **No apretar el tornillo Ø8 mm hasta el asiento final** hasta que la copa esté en su posición definitiva — el tornillo actúa como pivote de corrección de anteroversión.
+- Si es necesario, utilizar el instrumento de retención curvo (0296-5003) para mantener la copa en posición durante el ajuste.
+
+---
+
+### Shim Ø6,5 mm en orificio del tornillo Ø8 mm
+
+- El shim (cónico, REF 0296-0000) permite colocar un tornillo Ø6,5 mm en los orificios diseñados para el tornillo Ø8 mm.
+- Verificar que el shim quede correctamente insertado en su posición (boca cónica hacia afuera) antes de colocar el tornillo.
+
+---
+
+### Canastillo de Refuerzo — Moldeado y Posicionamiento
+
+- Los canastillos trial son **estériles de uso único** — uno por cirugía. Usar el trial para determinar el grado de curvado necesario antes de moldear el implante definitivo.
+- **Nunca doblar y desdoblar repetidamente el canastillo** — el titanio puro (cpTi) fatiga con dobleces reiterados y puede fracturarse.
+- El canastillo debe quedar con una distancia de **al menos 4 mm** respecto al MUTARS® PRS — contacto metálico directo está contraindicado.
+- Pre-perforar los orificios del flap proximal antes de la colocación final del canastillo para evitar mala alineación al momento de fijar los tornillos.
+
+---
+
+### Cemento Óseo y Capa de Conexión
+
+- La capa de cemento entre el MUTARS® PRS y el canastillo no debe superar **4 mm** — por encima de ese espesor, las propiedades biomecánicas del PMMA se ven comprometidas.
+- Los dos orificios en la esfera del canastillo están diseñados específicamente para **inyectar el cemento** entre el canastillo y la copa PRS. Usarlos de forma sistemática.
+- Al cementar la copa interna (EcoFit® 2M o Müller II), los tornillos también quedan angularmente estables.
+
+---
+
+### Cuidado Postoperatorio
+
+- **Carga completa prohibida** hasta que la oseointegración del MUTARS® PRS esté completa cuando se usa canastillo.
+- El seguimiento radiológico debe ser periódico para verificar posición de componentes, integración ósea y ausencia de aflojamiento.`
+  },
+
+  'hip-revision-aumentos-acetabulares': {
+    source: 'Técnica Quirúrgica Oficial implantcast GmbH — EPORE® Buttress/Shims — Traducción ic-Academy',
+
+    tecnica: `## EPORE® Buttress / Shims — Aumentos Acetabulares Superiores
+
+Los aumentos **EPORE® Buttress** y **EPORE® Shims** están diseñados para el tratamiento de defectos segmentarios superiores extensos (**Paprosky tipo 2A–2B**). El Buttress se coloca en el ilion para reconstruir el reborde acetabular superior y proporcionar soporte estructural al cotilo de revisión.
+
+> **Concepto clave:** El Buttress aporta soporte estructural al sector superior del acetábulo. Los Shims permiten optimizar el contacto óseo entre el Buttress y el lecho óseo ilíaco. La copa acetabular se cementa sobre la superficie cóncava del Buttress.
+
+---
+
+### Variedades de Buttress
+
+El Buttress está disponible en **4 variantes**:
+- Recto 54 mm
+- Recto 58 mm
+- Izquierdo posterior / Derecho anterior (anatómico)
+- Derecho posterior / Izquierdo anterior (anatómico)
+
+**Variedades de Shim:** Disponibles en 5°, 10° y 15° de corrección angular.
+
+---
+
+### Planificación Preoperatoria
+
+Antes de la cirugía, evaluar con radiología el tipo y extensión del defecto óseo (clasificación Paprosky). Seleccionar plantillas radiográficas o digitales del sistema de planificación habitual. Confirmar disponibilidad de todos los componentes e instrumental antes de la cirugía.
+
+---
+
+### Paso 1 — Exposición y Preparación Acetabular
+
+Exponer completamente la articulación de la cadera. Resecar la cápsula articular y el labrum acetabular. Disecar el borde óseo del acetábulo lo más completamente posible. Retirar osteofitos y tejido conectivo de la fosa acetabular. Para reconstruir proporciones anatómicas normales, medializar el acetábulo hasta poder reconstruir el centro de rotación planificado preoperatoriamente.
+
+Evaluar los defectos existentes intraoperatoriamente de forma exhaustiva: registrar el grado, posición y tipo del defecto óseo. Preparar el acetábulo con fresas de diámetros crecientes (incrementos de 2 mm). Tras completar el fresado, evaluar nuevamente el defecto.
+
+**Orientación del fresado:** aproximadamente 45° de abducción y 20–30° de anteroversión. Fresar hasta alcanzar hueso subcondral sangrante.
+
+---
+
+### Paso 2 — Determinación del Tamaño del Buttress
+
+Usar la **copa trial** (con ranuras de exploración) para verificar el tamaño del lecho preparado y evaluar el contacto óseo. Usar la copa trial junto con el **trial de Buttress** correspondiente para determinar el tamaño del Buttress. Colocar el trial de Buttress sobre el ilion. Conservar el stock óseo al máximo — retirar solo el hueso estrictamente necesario. Las superficies del defecto pueden alisarse con las fresas disponibles para optimizar el ajuste.
+
+Asegurar el máximo contacto posible entre el Buttress y el lecho óseo ilíaco preparado. Los Shims están disponibles en varios diseños para facilitar este objetivo.
+
+Cuando se alcance la posición óptima del Buttress trial, fijar el trial con los pines a través de los dos orificios canulados disponibles.
+
+---
+
+### Paso 3 — Prueba de los Shims (si es necesario)
+
+Verificar si existe contacto suficiente entre el implante y el hueso. Para aumentar el área de contacto, colocar el trial del Shim bajo el Buttress ya alineado y girarlo hasta lograr el contacto óptimo con el ilion. Prestar atención a la alineación de los orificios de los tornillos. Los Shims están disponibles en 5°, 10° y 15°. Retirar los componentes trial.
+
+---
+
+### Paso 4 — Extracción del Trial y Preparación de Orificios
+
+Con el trial de Buttress fijado con los pines, el espaciador trial puede retirarse del acetábulo usando el instrumento de inserción del espaciador. Asegurarse de que los pines permanecen en posición. Retirar los componentes trial.
+
+Si se utiliza un Shim, **es obligatorio unir los dos componentes con cemento óseo** antes de la implantación definitiva. El cemento óseo no debe penetrar en los orificios de los tornillos de los implantes.
+
+---
+
+### Paso 5 — Implantación del Buttress Definitivo
+
+El implante seleccionado se coloca con el instrumento de posicionamiento sobre los pines ya fijados. Pueden atornillarse el Buttress y los Shims entre sí. Están disponibles extensiones de broca en varias longitudes para preparar los orificios de los tornillos. Insertar la broca en el eje de broca flexible y pre-perforar con Ø6,5 mm usando la guía angulada para los tornillos esponjosos. Medir la longitud de tornillo necesaria con el medidor de profundidad.
+
+Posicionar los tornillos en el ilion de forma óptima y evitar dañar nervios o vasos. Usar el destornillador para retirar los tapones de los orificios donde se colocarán los tornillos.
+
+---
+
+### Paso 6 — Cemento y Copa Acetabular
+
+Aplicar el cemento óseo viscoso estándar en la superficie cóncava del EPORE® Buttress, asegurando que el cemento no escape al acetábulo (para no interferir con la osteointegración de la estructura EPORE®). Antes de que el cemento fragüe, insertar la copa en orientación exacta. Opcionalmente, insertar tornillos adicionales para fijar la copa si los orificios lo permiten. Evitar el contacto entre los tornillos esponjosos y el EPORE® Buttress. Los orificios abiertos pueden cerrarse con aloinjerto o sustituto óseo cerámico.`,
+
+    componentes: `## Componentes EPORE® Buttress y Shims
+
+### EPORE® Buttress Augment
+Material: implatan®, TiAl₆V₄
+
+| REF | Variante |
+|---|---|
+| 02960100 | Izquierdo posterior / Derecho anterior |
+| 02960101 | Derecho posterior / Izquierdo anterior |
+| 02960154 | Recto 54 mm |
+| 02960158 | Recto 58 mm |
+
+---
+
+### EPORE® Shim Augment
+Material: implatan®, TiAl₆V₄
+
+| REF | Ángulo |
+|---|---|
+| 0296-1005 | 5° |
+| 0296-1010 | 10° |
+| 0296-1015 | 15° |
+
+---
+
+### Tornillo Esponjoso Cabeza Plana Ø6,5 mm
+Material: implatan®, TiAl₆V₄ según ISO 5832-3
+
+| REF | Longitud |
+|---|---|
+| 0280-1015 | 15 mm |
+| 0280-1020 | 20 mm |
+| 0280-1025 | 25 mm |
+| 0280-1030 | 30 mm |
+| 0280-1035 | 35 mm |
+| 0280-1040 | 40 mm |
+| 0280-1045 | 45 mm |
+| 0280-1050 | 50 mm |
+| 0280-1055 | 55 mm |
+| 0280-1060 | 60 mm |
+| 0280-1065 | 65 mm |
+| 0280-1070 | 70 mm |
+| 0280-1075 | 75 mm |
+| 0280-1080 | 80 mm |
+
+---
+
+> **Indicaciones de compatibilidad:** Los EPORE® Buttress son compatibles con todos los sistemas de copa acetabular ic (EcoFit® EPORE®, EcoFit® 2M, Ceraco® ROM, PE Müller II) y con el sistema MUTARS® PRS. Pueden combinarse entre sí (con cemento óseo). El espesor de la capa de cemento no debe superar **4 mm**.
+> 
+> Los EPORE® Shims son compatibles únicamente con todos los EPORE® Buttress (con cemento óseo). **No deben combinarse con copas acetabulares artificiales directamente.**`,
+
+    instrumental: `## Cajas de Instrumental — EPORE® Buttress / Shims
+
+### Contenedor EPORE® Acetabular Spacer — REF 02970002
+
+| Instrumento | REF |
+|---|---|
+| Impactor acetabular EPORE® | 72951000 |
+| Extractor de pines | 75120800 |
+| Pin de fijación 3,2 mm × 300 mm, rosca 15 mm | 42240034 |
+| Pin de fijación 3,2 mm × 97 mm | 42230008 |
+| Insertador de pines 3,2 mm | 42230006 |
+| Trial EPORE® Buttress recto 54 mm | 02970154 |
+| Trial EPORE® Buttress recto 58 mm | 02970158 |
+| Trial EPORE® Buttress izq. posterior / der. anterior | 02970100 |
+| Trial EPORE® Buttress der. posterior / izq. anterior | 02970101 |
+| Trial EPORE® Shim 5° | 02971005 |
+| Trial EPORE® Shim 10° | 02971010 |
+| Trial EPORE® Shim 15° | 02971015 |
+
+---
+
+### Contenedor de instrumental para tornillos modular MUTARS® PRS — REF 02960003
+
+> **Importante:** De este contenedor solo deben usarse los instrumentos adecuados para los tornillos esponjosos de Ø6,5 mm. **No es posible combinar los EPORE® Buttress y Shims con tornillos de Ø8 mm.**
+
+| Instrumento | REF |
+|---|---|
+| Brocas con marcación de profundidad Ø3,2 mm | 02320015 (15 mm) / 02320020 (20 mm) / 02320025 (25 mm) / 02320040 (40 mm) / 02320060 (60 mm) / 02320115 (115 mm) |
+| Destornillador cardán | 02701009 (3,5 mm modular) / 02701030 (5 mm modular) |
+| Medidor de profundidad 0–100 mm | 02701070 |
+| Guía de broca angulada 3,2 mm | 02821001 |
+| Abrazadera retenedora de tornillos 180 mm | 02821002 (alt: 02821050) |
+| Eje de broca flexible ic | 02822120 |
+| Broca canulada Ø6 mm | 02965001 |
+| Mango de carraca | RIV-10-11-02DB |
+| Destornillador largo 3,5 mm modular | 02801009 |
+| Destornillador recto 5 mm modular | 02701050 |`,
+
+    tips: `## 🎯 Perlas Quirúrgicas Clave — EPORE® Buttress / Shims
+
+---
+
+### Selección y Clasificación de Defectos
+
+- El sistema Buttress/Shim está indicado para defectos **segmentarios superiores extensos Paprosky 2A y 2B** — no está diseñado para defectos cavitarios puros ni para defectos tipo 3 (usar MUTARS® PRS o LUMIC para esos casos).
+- **Tipo 2A:** pérdida de stock óseo superior con reborde intacto. **Tipo 2B:** pérdida segmentaria superior con defecto del reborde anterior o posterior.
+- Verificar intraoperatoriamente el tipo de defecto **después** de fresar — la evaluación cambia con frecuencia respecto a la planificación preoperatoria.
+
+---
+
+### Selección del Buttress
+
+- Elegir entre **recto** (54 o 58 mm) para defectos centrosuperiores simétricos, o **anatómico** (izq. post./der. ant. — der. post./izq. ant.) para defectos con mayor componente anterior o posterior.
+- Los Buttress anatómicos están diseñados para apoyarse en el reborde posterosuperior o anterosuperior del ilion según el lado.
+
+---
+
+### Pines de Fijación del Trial
+
+- Los pines de 3,2 mm son fundamentales para mantener el Buttress trial en posición mientras se retira el espaciador acetabular. **Verificar que los pines permanecen bien fijados** antes de retirar cualquier instrumento.
+- Retirar el espaciador trial con el instrumento de inserción del espaciador — no forzar el retiro sin este instrumento.
+
+---
+
+### Uso de Shims
+
+- El Shim (5°, 10° o 15°) es el "calce" entre el ilion y el Buttress — permite aumentar la superficie de contacto óseo cuando la geometría del defecto no es plana.
+- **Es obligatorio cementar el Shim al Buttress** antes de la implantación definitiva. El cemento no debe penetrar en los orificios de los tornillos — taponar los orificios antes de aplicar el cemento.
+- Verificar la alineación de los orificios de tornillos entre el Shim y el Buttress después de la cementación provisional, antes de que el cemento fragüe.
+- Rotar el trial del Shim bajo el Buttress hasta lograr contacto óseo máximo — no asumir que la orientación estándar de fábrica es la óptima para cada anatomía.
+
+---
+
+### Cemento y Copa Acetabular
+
+- Aplicar el cemento **solo en la superficie cóncava (cara articular) del Buttress** — si el cemento penetra en la estructura EPORE® (superficie convexa porosa contra el hueso), bloquea la osteointegración.
+- Insertar la copa acetabular **antes de que el cemento fragüe** — el tiempo de trabajo es corto; tener la copa preparada y el instrumento de inserción listo.
+- Evitar el contacto directo de los tornillos esponjosos con el cuerpo metálico del Buttress — posicionarlos en el hueso, no en el implante.
+- Los orificios cerrados del Buttress que no se usen para tornillos pueden llenarse con aloinjerto o sustituto óseo cerámico.
+
+---
+
+### Advertencia sobre Tornillos
+
+- **Usar únicamente tornillos Ø6,5 mm** con el EPORE® Buttress y Shims — los tornillos de Ø8 mm no son compatibles con este sistema.
+- La retirada de los tapones (*crunch plugs*) puede generar bordes cortantes en los extremos de rotura — manipular con cuidado y verificar con visión directa.`
   }
 
 };
@@ -13764,11 +16684,11 @@ const PRODUCT_META = {
   'hip-primary-cabeza-bipolar': { name: 'Cabeza Bipolar', seg: 'Cadera', type: 'Primaria', color: 'var(--hip)', desc: 'Endoprótesis de cadera con cabeza bipolar para pacientes de baja demanda' },
   'hip-primary-vastago-ecofit-nc': { name: 'Vástago EcoFit®', seg: 'Cadera', type: 'Primaria', color: 'var(--hip)', desc: 'Vástago femoral EcoFit® para artroplastia primaria de cadera. Disponible no cementado (implatan® TiAl₆V₄ con recubrimiento implaFix® cpTi o HA) y cementado (implavit® CoCrMo, estándar o alta pulida con subsider). Ángulo CCD 133° o 123° (coxa vara). 10 tallas NC / 6 tallas C. Versión estándar y lateralizada.' },
   'hip-primary-vastago-bicana-c': { name: 'Vástago Bicana Cementado', seg: 'Cadera', type: 'Primaria', color: 'var(--hip)', desc: 'Vástago Bicana de fijación cementada para artroplastia primaria de cadera' },
-  'hip-primary-copa-ecofit-2m': { name: 'Copa EcoFit® 2M No Cementada', seg: 'Cadera', type: 'Primaria', color: 'var(--hip)', desc: 'Copa EcoFit® 2M tripolar directa no cementada (CoCrMo + implaFix® HA). Sin tornillos, sin inserto intermedio — el capuchón 2M (implacross® E) articula directamente con la superficie interior pulida de la copa. Indicada en alto riesgo de luxación.' },
+  'hip-primary-copa-ecofit-2m': { name: 'Copa EcoFit® 2M No Cementada', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Copa EcoFit® 2M tripolar directa no cementada (CoCrMo + implaFix® HA). Sin tornillos, sin inserto intermedio — el capuchón 2M (implacross® E) articula directamente con la superficie interior pulida de la copa. Indicada en alto riesgo de luxación.' },
   'hip-revision-vastago-rs': { name: 'Vástago RS', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Vástago modular de revisión de cadera con sistema de suplemento distal' },
   'hip-revision-vastago-bicana-rev': { name: 'Vástago Bicana Revisión', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Vástago Bicana para revisiones de cadera con pérdida ósea proximal' },
   'hip-revision-copa-rs': { name: 'Copa RS', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Copa de revisión con diseño hemiesférico y soporte para aumentos acetabulares' },
-  'hip-revision-copa-ecofit-2m-c': { name: 'Copa Ecofit 2M Cementada', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Copa Ecofit 2M cementada para revisiones acetabulares con defectos menores' },
+  'hip-revision-copa-ecofit-2m-c': { name: 'Copa EcoFit® 2M (No Cementada y Cementada)', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Copa EcoFit® 2M cotilo de doble movilidad tripolar. Disponible en versión no cementada (press-fit + HA) y cementada (CoCrMo con estrías). Ambas comparten capuchón ImplaCross y el mismo instrumental.' },
   'hip-revision-prs-canastillo': { name: 'PRS con Canastillo y Aumentos', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Sistema PRS con canastillo, aumentos de columna y cuñas para defectos acetabulares complejos' },
   'hip-revision-aumentos-acetabulares': { name: 'Aumentos Acetabulares', seg: 'Cadera', type: 'Revisión', color: 'var(--hip)', desc: 'Aumentos metálicos porosos para reconstrucción de defectos acetabulares tipo Paprosky III' },
   'hip-tumor-femur-prox-std': { name: 'Fémur Proximal Estándar', seg: 'Cadera', type: 'Tumoral', color: 'var(--tumor)', desc: 'Endoprótesis estándar para reconstrucción de fémur proximal tras resección tumoral' },
@@ -13784,8 +16704,8 @@ const PRODUCT_META = {
   'shoulder-tumor-ulna-proximal': { name: 'Ulna Proximal', seg: 'Hombro', type: 'Tumoral', color: 'var(--tumor)', desc: 'Endoprótesis para reconstrucción de ulna proximal y olécranon tras resección tumoral' },
   'shoulder-tumor-codo-total': { name: 'Codo Total', seg: 'Hombro', type: 'Tumoral', color: 'var(--tumor)', desc: 'Sistema de artroplastia total de codo oncológica con reemplazo húmero-cubital' },
   // CARBOFIX
-  'nail-tumor-carbofix-humero': { name: 'Clavo Carbofix Largo — Húmero', seg: 'Carbofix', type: 'Tumoral', color: 'var(--tumor)', desc: 'Clavo intramedular largo de fibra de carbono para estabilización tumoral del húmero' },
-  'nail-tumor-carbofix-femur': { name: 'Clavo Carbofix Largo — Fémur', seg: 'Carbofix', type: 'Tumoral', color: 'var(--tumor)', desc: 'Clavo intramedular largo de fibra de carbono para estabilización tumoral del fémur' },
+  'nail-tumor-carbofix-humero': { name: 'Clavo Carbofix — Húmero', seg: 'Hombro', type: 'Tumoral', color: 'var(--tumor)', desc: 'Clavo intramedular largo de fibra de carbono para estabilización tumoral del húmero' },
+  'nail-tumor-carbofix-femur': { name: 'Clavo Carbofix — Fémur', seg: 'Cadera', type: 'Tumoral', color: 'var(--tumor)', desc: 'Clavo intramedular largo de fibra de carbono para estabilización tumoral del fémur' },
 };
 
 // ========================
@@ -13828,21 +16748,21 @@ const SEGMENTS = {
         { id: 'cabeza-bipolar',    type: 'primary', name: 'Cabeza Bipolar' },
         { id: 'vastago-ecofit-nc', type: 'primary', name: 'Vástago EcoFit®' },
         { id: 'vastago-bicana-c',  type: 'primary', name: 'Vástago Bicana Cementado' },
-        { id: 'copa-ecofit-2m',    type: 'primary', name: 'Copa Ecofit 2M No Cementada' },
       ]},
       { label: 'Revisión', products: [
         { id: 'vastago-rs',           type: 'revision', name: 'Vástago RS' },
         { id: 'vastago-bicana-rev',   type: 'revision', name: 'Vástago Bicana Revisión' },
         { id: 'copa-rs',              type: 'revision', name: 'Copa RS' },
-        { id: 'copa-ecofit-2m-c',     type: 'revision', name: 'Copa Ecofit 2M Cementada' },
+        { id: 'copa-ecofit-2m-c',     type: 'revision', name: 'Copa EcoFit® 2M (No Cementada y Cementada)' },
         { id: 'prs-canastillo',       type: 'revision', name: 'PRS con Canastillo' },
         { id: 'aumentos-acetabulares',type: 'revision', name: 'Aumentos Acetabulares' },
       ]},
       { label: 'Tumoral', products: [
-        { id: 'femur-prox-std', type: 'tumor', name: 'Fémur Proximal Estándar' },
-        { id: 'femur-prox-rs',  type: 'tumor', name: 'Fémur Proximal RS' },
-        { id: 'femur-total',    type: 'tumor', name: 'Fémur Total' },
-        { id: 'lumic',          type: 'tumor', name: 'Lumic' },
+        { id: 'femur-prox-std',   type: 'tumor', name: 'Fémur Proximal Estándar' },
+        { id: 'femur-prox-rs',    type: 'tumor', name: 'Fémur Proximal RS' },
+        { id: 'femur-total',      type: 'tumor', name: 'Fémur Total' },
+        { id: 'lumic',            type: 'tumor', name: 'Lumic' },
+        { id: 'carbofix-femur',   type: 'tumor', name: 'Clavo Carbofix — Fémur', seg: 'nail' },
       ]},
     ]
   },
@@ -13853,21 +16773,13 @@ const SEGMENTS = {
         { id: 'agilon', type: 'primary', name: 'Agilon' },
       ]},
       { label: 'Tumoral', products: [
-        { id: 'humero-prox-rev', type: 'tumor', name: 'Húmero Proximal Reverso' },
-        { id: 'humero-distal',   type: 'tumor', name: 'Húmero Distal' },
-        { id: 'humero-total',    type: 'tumor', name: 'Húmero Total' },
-        { id: 'humero-diaf',     type: 'tumor', name: 'Húmero Diafisiario' },
-        { id: 'ulna-proximal',   type: 'tumor', name: 'Ulna Proximal' },
-        { id: 'codo-total',      type: 'tumor', name: 'Codo Total' },
-      ]},
-    ]
-  },
-  nail: {
-    label: 'Clavo Carbofix', color: 'var(--tumor)',
-    subsections: [
-      { label: 'Tumoral', products: [
-        { id: 'carbofix-humero', type: 'tumor', name: 'Clavo Largo — Húmero' },
-        { id: 'carbofix-femur',  type: 'tumor', name: 'Clavo Largo — Fémur' },
+        { id: 'humero-prox-rev',  type: 'tumor', name: 'Húmero Proximal Reverso' },
+        { id: 'humero-distal',    type: 'tumor', name: 'Húmero Distal' },
+        { id: 'humero-total',     type: 'tumor', name: 'Húmero Total' },
+        { id: 'humero-diaf',      type: 'tumor', name: 'Húmero Diafisiario' },
+        { id: 'ulna-proximal',    type: 'tumor', name: 'Ulna Proximal' },
+        { id: 'codo-total',       type: 'tumor', name: 'Codo Total' },
+        { id: 'carbofix-humero',  type: 'tumor', name: 'Clavo Carbofix — Húmero', seg: 'nail' },
       ]},
     ]
   },
@@ -13916,12 +16828,13 @@ function openSegment(seg) {
     <div class="seg-subsection">
       <div class="seg-subsection-label">${sub.label}</div>
       <div class="seg-product-grid">
-        ${sub.products.map(p => `
-          <button class="seg-product-btn" onclick="loadProduct('${seg}','${p.type}','${p.id}')">
+        ${sub.products.map(p => {
+            const pSeg = p.seg || seg;
+            return `<button class="seg-product-btn" onclick="loadProduct('${pSeg}','${p.type}','${p.id}')">
             <span class="dot" style="background:${segData.color}"></span>
             ${p.name}
-          </button>
-        `).join('')}
+          </button>`;
+          }).join('')}
       </div>
     </div>
   `).join('');
